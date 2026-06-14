@@ -1,0 +1,35 @@
+Bleeding Complication of Triple Therapy of Rivaroxaban, Prasugrel, and Aspirin: A Case Report and General Discussion
+
+Dane D. Gruenebaum, Ahmad Alsarah, Osama Alsara, and Heather Laird-Fick
+Department of Internal Medicine, Michigan State University
+Published 11 March 2014
+
+1. Introduction
+
+Several options, with well-described bleeding risks, exist for the chemoprophylaxis of thrombotic complications of either atrial fibrillation or coronary stents in isolation. However, therapy is less clear when the two conditions are comorbid. The "gold standard" therapies differ for each and provide suboptimal risk reduction for the other condition. For example, the combination of aspirin and a thienopyridine inhibitor is recommended to prevent in-stent thrombosis but is inferior to warfarin or the newer oral anticoagulants for the prevention of stroke in atrial fibrillation. As a result, some clinicians have utilized both gold standard therapies simultaneously, resulting in triple oral antithrombotic therapy. While this strategy theoretically minimizes the risk of thrombotic complications, it may increase the risk of bleeding beyond the benefits gained. The net risk-benefit ratio for patients on triple antithrombotic therapy should drive treatment decisions, yet it is often unclear.
+
+2. Case
+
+A 55-year-old Caucasian male presented to the emergency department for one-day history of intractable nausea and vomiting and was found to be in atrial fibrillation with rapid ventricular response. He had a known history of paroxysmal atrial fibrillation but had previously refused warfarin therapy. His past medical history was otherwise significant for congestive heart failure preserved ejection fraction, coronary artery disease treated with a bare metal stent six months prior, diabetes mellitus type 2, hypertension, gout, and chronic kidney disease stage 3 (creatinine clearance 30). His home medications included prasugrel, aspirin, atorvastatin, clonidine, furosemide, potassium chloride, amlodipine, insulin, allopurinol, and hydralazine.
+
+His nausea and vomiting were treated with supportive care and he was started on heparin and diltiazem drip for his atrial fibrillation. Cardiology recommended rivaroxaban for thromboembolism prophylaxis as the patient's main objection to warfarin was the need for frequent monitoring and dose adjustment.
+
+Within 72 hours of initiating renally dosed rivaroxaban, the patient experienced recurrent nasal bleeding. During the day the patient had five episodes of mild bleeding that stopped with direct pressure and simple packing. However, that night the patient experienced severe posterior nasal hemorrhage requiring posterior nasal packing. Aspirin was discontinued. When the packing was removed five days later, bleeding recurred. Cardiology reevaluated the patient's antithrombotic regimen, discontinuing rivaroxaban and switching prasugrel to clopidogrel. After 24 hours without oral rivaroxaban or recurrence of hemorrhage, the patient was deemed stable for discharge.
+
+3. Discussion
+
+For decades, antithrombotic therapies have been effectively used to decrease complications associated with medical conditions such as atrial fibrillation, mechanical heart valves, deep venous thrombosis, and intravascular stents. An agent's mechanism of action (inhibition of the coagulation or platelet aggregation cascades) makes it more effective for specific cardiac diseases rather than others. For instance, aspirin and clopidogrel dual therapy is considered the standard of care to prevent stent thrombosis but is inferior to oral anticoagulants for preventing stroke in high-risk patients with atrial fibrillation. Similarly, oral anticoagulants reduce stroke risk in patients with atrial fibrillation but are not effective as monotherapy after stent.
+
+About 5-7% of patients undergoing percutaneous coronary interventions (PCI) have atrial fibrillation (AF) or other indications for chronic oral anticoagulant therapy. The combination of antithrombotic regimens into a "triple therapy" seems like an attractive option for preventing both stroke and in-stent thrombosis but must be balanced against a bleeding risk which is less well understood.
+
+The most studied oral triple antithrombotic therapies are aspirin, warfarin, and clopidogrel. A meta-analysis of nine trials included 1,996 participants taking either dual antiplatelet therapy (aspirin and clopidogrel) or triple therapy (warfarin, aspirin, and clopidogrel) has reported that triple therapy was more efficacious in reducing the occurrence of cardiovascular events and mortality compared with dual antiplatelet therapy. However, there was significantly more major bleeding with triple antithrombotic therapy in the first 6 months (OR, 2.12; 95% CI, 1.05-4.29; P = 0.04).
+
+Generally, bleeding events with triple therapy have been found to be 3.7 times higher than that with warfarin alone and 4 times than with aspirin monotherapy. Similarly, adding warfarin to dual antiplatelet therapy increases the relative risk for bleeding to 2.2 at 30 days, and the yearly incidence of bleeding will be 12% compared to 3.7% for only aspirin plus clopidogrel. Interestingly, combining warfarin and only clopidogrel reduces bleeding complications without increasing thrombotic events when compared to triple therapy.
+
+Many factors increased our patient's risk of bleeding. Prasugrel results in greater platelet inhibition and more bleeding compared to clopidogrel. Advanced chronic kidney disease may increase the bleeding risk. In the ROCKET AF trial, in which rivaroxaban was compared to warfarin in nonvalvular atrial fibrillation, patients with creatinine clearance <30 mL/min were excluded, and those with a creatinine clearance of 30-49 mL/min received a reduced dose of rivaroxaban (15 mg daily). To date, there is no published data on the effect of kidney failure on bleeding risk of triple therapy with rivaroxaban.
+
+When the anticipated risk of stroke overweigh the risk of bleeding, and the use of triple therapy becomes mandatory, many strategies can be considered to decrease bleeding risk, such as using the lower effective dose of aspirin and adding proton pump inhibitor as a prophylaxis of gastrointestinal bleeding. Utilizing bare metal stents to minimize time on triple therapy may be another strategy to prevent bleeding events, but at this point it is based on insufficient evidence.
+
+4. Conclusion
+
+We believe this is the first case report of bleeding complications involving this combination of medications. Care should be taken in selecting a regimen most appropriate for the patient, remembering that there are no methods for monitoring newer oral anticoagulants. This is especially true in patients with other comorbidities that increase bleeding risk, such as chronic kidney disease.
