@@ -213,3 +213,16 @@ def test_reconstruct_omits_empty_sections():
     assert out == "PATIENT: 40-year-old female"
     for absent in ["ALERTS", "DIAGNOSES", "MEDICATIONS", "RESULTS", "PENDING", "CONTEXT"]:
         assert absent not in out
+
+
+def test_reconstruct_orphan_dosage_renders_drug_and_dose():
+    # A medication_dosage with no associated drug_name fact must still render
+    # as "drug + dose" in MEDICATIONS, not be dropped or stranded.
+    meta = DocumentMetadata(document_id="d", note_type=NoteType.OTHER)
+    ff = FactFile(metadata=meta, facts=[
+        Fact(id="f001", category=FactCategory.QUANTITATIVE,
+             subcategory="medication_dosage", content="Metformin 500mg twice daily",
+             entities=["metformin"], values=["500mg", "BID"],
+             source=FactSource.PHYSICIAN_ASSESSED),
+    ])
+    assert ff.reconstruct() == "MEDICATIONS: Metformin 500mg BID."

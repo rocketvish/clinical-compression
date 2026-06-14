@@ -1,0 +1,1129 @@
+<SYSTEM>
+You are a clinical fact extractor. Given a medical document, you extract every clinically relevant patient-specific fact into a structured JSON format. You are exhaustive, precise, and follow strict decomposition rules.
+
+TAXONOMY (category: subcategories):
+Categorical: previous_diagnosis, reported_symptom, patient_identifier, family_history, behavior, code_status, negated_fact, allergy, infection_precaution, fall_risk, drug_name, device_type
+Temporal: medication_timing, event_sequence, lab_trajectory, dosage_change, time_since_event
+Quantitative: lab_value, vital_sign, medication_dosage
+Clinical Reasoning: considered_rejected_diagnosis, conditional_fact, explanatory_link, uncertainty_marker, pending_planned_task
+
+SOURCE ATTRIBUTION VALUES:
+patient_reported, physician_assessed, outside_records, nursing_note, family_reported, unknown
+
+DECOMPOSITION RULES:
+
+1. ONE ENTITY PER FACT. "Patient takes tylenol 200mg and metformin 10mg" becomes TWO facts, each with a single entity and its associated values. Never put multiple unrelated entities in one fact entry.
+
+2. ATOMIC FACTS. Compound clinical statements are decomposed into separate facts by category. "Metformin increased from 250mg to 500mg on 2024-01-10 due to inadequate glycemic control" becomes:
+   - categorical/drug_name: "Patient takes metformin"
+   - quantitative/medication_dosage: "Metformin 500mg" (current dose)
+   - temporal/dosage_change: "Metformin increased from 250mg to 500mg on 2024-01-10"
+   - clinical_reasoning/explanatory_link: "Metformin increased due to inadequate glycemic control"
+   All share the same group_id.
+
+3. GROUP_ID links facts decomposed from the same clinical statement. Each fact in a group is independently meaningful. Use format "g001", "g002", etc. Facts that stand alone have group_id: null.
+
+4. NEGATION. Any negated clinical fact (denies, no history of, ruled out, absent, etc.) MUST have negated: true. The content field MUST include the negation word. "Denies chest pain" → content: "Patient denies chest pain", negated: true. The entities field contains the concept being negated: ["chest pain"].
+
+5. VERBATIM SPAN. The span field captures the original text from the document, preserving abbreviations and formatting. If the fact comes from multiple non-contiguous spans, capture the most informative one.
+
+6. SOURCE ATTRIBUTION. Set the source field based on who asserted the fact:
+   - patient_reported: patient's own statements
+   - physician_assessed: physician's clinical judgment or documentation
+   - outside_records: from external records or prior documentation
+   - nursing_note: nursing documentation
+   - family_reported: family member statements
+   - unknown: cannot determine source
+
+7. MULTIPLE VALUES on one entity follow chronological order for changes (old first, new second) and co-equal listing for current state. Content must state direction explicitly for changes.
+
+8. TAGS for cross-cutting concerns use format "category:detail" (e.g. "temporal:started_2024-03-15"). Use tags when a fact has a secondary category relationship but its primary category is something else.
+
+9. EXTRACT PATIENT-SPECIFIC FACTS ONLY. Do not extract general medical knowledge, literature findings, study results, or guideline recommendations. Extract only facts about the specific patient in the case.
+
+WORKED EXAMPLE
+
+Given this clinical text:
+"Patient is a 67-year-old male with history of Type 2 diabetes (diagnosed 2019), currently on metformin 500mg BID. Denies chest pain. HbA1c 7.2% on 2024-03-15, up from 6.8% in 2023-09. Allergic to penicillin (anaphylaxis). Metformin was increased from 250mg to 500mg on 2024-01-10 due to inadequate glycemic control. Concerning for early diabetic nephropathy — plan to order urine albumin."
+
+Produce this extraction:
+{
+  "metadata": {
+    "document_id": "example-001",
+    "note_type": "progress_note",
+    "date": "2024-03-15",
+    "author_role": "attending physician",
+    "sections_present": ["HPI", "Assessment/Plan"],
+    "source_dataset": "synthetic"
+  },
+  "facts": [
+    {
+      "id": "f001",
+      "category": "categorical",
+      "subcategory": "patient_identifier",
+      "content": "Patient is a 67-year-old male",
+      "span": "67-year-old male",
+      "entities": ["patient"],
+      "values": ["67"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f002",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has Type 2 diabetes",
+      "span": "history of Type 2 diabetes (diagnosed 2019)",
+      "entities": ["Type 2 diabetes"],
+      "values": [],
+      "tags": ["temporal:diagnosed_2019"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f003",
+      "category": "temporal",
+      "subcategory": "time_since_event",
+      "content": "Type 2 diabetes diagnosed in 2019",
+      "span": "diagnosed 2019",
+      "entities": ["Type 2 diabetes"],
+      "values": ["2019"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f004",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient is currently on metformin",
+      "span": "currently on metformin 500mg BID",
+      "entities": ["metformin"],
+      "values": [],
+      "tags": ["quantitative:500mg_BID"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f005",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Metformin 500mg twice daily",
+      "span": "metformin 500mg BID",
+      "entities": ["metformin"],
+      "values": ["500mg", "BID"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f006",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "Patient denies chest pain",
+      "span": "Denies chest pain",
+      "entities": ["chest pain"],
+      "values": [],
+      "tags": [],
+      "source": "patient_reported",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f007",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "HbA1c is 7.2%",
+      "span": "HbA1c 7.2% on 2024-03-15",
+      "entities": ["HbA1c"],
+      "values": ["7.2%"],
+      "tags": ["temporal:2024-03-15"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f008",
+      "category": "temporal",
+      "subcategory": "lab_trajectory",
+      "content": "HbA1c increased from 6.8% to 7.2% between September 2023 and March 2024",
+      "span": "HbA1c 7.2% on 2024-03-15, up from 6.8% in 2023-09",
+      "entities": ["HbA1c"],
+      "values": ["6.8%", "7.2%"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f009",
+      "category": "categorical",
+      "subcategory": "allergy",
+      "content": "Patient is allergic to penicillin with anaphylaxis reaction",
+      "span": "Allergic to penicillin (anaphylaxis)",
+      "entities": ["penicillin"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f010",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Metformin increased from 250mg to 500mg on 2024-01-10",
+      "span": "Metformin was increased from 250mg to 500mg on 2024-01-10",
+      "entities": ["metformin"],
+      "values": ["250mg", "500mg", "2024-01-10"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f011",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Metformin was increased due to inadequate glycemic control",
+      "span": "due to inadequate glycemic control",
+      "entities": ["metformin", "glycemic control"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f012",
+      "category": "clinical_reasoning",
+      "subcategory": "uncertainty_marker",
+      "content": "Concerning for early diabetic nephropathy",
+      "span": "Concerning for early diabetic nephropathy",
+      "entities": ["diabetic nephropathy"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f013",
+      "category": "clinical_reasoning",
+      "subcategory": "pending_planned_task",
+      "content": "Plan to order urine albumin test",
+      "span": "plan to order urine albumin",
+      "entities": ["urine albumin"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    }
+  ]
+}
+
+OUTPUT FORMAT:
+Return ONLY valid JSON matching the FactFile structure. No markdown fencing, no explanation, no preamble, no postamble. Just the JSON object with "metadata" and "facts" keys.
+
+FactFile structure:
+{
+  "metadata": {
+    "document_id": str,
+    "note_type": one of [discharge_summary, progress_note, history_and_physical, consult, imaging_report, procedure_note, nursing_note, er_provider_note, echocardiography_report, case_report, other],
+    "date": str | null,            // ISO YYYY-MM-DD
+    "author_role": str | null,
+    "sections_present": [str, ...],
+    "source_dataset": str | null
+  },
+  "facts": [
+    {
+      "id": str,                    // "f001", unique within the file
+      "category": one of [categorical, temporal, quantitative, clinical_reasoning],
+      "subcategory": str,           // a valid subcategory for the category
+      "content": str,               // normalized, human-readable statement
+      "span": str | null,           // verbatim source text
+      "entities": [str, ...],       // at least one clinical entity
+      "values": [str, ...],         // quantitative values with units; may be empty
+      "tags": [str, ...],           // cross-cutting "category:detail"
+      "source": one of [patient_reported, physician_assessed, outside_records, nursing_note, family_reported, unknown],
+      "negated": bool,
+      "group_id": str | null        // links decomposed facts, e.g. "g001"
+    }
+  ]
+}
+</SYSTEM>
+
+<USER>
+Review this clinical document against the facts already extracted. Identify any clinically relevant patient-specific facts that are MISSING from the extraction.
+
+Focus especially on:
+- Negated facts (things the patient denies or does not have)
+- Temporal relationships (when things started, stopped, changed)
+- Clinical reasoning (why decisions were made, what was considered and rejected)
+- Conditional instructions (if X then Y)
+- Source attributions that may be wrong
+- Quantitative values (lab numbers, vitals, dosages) that were missed
+- Drug interactions or risk factors mentioned specifically about this patient
+
+Document text:
+---
+Bleeding Complication of Triple Therapy of Rivaroxaban, Prasugrel, and Aspirin: A Case Report and General Discussion
+
+Dane D. Gruenebaum, Ahmad Alsarah, Osama Alsara, and Heather Laird-Fick
+Department of Internal Medicine, Michigan State University
+Published 11 March 2014
+
+1. Introduction
+
+Several options, with well-described bleeding risks, exist for the chemoprophylaxis of thrombotic complications of either atrial fibrillation or coronary stents in isolation. However, therapy is less clear when the two conditions are comorbid. The "gold standard" therapies differ for each and provide suboptimal risk reduction for the other condition. For example, the combination of aspirin and a thienopyridine inhibitor is recommended to prevent in-stent thrombosis but is inferior to warfarin or the newer oral anticoagulants for the prevention of stroke in atrial fibrillation. As a result, some clinicians have utilized both gold standard therapies simultaneously, resulting in triple oral antithrombotic therapy. While this strategy theoretically minimizes the risk of thrombotic complications, it may increase the risk of bleeding beyond the benefits gained. The net risk-benefit ratio for patients on triple antithrombotic therapy should drive treatment decisions, yet it is often unclear.
+
+2. Case
+
+A 55-year-old Caucasian male presented to the emergency department for one-day history of intractable nausea and vomiting and was found to be in atrial fibrillation with rapid ventricular response. He had a known history of paroxysmal atrial fibrillation but had previously refused warfarin therapy. His past medical history was otherwise significant for congestive heart failure preserved ejection fraction, coronary artery disease treated with a bare metal stent six months prior, diabetes mellitus type 2, hypertension, gout, and chronic kidney disease stage 3 (creatinine clearance 30). His home medications included prasugrel, aspirin, atorvastatin, clonidine, furosemide, potassium chloride, amlodipine, insulin, allopurinol, and hydralazine.
+
+His nausea and vomiting were treated with supportive care and he was started on heparin and diltiazem drip for his atrial fibrillation. Cardiology recommended rivaroxaban for thromboembolism prophylaxis as the patient's main objection to warfarin was the need for frequent monitoring and dose adjustment.
+
+Within 72 hours of initiating renally dosed rivaroxaban, the patient experienced recurrent nasal bleeding. During the day the patient had five episodes of mild bleeding that stopped with direct pressure and simple packing. However, that night the patient experienced severe posterior nasal hemorrhage requiring posterior nasal packing. Aspirin was discontinued. When the packing was removed five days later, bleeding recurred. Cardiology reevaluated the patient's antithrombotic regimen, discontinuing rivaroxaban and switching prasugrel to clopidogrel. After 24 hours without oral rivaroxaban or recurrence of hemorrhage, the patient was deemed stable for discharge.
+
+3. Discussion
+
+For decades, antithrombotic therapies have been effectively used to decrease complications associated with medical conditions such as atrial fibrillation, mechanical heart valves, deep venous thrombosis, and intravascular stents. An agent's mechanism of action (inhibition of the coagulation or platelet aggregation cascades) makes it more effective for specific cardiac diseases rather than others. For instance, aspirin and clopidogrel dual therapy is considered the standard of care to prevent stent thrombosis but is inferior to oral anticoagulants for preventing stroke in high-risk patients with atrial fibrillation. Similarly, oral anticoagulants reduce stroke risk in patients with atrial fibrillation but are not effective as monotherapy after stent.
+
+About 5-7% of patients undergoing percutaneous coronary interventions (PCI) have atrial fibrillation (AF) or other indications for chronic oral anticoagulant therapy. The combination of antithrombotic regimens into a "triple therapy" seems like an attractive option for preventing both stroke and in-stent thrombosis but must be balanced against a bleeding risk which is less well understood.
+
+The most studied oral triple antithrombotic therapies are aspirin, warfarin, and clopidogrel. A meta-analysis of nine trials included 1,996 participants taking either dual antiplatelet therapy (aspirin and clopidogrel) or triple therapy (warfarin, aspirin, and clopidogrel) has reported that triple therapy was more efficacious in reducing the occurrence of cardiovascular events and mortality compared with dual antiplatelet therapy. However, there was significantly more major bleeding with triple antithrombotic therapy in the first 6 months (OR, 2.12; 95% CI, 1.05-4.29; P = 0.04).
+
+Generally, bleeding events with triple therapy have been found to be 3.7 times higher than that with warfarin alone and 4 times than with aspirin monotherapy. Similarly, adding warfarin to dual antiplatelet therapy increases the relative risk for bleeding to 2.2 at 30 days, and the yearly incidence of bleeding will be 12% compared to 3.7% for only aspirin plus clopidogrel. Interestingly, combining warfarin and only clopidogrel reduces bleeding complications without increasing thrombotic events when compared to triple therapy.
+
+Many factors increased our patient's risk of bleeding. Prasugrel results in greater platelet inhibition and more bleeding compared to clopidogrel. Advanced chronic kidney disease may increase the bleeding risk. In the ROCKET AF trial, in which rivaroxaban was compared to warfarin in nonvalvular atrial fibrillation, patients with creatinine clearance <30 mL/min were excluded, and those with a creatinine clearance of 30-49 mL/min received a reduced dose of rivaroxaban (15 mg daily). To date, there is no published data on the effect of kidney failure on bleeding risk of triple therapy with rivaroxaban.
+
+When the anticipated risk of stroke overweigh the risk of bleeding, and the use of triple therapy becomes mandatory, many strategies can be considered to decrease bleeding risk, such as using the lower effective dose of aspirin and adding proton pump inhibitor as a prophylaxis of gastrointestinal bleeding. Utilizing bare metal stents to minimize time on triple therapy may be another strategy to prevent bleeding events, but at this point it is based on insufficient evidence.
+
+4. Conclusion
+
+We believe this is the first case report of bleeding complications involving this combination of medications. Care should be taken in selecting a regimen most appropriate for the patient, remembering that there are no methods for monitoring newer oral anticoagulants. This is especially true in patients with other comorbidities that increase bleeding risk, such as chronic kidney disease.
+
+---
+
+Already extracted facts:
+---
+{
+  "metadata": {
+    "document_id": "bleeding-triple-therapy-case",
+    "note_type": "case_report",
+    "date": "2014-03-11",
+    "author_role": "unknown",
+    "sections_present": [
+      "Introduction",
+      "Case",
+      "Discussion",
+      "Conclusion"
+    ],
+    "source_dataset": "manual"
+  },
+  "facts": [
+    {
+      "id": "f001",
+      "category": "categorical",
+      "subcategory": "patient_identifier",
+      "content": "Patient is a 55-year-old Caucasian male",
+      "span": "55-year-old Caucasian male",
+      "entities": [
+        "patient"
+      ],
+      "values": [
+        "55"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f002",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient presented with one-day history of intractable nausea and vomiting",
+      "span": "one-day history of intractable nausea and vomiting",
+      "entities": [
+        "nausea",
+        "vomiting"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:one_day_duration"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f003",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient was found to be in atrial fibrillation with rapid ventricular response",
+      "span": "found to be in atrial fibrillation with rapid ventricular response",
+      "entities": [
+        "atrial fibrillation",
+        "rapid ventricular response"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f004",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has known history of paroxysmal atrial fibrillation",
+      "span": "known history of paroxysmal atrial fibrillation",
+      "entities": [
+        "paroxysmal atrial fibrillation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f005",
+      "category": "categorical",
+      "subcategory": "behavior",
+      "content": "Patient had previously refused warfarin therapy",
+      "span": "had previously refused warfarin therapy",
+      "entities": [
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f006",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has congestive heart failure with preserved ejection fraction",
+      "span": "congestive heart failure preserved ejection fraction",
+      "entities": [
+        "congestive heart failure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f007",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has coronary artery disease",
+      "span": "coronary artery disease treated with a bare metal stent six months prior",
+      "entities": [
+        "coronary artery disease"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f008",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Patient has a bare metal stent for coronary artery disease",
+      "span": "bare metal stent",
+      "entities": [
+        "bare metal stent"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f009",
+      "category": "temporal",
+      "subcategory": "time_since_event",
+      "content": "Bare metal stent was placed six months prior to presentation",
+      "span": "bare metal stent six months prior",
+      "entities": [
+        "bare metal stent"
+      ],
+      "values": [
+        "six months"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f010",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has diabetes mellitus type 2",
+      "span": "diabetes mellitus type 2",
+      "entities": [
+        "diabetes mellitus type 2"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f011",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has hypertension",
+      "span": "hypertension",
+      "entities": [
+        "hypertension"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f012",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has gout",
+      "span": "gout",
+      "entities": [
+        "gout"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f013",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has chronic kidney disease stage 3",
+      "span": "chronic kidney disease stage 3",
+      "entities": [
+        "chronic kidney disease"
+      ],
+      "values": [
+        "stage 3"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f014",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Creatinine clearance is 30",
+      "span": "creatinine clearance 30",
+      "entities": [
+        "creatinine clearance"
+      ],
+      "values": [
+        "30"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f015",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes prasugrel as a home medication",
+      "span": "prasugrel",
+      "entities": [
+        "prasugrel"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f016",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes aspirin as a home medication",
+      "span": "aspirin",
+      "entities": [
+        "aspirin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f017",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes atorvastatin as a home medication",
+      "span": "atorvastatin",
+      "entities": [
+        "atorvastatin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f018",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes clonidine as a home medication",
+      "span": "clonidine",
+      "entities": [
+        "clonidine"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f019",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes furosemide as a home medication",
+      "span": "furosemide",
+      "entities": [
+        "furosemide"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f020",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes potassium chloride as a home medication",
+      "span": "potassium chloride",
+      "entities": [
+        "potassium chloride"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f021",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes amlodipine as a home medication",
+      "span": "amlodipine",
+      "entities": [
+        "amlodipine"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f022",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes insulin as a home medication",
+      "span": "insulin",
+      "entities": [
+        "insulin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f023",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes allopurinol as a home medication",
+      "span": "allopurinol",
+      "entities": [
+        "allopurinol"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f024",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes hydralazine as a home medication",
+      "span": "hydralazine",
+      "entities": [
+        "hydralazine"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f025",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Nausea and vomiting were treated with supportive care",
+      "span": "nausea and vomiting were treated with supportive care",
+      "entities": [
+        "nausea",
+        "vomiting"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f026",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient was started on heparin drip for atrial fibrillation",
+      "span": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "entities": [
+        "heparin"
+      ],
+      "values": [],
+      "tags": [
+        "categorical:intravenous_drip"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f027",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient was started on diltiazem drip for atrial fibrillation",
+      "span": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "entities": [
+        "diltiazem"
+      ],
+      "values": [],
+      "tags": [
+        "categorical:intravenous_drip"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f028",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Heparin and diltiazem drips were initiated for management of atrial fibrillation",
+      "span": "for his atrial fibrillation",
+      "entities": [
+        "heparin",
+        "diltiazem",
+        "atrial fibrillation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f029",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Cardiology recommended rivaroxaban for the patient",
+      "span": "Cardiology recommended rivaroxaban for thromboembolism prophylaxis",
+      "entities": [
+        "rivaroxaban"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f030",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Rivaroxaban was recommended for thromboembolism prophylaxis",
+      "span": "rivaroxaban for thromboembolism prophylaxis",
+      "entities": [
+        "rivaroxaban",
+        "thromboembolism"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f031",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Rivaroxaban was chosen because patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "span": "patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "entities": [
+        "rivaroxaban",
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f032",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Rivaroxaban was renally dosed",
+      "span": "renally dosed rivaroxaban",
+      "entities": [
+        "rivaroxaban"
+      ],
+      "values": [],
+      "tags": [
+        "categorical:renal_dose_adjustment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f033",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient experienced recurrent nasal bleeding",
+      "span": "the patient experienced recurrent nasal bleeding",
+      "entities": [
+        "nasal bleeding"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f034",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Recurrent nasal bleeding occurred within 72 hours of initiating rivaroxaban",
+      "span": "Within 72 hours of initiating renally dosed rivaroxaban, the patient experienced recurrent nasal bleeding",
+      "entities": [
+        "nasal bleeding",
+        "rivaroxaban"
+      ],
+      "values": [
+        "72 hours"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f035",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient had five episodes of mild nasal bleeding during the day",
+      "span": "five episodes of mild bleeding",
+      "entities": [
+        "nasal bleeding"
+      ],
+      "values": [
+        "5"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f036",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Mild bleeding episodes stopped with direct pressure and simple packing",
+      "span": "stopped with direct pressure and simple packing",
+      "entities": [
+        "nasal bleeding"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f037",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient experienced severe posterior nasal hemorrhage that night",
+      "span": "severe posterior nasal hemorrhage",
+      "entities": [
+        "posterior nasal hemorrhage"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f038",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Posterior nasal packing was required for severe hemorrhage",
+      "span": "requiring posterior nasal packing",
+      "entities": [
+        "posterior nasal packing"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f039",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Aspirin was discontinued",
+      "span": "Aspirin was discontinued",
+      "entities": [
+        "aspirin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f040",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Posterior nasal packing was removed five days later",
+      "span": "packing was removed five days later",
+      "entities": [
+        "posterior nasal packing"
+      ],
+      "values": [
+        "five days"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f041",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Bleeding recurred when posterior nasal packing was removed",
+      "span": "bleeding recurred",
+      "entities": [
+        "nasal bleeding"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f042",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Rivaroxaban was discontinued",
+      "span": "discontinuing rivaroxaban",
+      "entities": [
+        "rivaroxaban"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f043",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Prasugrel was switched to clopidogrel",
+      "span": "switching prasugrel to clopidogrel",
+      "entities": [
+        "prasugrel",
+        "clopidogrel"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f044",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Cardiology reevaluated the patient's antithrombotic regimen after bleeding recurred",
+      "span": "Cardiology reevaluated the patient's antithrombotic regimen",
+      "entities": [
+        "antithrombotic regimen"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f045",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "Patient had no recurrence of hemorrhage after 24 hours without oral rivaroxaban",
+      "span": "24 hours without oral rivaroxaban or recurrence of hemorrhage",
+      "entities": [
+        "hemorrhage"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:24_hours_post_discontinuation"
+      ],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": "g011"
+    },
+    {
+      "id": "f046",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient was deemed stable for discharge after 24 hours without rivaroxaban or recurrence of hemorrhage",
+      "span": "the patient was deemed stable for discharge",
+      "entities": [
+        "discharge"
+      ],
+      "values": [
+        "24 hours"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f047",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Multiple factors increased the patient's risk of bleeding",
+      "span": "Many factors increased our patient's risk of bleeding",
+      "entities": [
+        "bleeding risk"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f048",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Prasugrel contributed to increased bleeding risk due to greater platelet inhibition compared to clopidogrel",
+      "span": "Prasugrel results in greater platelet inhibition and more bleeding compared to clopidogrel",
+      "entities": [
+        "prasugrel",
+        "clopidogrel",
+        "bleeding risk"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f049",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Advanced chronic kidney disease contributed to the patient's increased bleeding risk",
+      "span": "Advanced chronic kidney disease may increase the bleeding risk",
+      "entities": [
+        "chronic kidney disease",
+        "bleeding risk"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f050",
+      "category": "clinical_reasoning",
+      "subcategory": "uncertainty_marker",
+      "content": "No published data exists on the effect of kidney failure on bleeding risk of triple therapy with rivaroxaban for this patient's combination",
+      "span": "no published data on the effect of kidney failure on bleeding risk of triple therapy with rivaroxaban",
+      "entities": [
+        "rivaroxaban",
+        "chronic kidney disease",
+        "triple therapy"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    }
+  ]
+}
+---
+
+Return ONLY a JSON array of additional Fact objects that are missing. Use fact IDs continuing from the highest existing ID. Use group_ids continuing from the highest existing group. If no facts are missing, return an empty array: []
+
+No markdown fencing, no explanation. Just the JSON array.
+</USER>

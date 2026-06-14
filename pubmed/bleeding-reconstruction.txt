@@ -1,0 +1,11 @@
+PATIENT: 55-year-old Caucasian male
+
+DIAGNOSES: paroxysmal atrial fibrillation. congestive heart failure. coronary artery disease (bare metal stent six months prior). diabetes mellitus type 2. hypertension. gout. chronic kidney disease.
+
+MEDICATIONS: Prasugrel due to greater platelet inhibition compared to clopidogrel. Aspirin. Atorvastatin. Clonidine. Furosemide. Potassium chloride. Amlodipine. Insulin. Allopurinol. Hydralazine. Heparin. Diltiazem. Rivaroxaban. Triple antithrombotic therapy.
+
+RESULTS: creatinine clearance 30.
+
+CLINICAL REASONING: Rivaroxaban was chosen because patient's main objection to warfarin was the need for frequent monitoring and dose adjustment. Multiple factors increased the patient's risk of bleeding. Advanced chronic kidney disease contributed to the patient's increased bleeding risk. No published data exists on the effect of kidney failure on bleeding risk of triple therapy with rivaroxaban for this patient's combination. Rivaroxaban was renally dosed because of the patient's reduced creatinine clearance of 30. Patient's creatinine clearance of 30 mL/min placed him at the lower boundary of the ROCKET AF inclusion criteria, where patients with CrCl below 30 were excluded and those with 30-49 received a reduced rivaroxaban dose. This is believed to be the first case report of bleeding complications involving this combination of medications.
+
+CONTEXT: had previously refused warfarin therapy. patient's main objection to warfarin was the need for frequent monitoring and dose adjustment. 24 hours without oral rivaroxaban or recurrence of hemorrhage.

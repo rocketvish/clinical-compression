@@ -54,12 +54,18 @@ _DECOMPOSITION_RULES = """DECOMPOSITION RULES:
 
 8. TAGS for cross-cutting concerns use format "category:detail" (e.g. "temporal:started_2024-03-15"). Use tags when a fact has a secondary category relationship but its primary category is something else.
 
-9. EXTRACT PATIENT-SPECIFIC FACTS ONLY. Do not extract general medical knowledge, literature findings, study results, or guideline recommendations. Extract only facts about the specific patient in the case."""
+9. EXTRACT PATIENT-SPECIFIC FACTS ONLY. Do not extract general medical knowledge, literature findings, study results, or guideline recommendations. Extract only facts about the specific patient in the case.
+
+10. PRESERVE DISEASE QUALIFIERS. Stage, grade, severity, functional status, and subtype modifiers must be included in the content field. "Chronic kidney disease stage 3" not "chronic kidney disease." "Heart failure with preserved ejection fraction" not "heart failure." These qualifiers change clinical management.
+
+11. TREATMENT REGIMENS ARE NOT DRUGS. Do not extract combination therapy descriptions ("triple antithrombotic therapy", "dual antiplatelet therapy") as drug_name facts. The individual drugs in the regimen should each have their own drug_name entry. If the regimen concept is clinically relevant, categorize it as clinical_reasoning/explanatory_link."""
 
 _OUTPUT_FORMAT = (
-    "Return ONLY valid JSON matching the FactFile structure. No markdown "
-    "fencing, no explanation, no preamble, no postamble. Just the JSON object "
-    'with "metadata" and "facts" keys.'
+    "Return ONLY valid JSON matching the FactFile structure — a single JSON "
+    'object with "metadata" and "facts" keys.\n\n'
+    "CRITICAL: Your entire response must be valid JSON and nothing else. Start "
+    "your response with { and end it with }. No text before or after the "
+    "object. No explanation, no commentary, no markdown fencing."
 )
 
 # The worked example is embedded inline rather than read from tests/fixtures so
@@ -396,5 +402,5 @@ Already extracted facts:
 
 Return ONLY a JSON array of additional Fact objects that are missing. Use fact IDs continuing from the highest existing ID. Use group_ids continuing from the highest existing group. If no facts are missing, return an empty array: []
 
-No markdown fencing, no explanation. Just the JSON array.
+CRITICAL: Your entire response must be valid JSON and nothing else. Start your response with [ and end it with ]. No text before or after the array. No explanation, no commentary, no markdown fencing.
 </USER>"""

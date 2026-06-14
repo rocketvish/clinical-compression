@@ -75,7 +75,9 @@ NEW_LAB_FACT = """[
 def test_system_prompt_has_role_and_output_format():
     sp = build_system_prompt()
     assert "You are a clinical fact extractor." in sp
-    assert "Return ONLY valid JSON matching the FactFile structure." in sp
+    assert "Return ONLY valid JSON matching the FactFile structure" in sp
+    # Hardened JSON-only constraint for the extraction (object) pass.
+    assert "Start your response with { and end it with }" in sp
 
 
 def test_system_prompt_lists_all_categories_and_subcategories():
@@ -93,7 +95,7 @@ def test_system_prompt_lists_all_sources():
         assert source.value in sp
 
 
-def test_system_prompt_has_all_nine_decomposition_rules():
+def test_system_prompt_has_all_decomposition_rules():
     sp = build_system_prompt()
     markers = [
         "1. ONE ENTITY PER FACT",
@@ -105,6 +107,8 @@ def test_system_prompt_has_all_nine_decomposition_rules():
         "7. MULTIPLE VALUES",
         "8. TAGS",
         "9. EXTRACT PATIENT-SPECIFIC FACTS ONLY",
+        "10. PRESERVE DISEASE QUALIFIERS",
+        "11. TREATMENT REGIMENS ARE NOT DRUGS",
     ]
     for marker in markers:
         assert marker in sp, f"missing rule: {marker}"
@@ -153,6 +157,8 @@ def test_verification_prompt_includes_document_and_facts():
     assert '{"facts": []}' in prompt
     assert "MISSING" in prompt
     assert "JSON array" in prompt
+    # Hardened JSON-only constraint for the verification (array) pass.
+    assert "Start your response with [ and end it with ]" in prompt
 
 
 # ---------------------------------------------------------------------------
@@ -240,6 +246,14 @@ def test_merge_handles_fenced_array():
     existing = existing_factfile()
     merged = merge_facts(existing, "```json\n" + NEW_LAB_FACT + "\n```")
     assert len(merged.facts) == 6
+
+
+def test_merge_handles_prose_around_array():
+    existing = existing_factfile()
+    wrapped = "Here are the missing facts:\n" + NEW_LAB_FACT + "\nThat's everything."
+    merged = merge_facts(existing, wrapped)
+    assert len(merged.facts) == 6
+    assert merged.facts[-1].subcategory == "lab_value"
 
 
 def test_merge_empty_array_is_noop():

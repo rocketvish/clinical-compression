@@ -386,6 +386,19 @@ class FactFile(BaseModel):
                 consumed.add(link[0].id)
             parts.append(_ensure_period(base + clause))
             consumed.add(f.id)
+        # Orphan dosage facts: a medication_dosage with no associated drug_name
+        # (none shared its group_id or entity) still renders as drug + dose here
+        # rather than being dropped or stranded from its drug name.
+        for f in self.facts:
+            if f.id in consumed:
+                continue
+            if f.category is cat.QUANTITATIVE and f.subcategory == "medication_dosage":
+                if f.negated:
+                    parts.append(_ensure_period(f.span or _capitalize_first(_strip_patient_prefix(f.content))))
+                else:
+                    drug = _capitalize_first(f.entities[0])
+                    parts.append(_ensure_period(f"{drug} {' '.join(f.values)}".strip()))
+                consumed.add(f.id)
         if parts:
             sections.append(("MEDICATIONS", " ".join(parts)))
 
