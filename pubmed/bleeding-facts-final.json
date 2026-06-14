@@ -1,0 +1,939 @@
+{
+  "metadata": {
+    "document_id": "bleeding-triple-therapy-case",
+    "note_type": "case_report",
+    "date": "2014-03-11",
+    "author_role": "unknown",
+    "sections_present": [
+      "Introduction",
+      "Case",
+      "Discussion",
+      "Conclusion"
+    ],
+    "source_dataset": "manual"
+  },
+  "facts": [
+    {
+      "id": "f001",
+      "category": "categorical",
+      "subcategory": "patient_identifier",
+      "content": "Patient is a 55-year-old Caucasian male",
+      "span": "55-year-old Caucasian male",
+      "entities": [
+        "patient"
+      ],
+      "values": [
+        "55"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f002",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient presented with one-day history of intractable nausea and vomiting",
+      "span": "one-day history of intractable nausea and vomiting",
+      "entities": [
+        "nausea",
+        "vomiting"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:one_day_duration"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f003",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient was found to be in atrial fibrillation with rapid ventricular response",
+      "span": "found to be in atrial fibrillation with rapid ventricular response",
+      "entities": [
+        "atrial fibrillation",
+        "rapid ventricular response"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f004",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has known history of paroxysmal atrial fibrillation",
+      "span": "known history of paroxysmal atrial fibrillation",
+      "entities": [
+        "paroxysmal atrial fibrillation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f005",
+      "category": "categorical",
+      "subcategory": "behavior",
+      "content": "Patient had previously refused warfarin therapy",
+      "span": "had previously refused warfarin therapy",
+      "entities": [
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f006",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has congestive heart failure with preserved ejection fraction",
+      "span": "congestive heart failure preserved ejection fraction",
+      "entities": [
+        "congestive heart failure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f007",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has coronary artery disease",
+      "span": "coronary artery disease treated with a bare metal stent six months prior",
+      "entities": [
+        "coronary artery disease"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f008",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Patient has a bare metal stent for coronary artery disease",
+      "span": "bare metal stent",
+      "entities": [
+        "bare metal stent"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f009",
+      "category": "temporal",
+      "subcategory": "time_since_event",
+      "content": "Bare metal stent was placed six months prior to presentation",
+      "span": "bare metal stent six months prior",
+      "entities": [
+        "bare metal stent"
+      ],
+      "values": [
+        "six months"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f010",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has diabetes mellitus type 2",
+      "span": "diabetes mellitus type 2",
+      "entities": [
+        "diabetes mellitus type 2"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f011",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has hypertension",
+      "span": "hypertension",
+      "entities": [
+        "hypertension"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f012",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has gout",
+      "span": "gout",
+      "entities": [
+        "gout"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f013",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has chronic kidney disease stage 3",
+      "span": "chronic kidney disease stage 3",
+      "entities": [
+        "chronic kidney disease"
+      ],
+      "values": [
+        "stage 3"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f014",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Creatinine clearance is 30",
+      "span": "creatinine clearance 30",
+      "entities": [
+        "creatinine clearance"
+      ],
+      "values": [
+        "30"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f015",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes prasugrel as a home medication",
+      "span": "prasugrel",
+      "entities": [
+        "prasugrel"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f016",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes aspirin as a home medication",
+      "span": "aspirin",
+      "entities": [
+        "aspirin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f017",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes atorvastatin as a home medication",
+      "span": "atorvastatin",
+      "entities": [
+        "atorvastatin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f018",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes clonidine as a home medication",
+      "span": "clonidine",
+      "entities": [
+        "clonidine"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f019",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes furosemide as a home medication",
+      "span": "furosemide",
+      "entities": [
+        "furosemide"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f020",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes potassium chloride as a home medication",
+      "span": "potassium chloride",
+      "entities": [
+        "potassium chloride"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f021",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes amlodipine as a home medication",
+      "span": "amlodipine",
+      "entities": [
+        "amlodipine"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f022",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes insulin as a home medication",
+      "span": "insulin",
+      "entities": [
+        "insulin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f023",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes allopurinol as a home medication",
+      "span": "allopurinol",
+      "entities": [
+        "allopurinol"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f024",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient takes hydralazine as a home medication",
+      "span": "hydralazine",
+      "entities": [
+        "hydralazine"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f025",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Nausea and vomiting were treated with supportive care",
+      "span": "nausea and vomiting were treated with supportive care",
+      "entities": [
+        "nausea",
+        "vomiting"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f026",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient was started on heparin drip for atrial fibrillation",
+      "span": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "entities": [
+        "heparin"
+      ],
+      "values": [],
+      "tags": [
+        "categorical:intravenous_drip"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f027",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient was started on diltiazem drip for atrial fibrillation",
+      "span": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "entities": [
+        "diltiazem"
+      ],
+      "values": [],
+      "tags": [
+        "categorical:intravenous_drip"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f028",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Heparin and diltiazem drips were initiated for management of atrial fibrillation",
+      "span": "for his atrial fibrillation",
+      "entities": [
+        "heparin",
+        "diltiazem",
+        "atrial fibrillation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f029",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Cardiology recommended rivaroxaban for the patient",
+      "span": "Cardiology recommended rivaroxaban for thromboembolism prophylaxis",
+      "entities": [
+        "rivaroxaban"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f030",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Rivaroxaban was recommended for thromboembolism prophylaxis",
+      "span": "rivaroxaban for thromboembolism prophylaxis",
+      "entities": [
+        "rivaroxaban",
+        "thromboembolism"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f031",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Rivaroxaban was chosen because patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "span": "patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "entities": [
+        "rivaroxaban",
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f032",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Rivaroxaban was renally dosed",
+      "span": "renally dosed rivaroxaban",
+      "entities": [
+        "rivaroxaban"
+      ],
+      "values": [],
+      "tags": [
+        "categorical:renal_dose_adjustment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f033",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient experienced recurrent nasal bleeding",
+      "span": "the patient experienced recurrent nasal bleeding",
+      "entities": [
+        "nasal bleeding"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f034",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Recurrent nasal bleeding occurred within 72 hours of initiating rivaroxaban",
+      "span": "Within 72 hours of initiating renally dosed rivaroxaban, the patient experienced recurrent nasal bleeding",
+      "entities": [
+        "nasal bleeding",
+        "rivaroxaban"
+      ],
+      "values": [
+        "72 hours"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f035",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient had five episodes of mild nasal bleeding during the day",
+      "span": "five episodes of mild bleeding",
+      "entities": [
+        "nasal bleeding"
+      ],
+      "values": [
+        "5"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f036",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Mild bleeding episodes stopped with direct pressure and simple packing",
+      "span": "stopped with direct pressure and simple packing",
+      "entities": [
+        "nasal bleeding"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f037",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient experienced severe posterior nasal hemorrhage that night",
+      "span": "severe posterior nasal hemorrhage",
+      "entities": [
+        "posterior nasal hemorrhage"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f038",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Posterior nasal packing was required for severe hemorrhage",
+      "span": "requiring posterior nasal packing",
+      "entities": [
+        "posterior nasal packing"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f039",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Aspirin was discontinued",
+      "span": "Aspirin was discontinued",
+      "entities": [
+        "aspirin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f040",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Posterior nasal packing was removed five days later",
+      "span": "packing was removed five days later",
+      "entities": [
+        "posterior nasal packing"
+      ],
+      "values": [
+        "five days"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f041",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Bleeding recurred when posterior nasal packing was removed",
+      "span": "bleeding recurred",
+      "entities": [
+        "nasal bleeding"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f042",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Rivaroxaban was discontinued",
+      "span": "discontinuing rivaroxaban",
+      "entities": [
+        "rivaroxaban"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f043",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Prasugrel was switched to clopidogrel",
+      "span": "switching prasugrel to clopidogrel",
+      "entities": [
+        "prasugrel",
+        "clopidogrel"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f044",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Cardiology reevaluated the patient's antithrombotic regimen after bleeding recurred",
+      "span": "Cardiology reevaluated the patient's antithrombotic regimen",
+      "entities": [
+        "antithrombotic regimen"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f045",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "Patient had no recurrence of hemorrhage after 24 hours without oral rivaroxaban",
+      "span": "24 hours without oral rivaroxaban or recurrence of hemorrhage",
+      "entities": [
+        "hemorrhage"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:24_hours_post_discontinuation"
+      ],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": "g011"
+    },
+    {
+      "id": "f046",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient was deemed stable for discharge after 24 hours without rivaroxaban or recurrence of hemorrhage",
+      "span": "the patient was deemed stable for discharge",
+      "entities": [
+        "discharge"
+      ],
+      "values": [
+        "24 hours"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f047",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Multiple factors increased the patient's risk of bleeding",
+      "span": "Many factors increased our patient's risk of bleeding",
+      "entities": [
+        "bleeding risk"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f048",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Prasugrel contributed to increased bleeding risk due to greater platelet inhibition compared to clopidogrel",
+      "span": "Prasugrel results in greater platelet inhibition and more bleeding compared to clopidogrel",
+      "entities": [
+        "prasugrel",
+        "clopidogrel",
+        "bleeding risk"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f049",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Advanced chronic kidney disease contributed to the patient's increased bleeding risk",
+      "span": "Advanced chronic kidney disease may increase the bleeding risk",
+      "entities": [
+        "chronic kidney disease",
+        "bleeding risk"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f050",
+      "category": "clinical_reasoning",
+      "subcategory": "uncertainty_marker",
+      "content": "No published data exists on the effect of kidney failure on bleeding risk of triple therapy with rivaroxaban for this patient's combination",
+      "span": "no published data on the effect of kidney failure on bleeding risk of triple therapy with rivaroxaban",
+      "entities": [
+        "rivaroxaban",
+        "chronic kidney disease",
+        "triple therapy"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f051",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient presented to the emergency department",
+      "span": "presented to the emergency department",
+      "entities": [
+        "emergency department"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f052",
+      "category": "categorical",
+      "subcategory": "behavior",
+      "content": "Patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "span": "patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "entities": [
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "patient_reported",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f053",
+      "category": "temporal",
+      "subcategory": "medication_timing",
+      "content": "Rivaroxaban was initiated during this admission",
+      "span": "initiating renally dosed rivaroxaban",
+      "entities": [
+        "rivaroxaban"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f054",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient was on triple antithrombotic therapy consisting of rivaroxaban, prasugrel, and aspirin",
+      "span": "triple therapy of Rivaroxaban, Prasugrel, and Aspirin",
+      "entities": [
+        "triple antithrombotic therapy"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f055",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Simple nasal packing was used for mild bleeding episodes",
+      "span": "simple packing",
+      "entities": [
+        "simple nasal packing"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f056",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Rivaroxaban was renally dosed because of the patient's reduced creatinine clearance of 30",
+      "span": "renally dosed rivaroxaban",
+      "entities": [
+        "rivaroxaban",
+        "creatinine clearance"
+      ],
+      "values": [
+        "30"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f057",
+      "category": "clinical_reasoning",
+      "subcategory": "conditional_fact",
+      "content": "Patient's creatinine clearance of 30 mL/min placed him at the lower boundary of the ROCKET AF inclusion criteria, where patients with CrCl below 30 were excluded and those with 30-49 received a reduced rivaroxaban dose",
+      "span": "patients with creatinine clearance <30 mL/min were excluded, and those with a creatinine clearance of 30-49 mL/min received a reduced dose of rivaroxaban (15 mg daily)",
+      "entities": [
+        "creatinine clearance",
+        "rivaroxaban"
+      ],
+      "values": [
+        "30",
+        "<30",
+        "30-49",
+        "15 mg daily"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f058",
+      "category": "clinical_reasoning",
+      "subcategory": "uncertainty_marker",
+      "content": "This is believed to be the first case report of bleeding complications involving this combination of medications",
+      "span": "We believe this is the first case report of bleeding complications involving this combination of medications",
+      "entities": [
+        "rivaroxaban",
+        "prasugrel",
+        "aspirin",
+        "bleeding"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    }
+  ]
+}
