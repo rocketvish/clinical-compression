@@ -1,0 +1,675 @@
+{
+  "anchors": [
+    {
+      "id": "A1",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "atrial fibrillation",
+      "location": "presentation",
+      "distinctiveness": "low",
+      "granularity": "class",
+      "paired_anchors": ["A5", "A14"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A2",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "antithrombotic regimen",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": ["A6", "A7", "A8", "A9", "A10"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A3",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "thromboembolism prophylaxis",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": ["A6", "A28"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A4",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "recurrent nasal bleeding",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": ["A13"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A5",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "paroxysmal atrial fibrillation",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": ["A1"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A6",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "rivaroxaban",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": ["A2", "A3"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A7",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "prasugrel",
+      "location": "medications",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": ["A2"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A8",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "aspirin",
+      "location": "medications",
+      "distinctiveness": "low",
+      "granularity": "instance",
+      "paired_anchors": ["A2"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A9",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "clopidogrel",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": ["A2"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A10",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "warfarin",
+      "location": "presentation",
+      "distinctiveness": "low",
+      "granularity": "instance",
+      "paired_anchors": ["A2", "A17"],
+      "clinical_actionability": "medium",
+      "class_node_present": true
+    },
+    {
+      "id": "A11",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "coronary artery disease",
+      "location": "presentation",
+      "distinctiveness": "low",
+      "granularity": "instance",
+      "paired_anchors": ["A16"],
+      "clinical_actionability": "high",
+      "class_node_present": false
+    },
+    {
+      "id": "A12",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "chronic kidney disease stage 3",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": ["A26"],
+      "clinical_actionability": "high",
+      "class_node_present": false
+    },
+    {
+      "id": "A13",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "severe posterior nasal hemorrhage",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": ["A4"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A14",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "rapid ventricular response",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "qualifier",
+      "paired_anchors": ["A1", "A5"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A15",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "renally dosed rivaroxaban",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "qualifier",
+      "paired_anchors": ["A6", "A26"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A16",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "bare metal stent",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "qualifier",
+      "paired_anchors": ["A11", "A20"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A17",
+      "category": "CAT",
+      "subtype": "CAT.negated",
+      "text": "previously refused warfarin therapy",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A10", "A29"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A18",
+      "category": "CAT",
+      "subtype": "CAT.negated",
+      "text": "congestive heart failure preserved ejection fraction",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A19",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "one-day history of intractable nausea and vomiting",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "low",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A20",
+      "category": "TEMP",
+      "subtype": "TEMP.since",
+      "text": "six months prior",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A16", "A11"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A21",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "Within 72 hours of initiating renally dosed rivaroxaban",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A6", "A15"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A22",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "five days later",
+      "location": "hospital_course",
+      "distinctiveness": "low",
+      "granularity": "n/a",
+      "paired_anchors": ["A25"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A23",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "After 24 hours without oral rivaroxaban",
+      "location": "disposition",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A6"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A24",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "Aspirin was discontinued",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A8"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A25",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "discontinuing rivaroxaban and switching prasugrel to clopidogrel",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A6", "A7", "A9"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A26",
+      "category": "TEMP",
+      "subtype": "TEMP.sequence",
+      "text": "When the packing was removed five days later, bleeding recurred",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A4", "A22"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A27",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "previously refused warfarin therapy",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A10", "A17"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A28",
+      "category": "QUANT",
+      "subtype": "QUANT.anthro",
+      "text": "creatinine clearance 30",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A12", "A15"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A29",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "rivaroxaban for thromboembolism prophylaxis",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A6", "A3"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A30",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "the patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A10", "A17"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A31",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A1"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A32",
+      "category": "REAS",
+      "subtype": "REAS.planned",
+      "text": "Cardiology reevaluated the patient's antithrombotic regimen",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A2", "A25"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A33",
+      "category": "REAS",
+      "subtype": "REAS.planned",
+      "text": "the patient was deemed stable for discharge",
+      "location": "disposition",
+      "distinctiveness": "low",
+      "granularity": "n/a",
+      "paired_anchors": ["A23"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A34",
+      "category": "TEMP",
+      "subtype": "TEMP.sequence",
+      "text": "five episodes of mild bleeding that stopped with direct pressure and simple packing",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A4", "A13"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    }
+  ],
+  "questions": [
+    {
+      "anchor_id": "A1",
+      "question": "What cardiac arrhythmia category was the patient found to have on presentation?",
+      "expected_answer": "atrial fibrillation",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A2",
+      "question": "What broad category of medication regimen was reevaluated during the hospitalization?",
+      "expected_answer": "antithrombotic regimen",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A3",
+      "question": "What was the clinical indication for starting rivaroxaban?",
+      "expected_answer": "thromboembolism prophylaxis",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A4",
+      "question": "What general type of bleeding complication did the patient develop?",
+      "expected_answer": "recurrent nasal bleeding",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A5",
+      "question": "What specific subtype of atrial fibrillation was documented in the patient's history?",
+      "expected_answer": "paroxysmal atrial fibrillation",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A6",
+      "question": "Which specific oral anticoagulant was initiated for stroke prevention?",
+      "expected_answer": "rivaroxaban",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A7",
+      "question": "Which thienopyridine antiplatelet agent was included among the patient's home medications?",
+      "expected_answer": "prasugrel",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A8",
+      "question": "Which antiplatelet was the first to be discontinued after the bleeding episodes began?",
+      "expected_answer": "aspirin",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A9",
+      "question": "What antiplatelet agent was prasugrel switched to after the bleeding complication?",
+      "expected_answer": "clopidogrel",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A10",
+      "question": "Which anticoagulant had the patient previously been offered but declined?",
+      "expected_answer": "warfarin",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A11",
+      "question": "What cardiac diagnosis was treated with a stent in the patient's past medical history?",
+      "expected_answer": "coronary artery disease",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A12",
+      "question": "What renal diagnosis and its stage were documented in the past medical history?",
+      "expected_answer": "chronic kidney disease stage 3",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A13",
+      "question": "What was the most clinically severe bleeding event the patient experienced, including its anatomic specification?",
+      "expected_answer": "severe posterior nasal hemorrhage",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A14",
+      "question": "What qualifier described the ventricular rate at the time atrial fibrillation was identified?",
+      "expected_answer": "rapid ventricular response",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A15",
+      "question": "How was the rivaroxaban dosing described in relation to the patient's renal function?",
+      "expected_answer": "renally dosed rivaroxaban",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A16",
+      "question": "What type of coronary stent had the patient previously received?",
+      "expected_answer": "bare metal stent",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A17",
+      "question": "What was the patient's prior stance regarding warfarin therapy?",
+      "expected_answer": "previously refused warfarin therapy",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A18",
+      "question": "What type of heart failure, including its ejection fraction characterization, was documented?",
+      "expected_answer": "congestive heart failure preserved ejection fraction",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A19",
+      "question": "How long had the patient experienced nausea and vomiting before presenting to the emergency department?",
+      "expected_answer": "one-day history of intractable nausea and vomiting",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A20",
+      "question": "How long before the current presentation had the coronary stent been placed?",
+      "expected_answer": "six months prior",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A21",
+      "question": "How soon after rivaroxaban was started did the patient develop bleeding?",
+      "expected_answer": "Within 72 hours of initiating renally dosed rivaroxaban",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A22",
+      "question": "How long did the nasal packing remain in place before it was removed?",
+      "expected_answer": "five days later",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A23",
+      "question": "What time interval without rivaroxaban was observed before determining discharge readiness?",
+      "expected_answer": "After 24 hours without oral rivaroxaban",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A24",
+      "question": "What change was made to aspirin during the hospitalization, and what prompted it?",
+      "expected_answer": "Aspirin was discontinued",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A25",
+      "question": "What specific medication changes were made to the antithrombotic regimen after reevaluation, and which agents were involved?",
+      "expected_answer": "discontinuing rivaroxaban and switching prasugrel to clopidogrel",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A26",
+      "question": "What happened after the posterior nasal packing was removed?",
+      "expected_answer": "When the packing was removed five days later, bleeding recurred",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A27",
+      "question": "What was the patient's anticoagulation status before the current hospitalization, and what had changed?",
+      "expected_answer": "previously refused warfarin therapy",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A28",
+      "question": "What was the patient's creatinine clearance value, and what unit or threshold does it represent?",
+      "expected_answer": "creatinine clearance 30",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A29",
+      "question": "What therapeutic rationale linked the choice of rivaroxaban to the patient's clinical need?",
+      "expected_answer": "rivaroxaban for thromboembolism prophylaxis",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A30",
+      "question": "What specific reason did the patient give for refusing warfarin, and what aspect of warfarin therapy was objectionable?",
+      "expected_answer": "the patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A31",
+      "question": "What was the stated purpose for initiating heparin and diltiazem drip, and what diagnosis did they target?",
+      "expected_answer": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A32",
+      "question": "Which service initiated the formal reevaluation of the patient's drug regimen after the bleeding complication?",
+      "expected_answer": "Cardiology reevaluated the patient's antithrombotic regimen",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A33",
+      "question": "What clinical determination was made regarding the patient's readiness to leave the hospital?",
+      "expected_answer": "the patient was deemed stable for discharge",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A34",
+      "question": "How many discrete mild bleeding episodes occurred before the severe hemorrhage, and how were they managed?",
+      "expected_answer": "five episodes of mild bleeding that stopped with direct pressure and simple packing",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    }
+  ],
+  "coverage_report": {
+    "missing_subtypes": [
+      "CAT.alert",
+      "TEMP.date",
+      "TEMP.trajectory",
+      "QUANT.dose",
+      "QUANT.freq",
+      "QUANT.lab",
+      "QUANT.vital",
+      "REAS.considered",
+      "REAS.conditional",
+      "REAS.uncertain"
+    ],
+    "under_represented_subtypes": [
+      "QUANT.anthro"
+    ],
+    "instances_without_class_node": [
+      "A11",
+      "A12"
+    ],
+    "deliberate_deviations_from_target_bands": "QUANT is severely under-represented (1 anchor vs 8-12 target) because the case_text contains no specific drug doses (rivaroxaban is described only as 'renally dosed' without a mg figure), no lab values beyond CrCl 30, no vital signs, and no dosing frequencies. All numeric content aside from CrCl 30 is temporal in nature (durations, intervals) and is classified under TEMP. The excluded_text discussion section references 15 mg daily and trial-specific doses, but these are guideline citations, not patient data, and are correctly excluded. A18 (CHF preserved EF) is classified as CAT.negated rather than CAT.instance because 'preserved ejection fraction' functionally negates reduced EF, but this is a defensible judgment call; an alternative classification as CAT.instance with class_node_present false would also be reasonable. CAT.alert is absent because the case contains no explicit allergy, code status, or safety-alert documentation. REAS.considered is absent because no diagnosis or therapy is explicitly described as considered-and-rejected within the case narrative (warfarin was refused by the patient rather than considered and rejected by the clinical team). REAS.conditional and REAS.uncertain are absent because the case uses direct declarative language throughout."
+  },
+  "audit_notes": "Self-audit performed against all seven checks:\n\n1. VERBATIM CHECK: All 34 anchor text fields verified as present verbatim in case_text via automated substring matching (Python script run against case_text, all 34 returned OK). No anchor text was drawn from excluded_text or case_metadata.\n\n2. CLASS_NODE_PRESENT CHECK: Every CAT.instance anchor has class_node_present set. True for A5 (paroxysmal AF -> A1 atrial fibrillation), A6/A7/A8/A9/A10 (drugs -> A2 antithrombotic regimen), A13 (severe posterior nasal hemorrhage -> A4 recurrent nasal bleeding). False for A11 (coronary artery disease: no 'cardiovascular disease' class term in case_text) and A12 (CKD stage 3: no 'renal disease' or 'nephropathy' class term in case_text). All non-CAT.instance anchors set to 'n/a'.\n\n3. QUANT PAIRING CHECK: A28 (CrCl 30) is QUANT.anthro, not QUANT.dose/freq, so the dose/freq pairing rule does not apply. A28 is paired with A12 (the CKD instance it quantifies) and A15 (renally dosed qualifier it informs). No QUANT.dose or QUANT.freq anchors exist (documented in missing_subtypes).\n\n4. SUBTYPE COVERAGE CHECK: CAT.instance (9), CAT.qualifier (3), QUANT.lab (0 — missing, documented), TEMP.status (3), REAS.considered (0 — missing, documented) all checked. High-priority subtypes present: CAT.instance >= 2 ✓, CAT.qualifier >= 2 ✓, TEMP.status >= 2 ✓. Missing subtypes documented in coverage_report.\n\n5. ANSWER SOURCE CHECK: All question expected_answers are derivable solely from case_text. No question requires clinical knowledge from excluded_text or external sources. For example, Q28 asks about CrCl value (in case_text), not about the ROCKET AF dosing threshold (in excluded_text only).\n\n6. REAS QUESTION TARGETING CHECK: A29 question targets the causal link between rivaroxaban and its indication (not just 'was rivaroxaban started?'). A30 targets the specific reason for warfarin refusal (not just 'was warfarin refused?'). A31 targets the therapeutic rationale connecting heparin/diltiazem to AF. A32 targets which service performed the reevaluation. A33 targets the clinical determination.\n\n7. TEMP.STATUS QUESTION CHECK: A24 question asks 'what change was made to aspirin' (tests status change, not just presence). A25 asks about specific medication changes (tests the switching, not just current regimen). A27 asks about anticoagulation status and what changed (tests status change of warfarin refusal).\n\nRevisions made during audit: (a) Added A34 (TEMP.sequence for the five mild episodes and their management) to capture the escalation pattern that precedes the severe hemorrhage — this was initially omitted but is clinically important for testing whether compression preserves the progression narrative. (b) Reclassified A18 from CAT.instance to CAT.negated after recognizing that 'preserved ejection fraction' acts as a negation of reduced EF, which is the actionable finding. (c) Added A27 as a separate TEMP.status anchor for 'previously refused warfarin therapy' distinct from A17 (CAT.negated) to ensure the temporal status-change aspect is independently testable. The same text span appears in both because it genuinely encodes both a categorical negation and a temporal status change — questions are differentiated (A17 tests the stance, A27 tests the change in anticoagulation status over time)."
+}

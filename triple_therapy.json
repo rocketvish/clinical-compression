@@ -1,0 +1,852 @@
+{
+  "case_metadata": {
+    "title": "Bleeding Complication of Triple Therapy of Rivaroxaban, Prasugrel, and Aspirin: A Case Report and General Discussion",
+    "source": "Gruenebaum DD, Alsarah A, Alsara O, Laird-Fick H. Case Reports in Cardiology. 2014 Mar 11. Article ID 293476. doi: 10.1155/2014/293476",
+    "specialty": "cardiology",
+    "patient_descriptor": "55-year-old Caucasian male with atrial fibrillation and recent coronary stent",
+    "primary_condition_category": "cardiology",
+    "comorbidity_categories": [
+      "cardiovascular",
+      "endocrine",
+      "renal"
+    ],
+    "case_text_token_count_estimate": 920,
+    "excluded_text_token_count_estimate": 3200,
+    "truncation_notes": ""
+  },
+  "case_text": "A 55-year-old Caucasian male presented to the emergency department for one-day history of intractable nausea and vomiting and was found to be in atrial fibrillation with rapid ventricular response. He had a known history of paroxysmal atrial fibrillation but had previously refused warfarin therapy. His past medical history was otherwise significant for congestive heart failure preserved ejection fraction, coronary artery disease treated with a bare metal stent six months prior, diabetes mellitus type 2, hypertension, gout, and chronic kidney disease stage 3 (creatinine clearance 30). His home medications included prasugrel, aspirin atorvastatin, clonidine, furosemide, potassium chloride, amlodipine, insulin, allopurinol, and hydralazine.\n\nHis nausea and vomiting were treated with supportive care and he was started on heparin and diltiazem drip for his atrial fibrillation. Cardiology recommended rivaroxaban for thromboembolism prophylaxis as the patient's main objection to warfarin was the need for frequent monitoring and dose adjustment.\n\nWithin 72 hours of initiating renally dosed rivaroxaban, the patient experienced recurrent nasal bleeding. During the day the patient had five episodes of mild bleeding that stopped with direct pressure and simple packing. However, that night the patient experienced severe posterior nasal hemorrhage requiring posterior nasal packing. Aspirin was discontinued. When the packing was removed five days later, bleeding recurred. Cardiology reevaluated the patient's antithrombotic regimen, discontinuing rivaroxaban and switching prasugrel to clopidogrel. After 24 hours without oral rivaroxaban or recurrence of hemorrhage, the patient was deemed stable for discharge.",
+  "excluded_text": "Case Report\n\nBleeding Complication of Triple Therapy of Rivaroxaban, Prasugrel, and Aspirin: A Case Report and General Discussion\n\nDane D. Gruenebaum, Ahmad Alsarah, Osama Alsara, and Heather Laird-Fick\n\nDepartment of Internal Medicine, Michigan State University, B-301 Clinical Center, East Lansing, MI 48824, USA\n\nCorrespondence should be addressed to Dane D. Gruenebaum; dane.gruenebaum@hc.msu.edu\n\nReceived 14 December 2013; Accepted 13 February 2014; Published 11 March 2014\n\nAcademic Editors: R. Akdemir, M.-H. Jim, and G. Pontone\n\nCopyright © 2014 Dane D. Gruenebaum et al. This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.\n\nHemorrhagic side effects are the bane of oral anticoagulation. Despite careful selection of medications and close monitoring, some adverse events are unavoidable. The available literature about the risks of triple oral anticoagulation therapy versus dual antiplatelet therapy does not address all of the medication combinations currently available. This report describes a patient with atrial fibrillation and recent stent placement who developed severe, recurrent epistaxis on aspirin, prosugrel, and rivaroxaban. We believe this is the first case report of severe bleeding with this combination, and it may help provide insights into the risk for other patients.\n\n1. Introduction\n\nSeveral options, with well-described bleeding risks, exist for the chemoprophylaxis of thrombotic complications of either atrial fibrillation or coronary stents in isolation. However, therapy is less clear when the two conditions are comorbid. The \"gold standard\" therapies differ for each and provide suboptimal risk reduction for the other condition. For example, the combination of aspirin and a thienopyridine inhibitor is recommended to prevent in-stent thrombosis but is inferior to warfarin or the newer oral anticoagulants for the prevention of stroke in atrial fibrillation. As a result, some clinicians have utilized both gold standard therapies simultaneously, resulting in triple oral antithrombotic therapy. While this strategy theoretically minimizes the risk of thrombotic complications, it may increase the risk of bleeding beyond the benefits gained. The net risk-benefit ratio for patients on triple antithrombotic therapy should drive treatment decisions, yet it is often unclear.\n\n3. Discussion\n\nFor decades, antithrombotic therapies have been effectively used to decrease complications associated with medical conditions such as atrial fibrillation, mechanical heart valves, deep venous thrombosis, and intravascular stents. An agent's mechanism of action (inhibition of the coagulation or platelet aggregation cascades) makes it more effective for specific cardiac diseases rather than others. For instance, aspirin and clopidogrel dual therapy is considered the standard of care to prevent stent thrombosis [1] but is inferior to oral anticoagulants for preventing stroke in high-risk patients with atrial fibrillation [2]. Similarly, oral anticoagulants reduce stroke risk in patients with atrial fibrillation [3, 4] but are not effective as monotherapy after stent [5].\n\nAbout 5–7% of patients undergoing percutaneous coronary interventions (PCI) have atrial fibrillation (AF) or other indications for chronic oral anticoagulant therapy [6]. The combination of antithrombotic regimens into a \"triple therapy\" seems like an attractive option for preventing both stroke and in-stent thrombosis but must be balanced against a bleeding risk which is less well understood.\n\nThe most studied oral triple antithrombotic therapies are aspirin, warfarin, and clopidogrel. A meta-analysis of nine trials included 1,996 participants taking either dual antiplatelet therapy (aspirin and clopidogrel) or triple therapy (warfarin, aspirin, and clopidogrel) has reported that triple therapy was more efficacious in reducing the occurrence of cardiovascular events and mortality compared with dual antiplatelet therapy. However, there was significantly more major bleeding with triple antithrombotic therapy in the first 6 months (OR, 2.12; 95% CI, 1.05–4.29; P = 0.04) [7]. Generally, bleeding events with triple therapy have been found to be 3.7 times higher than that with warfarin alone and 4 times than with aspirin monotherapy [8, 9]. Similarly, adding warfarin to dual antiplatelet therapy increases the relative risk for bleeding to 2.2 at 30 days [10], and the yearly incidence of bleeding will be 12% compared to 3.7% for only aspirin plus clopidogrel [9]. Interestingly, combining warfarin and only clopidogrel reduces bleeding complications without increasing thrombotic events when compared to triple therapy [11].\n\nLack of large randomized control trials in this area has resulted in divergence in medical society recommendations. American College of Cardiology/American Heart Association guidelines recommended that high-risk patients with concurrent AF and coronary stents receive therapy of warfarin and clopidogrel for 1–12 months depending on the type of stent and then warfarin as monotherapy [12]. On the other hand, the 2012 American College of Chest Physicians (ACCP) guideline on antithrombotic therapy for atrial fibrillation stratified patients depending on their risk of stroke, using CHADS2. For patients with CHADS2 score of greater than 1 and recent stent placement, ACCP recommends triple therapy for one (bare metal stent) or 3–6 (drug-eluting stent) months, followed by warfarin and a single antiplatelet drug for 12 months, and then warfarin monotherapy. For patients with CHADS2 score of 0 or 1, the recommendation is dual antiplatelet therapy for 12 months and then warfarin [13]. In clinical practice, physicians' strategies broadly vary between triple therapy, dual antiplatelet therapy, and oral anticoagulation with aspirin. The decision is usually influenced by the anticipated bleeding risk of combined pharmacotherapy [14].\n\nMost of the research on triple therapy, as well as current guidelines, has included warfarin. There appears to be a paucity of information involving the utilization of newer agents in triple therapy. Rivaroxaban is a direct factor X inhibitor that has demonstrated efficacy in preventing stroke and systemic embolism in patients with atrial fibrillation but did not remarkably reduce the rates of bleeding when compared to warfarin [15]. It cannot be monitored or reversed, unlike warfarin. There are two studies in which triple therapy including rivaroxaban was compared to dual antiplatelet therapy in patients with STEMI, NSTEMI, or unstable angina. The ATLAS ACS-TIMI 46 is a Phase-2 study that included 3491 patients who were randomized to three groups: placebo, rivaroxaban 5–20 mg daily, or rivaroxaban 5–10 mg twice daily. In this study, rivaroxaban 20 mg was not associated with a decreased rate in the combination of death, MI, stroke, or severe recurrent ischemia requiring revascularization but resulted in an increased risk of bleeding (HR 5.06 [3.45–7.42]; P < 0.00015) compared to placebo. Bleeding risk was increased in a dose-dependent manner in relation to total daily doses of rivaroxaban [16]. The next study, ATLAS ACS2-TIMI 51, was a Phase-3 study in which rivaroxaban 2.5 mg daily, rivaroxaban 5 mg daily, or placebo was added to dual antiplatelet therapy in 15,526 patients with STEMI, NSTEMI, or unstable angina. This study found that triple therapy increased the rates of major bleeding (2.1% versus 0.6%; P < 0.001) and intracranial hemorrhage (0.6% versus 0.2%; P = 0.009), without a significant increase in fatal bleeding (0.3% versus 0.2%; P = 0.66) compared to placebo but with a significant improvement in cardiovascular mortality, MI, or stroke [17]. Although both two doses of rivaroxaban reduced cardiovascular events in patients with recent acute coronary syndromes treated with antiplatelet therapies, the 2.5 mg dose was associated with lower mortality and fewer bleeding complications than the 5 mg dose, and it seemed to provide a more balance of efficacy and safety in those patients [18].\n\nMany factors increased our patient's risk of bleeding. Prasugrel results in greater platelet inhibition and more bleeding compared to clopidogrel [19, 20]. Advanced chronic kidney disease may increase the bleeding risk. In the ROCKET AF trial, in which rivaroxaban was compared to warfarin in nonvalvular atrial fibrillation, patients with creatinine clearance <30 mL/min were excluded, and those with a creatinine clearance of 30–49 mL/min received a reduced dose of rivaroxaban (15 mg daily) [15]. To date, there is no published data on the effect of kidney failure on bleeding risk of triple therapy with rivaroxaban.\n\nWhen the anticipated risk of stroke overweigh the risk of bleeding, and the use of triple therapy becomes mandatory, many strategies can be considered to decrease bleeding risk, such as using the lower effective dose of aspirin [10, 21] and adding proton pump inhibitor as a prophylaxis of gastrointestinal bleeding [10, 22]. Utilizing bare metal stents to minimize time on triple therapy may be another strategy to prevent bleeding events, but at this point it is based on insufficient evidence.\n\n4. Conclusion\n\nWe believe this is the first case report of bleeding complications involving this combination of medications. Care should be taken in selecting a regimen most appropriate for the patient, remembering that there are no methods for monitoring newer oral anticoagulants. This is especially true in patients with other comorbidities that increase bleeding risk, such as chronic kidney disease.\n\nConflict of Interests\n\nThe authors declare that there is no conflict of interests regarding the publication of this paper.\n\nReferences\n\n[1] S. B. King III, S. C. Smith Jr., J. W. Hirshfeld Jr. et al., \"2007 focused update of the ACC/AHA/SCAI 2005 guideline update for percutaneous coronary intervention: a report of the American College of Cardiology/American Heart Association task force on practice guidelines,\" Circulation, vol. 117, no. 2, pp. 261–295, 2008.\n[2] S. Connolly, J. Pogue, R. Hart et al., \"Clopidogrel plus aspirin versus oral anticoagulation for atrial fibrillation in the Atrial fibrillation Clopidogrel Trial with Irbesartan for prevention of Vascular Events (ACTIVE W): a randomised controlled trial,\" The Lancet, vol. 367, no. 9526, pp. 1903–1912, 2006.\n[3] R. L. McNamara, L. J. Tamariz, J. B. Segal, and E. B. Bass, \"Management of atrial fibrillation: review of the evidence for the role of pharmacologic therapy, electrical cardioversion, and echocardiography,\" Annals of Internal Medicine, vol. 139, no. 12, pp. 1018–1033, 2003.\n[4] R. G. Hart, L. A. Pearce, and M. I. Aguilar, \"Meta-analysis: antithrombotic therapy to prevent stroke in patients who have nonvalvular atrial fibrillation,\" Annals of Internal Medicine, vol. 146, no. 12, pp. 857–867, 2007.\n[5] M. B. Leon, D. S. Baim, J. J. Popma et al., \"A clinical trial comparing three antithrombotic-drug regimens after coronaryartery stenting,\" The New England Journal of Medicine, vol. 339, no. 23, pp. 1665–1671, 1998.\n[6] D. P. Faxon, J. W. Eikelboom, P. B. Berger et al., \"Antithrombotic therapy in patients with atrial fibrillation undergoing coronary stenting: a North American perspective: executive summary,\" Circulation: Cardiovascular Interventions, vol. 4, no. 5, pp. 522–534, 2011.\n[7] H.-J. Zhao, Z.-T. Zheng, Z.-H. Wang et al., \"\\\"Triple therapy\\\" rather than \\\"triple threat\\\": a meta-analysis of the two antithrombotic regimens after stent implantation in patients receiving long-term oral anticoagulant treatment,\" Chest, vol. 139, no. 2, pp. 260–270, 2011.\n[8] M. L. Hansen, R. Sørensen, M. T. Clausen et al., \"Risk of bleeding with single, dual, or triple therapy with warfarin, aspirin, and clopidogrel in patients with atrial fibrillation,\" Archives of Internal Medicine, vol. 170, no. 16, pp. 1433–1441, 2010.\n[9] R. Sørensen, M. L. Hansen, S. Z. Abildstrom et al., \"Risk of bleeding in patients with acute myocardial infarction treated with different combinations of aspirin, clopidogrel, and vitamin K antagonists in Denmark: a retrospective analysis of nationwide registry data,\" The Lancet, vol. 374, no. 9706, pp. 1967–1974, 2009.\n[10] J. S. Paikin, D. S. Wright, M. A. Crowther, S. R. Mehta, and J. W. Eikelboom, \"Triple antithrombotic therapy in patients with atrial fibrillation and coronary artery stents,\" Circulation, vol. 121, no. 18, pp. 2067–2070, 2010.\n[11] W. J. Dewilde, T. Oirbans, F. W. Verheugt et al., \"Use of clopidogrel with or without aspirin in patients taking oral anticoagulant therapy and undergoing percutaneous coronary intervention: an open-label, randomised, controlled trial,\" The Lancet, vol. 381, no. 9872, pp. 1107–1115, 2013.\n[12] V. Fuster, L. E. Ryden, D. S. Cannom et al., \"ACC/AHA/ESC 2006 guidelines for the management of patients with atrial fibrillation: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines and the European Society of Cardiology Committee for Practice Guidelines (Writing Committee to Revise the 2001 Guidelines for the Management of Patients with Atrial Fibrillation): developed in collaboration with the European Heart Rhythm Association and the Heart Rhythm Society,\" Circulation, vol. 114, no. 7, pp. e257–e354, 2006.\n[13] J. J. You, D. E. Singer, P. A. Howard et al., \"Antithrombotic therapy for atrial fibrillation: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines,\" Chest, vol. 141, pp. e531S–e575S, 2012.\n[14] T. Y. Wang, L. A. Robinson, F.-S. Ou et al., \"Discharge antithrombotic strategies among patients with acute coronary syndrome previously on warfarin anticoagulation: physician practice in the CRUSADE registry,\" American Heart Journal, vol. 155, no. 2, pp. 361–368, 2008.\n[15] M. R. Patel, K. W. Mahaffey, J. Garg et al., \"Rivaroxaban versus warfarin in nonvalvular atrial fibrillation,\" The New England Journal of Medicine, vol. 365, no. 10, pp. 883–891, 2011.\n[16] J. Mega, E. Braunwald, S. Mohanavelu et al., \"Rivaroxaban versus placebo in patients with acute coronary syndromes (ATLAS ACS-TIMI 46): a randomised, double-blind, phase II trial,\" The Lancet, vol. 374, no. 9683, pp. 29–38, 2009.\n[17] J. L. Mega, E. Braunwald, S. D. Wiviott et al., \"Rivaroxaban in patients with a recent acute coronary syndrome,\" The New England Journal of Medicine, vol. 366, no. 1, pp. 9–19, 2012.\n[18] J. L. Mega, E. Braunwald, S. D. Wiviott et al., \"Comparison of the efficacy and safety of two rivaroxaban doses in acute coronary syndrome (from ATLAS ACS 2-TIMI 51),\" American Journal of Cardiology, vol. 112, no. 4, pp. 472–478, 2013.\n[19] S. D. Wiviott, D. Trenk, A. L. Frelinger et al., \"Prasugrel compared with high loading- and maintenance-dose clopidogrel in patients with planned percutaneous coronary intervention: the prasugrel in comparison to clopidogrel for inhibition of platelet activation and aggregation-thrombolysis in myocardial infarction 44 trial,\" Circulation, vol. 116, no. 25, pp. 2923–2932, 2007.\n[20] S. D. Wiviott, E. Braunwald, C. H. McCabe et al., \"Prasugrel versus clopidogrel in patients with acute coronary syndromes,\" The New England Journal of Medicine, vol. 357, no. 20, pp. 2001–2015, 2007.\n[21] S. R. Mehta, J.-F. Tanguay, J. W. Eikelboom et al., \"Double-dose versus standard-dose clopidogrel and high-dose versus low-dose aspirin in individuals undergoing percutaneous coronary intervention for acute coronary syndromes (CURRENT-OASIS 7): a randomised factorial trial,\" The Lancet, vol. 376, no. 9748, pp. 1233–1243, 2010.\n[22] D. L. Bhatt, J. Scheiman, N. S. Abraham et al., \"ACCF/ACG/AHA 2008 expert consensus document on reducing the gastrointestinal risks of antiplatelet therapy and NSAID use,\" The American Journal of Gastroenterology, vol. 103, no. 11, pp. 2890–2907, 2008.",
+  "anchors": [
+    {
+      "id": "A1",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "atrial fibrillation",
+      "location": "presentation",
+      "distinctiveness": "low",
+      "granularity": "class",
+      "paired_anchors": [
+        "A5",
+        "A14"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A2",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "antithrombotic regimen",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": [
+        "A6",
+        "A7",
+        "A8",
+        "A9",
+        "A10"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A3",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "thromboembolism prophylaxis",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": [
+        "A6",
+        "A28"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A4",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "recurrent nasal bleeding",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": [
+        "A13"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A5",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "paroxysmal atrial fibrillation",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A1"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A6",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "rivaroxaban",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2",
+        "A3"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A7",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "prasugrel",
+      "location": "medications",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A8",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "aspirin",
+      "location": "medications",
+      "distinctiveness": "low",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A9",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "clopidogrel",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A10",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "warfarin",
+      "location": "presentation",
+      "distinctiveness": "low",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2",
+        "A17"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": true
+    },
+    {
+      "id": "A11",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "coronary artery disease",
+      "location": "presentation",
+      "distinctiveness": "low",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A16"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": false
+    },
+    {
+      "id": "A12",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "chronic kidney disease stage 3",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A26"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": false
+    },
+    {
+      "id": "A13",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "severe posterior nasal hemorrhage",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A4"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A14",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "rapid ventricular response",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "qualifier",
+      "paired_anchors": [
+        "A1",
+        "A5"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A15",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "renally dosed rivaroxaban",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "qualifier",
+      "paired_anchors": [
+        "A6",
+        "A26"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A16",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "bare metal stent",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "qualifier",
+      "paired_anchors": [
+        "A11",
+        "A20"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A17",
+      "category": "CAT",
+      "subtype": "CAT.negated",
+      "text": "previously refused warfarin therapy",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A10",
+        "A29"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A18",
+      "category": "CAT",
+      "subtype": "CAT.negated",
+      "text": "congestive heart failure preserved ejection fraction",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A19",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "one-day history of intractable nausea and vomiting",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "low",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A20",
+      "category": "TEMP",
+      "subtype": "TEMP.since",
+      "text": "six months prior",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A16",
+        "A11"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A21",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "Within 72 hours of initiating renally dosed rivaroxaban",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A6",
+        "A15"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A22",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "five days later",
+      "location": "hospital_course",
+      "distinctiveness": "low",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A25"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A23",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "After 24 hours without oral rivaroxaban",
+      "location": "disposition",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A6"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A24",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "Aspirin was discontinued",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A8"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A25",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "discontinuing rivaroxaban and switching prasugrel to clopidogrel",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A6",
+        "A7",
+        "A9"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A26",
+      "category": "TEMP",
+      "subtype": "TEMP.sequence",
+      "text": "When the packing was removed five days later, bleeding recurred",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A4",
+        "A22"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A27",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "previously refused warfarin therapy",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A10",
+        "A17"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A28",
+      "category": "QUANT",
+      "subtype": "QUANT.anthro",
+      "text": "creatinine clearance 30",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A12",
+        "A15"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A29",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "rivaroxaban for thromboembolism prophylaxis",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A6",
+        "A3"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A30",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "the patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A10",
+        "A17"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A31",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A1"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A32",
+      "category": "REAS",
+      "subtype": "REAS.planned",
+      "text": "Cardiology reevaluated the patient's antithrombotic regimen",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A2",
+        "A25"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A33",
+      "category": "REAS",
+      "subtype": "REAS.planned",
+      "text": "the patient was deemed stable for discharge",
+      "location": "disposition",
+      "distinctiveness": "low",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A23"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A34",
+      "category": "TEMP",
+      "subtype": "TEMP.sequence",
+      "text": "five episodes of mild bleeding that stopped with direct pressure and simple packing",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A4",
+        "A13"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    }
+  ],
+  "questions": [
+    {
+      "anchor_id": "A1",
+      "question": "What cardiac arrhythmia category was the patient found to have on presentation?",
+      "expected_answer": "atrial fibrillation",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A2",
+      "question": "What broad category of medication regimen was reevaluated during the hospitalization?",
+      "expected_answer": "antithrombotic regimen",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A3",
+      "question": "What was the clinical indication for starting rivaroxaban?",
+      "expected_answer": "thromboembolism prophylaxis",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A4",
+      "question": "What general type of bleeding complication did the patient develop?",
+      "expected_answer": "recurrent nasal bleeding",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A5",
+      "question": "What specific subtype of atrial fibrillation was documented in the patient's history?",
+      "expected_answer": "paroxysmal atrial fibrillation",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A6",
+      "question": "Which specific oral anticoagulant was initiated for stroke prevention?",
+      "expected_answer": "rivaroxaban",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A7",
+      "question": "Which thienopyridine antiplatelet agent was included among the patient's home medications?",
+      "expected_answer": "prasugrel",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A8",
+      "question": "Which antiplatelet was the first to be discontinued after the bleeding episodes began?",
+      "expected_answer": "aspirin",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A9",
+      "question": "What antiplatelet agent was prasugrel switched to after the bleeding complication?",
+      "expected_answer": "clopidogrel",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A10",
+      "question": "Which anticoagulant had the patient previously been offered but declined?",
+      "expected_answer": "warfarin",
+      "scoring": "exact_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A11",
+      "question": "What cardiac diagnosis was treated with a stent in the patient's past medical history?",
+      "expected_answer": "coronary artery disease",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A12",
+      "question": "What renal diagnosis and its stage were documented in the past medical history?",
+      "expected_answer": "chronic kidney disease stage 3",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A13",
+      "question": "What was the most clinically severe bleeding event the patient experienced, including its anatomic specification?",
+      "expected_answer": "severe posterior nasal hemorrhage",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A14",
+      "question": "What qualifier described the ventricular rate at the time atrial fibrillation was identified?",
+      "expected_answer": "rapid ventricular response",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A15",
+      "question": "How was the rivaroxaban dosing described in relation to the patient's renal function?",
+      "expected_answer": "renally dosed rivaroxaban",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A16",
+      "question": "What type of coronary stent had the patient previously received?",
+      "expected_answer": "bare metal stent",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A17",
+      "question": "What was the patient's prior stance regarding warfarin therapy?",
+      "expected_answer": "previously refused warfarin therapy",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A18",
+      "question": "What type of heart failure, including its ejection fraction characterization, was documented?",
+      "expected_answer": "congestive heart failure preserved ejection fraction",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A19",
+      "question": "How long had the patient experienced nausea and vomiting before presenting to the emergency department?",
+      "expected_answer": "one-day history of intractable nausea and vomiting",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A20",
+      "question": "How long before the current presentation had the coronary stent been placed?",
+      "expected_answer": "six months prior",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A21",
+      "question": "How soon after rivaroxaban was started did the patient develop bleeding?",
+      "expected_answer": "Within 72 hours of initiating renally dosed rivaroxaban",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A22",
+      "question": "How long did the nasal packing remain in place before it was removed?",
+      "expected_answer": "five days later",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A23",
+      "question": "What time interval without rivaroxaban was observed before determining discharge readiness?",
+      "expected_answer": "After 24 hours without oral rivaroxaban",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A24",
+      "question": "What change was made to aspirin during the hospitalization, and what prompted it?",
+      "expected_answer": "Aspirin was discontinued",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A25",
+      "question": "What specific medication changes were made to the antithrombotic regimen after reevaluation, and which agents were involved?",
+      "expected_answer": "discontinuing rivaroxaban and switching prasugrel to clopidogrel",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A26",
+      "question": "What happened after the posterior nasal packing was removed?",
+      "expected_answer": "When the packing was removed five days later, bleeding recurred",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A27",
+      "question": "What was the patient's anticoagulation status before the current hospitalization, and what had changed?",
+      "expected_answer": "previously refused warfarin therapy",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A28",
+      "question": "What was the patient's creatinine clearance value, and what unit or threshold does it represent?",
+      "expected_answer": "creatinine clearance 30",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A29",
+      "question": "What therapeutic rationale linked the choice of rivaroxaban to the patient's clinical need?",
+      "expected_answer": "rivaroxaban for thromboembolism prophylaxis",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A30",
+      "question": "What specific reason did the patient give for refusing warfarin, and what aspect of warfarin therapy was objectionable?",
+      "expected_answer": "the patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A31",
+      "question": "What was the stated purpose for initiating heparin and diltiazem drip, and what diagnosis did they target?",
+      "expected_answer": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A32",
+      "question": "Which service initiated the formal reevaluation of the patient's drug regimen after the bleeding complication?",
+      "expected_answer": "Cardiology reevaluated the patient's antithrombotic regimen",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A33",
+      "question": "What clinical determination was made regarding the patient's readiness to leave the hospital?",
+      "expected_answer": "the patient was deemed stable for discharge",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A34",
+      "question": "How many discrete mild bleeding episodes occurred before the severe hemorrhage, and how were they managed?",
+      "expected_answer": "five episodes of mild bleeding that stopped with direct pressure and simple packing",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    }
+  ],
+  "filler_blocks": [
+    {
+      "block_id": 1,
+      "note_type": "Physical therapy progress note",
+      "approximate_tokens": 1480,
+      "content": "PHYSICAL THERAPY PROGRESS NOTE\n\nPATIENT: 55-year-old male\nSERVICE: Inpatient Physical Therapy\nVISIT NUMBER: 3\n\nSUBJECTIVE:\nPatient was seen at bedside this morning for continued mobility assessment and therapeutic exercise. He was alert and oriented, cooperative with the session, and in no apparent distress at the time of evaluation. He reports feeling more fatigued than the prior session, which he attributes to disrupted sleep overnight. He expressed motivation to progress his mobility and verbalized a goal of returning to independent ambulation at his baseline prior to admission. He denies any new complaints relevant to the therapy plan. Patient's wife was present at the bedside during the session and provided supplementary history regarding his home functional level; she confirms that he was independently ambulatory at baseline without assistive device and was performing all activities of daily living without assistance prior to this hospitalization.\n\nOBJECTIVE:\nVitals reviewed and noted to be stable per nursing documentation prior to initiating session. Patient was found in bed in a semi-reclined position. Bed mobility assessed: patient required minimal assistance with supine-to-sit transition due to generalized deconditioning and some reluctance related to discomfort; once seated at edge of bed, he maintained sitting balance independently x 60 seconds without loss of balance or need for hand support. Transfer from sit to stand was accomplished with contact guard assist; patient required verbal cueing for weight-shifting technique and trunk upright alignment. Once standing, he was hemodynamically stable per self-report and nursing confirmation.\n\nAmbulation: Patient ambulated approximately 40 feet in the corridor with rolling walker and contact guard assistance. Gait pattern demonstrated mild antalgic component, shortened stride length bilaterally, and reduced cadence compared to expected baseline. No significant deviation in frontal plane. Patient requested to stop at 40 feet, citing fatigue. He was returned to bedside via reverse ambulation and seated without incident.\n\nLower extremity strength: Grossly limited secondary to deconditioning; patient able to perform active range of motion against gravity in bilateral lower extremities. Upper extremity strength appears functional for ADL support.\n\nFall risk: Assessed as moderate-to-high fall risk given deconditioning, fatigue, and recent reduced mobility. Non-slip footwear in place. Bed alarm status confirmed with nursing.\n\nASSESSMENT:\nPatient is a 55-year-old male with significant cardiovascular and metabolic comorbidity burden presenting with functional decline in the setting of acute hospitalization. Current PT presentation is consistent with generalized deconditioning with mobility limitations expected in the context of this admission. He is making incremental but appropriate progress given clinical picture. Goals remain achievable with continued daily PT intervention.\n\nProblems addressed this session:\n1. Decreased functional mobility and ambulation endurance\n2. Decreased lower extremity strength secondary to deconditioning\n3. Impaired transfer safety\n4. Fall risk in inpatient setting\n\nPLAN:\n- Continue daily PT sessions with progressive ambulation goals; target 60-80 feet next session\n- Advance from contact guard to supervision as tolerated\n- Initiate therapeutic exercise program targeting lower extremity strength: seated heel raises, ankle pumps, quad sets, and standing hip abduction as tolerated\n- Family education: patient's wife to be instructed in safe guarding techniques and encouraged to accompany patient during corridor ambulation\n- Ongoing fall risk monitoring in coordination with nursing\n- Discharge planning input: anticipate need for home PT upon discharge; outpatient PT referral to be coordinated with case management. Home environment assessment deferred to occupational therapy. Based on current trajectory, patient may require short-term skilled care placement or intensive home PT depending on speed of recovery over next several days.\n\nPROGNOSIS: Guarded to fair for return to prior level of function within current admission. Patient is motivated and has appropriate social support, which is a favorable prognostic indicator.\n\nSigned: [PT, DPT, Inpatient Rehabilitation Services]\nTime of visit: This morning, approximately 45 minutes."
+    },
+    {
+      "block_id": 2,
+      "note_type": "Nursing shift assessment",
+      "approximate_tokens": 1550,
+      "content": "NURSING SHIFT ASSESSMENT — DAYS\n\nPt: 55 y/o M, significant cardiac/metabolic/renal hx. Admitted for management of acute medical issues. Currently on telemetry. MD team rounding this AM.\n\nNEURO: AAO x3 — person, place, situation. Follows commands without difficulty. Mood cooperative; somewhat anxious when discussing d/c plan, reassured by RN and SW contact noted. Denies h/a, dizziness. No new neuro deficits observed this shift.\n\nCARDIO/RESP: On continuous cardiac monitoring per orders. Rhythm strip reviewed and communicated to team per protocol. Hemodynamically stable. Afebrile. Breath sounds auscultated bilaterally — clear in upper lobes, diminished at bases, unchanged from prior shift documentation. O2 in use per protocol; pt tolerating well. No respiratory distress observed. HOB maintained per care plan. Denies chest discomfort at this time.\n\nGI/GU: Abdomen soft, non-distended. Bowel sounds present in all four quadrants. Pt reports passing flatus; no BM overnight; bowel regimen in place per orders. Oral intake adequate this shift — consumed approximately 70% of breakfast tray per pt self-report; tolerating prescribed diet consistency. Nausea: denies. Emesis: none.\nUrine output monitored per I&O protocol. Output within expected range for this patient and noted to team. No complaints of dysuria or urinary retention. Foley care performed per protocol; site without signs of irritation or infection.\n\nMUSCULOSKELETAL/SKIN: Skin warm and dry. Color appropriate for baseline. No new skin breakdown identified on shift assessment. Repositioning performed per protocol. Pressure injury risk score reviewed — patient at moderate risk. Heel protectors in place bilaterally. Turn schedule communicated to patient and family.\n\nACCESS: Peripheral IV accessed this shift; patent with brisk blood return; site without signs of phlebitis, infiltration, or infection. Dressing intact. Flush performed per protocol.\n\nMEDS: Scheduled medications administered as ordered. Patient verbalized understanding of medication purpose at a general level. As-needed medications offered per protocol; patient utilized as-needed analgesia once this shift with reported adequate effect. No adverse reactions noted.\n\nPAIN: Patient rates pain as mild, localized to abdomen, intermittent in nature. Reported as improved compared to overnight. Non-pharmacologic comfort measures offered (repositioning, distraction). Patient reports current pain level acceptable and declining additional intervention at this time.\n\nACTIVITY: Activity level per MD orders. OOB to chair x1 this shift with RN assist; tolerated without incident. Physical therapy has been in to see the patient this morning — refer to PT note. Ambulation completed with PT.\n\nEDUCATION: Reinforced general activity precautions per inpatient protocol. Patient and family verbalized understanding. Wife present this shift; engaged in care discussions. Encouraged family participation in care and ambulation.\n\nSAFETY: Two-sided bed rails up when patient in bed. Call light within reach. Non-slip socks in place. Fall prevention protocol in effect per risk score. Patient verbalized awareness of call light use.\n\nPSYCHOSOCIAL: Patient expressed mild anxiety regarding length of stay and impact on occupational activities. Social work aware and follow-up scheduled. Patient coping reasonably; utilizing humor as adaptive mechanism. Family support robust — wife present daily.\n\nCOMMUNICATION: Interdisciplinary team update communicated at shift huddle. Concerns relayed to oncoming RN at change of shift. No acute events this shift.\n\nDOCUMENTED BY: RN, Inpatient Cardiology Unit\nSHIFT: 0700–1900"
+    },
+    {
+      "block_id": 3,
+      "note_type": "Nutrition consult note",
+      "approximate_tokens": 1420,
+      "content": "CLINICAL NUTRITION CONSULTATION\n\nReferral reason: Inpatient nutrition assessment for patient with multiple chronic conditions; dietary optimization requested by primary team.\n\nPatient is a 55-year-old male with known cardiovascular, metabolic, and renal comorbidity burden admitted for management of an acute medical issue. I was asked to assess nutritional status, evaluate current dietary tolerance, and provide recommendations consistent with this patient's overall clinical picture and management goals.\n\nNUTRITIONAL HISTORY:\nPatient provided dietary history during interview. He describes a diet prior to this admission that he characterizes as 'generally healthy' though with acknowledged inconsistency. He reports variable adherence to dietary modifications recommended in the outpatient setting; specifically, he acknowledges difficulty maintaining consistent dietary habits due to a demanding work schedule and frequent travel. He denies intentional caloric restriction but acknowledges periods of reduced appetite, which he attributes to stress. His wife corroborates this history and adds that she has tried to prepare home-cooked meals to support his chronic disease management, but the patient frequently eats outside the home during the work week.\n\nWeight history: Patient reports that his weight has been relatively stable over the past several months, with a slight downward trend that he attributes to reduced appetite during the period leading up to this admission. He denies intentional weight loss. Historical weight data reviewed in chart; current weight noted and incorporated into assessment — current status reflects minimal change from most recent outpatient documented weight.\n\nNUTRITIONAL ASSESSMENT:\nMalnutrition screening performed using validated inpatient tool. Patient scores in the at-risk range based on combination of recent reduced oral intake, underlying chronic condition burden, and current acute illness. Formal malnutrition diagnostic criteria assessed: does not meet criteria for moderate or severe malnutrition at this time, but warrants close monitoring and proactive dietary optimization.\n\nAnthropometric assessment: Body habitus notable for central adiposity distribution, consistent with patient's chronic metabolic comorbidity profile. Current BMI calculated from weight and height per chart; falls within overweight range. Muscle mass by clinical assessment appears reduced relative to adipose tissue — consistent with sarcopenic obesity phenotype, which is relevant to functional recovery and therapy goals.\n\nEstimated nutritional requirements calculated per standard clinical guidelines for inpatient adults with chronic disease burden: caloric and protein targets established; specific values communicated verbally to team and in care plan per protocol. Patient's fluid balance and renal status have been factored into recommendations in coordination with the nephrology team.\n\nCURRENT DIETARY TOLERANCE:\nPatient is currently tolerating oral diet. He consumed approximately 60–70% of recent meal trays per nursing documentation and patient self-report. Appetite described as fair. Nausea: absent at time of this assessment. He reports that certain food textures and temperatures are currently more palatable than others; no specific intolerances or aversions requiring formal diet modification at this time.\n\nRECOMMENDATIONS:\n1. Continue oral diet; no change to current diet order indicated at this time. Texture and consistency appropriate for patient.\n2. Encourage oral intake — set tray-clearing goals with nursing; consider meal documentation for trending.\n3. Nutritional supplementation: recommend addition of an oral nutritional supplement between meals to support caloric and protein targets in setting of suboptimal spontaneous intake. Choice of supplement to be reviewed with pharmacy and ordering team to ensure compatibility with overall management plan.\n4. Re-evaluation in two to three days or sooner if clinical status changes, intake declines, or significant weight change is noted.\n5. Upon discharge, recommend referral for outpatient dietary counseling to reinforce chronic disease dietary management in a more sustained and individualized format than is achievable in the inpatient setting.\n\nPatient was engaged during this encounter and asked appropriate questions. He appears motivated to improve dietary practices and expressed interest in structured dietary education. A brief introductory education session was conducted this visit regarding general principles of dietary optimization for patients with multi-system chronic conditions; detailed outpatient counseling will allow more thorough and individualized guidance.\n\nDietitian: Clinical Nutrition, Inpatient Services\nVisit duration: Approximately 35 minutes"
+    },
+    {
+      "block_id": 4,
+      "note_type": "Care coordination / social work note",
+      "approximate_tokens": 1600,
+      "content": "SOCIAL WORK / CARE COORDINATION NOTE\n\nReferral source: Nursing, with input from patient's wife who approached the charge nurse to request social work contact.\nPurpose: Psychosocial assessment, coping support, discharge planning initiation.\n\nI met with the patient and his wife in his room this afternoon. The patient was alert, cooperative, and able to engage in full conversation without apparent difficulty. He appeared mildly fatigued but maintained eye contact and demonstrated intact comprehension throughout the encounter. His wife participated actively and provided collateral history.\n\nPSYCHOSOCIAL ASSESSMENT:\n\nLiving Situation: Patient and his wife live together in a two-story single-family home. They have been in this residence for a number of years and describe the home as generally appropriate for their needs, though the patient notes that the master bedroom is on the second floor, which he acknowledged could present challenges if his mobility is significantly impaired at the time of discharge. There is a bathroom on the first floor. First-floor living arrangement would require temporary relocation of sleeping area; patient and wife open to this if recommended by the clinical team.\n\nSupport System: The couple's support network is described as primarily consisting of family. Two adult children are in the area; one has already visited during this admission, and the other is expected to visit within the next day or two. Extended family and friends have reached out by phone, which the patient described as 'overwhelming in a good way.' Wife is the primary caregiver and describes herself as capable and willing to take on expanded caregiving responsibilities in the short term, though she voiced some concern about managing his care at home if his needs are more complex than anticipated. She requested guidance on available resources.\n\nOccupational Context: Patient works in a professional capacity and describes his work as cognitively demanding. He has significant anxiety about the impact of this hospitalization on pending professional obligations. He has already been in contact with his employer and has arranged temporary coverage for immediate responsibilities. He expresses concern about the long-term impact on his professional trajectory if recovery is prolonged. Patient was counseled that it is too early in the admission to make specific return-to-work projections, and that his primary team will provide guidance as clinical situation evolves. The importance of full recovery prior to return to full occupational demands was emphasized.\n\nFinancial / Insurance: Patient carries private health insurance through his employer. He and his wife report no immediate financial crisis, though he expressed general concerns about the financial burden of an extended hospitalization and anticipated follow-up needs. Contact with the patient financial services team to be initiated to assess eligibility for any applicable assistance programs and to clarify insurance coverage for anticipated post-acute and home services.\n\nMood and Coping: Patient describes his emotional state as 'anxious but managing.' He reports some difficulty sleeping due to unfamiliar environment and worry, rather than physical discomfort. He denies hopelessness. He identifies his wife and family as primary emotional supports. He demonstrates appropriate reality testing and does not exhibit signs of acute psychiatric decompensation. No safety concerns at this time — patient denied current suicidal or self-harm ideation when asked directly; he engaged with this question without distress and appreciated the routine nature of the inquiry.\n\nHe uses humor adaptively and has a generally positive orientation toward recovery, though he expressed frustration at feeling 'out of control' during hospitalization. Psychoeducation provided around common emotional responses to acute illness and hospitalization.\n\nDISCHARGE PLANNING INITIATION:\n\nDischarge destination: Tentatively home with supports; clinical team to confirm as admission progresses.\nAnticipated needs upon discharge:\n- Home health nursing services for monitoring and medication support — referral to be initiated once discharge timeline clarified\n- Home physical therapy if inpatient PT progress indicates continued need\n- Durable medical equipment: potential need for assistive device assessed by PT — will coordinate DME order once PT makes recommendation\n- Transportation: wife available to drive; confirmed patient does not plan to drive himself immediately upon discharge\n- Follow-up appointments: Primary team to identify required post-discharge follow-up; social work to assist with scheduling logistics if needed\n\nPATIENT / FAMILY EDUCATION: Wife provided with a written resource list for local support services, family caregiver resources, and patient advocacy organizations relevant to patients with chronic medical conditions. She was encouraged to keep a list of questions for the medical team and provided with the unit social work contact information.\n\nPLAN:\n- Follow up with patient and wife in one to two days for continued psychosocial support and discharge planning progress\n- Coordinate with case management, PT, nursing, and primary team for integrated discharge plan\n- Connect patient with financial services\n- Reassess coping and mood; refer to psychiatry or psychology if distress escalates\n\nTime of encounter: This afternoon, approximately 50 minutes\nSocial Worker, LCSW — Inpatient Services"
+    },
+    {
+      "block_id": 5,
+      "note_type": "Pain management note",
+      "approximate_tokens": 1350,
+      "content": "PAIN MANAGEMENT / PALLIATIVE CARE CONSULTATION NOTE\n\nConsult request received from primary cardiology team requesting pain management input for patient with suboptimal pain control in the context of multi-system chronic conditions and complex medication management concerns.\n\nPt is a 55 y/o M with significant cardiovascular, metabolic, and renal comorbidity burden. I met with patient and his wife in room. Pt alert, conversational, appropriate affect. Wife at bedside.\n\nS: Pt reports pain localized to mid-to-upper abdomen, intermittent in character, described as 'pressure' or 'heaviness,' rated at this time as mild. He states the pain improves with positioning — specifically, partial recumbency — and worsens with prolonged ambulation, though he acknowledges that ambulation distance has been quite limited during this admission. He denies radiation of the pain to any specific location. He denies that the pain is the most significant symptom currently troubling him — he identifies fatigue and disrupted sleep as his primary quality-of-life concerns. He notes that the as-needed pain medication administered earlier today provided adequate relief for approximately several hours before returning to a mild level.\n\nHe denies neuropathic pain descriptors (no burning, no shooting, no electrical quality). He denies pain at rest of more than a mild severity. Pain does not appear to be significantly limiting his participation in physical therapy, per his report and PT's documentation.\n\nO: Pt observed in mild discomfort during abdominal palpation; consistent with his reported symptom localization. No guarding or rigidity observed. Exam otherwise unremarkable from pain assessment perspective. Affect calm. No signs of undertreated severe pain.\n\nPain history reviewed with patient: He has a prior history of chronic musculoskeletal discomfort managed conservatively in the outpatient setting; this is not his presenting complaint and appears unrelated to current acute issues. He denies prior history of chronic opioid use or substance use disorder when asked directly.\n\nMedication reconciliation from pain management perspective: Current analgesic regimen reviewed. Existing as-needed medication appearing to provide adequate though transient relief. Medication selection appropriate given patient's comorbidity profile and the clinical team's documented considerations around his renal status and his cardiovascular management requirements. I concur with the team's conservatism in analgesic selection. No modification to analgesic class is recommended at this time.\n\nA/P:\n1. Pain severity: Mild, consistent with overall clinical picture. No indication for escalation to higher-acuity analgesic regimen at this time.\n2. Non-pharmacologic pain management: Reinforced with patient — positioning strategies, heat/cold therapy if not contraindicated per team, distraction, and relaxation techniques. Patient receptive.\n3. Fatigue and sleep: Patient's primary quality-of-life complaint is fatigue and disrupted sleep rather than pain per se. Recommend sleep hygiene counseling by nursing; minimize overnight interruptions where clinically safe; consider whether any scheduled interventions can be consolidated to allow longer uninterrupted rest periods. Team to address.\n4. Reassessment: Will reassess in two days or sooner if pain escalates or character changes significantly.\n5. Mood/emotional context: Patient's pain experience appears to have a significant emotional amplification component related to anxiety about hospitalization; psychosocial support from social work already engaged, which should be beneficial.\n\nPalliative care/comfort focus: This patient is not currently at end of life and is not appropriate for a primary palliative care focus. Pain management input is supportive of his overall recovery-oriented goals. Palliative care resources available as needs evolve.\n\nConsultant: Pain Management / Palliative Care\nTime of encounter: This afternoon, approximately 30 minutes"
+    },
+    {
+      "block_id": 6,
+      "note_type": "Respiratory therapy note",
+      "approximate_tokens": 1400,
+      "content": "RESPIRATORY THERAPY — SHIFT NOTE\n\nPatient: 55-year-old male, cardiology service\nShift: Day\n\nClinical Background (for RT context only): Patient with complex chronic medical history including known cardiovascular and metabolic conditions, currently admitted for acute medical management. Respiratory status has been a monitored parameter during this admission. Orders reviewed; RT interventions performed per protocol.\n\nASSESSMENT:\n\nBreathing: Patient assessed at bedside this morning. Respiratory pattern observed as regular, unlabored. No use of accessory muscles noted at rest. Patient able to complete full sentences without significant pause. Denies significant dyspnea at rest; reports mild exertional breathlessness with ambulation, which he describes as unchanged from his pre-admission baseline and which he attributes to his overall deconditioning.\n\nOxygen: Supplemental oxygen in use per current orders. Patient tolerating delivery device without complaint. Saturation monitoring ongoing per protocol. Status communicated to nursing and primary team.\n\nAuscultation: Breath sounds assessed bilaterally. Upper lobes with clear air entry bilaterally. Basilar diminishment noted bilaterally — mild, and consistent with prior shift assessments; no new adventitious sounds (no wheeze, no crackle, no rhonchi identified today). Overall auscultatory finding is stable compared to prior RT documentation.\n\nCough: Patient demonstrates a weak but present voluntary cough effort. He reports that coughing causes transient abdominal discomfort and therefore he tends to suppress cough; educated patient on the importance of cough effort for secretion clearance and pulmonary hygiene and offered instruction in splinted cough technique to reduce abdominal pain with coughing. Patient performed splinted cough x3 with adequate technique after brief instruction. Small amount of clear thin secretions mobilized; patient able to clear via cough without suctioning.\n\nSPIROMETRY / INCENTIVE SPIROMETRY:\nIncentive spirometry device reviewed with patient. He is performing IS per instruction, targeting volume goals per ordering team and RT protocol. This morning he was observed to perform IS x5 repetitions at adequate effort. Patient verbalized understanding of purpose of IS and committed to performing IS exercises every waking hour as instructed.\n\nINTERVENTIONS PERFORMED THIS SHIFT:\n1. Supplemental oxygen assessment and management per protocol\n2. Breathing assessment and auscultation\n3. Incentive spirometry coaching and observation\n4. Education: splinted cough technique\n5. Documentation of respiratory status for interdisciplinary team awareness\n\nEDUCATION PROVIDED:\nPatient educated on: rationale for pulmonary hygiene in the inpatient setting, IS technique and frequency targets, splinted cough, and importance of early ambulation for respiratory status. Patient engaged and asked appropriate questions. Wife present for portion of education session and verbalized general understanding of pulmonary hygiene goals.\n\nCOMMUNICATION:\nRespiratory status communicated to primary team at morning rounds — findings as above, no acute change. O2 requirements stable. No escalation in respiratory support indicated based on current assessment.\n\nPLAN:\n- Continue current supplemental oxygen per orders; wean per team protocol as tolerated\n- Continue IS per protocol; reassess volume achievement at next RT visit\n- Continue monitoring breath sounds; notify team of any new adventitious sounds or increased O2 requirement\n- Continue patient education reinforcement at each RT encounter\n- Coordinate with PT regarding ambulation and any impact on respiratory parameters during activity\n\nResponding Therapist: Respiratory Therapy, Inpatient\nTime on unit: Approximately 25 minutes"
+    },
+    {
+      "block_id": 7,
+      "note_type": "Pharmacy reconciliation note",
+      "approximate_tokens": 1500,
+      "content": "PHARMACY — MEDICATION RECONCILIATION AND CLINICAL REVIEW NOTE\n\nPatient: 55-year-old male, inpatient cardiology\nPurpose: Comprehensive medication reconciliation, therapeutic appropriateness review, and monitoring plan documentation.\n\nMEDICATION RECONCILIATION PROCESS:\n\nA complete medication reconciliation was performed by clinical pharmacy in coordination with the patient, his wife, and available outpatient records. The patient's home medication regimen was extensive, reflecting management of multiple chronic conditions across cardiovascular, metabolic, and renal systems. The following process was followed:\n\n1. Patient and wife interviewed regarding home medication list, including prescription medications, over-the-counter products, vitamins, and herbal supplements.\n2. Home medication list compared against outpatient prescribing records available in the electronic health system.\n3. Admission medication orders reviewed and cross-referenced against reconciled home list.\n4. Discrepancies identified, reviewed, and resolved in coordination with the primary team.\n\nRECONCILIATION SUMMARY:\n\nHOME MEDICATIONS — BY THERAPEUTIC CLASS (full list per medical record):\n- Cardiovascular management: Multiple agents across relevant therapeutic classes for cardiac and vascular support per chronic condition management. Details per medication administration record.\n- Metabolic / endocrine management: Agents for metabolic and endocrine conditions, including agents acting on relevant metabolic pathways. Specific agents and regimens per medication administration record.\n- Renal / fluid management: Agents for fluid and renal condition management, as documented.\n- Anticoagulation and antiplatelet management: Agents in this class constitute a high-risk, high-complexity area of this patient's regimen; reviewed with particular attention. Details per prescriber orders and medication administration record.\n- Gastroprotection: Agent in this class noted in home regimen; status on inpatient formulary reviewed.\n- Supplements/OTC: Patient uses several over-the-counter products; relevance to current management reviewed with team. One supplement was identified as potentially relevant to the clinical discussion and flagged for prescriber awareness.\n\nDISCREPANCIES IDENTIFIED AND RESOLUTION:\n- Two minor discrepancies between outpatient prescription records and patient's self-reported regimen noted — specifically, dosing frequency for two agents differed. Patient clarified that his outpatient provider had recently adjusted these; updated records obtained and reconciliation corrected. Prescriber notified.\n- No critical discrepancies (omissions or duplications of high-risk medications) identified after full reconciliation.\n\nHIGH-ALERT MEDICATION REVIEW:\nSeveral agents in this patient's regimen are designated as high-alert medications in our institutional formulary. These have been individually reviewed for appropriate ordering, monitoring, and documentation:\n- Anticoagulation and antiplatelet agents: Reviewed in detail. This area of the patient's regimen is particularly complex given the combination of agents involved. Monitoring plan confirmed with primary team and cardiology; parameters to be assessed per protocol. Alert thresholds for nursing notification confirmed.\n- Agents with renal dosing considerations: Multiple agents in this patient's regimen require dose adjustment or monitoring in the context of his renal comorbidity. Each has been individually reviewed against current documented renal function. Recommendations communicated to prescribers and reflected in current order set.\n\nADVERSE DRUG EVENT / INTERACTION SCREENING:\nPharmacy-based interaction screening performed. No critical drug-drug interactions newly identified in current regimen. Interactions of lower clinical significance were noted and reviewed — the team's management approach for these is appropriate and documented. No new allergy or intolerance concerns identified on reconciliation.\n\nMONITORING PLAN:\nPharmacy will conduct daily review of medication administration records, relevant laboratory monitoring parameters, and clinical documentation to identify any new concerns. Team to be notified of any significant changes or concerns prospectively.\n\nPATIENT EDUCATION:\nBrief medication education provided at bedside. Patient appears knowledgeable about his medications at a general level; he was able to name the classes of several agents and describe their general purpose. He acknowledged that he has struggled at times with adherence to the full regimen in the outpatient setting and expressed interest in a structured medication education session prior to discharge. This has been flagged for a pre-discharge pharmacy counseling session.\n\nClinical Pharmacist — Inpatient Services\nTime spent on reconciliation and review: Approximately 60 minutes"
+    },
+    {
+      "block_id": 8,
+      "note_type": "Case management discharge planning note",
+      "approximate_tokens": 1580,
+      "content": "CASE MANAGEMENT — DISCHARGE PLANNING NOTE\n\nCase Manager: Inpatient Case Management, Cardiology Unit\nPatient: 55-year-old male with multi-system chronic condition burden; cardiology primary service\n\nThis note documents initial formal discharge planning assessment and ongoing coordination activities. Contact with social work, primary team, physical therapy, pharmacy, and nursing has been established. Family (wife) engaged.\n\nANTICIPATED DISCHARGE DISPOSITION:\n\nBased on current clinical trajectory, anticipated discharge disposition is return to home with outpatient support services. Patient and wife have expressed a strong preference for home discharge, and the patient has a supportive home environment. However, the specific complexity of this patient's post-acute monitoring needs and the degree of functional recovery at time of discharge will be determinative. Contingency planning for short-term skilled nursing facility or inpatient rehabilitation facility placement has been initiated in case clinical trajectory or functional status warrants.\n\nPrimary team has not yet provided a specific target discharge date. Case management will update this assessment as clinical picture clarifies.\n\nINSURANCE AND AUTHORIZATION STATUS:\n- Patient carries primary commercial insurance through employer.\n- Inpatient stay authorization has been obtained and is current.\n- Authorization for anticipated post-acute home health services has been initiated; prior authorization submission to insurance pending verification of required clinical documentation from primary team.\n- If skilled nursing facility placement becomes necessary, authorization pathway identified and will be activated promptly.\n- Patient financial services contacted; initial contact completed, follow-up scheduled.\n\nANTICIPATED POST-DISCHARGE NEEDS ASSESSMENT:\n\n1. Home Health Nursing: High likelihood of need given complexity of medication regimen (including high-alert agents), monitoring requirements, and need to reinforce patient education in home setting. Referral to be placed once discharge date and specific monitoring parameters are confirmed by team. Patient and wife receptive to home nursing; wife noted that she would find professional nursing support reassuring given the complexity of his care.\n\n2. Home Physical Therapy: PT progress is being tracked; recommendation from PT anticipated prior to discharge. If patient has not returned to independent safe ambulation by time of discharge, home PT referral to be placed in coordination with PT team.\n\n3. Durable Medical Equipment: Potential need for assistive device for ambulation (to be confirmed by PT). Additional DME needs to be assessed closer to discharge. Home oxygen: current supplemental oxygen requirements to be assessed by RT; if O2 is required at time of discharge, home oxygen set-up to be arranged — assessment in progress.\n\n4. Follow-up Appointments: Multiple post-discharge follow-up appointments anticipated given the complexity of this patient's medical profile. Preliminary list of required follow-up contacts identified with team at rounds:\n   - Cardiology: Priority follow-up within one to two weeks\n   - Primary care provider: Follow-up within two weeks for chronic condition monitoring\n   - Additional subspecialty follow-ups to be confirmed by team\n   Case management coordinating with outpatient scheduling to confirm appointment availability aligned with anticipated discharge date.\n\n5. Medication and Monitoring Supplies: Pharmacy has flagged the need for pre-discharge counseling and assessment of patient's home monitoring supply needs. Coordination with pharmacy and primary team to ensure patient leaves with adequate supplies and clear instructions for home monitoring parameters. Home monitoring parameters and thresholds for medical contact to be specified in discharge instructions by primary team.\n\n6. Transportation: Wife confirmed as primary transport for discharge. No transportation assistance needed at this time. However, if patient cannot tolerate private vehicle transport at time of discharge, medical transport options identified.\n\nBARRIERS TO DISCHARGE IDENTIFIED:\n- Two-story home with master bedroom on second floor: patient and wife exploring temporary first-floor sleeping arrangements. Social work engaged.\n- Medication regimen complexity: Patient acknowledged outpatient adherence challenges; pharmacy counseling and home health nursing will address.\n- Patient anxiety and uncertainty about post-discharge care: SW engaged; care plan education to be reinforced.\n- Unknown discharge timing: Primary team to provide clearer timeline estimate within next one to two days.\n\nACTION ITEMS / FOLLOW-UP:\n- Daily check-in with primary team for discharge timeline update\n- Confirm PT home PT recommendation\n- Confirm RT O2 discharge needs\n- Submit home health referral when discharge date confirmed\n- Finalize insurance authorizations\n- Coordinate follow-up appointment scheduling\n- Confirm DME needs with PT and RT\n- Facilitate pharmacy discharge counseling session\n\nNext case management contact with patient: Tomorrow morning.\n\nCase Manager, RN — Inpatient Case Management"
+    },
+    {
+      "block_id": 9,
+      "note_type": "Occupational therapy evaluation",
+      "approximate_tokens": 1450,
+      "content": "OCCUPATIONAL THERAPY — INITIAL INPATIENT EVALUATION\n\nReferral received from physical therapy in coordination with primary team; purpose is comprehensive functional assessment with focus on activities of daily living, home safety, and discharge planning support.\n\nOCCUPATIONAL PROFILE:\n\nPatient is a 55-year-old male with significant cardiovascular, metabolic, and renal comorbidity burden, admitted for management of an acute medical issue. He is employed in a professional capacity and describes his work as primarily cognitively demanding with some physical demands (extended periods of sitting at desk, some travel). He lives with his wife in a two-story home. Prior to this admission, he reports independence in all basic and instrumental activities of daily living (BADLs and IADLs). He had no prior use of adaptive equipment or assistive devices.\n\nLeisure and meaningful activities identified by patient: golf (admits this has been sporadic in recent months due to work demands), cooking (shared with wife on weekends), reading. Patient identifies return to work and return to these leisure activities as important personal goals.\n\nPRIOR LEVEL OF FUNCTION (PLOF):\n- BADLs: Independent — bathing, dressing, grooming, toileting, feeding, transfers, mobility within home\n- IADLs: Independent — meal preparation, household management, driving, managing finances, managing complex medication regimen (with self-reported inconsistency), shopping\n- Home: Lives with wife; no prior home health services or formal caregiving support\n- Work: Full-time employment in professional role; no prior work modifications\n\nFUNCTIONAL ASSESSMENT — CURRENT:\n\nUpper extremity: Bilateral upper extremity strength and range of motion appears grossly within functional limits for ADL performance. Fine motor coordination: assessed via standardized bedside tasks; patient demonstrates adequate dexterity for self-care tasks, though he reports his hands 'feel weak' — likely a subjective perception related to overall deconditioning rather than specific upper extremity dysfunction. No focal neurological deficit identified on OT assessment.\n\nBasic ADLs:\n- Feeding: Independent. Manages standard hospital food tray without difficulty; appropriate utensil use observed.\n- Grooming: Performed with supervision/setup this visit; patient able to complete grooming tasks with items placed within reach; requires seated positioning for comfort and energy conservation.\n- Upper body dressing: Requires minimal assistance due to positioning and fatigue; once positioned at edge of bed with items accessible, able to don upper body garments with minimal verbal cueing.\n- Lower body dressing: Requires moderate assistance; difficulty with sock and shoe application, primarily limited by fatigue, mild discomfort with forward bending, and deconditioning rather than focal functional deficit.\n- Toileting: Currently using bedside commode with supervision; safe technique observed with appropriate transfer. Standard bathroom toilet would require step-up modification or grab bar support at home — to be discussed as part of home safety planning.\n- Bathing: Not formally assessed today given equipment limitations; patient reports that he anticipates difficulty with tub entry and standing tolerance in shower at home. Shower chair and grab bar assessment warranted for discharge planning.\n\nCognitive/perceptual screen: Patient AAO x3; follows multi-step instructions without difficulty; demonstrates adequate short-term memory for session content. No cognitive barrier to ADL function or patient education identified.\n\nENERGY CONSERVATION AND FATIGUE:\nPatient describes significant fatigue as his most limiting symptom for functional independence. He paced slowly through ADL tasks with adequate technique but required rest breaks. Energy conservation strategies introduced and practiced:\n- Seated ADL performance where possible\n- Task pacing and rest break scheduling\n- Prioritization of high-priority daily tasks\n\nPatient receptive to energy conservation principles; wife was present for education and will reinforce strategies.\n\nHOME SAFETY ASSESSMENT (preliminary, by patient/wife report):\n- Second-floor master bedroom: Recommend temporary first-floor sleeping arrangements; bathroom on first floor available\n- Shower: Patient uses stand-up shower; recommend shower chair and handheld showerhead\n- Toilet: Standard height; recommend toilet safety frame or grab bar installation\n- Stairs: Patient reports 4 steps to front door with railing on one side — potential discharge barrier if bilateral railing not available; to be reassessed closer to discharge\n- Loose rugs: Wife reports several area rugs; recommend removal prior to patient return home\n\nGOALS (short-term, inpatient):\n1. Patient will complete upper and lower body dressing with supervision/setup only by discharge\n2. Patient will demonstrate safe toilet transfer with equipment as needed\n3. Patient and wife will verbalize three energy conservation strategies\n\nRECOMMENDATIONS:\n1. Continue daily OT for ADL retraining and energy conservation\n2. DME: Recommend shower chair, handheld showerhead, toilet safety frame — initiate order\n3. Outpatient OT referral upon discharge if patient has not returned to independent ADL function\n4. Home safety modification recommendations communicated to wife (written list provided)\n\nOccupational Therapist — Inpatient Rehabilitation Services\nTime of evaluation: Approximately 55 minutes"
+    },
+    {
+      "block_id": 10,
+      "note_type": "Patient education encounter",
+      "approximate_tokens": 1470,
+      "content": "PATIENT AND FAMILY EDUCATION ENCOUNTER DOCUMENTATION\n\nEducator: Inpatient Cardiology Education Nurse\nParticipants: Patient (55-year-old male), wife (primary caregiver and support person)\nSetting: Patient room; patient seated in bedside chair; wife seated beside him\nDuration: Approximately 45 minutes\nEducation session: Comprehensive pre-discharge readiness education — session 1 of anticipated 2\n\nINITIAL LEARNING ASSESSMENT:\n\nPrior to beginning formal education content, the patient's and wife's existing knowledge base and learning preferences were assessed through informal discussion.\n\nPatient describes himself as a 'researcher' who likes to understand the 'why' behind instructions, rather than simply following directives. He has done some personal reading about his chronic conditions and general cardiovascular health prior to and during this admission; he was invited to share what he has learned, and his general understanding was noted to be above average for a lay patient, with some areas of misconception that were gently addressed during the session.\n\nWife describes herself as 'the one who actually makes sure things get done at home' — she is organized, engaged, and came to the session with a written list of questions. She is clearly the primary implementer of the care plan in the home environment.\n\nPreferred learning modes: Patient prefers detailed written materials he can review at his own pace; wife prefers clear, brief action-oriented summaries. Both are comfortable with visual aids. Neither reported any significant literacy or language barriers.\n\nCONTENT COVERED — SESSION 1:\n\n1. General Understanding of This Hospitalization\nThe purpose and goals of this hospitalization were reviewed at a general level, in terms the patient and wife could understand without requiring clinical detail. Both were able to restate the general purpose of the admission in their own words, demonstrating adequate understanding. Questions were invited and several were asked — primarily regarding timeline and anticipated next steps — and were answered in coordination with the primary team's communicated guidance.\n\n2. Activity and Mobility at Home (Post-Discharge)\nDiscussion covered the importance of gradual resumption of physical activity following an acute hospitalization. Patient was advised that his activity level will be guided by the primary team's discharge instructions, which will be individualized to his recovery trajectory. General principles of activity pacing, rest, and monitoring for symptoms with activity were introduced. The importance of not resuming high-exertion activities (including strenuous work travel and sports activities such as golf) until cleared by his primary team was emphasized. Patient acknowledged this guidance; wife noted this information and asked how they would know when it was safe to resume specific activities — patient was directed to raise these specific questions with the primary team.\n\n3. Monitoring at Home — General Principles\nPatient and wife were introduced to the general concept of home monitoring following discharge: the importance of tracking relevant symptoms, knowing which symptoms warrant immediate contact with the medical team, and knowing when to seek emergency care. Specific parameters and thresholds to monitor will be detailed in the individualized discharge instruction sheet prepared by the primary team. The framework introduced today was intended to help the patient and wife understand how to use those instructions effectively. The concept of a 'when to call your doctor' framework was introduced and both participants engaged actively with this concept.\n\n4. Medication Adherence — General Principles\nGiven the patient's self-disclosed history of inconsistent adherence to his outpatient medication regimen, a focused discussion on medication adherence was included. No specific medications were reviewed in detail today — this will be addressed comprehensively in the pharmacy pre-discharge counseling session already scheduled. The session today focused on the 'why' of adherence: the relationship between consistent adherence to chronic disease management agents and reduction in acute complications. Patient was receptive and acknowledged that previous adherence gaps were largely driven by busyness and a feeling of being 'okay enough' to skip doses. He verbalized a commitment to improved adherence and was provided with general strategies for building medication routines into daily habits (linking to existing routines, use of a pill organizer, involving his wife in monitoring).\n\n5. Follow-Up Appointments — Importance and Logistics\nThe importance of keeping all scheduled post-discharge follow-up appointments was emphasized. The care team will be providing specific appointment details and instructions. General guidance: do not cancel follow-up appointments without rescheduling; bring an updated medication list to all appointments; bring a companion when possible.\n\n6. Warning Signs — When to Seek Care Immediately\nA general framework for recognizing when to seek emergency care was introduced. Specific warning sign lists will be included in the primary team's discharge instructions. Both patient and wife were encouraged to review these carefully and keep them accessible at home.\n\nKNOWLEDGE ASSESSMENT / TEACH-BACK:\nAt the conclusion of session 1, teach-back methodology was used to assess retention of key session concepts:\n- Patient was able to restate in own words: the general purpose of home monitoring, the general principle of gradual activity resumption, and the importance of medication adherence.\n- Wife was able to restate: three specific medication adherence strategies discussed, and the general framework for when to seek emergency care.\nBoth participants demonstrated adequate session 1 knowledge acquisition. Areas for reinforcement in session 2 have been noted.\n\nSESSION 2 PLAN:\nSession 2 to be completed prior to discharge — to include review of individualized discharge instructions once finalized by primary team, medication-specific review in coordination with pharmacy, home monitoring parameter review, and finalization of follow-up plan.\n\nDocumented by: RN Patient Education — Inpatient Cardiology\nDate/time: This afternoon"
+    }
+  ],
+  "coverage_report": {
+    "missing_subtypes": [
+      "CAT.alert",
+      "TEMP.date",
+      "TEMP.trajectory",
+      "QUANT.dose",
+      "QUANT.freq",
+      "QUANT.lab",
+      "QUANT.vital",
+      "REAS.considered",
+      "REAS.conditional",
+      "REAS.uncertain"
+    ],
+    "under_represented_subtypes": [
+      "QUANT.anthro"
+    ],
+    "instances_without_class_node": [
+      "A11",
+      "A12"
+    ],
+    "deliberate_deviations_from_target_bands": "QUANT is severely under-represented (1 anchor vs 8-12 target) because the case_text contains no specific drug doses (rivaroxaban is described only as 'renally dosed' without a mg figure), no lab values beyond CrCl 30, no vital signs, and no dosing frequencies. All numeric content aside from CrCl 30 is temporal in nature (durations, intervals) and is classified under TEMP. The excluded_text discussion section references 15 mg daily and trial-specific doses, but these are guideline citations, not patient data, and are correctly excluded. A18 (CHF preserved EF) is classified as CAT.negated rather than CAT.instance because 'preserved ejection fraction' functionally negates reduced EF, but this is a defensible judgment call; an alternative classification as CAT.instance with class_node_present false would also be reasonable. CAT.alert is absent because the case contains no explicit allergy, code status, or safety-alert documentation. REAS.considered is absent because no diagnosis or therapy is explicitly described as considered-and-rejected within the case narrative (warfarin was refused by the patient rather than considered and rejected by the clinical team). REAS.conditional and REAS.uncertain are absent because the case uses direct declarative language throughout."
+  },
+  "filler_constraints_used": [
+    "no named medications",
+    "no named diagnoses",
+    "no specific organisms",
+    "no specific lab values with units",
+    "no specific vital signs with numbers",
+    "no specific doses or frequencies",
+    "no specific dates or date patterns",
+    "no acute clinical events (bleeding, arrhythmia, etc.)",
+    "no specific clinical reasoning chains or conditional management"
+  ],
+  "audit_notes": "[part2 anchors] Self-audit performed against all seven checks:\n\n1. VERBATIM CHECK: All 34 anchor text fields verified as present verbatim in case_text via automated substring matching (Python script run against case_text, all 34 returned OK). No anchor text was drawn from excluded_text or case_metadata.\n\n2. CLASS_NODE_PRESENT CHECK: Every CAT.instance anchor has class_node_present set. True for A5 (paroxysmal AF -> A1 atrial fibrillation), A6/A7/A8/A9/A10 (drugs -> A2 antithrombotic regimen), A13 (severe posterior nasal hemorrhage -> A4 recurrent nasal bleeding). False for A11 (coronary artery disease: no 'cardiovascular disease' class term in case_text) and A12 (CKD stage 3: no 'renal disease' or 'nephropathy' class term in case_text). All non-CAT.instance anchors set to 'n/a'.\n\n3. QUANT PAIRING CHECK: A28 (CrCl 30) is QUANT.anthro, not QUANT.dose/freq, so the dose/freq pairing rule does not apply. A28 is paired with A12 (the CKD instance it quantifies) and A15 (renally dosed qualifier it informs). No QUANT.dose or QUANT.freq anchors exist (documented in missing_subtypes).\n\n4. SUBTYPE COVERAGE CHECK: CAT.instance (9), CAT.qualifier (3), QUANT.lab (0 — missing, documented), TEMP.status (3), REAS.considered (0 — missing, documented) all checked. High-priority subtypes present: CAT.instance >= 2 ✓, CAT.qualifier >= 2 ✓, TEMP.status >= 2 ✓. Missing subtypes documented in coverage_report.\n\n5. ANSWER SOURCE CHECK: All question expected_answers are derivable solely from case_text. No question requires clinical knowledge from excluded_text or external sources. For example, Q28 asks about CrCl value (in case_text), not about the ROCKET AF dosing threshold (in excluded_text only).\n\n6. REAS QUESTION TARGETING CHECK: A29 question targets the causal link between rivaroxaban and its indication (not just 'was rivaroxaban started?'). A30 targets the specific reason for warfarin refusal (not just 'was warfarin refused?'). A31 targets the therapeutic rationale connecting heparin/diltiazem to AF. A32 targets which service performed the reevaluation. A33 targets the clinical determination.\n\n7. TEMP.STATUS QUESTION CHECK: A24 question asks 'what change was made to aspirin' (tests status change, not just presence). A25 asks about specific medication changes (tests the switching, not just current regimen). A27 asks about anticoagulation status and what changed (tests status change of warfarin refusal).\n\nRevisions made during audit: (a) Added A34 (TEMP.sequence for the five mild episodes and their management) to capture the escalation pattern that precedes the severe hemorrhage — this was initially omitted but is clinically important for testing whether compression preserves the progression narrative. (b) Reclassified A18 from CAT.instance to CAT.negated after recognizing that 'preserved ejection fraction' acts as a negation of reduced EF, which is the actionable finding. (c) Added A27 as a separate TEMP.status anchor for 'previously refused warfarin therapy' distinct from A17 (CAT.negated) to ensure the temporal status-change aspect is independently testable. The same text span appears in both because it genuinely encodes both a categorical negation and a temporal status change — questions are differentiated (A17 tests the stance, A27 tests the change in anticoagulation status over time).\n\n[part3 filler] Self-audit performed before finalizing. (1) Medication names: no drug names used in any block; all medications referenced by therapeutic class only (antihypertensive, anticoagulation and antiplatelet agents, metabolic agents, etc.). Scanned for common drug suffixes (-pril, -sartan, -olol, -statin, -azole, -mycin) — none found. (2) Diagnosis names: 'hypertension,' 'diabetes,' 'atrial fibrillation,' 'CKD,' 'COPD,' and 'coronary artery disease' were not used. All conditions referenced at system level only ('cardiovascular comorbidities,' 'metabolic conditions,' 'renal comorbidity,' 'chronic conditions'). Close call: the pharmacy note references 'anticoagulation and antiplatelet' class — acceptable as this is a therapeutic class descriptor, not a diagnosis or named drug. (3) Specific lab values: none. One close call in nursing note re: urine output — kept qualitative ('within expected range'). (4) Vital signs: all qualitative only ('hemodynamically stable,' 'afebrile,' 'vitals stable'); no numeric values. (5) Doses or frequencies: BID used in prompt instructions but not in generated blocks — confirmed absent. No mg, mcg, mL, or frequency notations. (6) Dates: no calendar dates; all temporal references are relative ('this morning,' 'overnight,' 'earlier this admission,' 'prior to admission'). (7) Acute clinical events: no bleeding, arrhythmia, infarction, stroke, sepsis referenced. (8) Specific clinical reasoning: no conditional 'if X then Y' management chains; no differentials enumerated; all notes describe routine clinical workflow. (9) 'BID' appeared in the system prompt but was not used in filler — confirmed. Note: O2 saturation referenced only qualitatively in RT note; no percentage values. Ambulation distance in PT note (40 feet) retained — this is a functional therapy metric, not a clinical diagnostic value, and does not risk colliding with any clinical anchor in a cardiology case."
+}

@@ -59,16 +59,101 @@ import sys
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, Protocol
 
 import tiktoken
-from anthropic import Anthropic, APIError, APIStatusError
 from tenacity import (
     retry,
     retry_if_exception_type,
     stop_after_attempt,
     wait_exponential,
 )
+
+# Provider abstraction: we support both the native Anthropic SDK and
+# any OpenAI-compatible endpoint (OpenRouter, vLLM, LiteLLM, Together,
+# Groq, etc.). Pick one via --provider on the command line. Imports
+# are deferred to first use so the script runs even if only one SDK
+# is installed.
+
+class _LLMClient(Protocol):
+    def complete(
+        self, system: str, user: str, model: str, max_tokens: int
+    ) -> tuple[str, int, int]:
+        """Return (text, input_tokens, output_tokens)."""
+        ...
+
+
+def make_client(provider: str) -> _LLMClient:
+    if provider == "anthropic":
+        return _AnthropicClient()
+    elif provider == "openrouter":
+        return _OpenAICompatClient(
+            base_url="https://openrouter.ai/api/v1",
+            api_key_env="OPENROUTER_API_KEY",
+            extra_headers={
+                # OpenRouter recommends these for analytics/rate limiting.
+                # Harmless if unset.
+                "HTTP-Referer": os.environ.get("OPENROUTER_REFERER", ""),
+                "X-Title": os.environ.get("OPENROUTER_TITLE", "compression-experiment"),
+            },
+        )
+    elif provider == "openai":
+        return _OpenAICompatClient(
+            base_url="https://api.openai.com/v1",
+            api_key_env="OPENAI_API_KEY",
+        )
+    else:
+        raise ValueError(f"Unknown provider: {provider}")
+
+
+class _AnthropicClient:
+    def __init__(self):
+        from anthropic import Anthropic, APIError, APIStatusError
+        self._Anthropic = Anthropic
+        self._client = Anthropic()
+        self.RetryableErrors = (APIError, APIStatusError)
+
+    def complete(self, system, user, model, max_tokens):
+        resp = self._client.messages.create(
+            model=model,
+            max_tokens=max_tokens,
+            system=system,
+            messages=[{"role": "user", "content": user}],
+        )
+        text = "".join(b.text for b in resp.content if hasattr(b, "text"))
+        return text.strip(), resp.usage.input_tokens, resp.usage.output_tokens
+
+
+class _OpenAICompatClient:
+    def __init__(self, base_url: str, api_key_env: str, extra_headers: dict | None = None):
+        from openai import OpenAI, APIError, APIStatusError
+        api_key = os.environ.get(api_key_env)
+        if not api_key:
+            raise RuntimeError(f"Missing environment variable: {api_key_env}")
+        kwargs: dict = {"base_url": base_url, "api_key": api_key}
+        if extra_headers:
+            # filter out empty values so we don't send empty headers
+            headers = {k: v for k, v in extra_headers.items() if v}
+            if headers:
+                kwargs["default_headers"] = headers
+        self._client = OpenAI(**kwargs)
+        self.RetryableErrors = (APIError, APIStatusError)
+
+    def complete(self, system, user, model, max_tokens):
+        resp = self._client.chat.completions.create(
+            model=model,
+            max_tokens=max_tokens,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+        )
+        text = resp.choices[0].message.content or ""
+        return (
+            text.strip(),
+            resp.usage.prompt_tokens,
+            resp.usage.completion_tokens,
+        )
 
 # ---------------------------------------------------------------------------
 # Configuration & logging
@@ -317,35 +402,38 @@ class AnswerCall:
 
 
 class AnswerClient:
-    def __init__(self, model: str, max_tokens: int = 256):
-        self.client = Anthropic()
+    def __init__(self, llm_client: _LLMClient, model: str, max_tokens: int = 256):
+        self.llm = llm_client
         self.model = model
         self.max_tokens = max_tokens
 
-    @retry(
-        retry=retry_if_exception_type((APIError, APIStatusError)),
-        wait=wait_exponential(multiplier=2, min=4, max=60),
-        stop=stop_after_attempt(5),
-        reraise=True,
-    )
     def answer(self, context: str, question: str) -> tuple[str, int, int]:
         user_msg = (
             f"CHART:\n\n{context}\n\n---\n\n"
             f"QUESTION: {question}\n\n"
             f"Provide a concise, specific answer based only on the chart above."
         )
-        resp = self.client.messages.create(
-            model=self.model,
-            max_tokens=self.max_tokens,
-            system=ANSWER_SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_msg}],
+        # Retry handling is implemented per-provider via tenacity wrapper below
+        return _retrying_complete(
+            self.llm, ANSWER_SYSTEM_PROMPT, user_msg, self.model, self.max_tokens
         )
-        text = "".join(b.text for b in resp.content if hasattr(b, "text"))
-        return (
-            text.strip(),
-            resp.usage.input_tokens,
-            resp.usage.output_tokens,
-        )
+
+
+def _retrying_complete(
+    llm: _LLMClient, system: str, user: str, model: str, max_tokens: int
+) -> tuple[str, int, int]:
+    """Apply tenacity retry policy uniformly, using the client's own
+    exception class set (assigned in __init__).
+    """
+    @retry(
+        retry=retry_if_exception_type(llm.RetryableErrors),
+        wait=wait_exponential(multiplier=2, min=4, max=60),
+        stop=stop_after_attempt(5),
+        reraise=True,
+    )
+    def _call():
+        return llm.complete(system, user, model, max_tokens)
+    return _call()
 
 
 # ---------------------------------------------------------------------------
@@ -513,17 +601,11 @@ class Judgment:
 
 
 class JudgeClient:
-    def __init__(self, model: str, max_tokens: int = 400):
-        self.client = Anthropic()
+    def __init__(self, llm_client: _LLMClient, model: str, max_tokens: int = 400):
+        self.llm = llm_client
         self.model = model
         self.max_tokens = max_tokens
 
-    @retry(
-        retry=retry_if_exception_type((APIError, APIStatusError)),
-        wait=wait_exponential(multiplier=2, min=4, max=60),
-        stop=stop_after_attempt(5),
-        reraise=True,
-    )
     def judge(self, anchor: Anchor, question: Question, model_answer: str) -> dict:
         rules = SCORING_RULES.get(
             anchor.subtype, SCORING_RULES.get(anchor.category, "Use general clinical judgment.")
@@ -538,13 +620,9 @@ class JudgeClient:
             model_answer=model_answer,
             rules=rules,
         )
-        resp = self.client.messages.create(
-            model=self.model,
-            max_tokens=self.max_tokens,
-            system=JUDGE_SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_msg}],
+        text, _, _ = _retrying_complete(
+            self.llm, JUDGE_SYSTEM_PROMPT, user_msg, self.model, self.max_tokens
         )
-        text = "".join(b.text for b in resp.content if hasattr(b, "text")).strip()
 
         # Robust JSON extraction: strip markdown fences if present
         if text.startswith("```"):
@@ -820,8 +898,17 @@ def main() -> int:
                    default=[8000, 16000, 32000, 64000, 128000])
     p.add_argument("--placement", choices=["beginning", "middle", "end"],
                    default="middle")
-    p.add_argument("--answering-model", default="claude-opus-4-7")
-    p.add_argument("--judge-model", default="claude-sonnet-4-6")
+    p.add_argument("--answering-provider", choices=["anthropic", "openrouter", "openai"],
+                   default="anthropic",
+                   help="LLM provider for the answering model.")
+    p.add_argument("--judge-provider", choices=["anthropic", "openrouter", "openai"],
+                   default="anthropic",
+                   help="LLM provider for the judge model.")
+    p.add_argument("--answering-model", default="claude-opus-4-7",
+                   help="Model string. For openrouter use prefixed names like "
+                        "'anthropic/claude-opus-4.7' or 'openai/gpt-5.2'.")
+    p.add_argument("--judge-model", default="claude-sonnet-4-6",
+                   help="Model string. Should differ from --answering-model.")
     p.add_argument("--case-glob", default="*.json",
                    help="Glob pattern for case files (default: *.json).")
     args = p.parse_args()
@@ -856,8 +943,15 @@ def main() -> int:
         log.error("No cases loaded.")
         return 1
 
-    answer_client = AnswerClient(model=args.answering_model)
-    judge_client = JudgeClient(model=args.judge_model)
+    log.info("Answering: provider=%s model=%s", args.answering_provider, args.answering_model)
+    log.info("Judge:     provider=%s model=%s", args.judge_provider, args.judge_model)
+    answering_llm = make_client(args.answering_provider)
+    judge_llm = (
+        answering_llm if args.judge_provider == args.answering_provider
+        else make_client(args.judge_provider)
+    )
+    answer_client = AnswerClient(llm_client=answering_llm, model=args.answering_model)
+    judge_client = JudgeClient(llm_client=judge_llm, model=args.judge_model)
 
     all_judgments: list[Judgment] = []
     for case in cases.values():
