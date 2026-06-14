@@ -58,17 +58,77 @@
 
 ---
 
-## Degradation Modes (Scoring Rubric)
+## Mapping to Judge Scoring Categories
 
-Each fact is scored on **type** (categories above) × **degradation mode** (below):
+The extraction pipeline uses fine-grained subcategories for fact capture. The evaluation pipeline (orchestrate.py, LLM-as-judge) uses compact dot-notation subtypes calibrated for scoring. A converter module will bridge these. The mapping is not always 1:1 — some extraction subcategories map to different judge subtypes depending on the fact's specificity level.
 
-| Mode | Description | Example |
+### Categorical → CAT.*
+
+| Extraction subcategory | Judge subtype | Notes |
 |---|---|---|
-| Complete loss | Fact absent from output | Allergy to penicillin not mentioned |
-| Binding failure | Components survive but misassociate | "HbA1c" and "1.1" both present but cross-wired |
-| Polarity inversion | Clinical meaning reversed | "Denies chest pain" → "chest pain" |
-| Qualification loss | Uncertainty/hedging stripped | "Concerning for pneumonia" → "pneumonia" |
-| Attribution loss | Source/reliability signal dropped | "Patient reports" removed from assertion |
+| previous_diagnosis | CAT.class or CAT.instance | Class if general ("diabetes"), instance if specific ("Type 2 DM") |
+| reported_symptom | CAT.class or CAT.qualifier | Qualifier if anatomy/modifier attached |
+| patient_identifier | CAT.class | Demographics |
+| family_history | CAT.class | |
+| behavior | CAT.class or CAT.qualifier | Qualifier if specifics attached ("1 pack/day") |
+| code_status | CAT.class | |
+| negated_fact | CAT.negated | Always maps to negated regardless of underlying entity |
+| allergy | CAT.alert | Requires substance + reaction type for CORRECT |
+| infection_precaution | CAT.alert | |
+| fall_risk | CAT.alert | |
+| drug_name | CAT.instance | Most common mapping — specific entity required |
+| device_type | CAT.instance | |
+
+### Temporal → TEMP.*
+
+| Extraction subcategory | Judge subtype | Notes |
+|---|---|---|
+| medication_timing | TEMP.date, TEMP.duration, TEMP.status, or TEMP.since | Depends on what the fact captures: absolute date, duration, status change, or elapsed time |
+| event_sequence | TEMP.sequence | |
+| lab_trajectory | TEMP.trajectory | |
+| dosage_change | TEMP.status | Status change on a quantitative entity |
+| time_since_event | TEMP.since | |
+
+### Quantitative → QUANT.*
+
+| Extraction subcategory | Judge subtype | Notes |
+|---|---|---|
+| lab_value | QUANT.lab | |
+| vital_sign | QUANT.vital | |
+| medication_dosage | QUANT.dose and/or QUANT.freq | Dose and frequency may be separate judge anchors from one extraction fact |
+
+### Clinical Reasoning → REAS.*
+
+| Extraction subcategory | Judge subtype | Notes |
+|---|---|---|
+| considered_rejected_diagnosis | REAS.considered | |
+| conditional_fact | REAS.conditional | |
+| explanatory_link | REAS.causal | |
+| uncertainty_marker | REAS.uncertain | |
+| pending_planned_task | REAS.planned | |
+
+---
+
+## Failure Mode Taxonomy (Scoring Rubric)
+
+The canonical failure mode taxonomy comes from the LLM-as-judge (orchestrate.py). Each fact is scored on **type** (categories above) × **failure mode** (below).
+
+| Failure mode | Description | Example | Clinical risk |
+|---|---|---|---|
+| class_collapse | Model gave class-level answer when instance required | "antibiotics" for "vancomycin" | Moderate — loses actionability |
+| instance_swap | Model named a different instance within the same class | "rivaroxaban" for "apixaban" | **Highest** — wrong medication |
+| status_loss | Entity preserved but temporal status qualifier lost | "on apixaban" for "recently discontinued apixaban" | High — could cause re-prescription |
+| negation_loss | Lost negation, reporting affirmative form | "chest pain" for "denies chest pain" | **Highest** — reverses clinical meaning |
+| qualifier_loss | Base entity preserved but qualifier lost | "S. aureus" for "methicillin-resistant S. aureus" | High — changes treatment |
+| uncertainty_loss | Stripped uncertainty markers | "pneumonia" for "concerning for pneumonia" | High — inflates diagnostic certainty |
+| magnitude_error | Numeric value wrong beyond tolerance | "INR 3.5" for "INR 8.5" | High — affects dosing decisions |
+| unit_missing | Number correct but unit absent | "8.5" for "INR 8.5" | Moderate — ambiguous without context |
+| binding_failure | Components survive but misassociate | "HbA1c" and "1.1" cross-wired | High — wrong value on wrong entity |
+| fabrication | Answer not in case at all | Model invents a medication | **Highest** — no basis in record |
+| refusal | Model declined or said not available | "not documented" | Informative signal, not clinical harm |
+| attribution_loss | Source/reliability signal dropped | "Patient reports" removed | Low-moderate — loses reliability context |
+
+Note: the earlier "degradation modes" (complete loss, polarity inversion, qualification loss) map into this taxonomy. Complete loss → refusal or fabrication depending on model behavior. Polarity inversion → negation_loss. Qualification loss → qualifier_loss or uncertainty_loss depending on what was lost.
 
 ---
 
