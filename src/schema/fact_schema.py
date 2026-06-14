@@ -38,6 +38,7 @@ class NoteType(StrEnum):
     NURSING_NOTE = "nursing_note"
     ER_PROVIDER_NOTE = "er_provider_note"
     ECHOCARDIOGRAPHY_REPORT = "echocardiography_report"
+    CASE_REPORT = "case_report"
     OTHER = "other"
 
 

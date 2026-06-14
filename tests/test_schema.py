@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from schema.fact_schema import (
+from src.schema.fact_schema import (
     DocumentMetadata,
     Fact,
     FactCategory,

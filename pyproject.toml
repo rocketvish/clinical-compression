@@ -15,5 +15,5 @@ dev = [
 # Tests import the schema as `from schema.fact_schema import ...`; putting
 # `src` on the path makes `schema` a top-level package without an install step.
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["."]
 testpaths = ["tests"]
