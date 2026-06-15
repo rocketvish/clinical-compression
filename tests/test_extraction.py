@@ -109,6 +109,9 @@ def test_system_prompt_has_all_decomposition_rules():
         "9. EXTRACT PATIENT-SPECIFIC FACTS ONLY",
         "10. PRESERVE DISEASE QUALIFIERS",
         "11. TREATMENT REGIMENS ARE NOT DRUGS",
+        "12. DEDUPLICATE FACTS",
+        "13. DIAGNOSIS HIERARCHY",
+        "14. PROGRESSIVE CONDITIONS",
     ]
     for marker in markers:
         assert marker in sp, f"missing rule: {marker}"

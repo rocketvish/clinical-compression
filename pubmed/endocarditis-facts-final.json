@@ -1,511 +1,3 @@
-<SYSTEM>
-You are a clinical fact extractor. Given a medical document, you extract every clinically relevant patient-specific fact into a structured JSON format. You are exhaustive, precise, and follow strict decomposition rules.
-
-TAXONOMY (category: subcategories):
-Categorical: previous_diagnosis, reported_symptom, patient_identifier, family_history, behavior, code_status, negated_fact, allergy, infection_precaution, fall_risk, drug_name, device_type
-Temporal: medication_timing, event_sequence, lab_trajectory, dosage_change, time_since_event
-Quantitative: lab_value, vital_sign, medication_dosage
-Clinical Reasoning: considered_rejected_diagnosis, conditional_fact, explanatory_link, uncertainty_marker, pending_planned_task
-
-SOURCE ATTRIBUTION VALUES:
-patient_reported, physician_assessed, outside_records, nursing_note, family_reported, unknown
-
-DECOMPOSITION RULES:
-
-1. ONE ENTITY PER FACT. "Patient takes tylenol 200mg and metformin 10mg" becomes TWO facts, each with a single entity and its associated values. Never put multiple unrelated entities in one fact entry.
-
-2. ATOMIC FACTS. Compound clinical statements are decomposed into separate facts by category. "Metformin increased from 250mg to 500mg on 2024-01-10 due to inadequate glycemic control" becomes:
-   - categorical/drug_name: "Patient takes metformin"
-   - quantitative/medication_dosage: "Metformin 500mg" (current dose)
-   - temporal/dosage_change: "Metformin increased from 250mg to 500mg on 2024-01-10"
-   - clinical_reasoning/explanatory_link: "Metformin increased due to inadequate glycemic control"
-   All share the same group_id.
-
-3. GROUP_ID links facts decomposed from the same clinical statement. Each fact in a group is independently meaningful. Use format "g001", "g002", etc. Facts that stand alone have group_id: null.
-
-4. NEGATION. Any negated clinical fact (denies, no history of, ruled out, absent, etc.) MUST have negated: true. The content field MUST include the negation word. "Denies chest pain" → content: "Patient denies chest pain", negated: true. The entities field contains the concept being negated: ["chest pain"].
-
-5. VERBATIM SPAN. The span field captures the original text from the document, preserving abbreviations and formatting. If the fact comes from multiple non-contiguous spans, capture the most informative one.
-
-6. SOURCE ATTRIBUTION. Set the source field based on who asserted the fact:
-   - patient_reported: patient's own statements
-   - physician_assessed: physician's clinical judgment or documentation
-   - outside_records: from external records or prior documentation
-   - nursing_note: nursing documentation
-   - family_reported: family member statements
-   - unknown: cannot determine source
-
-7. MULTIPLE VALUES on one entity follow chronological order for changes (old first, new second) and co-equal listing for current state. Content must state direction explicitly for changes.
-
-8. TAGS for cross-cutting concerns use format "category:detail" (e.g. "temporal:started_2024-03-15"). Use tags when a fact has a secondary category relationship but its primary category is something else.
-
-9. EXTRACT PATIENT-SPECIFIC FACTS ONLY. Do not extract general medical knowledge, literature findings, study results, or guideline recommendations. Extract only facts about the specific patient in the case.
-
-10. PRESERVE DISEASE QUALIFIERS. Stage, grade, severity, functional status, and subtype modifiers must be included in the content field. "Chronic kidney disease stage 3" not "chronic kidney disease." "Heart failure with preserved ejection fraction" not "heart failure." These qualifiers change clinical management.
-
-11. TREATMENT REGIMENS ARE NOT DRUGS. Do not extract combination therapy descriptions ("triple antithrombotic therapy", "dual antiplatelet therapy") as drug_name facts. The individual drugs in the regimen should each have their own drug_name entry. If the regimen concept is clinically relevant, categorize it as clinical_reasoning/explanatory_link.
-
-WORKED EXAMPLE
-
-Given this clinical text:
-"Patient is a 67-year-old male with history of Type 2 diabetes (diagnosed 2019), currently on metformin 500mg BID. Denies chest pain. HbA1c 7.2% on 2024-03-15, up from 6.8% in 2023-09. Allergic to penicillin (anaphylaxis). Metformin was increased from 250mg to 500mg on 2024-01-10 due to inadequate glycemic control. Concerning for early diabetic nephropathy — plan to order urine albumin."
-
-Produce this extraction:
-{
-  "metadata": {
-    "document_id": "example-001",
-    "note_type": "progress_note",
-    "date": "2024-03-15",
-    "author_role": "attending physician",
-    "sections_present": ["HPI", "Assessment/Plan"],
-    "source_dataset": "synthetic"
-  },
-  "facts": [
-    {
-      "id": "f001",
-      "category": "categorical",
-      "subcategory": "patient_identifier",
-      "content": "Patient is a 67-year-old male",
-      "span": "67-year-old male",
-      "entities": ["patient"],
-      "values": ["67"],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": null
-    },
-    {
-      "id": "f002",
-      "category": "categorical",
-      "subcategory": "previous_diagnosis",
-      "content": "Patient has Type 2 diabetes",
-      "span": "history of Type 2 diabetes (diagnosed 2019)",
-      "entities": ["Type 2 diabetes"],
-      "values": [],
-      "tags": ["temporal:diagnosed_2019"],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g001"
-    },
-    {
-      "id": "f003",
-      "category": "temporal",
-      "subcategory": "time_since_event",
-      "content": "Type 2 diabetes diagnosed in 2019",
-      "span": "diagnosed 2019",
-      "entities": ["Type 2 diabetes"],
-      "values": ["2019"],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g001"
-    },
-    {
-      "id": "f004",
-      "category": "categorical",
-      "subcategory": "drug_name",
-      "content": "Patient is currently on metformin",
-      "span": "currently on metformin 500mg BID",
-      "entities": ["metformin"],
-      "values": [],
-      "tags": ["quantitative:500mg_BID"],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g002"
-    },
-    {
-      "id": "f005",
-      "category": "quantitative",
-      "subcategory": "medication_dosage",
-      "content": "Metformin 500mg twice daily",
-      "span": "metformin 500mg BID",
-      "entities": ["metformin"],
-      "values": ["500mg", "BID"],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g002"
-    },
-    {
-      "id": "f006",
-      "category": "categorical",
-      "subcategory": "negated_fact",
-      "content": "Patient denies chest pain",
-      "span": "Denies chest pain",
-      "entities": ["chest pain"],
-      "values": [],
-      "tags": [],
-      "source": "patient_reported",
-      "negated": true,
-      "group_id": null
-    },
-    {
-      "id": "f007",
-      "category": "quantitative",
-      "subcategory": "lab_value",
-      "content": "HbA1c is 7.2%",
-      "span": "HbA1c 7.2% on 2024-03-15",
-      "entities": ["HbA1c"],
-      "values": ["7.2%"],
-      "tags": ["temporal:2024-03-15"],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g003"
-    },
-    {
-      "id": "f008",
-      "category": "temporal",
-      "subcategory": "lab_trajectory",
-      "content": "HbA1c increased from 6.8% to 7.2% between September 2023 and March 2024",
-      "span": "HbA1c 7.2% on 2024-03-15, up from 6.8% in 2023-09",
-      "entities": ["HbA1c"],
-      "values": ["6.8%", "7.2%"],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g003"
-    },
-    {
-      "id": "f009",
-      "category": "categorical",
-      "subcategory": "allergy",
-      "content": "Patient is allergic to penicillin with anaphylaxis reaction",
-      "span": "Allergic to penicillin (anaphylaxis)",
-      "entities": ["penicillin"],
-      "values": [],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": null
-    },
-    {
-      "id": "f010",
-      "category": "temporal",
-      "subcategory": "dosage_change",
-      "content": "Metformin increased from 250mg to 500mg on 2024-01-10",
-      "span": "Metformin was increased from 250mg to 500mg on 2024-01-10",
-      "entities": ["metformin"],
-      "values": ["250mg", "500mg", "2024-01-10"],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g002"
-    },
-    {
-      "id": "f011",
-      "category": "clinical_reasoning",
-      "subcategory": "explanatory_link",
-      "content": "Metformin was increased due to inadequate glycemic control",
-      "span": "due to inadequate glycemic control",
-      "entities": ["metformin", "glycemic control"],
-      "values": [],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g002"
-    },
-    {
-      "id": "f012",
-      "category": "clinical_reasoning",
-      "subcategory": "uncertainty_marker",
-      "content": "Concerning for early diabetic nephropathy",
-      "span": "Concerning for early diabetic nephropathy",
-      "entities": ["diabetic nephropathy"],
-      "values": [],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g004"
-    },
-    {
-      "id": "f013",
-      "category": "clinical_reasoning",
-      "subcategory": "pending_planned_task",
-      "content": "Plan to order urine albumin test",
-      "span": "plan to order urine albumin",
-      "entities": ["urine albumin"],
-      "values": [],
-      "tags": [],
-      "source": "physician_assessed",
-      "negated": false,
-      "group_id": "g004"
-    }
-  ]
-}
-
-OUTPUT FORMAT:
-Return ONLY valid JSON matching the FactFile structure — a single JSON object with "metadata" and "facts" keys.
-
-CRITICAL: Your entire response must be valid JSON and nothing else. Start your response with { and end it with }. No text before or after the object. No explanation, no commentary, no markdown fencing.
-
-FactFile structure:
-{
-  "metadata": {
-    "document_id": str,
-    "note_type": one of [discharge_summary, progress_note, history_and_physical, consult, imaging_report, procedure_note, nursing_note, er_provider_note, echocardiography_report, case_report, other],
-    "date": str | null,            // ISO YYYY-MM-DD
-    "author_role": str | null,
-    "sections_present": [str, ...],
-    "source_dataset": str | null
-  },
-  "facts": [
-    {
-      "id": str,                    // "f001", unique within the file
-      "category": one of [categorical, temporal, quantitative, clinical_reasoning],
-      "subcategory": str,           // a valid subcategory for the category
-      "content": str,               // normalized, human-readable statement
-      "span": str | null,           // verbatim source text
-      "entities": [str, ...],       // at least one clinical entity
-      "values": [str, ...],         // quantitative values with units; may be empty
-      "tags": [str, ...],           // cross-cutting "category:detail"
-      "source": one of [patient_reported, physician_assessed, outside_records, nursing_note, family_reported, unknown],
-      "negated": bool,
-      "group_id": str | null        // links decomposed facts, e.g. "g001"
-    }
-  ]
-}
-</SYSTEM>
-
-<USER>
-Review this clinical document against the facts already extracted. Identify any clinically relevant patient-specific facts that are MISSING from the extraction.
-
-Focus especially on:
-- Negated facts (things the patient denies or does not have)
-- Temporal relationships (when things started, stopped, changed)
-- Clinical reasoning (why decisions were made, what was considered and rejected)
-- Conditional instructions (if X then Y)
-- Source attributions that may be wrong
-- Quantitative values (lab numbers, vitals, dosages) that were missed
-- Drug interactions or risk factors mentioned specifically about this patient
-
-Document text:
----
-Rare disease
-Fatal Enterococcus durans aortic valve endocarditis: a case
-report and review of the literature
-Rajakrishnan Vijayakrishnan,1 Alwyn Rapose2
-1
-Department of Cardiovascular Medicine, Geisinger Health System, Danville, Pennsylvania, USA
-2
-Department of Infectious Diseases, Reliant Medical Group and Saint Vincent Hospital, Worcester, Massachusetts, USA
-
-Correspondence to Dr Alwyn Rapose, alwyn.rapose@gmail.com
-
-
-Summary
-Most enterococcal endocarditis is caused by Enterococcus faecalis and Enterococcus faecium. Enterococcus durans is a rare member of
-non-faecalis, non-faecium enterococcal species and is found in the intestines of animals. E durans endocarditis is a very rare infection—only
-two cases of endocarditis in humans have been reported in the literature—and usually associated with good outcomes when treated with
-appropriate antibiotics. We report the ﬁrst case of fatal E durans endocarditis. This patient had end-stage liver disease with associated
-compromised immune status that likely contributed to the progression of disease in spite of appropriate antibiotic coverage and clearance
-of bacteraemia.
-
-
-
-BACKGROUND                                                                        analysis was positive for few squamous epithelial cells, red
-Endocarditis with enterococcus is a potentially devastating                       blood cells, white blood cells and few bacteria. It was nega-
-infection and most often requires prolonged intravenous                           tive for casts, and urine culture was negative. Chest radiog-
-antibiotics with associated risks. Enterococcus durans endo-                      raphy revealed pulmonary oedema with bilateral pleural
-carditis is very rare. Host factors including liver disease                       effusions and no evidence of pneumonia. An ultrasound of
-contribute to morbidity and mortality, as was seen in this                        the abdomen revealed an irregular and nodular liver consist-
-patient. We could not ﬁnd any other case in the literature                        ent with cirrhosis, large collaterals seen adjacent to the
-with E durans endocarditis associated with fatal outcome.                         spleen, splenomegally and ascites—consistent with portal
-                                                                                  hypertension. Two sets of blood cultures (BacT/Alert 3D,
-CASE PRESENTATION                                                                 bioMérieux Vitek, Inc., Durham, North Carolina, USA)
-A 61-year-old Caucasian man presented with complaints of                          drawn on admission were positive for gram-positive cocci in
-generalised weakness lasting 1 month and a fever on the                           clusters in all four bottles in less than 24 h. Preliminary
-day of admission to the hospital. He had a history of alco-                       identiﬁcation of the isolates over the next few days was
-holic liver disease, portal hypertension, anaemia, thrombo-                       based on gram stain, milky white colonies, negative catalase
-cytopaenia and severe aortic stenosis. The patient had no                         and pyrrolidonyl arylamidase (PYR) reaction (LifeSign, LLC,
-history of recent dental, gastrointestinal or genito-urinary                      Skillman, New Jersey, USA). The predominant colony was
-procedure and no history of intravenous access lines or                           PYR negative and was identiﬁed as E. durans (Vitek1
-catheters prior to presentation. At the time of admission, he                     (bioMérieux Vitek, Inc., Durham, North Carolina, USA)
-had a temperature of 100.6°F (38.1 °C). His physical exam-                        and API 20 Strep (bioMérieux SA, Marcy l’Etoille France)).
-ination was signiﬁcant for a grade 4 systolic murmur in the                       Minimum inhibitory concentrations by the Kerby Bauer dif-
-aortic area with radiation to the carotids. The abdomen was                       fusion method revealed: penicillin 22 mm, ampicillin
-distended, with dullness to percussion in the ﬂanks suggest-                      26 mm, vancomycin 22 mm, with synergy to gentamicin
-ive of ascites; the liver was not palpable and the spleen tip                     and streptomycin interpreted as ‘sensitive’ according to the
-was just palpable below the left costal margin. He also had                       Clinical and Laboratory Standards Institute guidelines. A
-cutaneous telangiectasias consistent with cirrhosis and                           transthoracic echocardiogram showed mobile vegetation on
-bilateral lower extremity pitting oedema. He was awake,                           the aortic valve without any adjacent abscess (ﬁgure 1). A
-alert and had no evidence of hepatic encephalopathy. He                           transoesophageal echocardiogram was deferred because of
-had no Janeway lesions, Osler nodes or Roth spots.                                the risk of bleeding secondary to high-grade oesophageal
-                                                                                  varices. Colonoscopy revealed an ulcer at the splenic ﬂexure.
-INVESTIGATIONS                                                                    It was assumed to be ischaemic and biopsy was not done.
-Laboratory workup revealed a normal leucocyte count
-(5.1 × 10−9/l), anaemia (haemoglobin 7.9 g/dl) and thrombo-                       DIFFERENTIAL DIAGNOSIS
-cytopaenia (platelets 43 000/μl). Alanine transaminase was                        Spontaneous bacterial peritonitis, endocarditis, urinary
-11 u/l, aspartate transaminase 41 u/l, alkaline phosphatase                       tract infection.
-72 u/l, albumin 1.7 g/dl, international normalised ratio (INR)
-1.5. Creatinine was 1.08 mg/dl. Beta natriuretic peptide                          TREATMENT
-(BNP) was 1122 pg/ml (normal: 0–100 pg/ml). C-reactive                            On admission, the patient was initiated on empiric anti-
-protein was elevated (69.67 mg/l; normal: 0–4.9 mg/l). Urine                      biotic therapy with intravenous ceftriaxone 2 g every
-
-
-BMJ Case Reports 2012; doi:10.1136/bcr-02-2012-5855                                                                                       1 of 4
-                                                                   Figure 2 Transthoracic echocardiogram ( parasternal long-axis
-Figure 1 Transthoracic echocardiogram ( parasternal long-axis      view) showing aortic valve with increased size of vegetation
-view) showing aortic valve with leaﬂet vegetation (white arrow).   (white arrowhead) and multiple abscesses in the aortic sinus
-                                                                   (white arrows).
-24 h. This was secondary to clinical suspicion of spontan-
-eous bacterial peritonitis that is most often associated           and laboratory evidence of liver failure, thrombocyto-
-with enteric gram-negative organisms. However, when                paenia and nutritional status were all considered in the
-blood cultures revealed gram-positive cocci in clusters,           decision-making process. Gentamicin was discontinued on
-antibiotics were switched to intravenous vancomycin                account of increased creatinine and substituted with cef-
-(20 mg/kg every 12 h). On account of high-grade bacter-            triaxone. Ampicillin was continued. He completed the
-aemia, a transthoracic echocardiogram was requested to             recommended 6-week course of antibiotics. Surveillance
-evaluate for endocarditis. When the organism was identi-           blood cultures on days 7, 12 (before ﬁrst discharge from
-ﬁed as enterococcus—sensitive to ampicillin with synergy           hospital), 17, 45 (3 days after completing antibiotic
-for gentamicin—therapy was changed to a combination                course) and 54 (12 days after completing antibiotic
-of ampicillin (2 g every 4 h) and gentamicin (1 mg/kg              course) remained negative.
-every 8 h).                                                           Unfortunately, he developed progressive heart failure
-                                                                   (BNP 4892 pg/ml), renal failure (creatinine 3.56 mg/dl),
-OUTCOME AND FOLLOW-UP                                              thrombocytopaenia ( platelets 20 000/μl) and epistaxis.
-The patient had no more fevers in hospital. Five days after        Once again, he was deemed to be at very high risk for
-admission, the blood cultures turned negative. Two weeks           aortic valve surgery. After detailed discussion of his
-after the initial presentation, the patient was discharged         disease and prognosis, the patient made an informed deci-
-on combination antibiotics delivered through a peripher-           sion declining further aggressive treatment in favour of
-ally inserted central catheter with a planned duration of          primary palliation of symptoms. He died in a few days.
-6 weeks from ﬁrst negative blood culture. Unfortunately,
-inﬂammatory markers like C-reactive protein were not               DISCUSSION
-rechecked before the patient was discharged from hospital.         The incidence of infective endocarditis is approximately
-Creatinine and gentamicin levels were monitored twice a            1.7–6.2 cases per 100 000 patient years.1 Enterococci are
-week, and gentamicin dose adjusted appropriately to keep           the third most common organism (approximately 8% of
-troughs <1 μg/ml.                                                  cases) causing endocarditis, after streptococci and
-   The patient required readmission to the hospital                staphylococci,2 and are emerging as an increasingly
-2 weeks later for treatment of decompensated congestive            important cause of infection, especially in the elderly.
-heart failure (BNP 2376 pg/ml) and worsening renal                 They are gram-positive, catalase-negative, facultative anae-
-failure (creatinine 1.67 mg/dl). INR had increased to 1.5          robes that are seen under direct microscopy as diplococci
-and platelet count had fallen to 25 000/μl. Repeat blood           in short chains. They can be differentiated from other
-cultures were done from both peripheral sites as well as           species of catalase-negative gram-positive cocci by their
-from the central catheter to determine whether there was           ability to produce PYR reaction. Although staphylococci
-evidence of line infection. The results of all blood cultures      and streptococci are established as the most common
-were negative. The gold standard for testing for line infec-       causes of bacterial endocarditis, enterococcal species were
-tion—removal and culture of the line—was not possible              detected more frequently in a large surveillance study in
-because it was very risky to remove the line and then to           Italy.3 This was attributed to a high percentage of elderly
-place a new line in the presence of low platelets and high         patients in that study population. Anderson et al4 also
-INR. A repeat echocardiogram demonstrated multiple                 found enterococcal endocarditis more common in the
-mobile densities on the aortic valve suggestive of vegeta-         elderly. In their study, intracardiac abscess was more
-tions and multiple abscesses in the aortic sinuses (ﬁgure 2).      common in prosthetic valves when compared to native
-The patient was evaluated by two cardiothoracic surgeons           valve involvement. In another collaborative study involv-
-and was considered to have high mortality risk if he               ing 107 patients with enterococcal endocarditis, it was
-underwent cardiac surgery. Liver cirrhosis with clinical           found that enterococcal endocarditis occurred in older
-
-2 of 4                                                                              BMJ Case Reports 2012; doi:10.1136/bcr-02-2012-5855
-patients, predominantly affected the aortic valve and led         demonstrated good synergism with combinations of cell-wall
-to more heart failure compared to other streptococcus             active antibiotics like teicoplanin–imipenem, ampicillin–
-species.2 5 Peripheral signs of endocarditis such as Osler        ceftriaxone and ampicillin–imipenem.11 Typically, cephalos-
-nodes, Roth spots and petechial lesions are found less fre-       porins have weak activity against enterococcal species with
-quently in enterococcal endocarditis than in other species.       the exception of ceftriaxone or cefotaxim in combination
-   Among all enterococcal infections, E faecalis is isolated in   with ampicillin12 which was used in our patient.
-63–81%, . faecium in 13–23% and other species (Enterococcus          In this case, we feel that the antibiotic choice was very
-avium, Enterococcus durans, Enterococcus casseliﬂavus,            appropriate at every step. Vancomycin is the recommended
-Enterococcus gallinarum, Enterococcus hirae, and Enterococcus     drug of choice for suspected methicillin-resistant
-rafﬁnosus) in the remaining.6 Non-faecalis, non-faecium           Staphylococcus aureus endocarditis (gram-positive cocci in
-enterococci are a group of diverse enterococcal species that      clusters—as per initial report from the microbiology labora-
-have rarely been associated with human infections. Greater        tory) and a combination of ampicillin + gentamicin is
-attention is now focused on these rarer species because of        recommended once enterococcus is identiﬁed. The only
-their potential to express low-level resistance to antibiotics.   broader coverage would have been to add gentamicin to the
-Tan et al7 analysed 182 patients with non-faecalis, non-          vancomycin initially and it has been recommended to avoid
-faecium enterococcal bacteraemia, of which 5% were                this, secondary to risk for nephrotoxicity. In this patient
-found to have infective endocarditis. In their study, malig-      with liver disease and congestive heart failure, it would
-nancy was found to be the most common underlying                  have been inappropriate to add gentamicin to vancomycin
-disease, followed by biliary tract disease. de Perio et al8       to broaden the coverage and risk precipitating acute renal
-studied 36 cases of non-faecalis, non-faecium enterococcal        failure. Our antibiotic choice was appropriate as evidenced
-bacteraemia and found no difference in death rates com-           by sustained clearance of the bacteraemia not only after ini-
-pared to E faecalis. Again, the gastrointestinal tract was the    tiation but even after completion of the antibiotic course.
-most likely source of infection. Patients with non-faecalis,         The initial echocardiogram showed only aortic valve vege-
-non-faecium enterococcal infection were more likely to            tation, but the follow-up imaging documented multiple
-have underlying disease that compromised the immune               abscesses indicating progression of the disease in spite of suc-
-system than those with E faecalis infection.                      cessful clearance of organism from the blood. This calls atten-
-   E durans is a very rare species of non-faecalis, non-          tion to host factors that are required to clear any infection.
-faecium enterococci. E durans has been isolated from clin-           All host defence mechanisms are compromised in
-ical specimens (usually from the intestine of animals and         patients with cirrhosis, and mortality from infection is
-less frequently in humans) but rarely causes human infec-         increased more than 20 times compared to the general
-tions as it is known to have low virulence.9 Devriese et al10     population.13 In vivo studies in patients with cirrhotic liver
-reviewed the literature on E durans and noted this organism       disease have demonstrated deﬁcient neutrophil recruitment
-to be an inhabitant of the gut of young chickens and              and impaired phagocytic activity, and defects in mucosal
-calves. It was also associated with enteropathies in domes-       barriers and lymphocyte activation.14 This impaired innate
-ticated animals including dogs, kittens and piglets. E            and adaptive immunity in our patient could have contribu-
-durans was a rare cause of enterococcal bacteraemia (0.1%)        ted to the development of endocarditis with valve abscess
-in a large series (1887 cases) from a 9- year database from       caused by this low-virulence species of enterococcus.
-Taiwan.7 They reported 182 cases of non-faecalis, non-
-faecium endocarditis, of which only two cases were E
-durans. In their 36 cases of non-faecalis, non-faecium bac-         Learning points
-teraemia, de Perio8 observed only ﬁve cases of E durans.
-   Our 61-year-old patient with end-stage liver cirrhosis          ▸ Enterococci are emerging as very important aetiological
-developed enterococcal endocarditis complicated by an                agents causing endocarditis, especially in the elderly
-abscess of the native aortic valve. Peripheral stigmata of           and in those with underlying immune compromising
-endocarditis were absent. The ulcer seen at the splenic              conditions.
-ﬂexure of the colon could have served as the portal of             ▸ Enterococcus durans is a very rare, low-virulence
-entry for enterococcus from the gastrointestinal tract into          species of enterococcus.
-the blood stream.                                                  ▸ End-stage liver disease is associated with multiple
-   When initial blood cultures turned positive, the organism         defects in host immune response.
-was reported as gram-positive cocci in clusters and hence          ▸ Even low-virulence organisms like E durans may cause
-treatment was changed from ceftriaxone to vancomycin to              a fatal outcome in a patient with advanced liver
-cover Staphylococcus aureus—of which methicillin-resistant           disease in spite of optimised antibiotic therapy.
-Staphylococcus aureus has worse prognosis. A change to
-ampicillin + gentamicin was made as soon as it became
-evident that the organism was an enterococcus susceptible
-to these antibiotics.                                             Competing interests None.
-   The recommended treatment regimen for enterococcus             Patient consent Obtained.
-endocarditis is a combination of a β-lactam along with an
-aminoglycoside for synergistic action. Patients treated with a
-single agent have severe complications and hence combination
-                                                                  REFERENCES
-therapy is always preferred.5 In our patient, owing to renal       1. Baddour LM, Wilson WR, Bayer AS, et al. Infective endocarditis: diagnosis,
-failure, gentamicin had to be discontinued and we opted for           antimicrobial therapy, and management of complications. Circulation
-an alternate treatment regimen. In vitro studies have                 2005;111:e394–434.
-
-
-BMJ Case Reports 2012; doi:10.1136/bcr-02-2012-5855                                                                                        3 of 4
- 2. McDonald JR, Olaison L, Anderson DJ, et al. Enterococcal endocarditis: 107            8. de Perio MA, Yarnold PR, Warren J, et al. Risk factors and outcomes
-    cases from the international collaboration on endocarditis merged database.              associated with non-Enterococcus faecalis, non-Enterococcus faecium
-    Am J Med 2005;118:759–66.                                                                enterococcal bacteremia. Infect Control Hosp Epidemiol 2006;27:28–33.
- 3. Scudeller L, Badano L, Crapis M, et al. Population-based surveillance of              9. Stepanović S, Jovanović M, Lavadinović L, et al. Enterococcus durans
-    infectious endocarditis in an Italian region. Arch Intern Med                            endocarditis in a patient with transposition of the great vessels. J Med
-    2009;169:1720–3.                                                                         Microbiol 2004;53:259–61.
- 4. Anderson DJ, Olaison L, McDonald JR, et al. Enterococcal prosthetic valve            10. Devriese LA, Vancanneyt M, Descheemaeker P, et al. Differentiation and
-    infective endocarditis: report of 45 episodes from the International                     identiﬁcation of Enterococcus durans, E. hirae and E. villorum. J Appl
-    Collaboration on Endocarditis-merged database. Eur J Clin Microbiol Infect Dis           Microbiol 2002;92:821–7.
-    2005;24:665–70.                                                                      11. Hoen B. Epidemiology and antibiotic treatment of infective endocarditis: an
- 5. Martínez Odriozola P, Muñoz Sánchez J, Arriola Martínez P, et al.                        update. Heart 2006;92:1694–700.
-    Enterococcal infective endocarditis: description of 12 cases. Ann Med Intern         12. Gavaldà J, Len O, Miró JM, et al. Brief communication: treatment of
-    2007;24:539–42.                                                                          Enterococcus faecalis endocarditis with ampicillin plus ceftriaxone. Ann Intern
- 6. Ruoff KL, de la Maza L, Murtagh MJ, et al. Species identities of enterococci             Med 2007;146:574–9.
-    isolated from clinical specimens. J Clin Microbiol 1990;28:435–7.                    13. Vilstrup H. Cirrhosis and bacterial infections. Rom J Gastroenterol
- 7. Tan CK, Lai CC, Wang JY, et al. Bacteremia caused by non-faecalis and                    2003;12:297–302.
-    non-faecium enterococcus species at a Medical center in Taiwan, 2000 to              14. Fiuza C, Salcedo M, Clemente G, et al. In vivo neutrophil dysfunction in
-    2008. J Infect 2010;61:34–43.                                                            cirrhotic patients with advanced liver disease. J Infect Dis 2000;182:526–33.
-
-
-
-
-  This pdf has been created automatically from the ﬁnal edited text and images.
-  Copyright 2012 BMJ Publishing Group. All rights reserved. For permission to reuse any of this content visit
-  http://group.bmj.com/group/rights-licensing/permissions.
-  BMJ Case Report Fellows may re-use this article for personal use and teaching without any further permission.
-  Please cite this article as follows (you will need to access the article online to obtain the date of publication).
-  Vijayakrishnan R, Rapose A. Fatal Enterococcus durans aortic valve endocarditis: a case report and review of the literature. BMJ Case Reports 2012;10.1136/
-  bcr-02-2012-5855, Published XXX
-  Become a Fellow of BMJ Case Reports today and you can:
-  ▸ Submit as many cases as you like
-  ▸ Enjoy fast sympathetic peer review and rapid publication of accepted articles
-  ▸ Access all the published articles
-  ▸ Re-use any of the published material for personal use and teaching without further permission
-  For information on Institutional Fellowships contact consortiasales@bmjgroup.com
-
-  Visit casereports.bmj.com for more articles like this and to become a Fellow
-
-
-
-
-4 of 4                                                                                                           BMJ Case Reports 2012; doi:10.1136/bcr-02-2012-5855
-
----
-
-Already extracted facts:
----
 {
   "metadata": {
     "document_id": "endocarditis",
@@ -2536,12 +2028,54 @@ Already extracted facts:
       "source": "physician_assessed",
       "negated": false,
       "group_id": null
+    },
+    {
+      "id": "f125",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient had clinical and laboratory evidence of liver failure",
+      "span": "Liver cirrhosis with clinical and laboratory evidence of liver failure",
+      "entities": [
+        "liver failure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g032"
+    },
+    {
+      "id": "f126",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Liver failure, thrombocytopaenia and nutritional status were all considered in the antibiotic decision-making process",
+      "span": "Liver cirrhosis with clinical and laboratory evidence of liver failure, thrombocytopaenia and nutritional status were all considered in the decision-making process",
+      "entities": [
+        "liver failure",
+        "thrombocytopaenia",
+        "nutritional status",
+        "antibiotic management"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g032"
+    },
+    {
+      "id": "f127",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "Peripheral stigmata of endocarditis were absent",
+      "span": "Peripheral stigmata of endocarditis were absent",
+      "entities": [
+        "peripheral stigmata of endocarditis"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": "g032"
     }
   ]
 }
----
-
-Return ONLY a JSON array of additional Fact objects that are missing. Use fact IDs continuing from the highest existing ID. Use group_ids continuing from the highest existing group. If no facts are missing, return an empty array: []
-
-CRITICAL: Your entire response must be valid JSON and nothing else. Start your response with [ and end it with ]. No text before or after the array. No explanation, no commentary, no markdown fencing.
-</USER>

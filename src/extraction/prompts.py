@@ -58,7 +58,13 @@ _DECOMPOSITION_RULES = """DECOMPOSITION RULES:
 
 10. PRESERVE DISEASE QUALIFIERS. Stage, grade, severity, functional status, and subtype modifiers must be included in the content field. "Chronic kidney disease stage 3" not "chronic kidney disease." "Heart failure with preserved ejection fraction" not "heart failure." These qualifiers change clinical management.
 
-11. TREATMENT REGIMENS ARE NOT DRUGS. Do not extract combination therapy descriptions ("triple antithrombotic therapy", "dual antiplatelet therapy") as drug_name facts. The individual drugs in the regimen should each have their own drug_name entry. If the regimen concept is clinically relevant, categorize it as clinical_reasoning/explanatory_link."""
+11. TREATMENT REGIMENS ARE NOT DRUGS. Do not extract combination therapy descriptions ("triple antithrombotic therapy", "dual antiplatelet therapy") as drug_name facts. The individual drugs in the regimen should each have their own drug_name entry. If the regimen concept is clinically relevant, categorize it as clinical_reasoning/explanatory_link.
+
+12. DEDUPLICATE FACTS. If the same clinical fact appears in multiple sections of the document (e.g., mentioned in the case presentation and again in the discussion), extract it ONCE. Use the most complete or specific version. Do not create separate fact entries for each mention of the same fact.
+
+13. DIAGNOSIS HIERARCHY. When a condition has an etiology, pathology, and functional consequence (e.g., alcoholic liver disease → cirrhosis → liver failure), extract the most clinically specific composite diagnosis rather than separate entries for each level. Use the content field for the composite ('end-stage alcoholic cirrhosis with liver failure') and entities for the key terms. Extract separate facts only when different levels are clinically independent or diagnosed at different times.
+
+14. PROGRESSIVE CONDITIONS. When the same condition appears at different severity levels across the document timeline (e.g., 'heart failure' early, 'decompensated heart failure' later), extract the progression as a single temporal fact showing the trajectory, not as two separate categorical diagnoses."""
 
 _OUTPUT_FORMAT = (
     "Return ONLY valid JSON matching the FactFile structure — a single JSON "
