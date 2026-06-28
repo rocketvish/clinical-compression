@@ -1,0 +1,8 @@
+Model: Claude Opus 4.8
+Effort: High (default)
+Target: ~470 words (3x compression)
+Source: bleeding-triple-therapy-case.txt
+Date: 2026-06-28
+Notes: Frontier text-level summarization baseline. Prompt instructed 
+preservation of specific drug names, dosages, lab values, temporal 
+relationships, clinical reasoning, negated findings, and allergies.

@@ -1,0 +1,5 @@
+model: Qwen/Qwen3-8B
+input: bleeding-triple-therapy-case.txt
+target_words: 470
+actual_words: 440
+date: 2026-06-28
