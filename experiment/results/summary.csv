@@ -1,0 +1,69 @@
+case_id,context_length,anchor_id,category,subtype,granularity,distinctiveness,clinical_actionability,class_node_present,judgment,failure_mode,preserved_class,rationale
+triple_therapy,8000,A1,CAT,CAT.class,class,low,high,n/a,CORRECT,,n/a,"The answer identifies atrial fibrillation, and the added detail of rapid ventricular response is a more specific description that preserves the anchor class."
+triple_therapy,8000,A2,CAT,CAT.class,class,medium,high,n/a,CORRECT,,n/a,"The model explicitly identified the antithrombotic regimen, matching the anchor fact exactly."
+triple_therapy,8000,A3,CAT,CAT.class,class,medium,high,n/a,CORRECT,,n/a,"The model explicitly states thromboembolism prophylaxis, matching the anchor fact, with an added clinical context that does not change the indication."
+triple_therapy,8000,A4,CAT,CAT.class,class,medium,high,n/a,CORRECT,,n/a,"The answer explicitly states the anchor fact as recurrent nasal bleeding, with epistaxis as a synonymous term and added specificity."
+triple_therapy,8000,A5,CAT,CAT.instance,instance,medium,high,true,CORRECT,,True,The model exactly recovered the documented specific subtype of atrial fibrillation: paroxysmal atrial fibrillation.
+triple_therapy,8000,A6,CAT,CAT.instance,instance,high,high,true,CORRECT,,True,"The model explicitly names rivaroxaban, which exactly matches the anchor fact."
+triple_therapy,8000,A7,CAT,CAT.instance,instance,high,high,true,CORRECT,,True,"The model accurately named the specific thienopyridine antiplatelet agent from the case, prasugrel."
+triple_therapy,8000,A8,CAT,CAT.instance,instance,low,high,true,CORRECT,,True,"The model explicitly identifies aspirin, which matches the anchor fact exactly."
+triple_therapy,8000,A9,CAT,CAT.instance,instance,high,high,true,CORRECT,,True,The model correctly identified the specific antiplatelet agent clopidogrel.
+triple_therapy,8000,A10,CAT,CAT.instance,instance,low,medium,true,CORRECT,,True,"The model named the exact anticoagulant from the case, with a valid brand-generic match to warfarin."
+triple_therapy,8000,A11,CAT,CAT.instance,instance,low,high,false,CORRECT,,True,"The answer explicitly identifies coronary artery disease, which matches the anchor fact treated with a stent in the past medical history."
+triple_therapy,8000,A12,CAT,CAT.instance,instance,medium,high,false,CORRECT,,True,The model exactly recovered the documented renal diagnosis and stage: chronic kidney disease stage 3.
+triple_therapy,8000,A13,CAT,CAT.instance,instance,high,high,true,CORRECT,,True,"The answer exactly recovers the anchor fact “severe posterior nasal hemorrhage,” with only additional procedural detail that does not alter the entity."
+triple_therapy,8000,A14,CAT,CAT.qualifier,qualifier,medium,medium,n/a,CORRECT,,n/a,"The model explicitly recovered the qualifier phrase ""rapid ventricular response"" describing the atrial fibrillation."
+triple_therapy,8000,A15,CAT,CAT.qualifier,qualifier,high,high,n/a,CORRECT,,n/a,The model exactly recovered both the base entity (rivaroxaban) and the renal-function qualifier (renally dosed).
+triple_therapy,8000,A16,CAT,CAT.qualifier,qualifier,medium,high,n/a,CORRECT,,n/a,The response exactly recovered the anchor fact by stating the patient previously received a bare metal coronary stent.
+triple_therapy,8000,A17,CAT,CAT.negated,n/a,high,medium,n/a,CORRECT,,n/a,The response preserves the negated meaning that he previously refused warfarin therapy.
+triple_therapy,8000,A18,CAT,CAT.negated,n/a,medium,medium,n/a,INCORRECT,negation_loss,n/a,"The model reported affirmative congestive heart failure with preserved ejection fraction, but the anchor is a negated finding and the required negation was not preserved."
+triple_therapy,8000,A19,TEMP,TEMP.duration,n/a,medium,low,n/a,CORRECT,,n/a,"The model correctly recovered the duration as one day, matching the anchor fact's numeric duration."
+triple_therapy,8000,A20,TEMP,TEMP.since,n/a,medium,medium,n/a,CORRECT,,n/a,The answer preserves both the elapsed time (6 months) and the referenced event (prior to presentation).
+triple_therapy,8000,A21,TEMP,TEMP.duration,n/a,high,high,n/a,CORRECT,,n/a,"The model preserved the exact duration anchor of within 72 hours, with only synonymous wording for starting/initiating rivaroxaban and added bleeding context."
+triple_therapy,8000,A22,TEMP,TEMP.duration,n/a,low,medium,n/a,CORRECT,,n/a,"The model preserved the duration as five days, which matches the anchor fact within acceptable unit equivalence."
+triple_therapy,8000,A23,TEMP,TEMP.duration,n/a,high,medium,n/a,CORRECT,,n/a,"The model preserved the exact duration and unit, matching the anchor fact verbatim."
+triple_therapy,8000,A24,TEMP,TEMP.status,n/a,high,high,n/a,CORRECT,,n/a,The answer explicitly preserves the anchor status change by stating that aspirin was discontinued.
+triple_therapy,8000,A25,TEMP,TEMP.status,n/a,high,high,n/a,CORRECT,,n/a,The answer explicitly preserves the status changes and agents involved: discontinuing rivaroxaban and switching prasugrel to clopidogrel.
+triple_therapy,8000,A26,TEMP,TEMP.sequence,n/a,high,high,n/a,CORRECT,,n/a,"The answer preserves the correct sequence: bleeding recurred after the posterior nasal packing was removed, matching the anchor fact."
+triple_therapy,8000,A27,TEMP,TEMP.status,n/a,high,medium,n/a,CORRECT,,n/a,The response explicitly preserves the anchor fact that the patient had previously refused warfarin therapy before hospitalization.
+triple_therapy,8000,A28,QUANT,QUANT.anthro,n/a,high,high,n/a,CORRECT,,n/a,The model recovered the exact creatinine clearance value of 30 and correctly supplied the implied unit threshold as 30 mL/min.
+triple_therapy,8000,A29,REAS,REAS.causal,n/a,medium,high,n/a,CORRECT,,n/a,"The answer preserves the causal link by stating rivaroxaban was chosen for thromboembolism prophylaxis, matching the anchor fact."
+triple_therapy,8000,A30,REAS,REAS.causal,n/a,high,medium,n/a,CORRECT,,n/a,The answer preserves the causal relationship and correctly identifies frequent monitoring and dose adjustment as the reason for refusing warfarin.
+triple_therapy,8000,A31,REAS,REAS.causal,n/a,medium,medium,n/a,CORRECT,,n/a,"The answer preserves the causal purpose and target diagnosis, stating that heparin and diltiazem were started for atrial fibrillation."
+triple_therapy,8000,A32,REAS,REAS.planned,n/a,high,high,n/a,CORRECT,,n/a,"The response correctly identifies cardiology and preserves the formal reevaluation after the bleeding complication, matching the anchor fact."
+triple_therapy,8000,A33,REAS,REAS.planned,n/a,low,medium,n/a,CORRECT,,n/a,The answer preserves both the discharge readiness determination and its temporal/conditional context after 24 hours off rivaroxaban without recurrent hemorrhage.
+triple_therapy,8000,A34,TEMP,TEMP.sequence,n/a,high,high,n/a,CORRECT,,n/a,The model preserved the exact sequence and content: five mild bleeding episodes managed with direct pressure and simple packing.
+triple_therapy,32000,A1,CAT,CAT.class,class,low,high,n/a,CORRECT,,n/a,"The answer identifies atrial fibrillation, and the added detail of rapid ventricular response is a more specific clinical description that preserves the anchor class."
+triple_therapy,32000,A2,CAT,CAT.class,class,medium,high,n/a,CORRECT,,n/a,"The model explicitly identified the antithrombotic regimen, matching the anchor category exactly and adding a compatible explanatory detail."
+triple_therapy,32000,A3,CAT,CAT.class,class,medium,high,n/a,CORRECT,,n/a,"The answer directly states thromboembolism prophylaxis, matching the anchor fact, with an added specific context that does not alter the class-level indication."
+triple_therapy,32000,A4,CAT,CAT.class,class,medium,high,n/a,CORRECT,,n/a,"The answer directly matches the anchor fact by stating recurrent nasal bleeding, with epistaxis as a synonymous term and added specificity that does not change the class."
+triple_therapy,32000,A5,CAT,CAT.instance,instance,medium,high,true,CORRECT,,True,"The model exactly recovered the specific documented subtype, paroxysmal atrial fibrillation."
+triple_therapy,32000,A6,CAT,CAT.instance,instance,high,high,true,CORRECT,,True,"The model explicitly names rivaroxaban, which matches the anchor fact exactly."
+triple_therapy,32000,A7,CAT,CAT.instance,instance,high,high,true,CORRECT,,True,"The model explicitly named prasugrel, which matches the anchor fact exactly."
+triple_therapy,32000,A8,CAT,CAT.instance,instance,low,high,true,CORRECT,,True,"The model explicitly names aspirin, which matches the anchored antiplatelet instance exactly."
+triple_therapy,32000,A9,CAT,CAT.instance,instance,high,high,true,CORRECT,,True,"The model explicitly names clopidogrel as the antiplatelet agent prasugrel was switched to, matching the anchor fact exactly."
+triple_therapy,32000,A10,CAT,CAT.instance,instance,low,medium,true,CORRECT,,True,"The model correctly identified the specific anticoagulant warfarin, matching the anchor fact exactly."
+triple_therapy,32000,A11,CAT,CAT.instance,instance,low,high,false,CORRECT,,True,"The model explicitly names coronary artery disease as the diagnosis treated with a stent, matching the anchor fact."
+triple_therapy,32000,A12,CAT,CAT.instance,instance,medium,high,false,CORRECT,,True,The model exactly recovered the documented renal diagnosis and stage: chronic kidney disease stage 3.
+triple_therapy,32000,A13,CAT,CAT.instance,instance,high,high,true,CORRECT,,True,"The model correctly identified the specific bleeding event as severe posterior nasal hemorrhage, with only added procedural detail that does not alter the anchor fact."
+triple_therapy,32000,A14,CAT,CAT.qualifier,qualifier,medium,medium,n/a,CORRECT,,n/a,"The model explicitly recovered the full qualifier phrase ""rapid ventricular response,"" matching the anchor fact exactly."
+triple_therapy,32000,A15,CAT,CAT.qualifier,qualifier,high,high,n/a,CORRECT,,n/a,"The model exactly recovered both the base drug and the renal dosing qualifier: ""renally dosed rivaroxaban."""
+triple_therapy,32000,A16,CAT,CAT.qualifier,qualifier,medium,high,n/a,CORRECT,,n/a,"The response accurately recovered the full stent type, including the qualifier ""bare metal,"" matching the anchor fact."
+triple_therapy,32000,A17,CAT,CAT.negated,n/a,high,medium,n/a,CORRECT,,n/a,"The answer preserves the negated prior stance that he previously refused warfarin therapy, with only added explanatory detail."
+triple_therapy,32000,A18,CAT,CAT.negated,n/a,medium,medium,n/a,CORRECT,,n/a,The model correctly recovered the documented diagnosis and preserved the preserved-ejection-fraction characterization.
+triple_therapy,32000,A19,TEMP,TEMP.duration,n/a,medium,low,n/a,CORRECT,,n/a,The model preserved the exact one-day duration of nausea and vomiting before ED presentation.
+triple_therapy,32000,A20,TEMP,TEMP.since,n/a,medium,medium,n/a,CORRECT,,n/a,"The answer preserves both the elapsed time and the reference event, matching “six months prior.”"
+triple_therapy,32000,A21,TEMP,TEMP.duration,n/a,high,high,n/a,CORRECT,,n/a,"The model reproduced the same duration, ""within 72 hours,"" matching the anchor fact exactly."
+triple_therapy,32000,A22,TEMP,TEMP.duration,n/a,low,medium,n/a,CORRECT,,n/a,"The model recovered the same duration anchor, stating that it was removed five days later, which matches the expected answer."
+triple_therapy,32000,A23,TEMP,TEMP.duration,n/a,high,medium,n/a,CORRECT,,n/a,"The model preserved the exact duration of 24 hours without oral rivaroxaban, matching the anchor fact."
+triple_therapy,32000,A24,TEMP,TEMP.status,n/a,high,high,n/a,CORRECT,,n/a,"The answer explicitly preserves the anchor fact that aspirin was discontinued, and also includes the prompt for this change."
+triple_therapy,32000,A25,TEMP,TEMP.status,n/a,high,high,n/a,CORRECT,,n/a,"The answer explicitly preserves the key medication changes: rivaroxaban was discontinued and prasugrel was switched to clopidogrel, matching the anchor fact."
+triple_therapy,32000,A26,TEMP,TEMP.sequence,n/a,high,high,n/a,CORRECT,,n/a,"The model preserved the temporal sequence by stating that bleeding recurred after the posterior nasal packing was removed, matching the anchor fact."
+triple_therapy,32000,A27,TEMP,TEMP.status,n/a,high,medium,n/a,CORRECT,,n/a,"The answer explicitly states that before hospitalization he had previously refused warfarin therapy, which matches the anchor fact."
+triple_therapy,32000,A28,QUANT,QUANT.anthro,n/a,high,high,n/a,CORRECT,,n/a,"The model correctly recovered the creatinine clearance value as 30 and appropriately identified it as 30 mL/min, matching the anchor fact."
+triple_therapy,32000,A29,REAS,REAS.causal,n/a,medium,high,n/a,CORRECT,,n/a,"The answer preserves the causal linkage between rivaroxaban and thromboembolism prophylaxis, matching the anchor fact."
+triple_therapy,32000,A30,REAS,REAS.causal,n/a,high,medium,n/a,CORRECT,,n/a,The answer preserves the causal relationship and correctly identifies the objection as frequent monitoring and dose adjustment with warfarin.
+triple_therapy,32000,A31,REAS,REAS.causal,n/a,medium,medium,n/a,CORRECT,,n/a,"The answer preserves the causal purpose and target diagnosis, stating that heparin and diltiazem drip were started for atrial fibrillation."
+triple_therapy,32000,A32,REAS,REAS.planned,n/a,high,high,n/a,CORRECT,,n/a,The answer preserves both the service and the planned reevaluation context after the bleeding complication.
+triple_therapy,32000,A33,REAS,REAS.planned,n/a,low,medium,n/a,CORRECT,,n/a,"The answer preserves the anchor fact that the patient was deemed stable for discharge and includes the conditional/temporal context, which matches the subtype requirements."
+triple_therapy,32000,A34,TEMP,TEMP.sequence,n/a,high,high,n/a,CORRECT,,n/a,The model preserved the exact count of five episodes and correctly described management with direct pressure and simple packing in the proper temporal sequence before the severe hemorrhage.

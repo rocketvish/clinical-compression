@@ -1,0 +1,313 @@
+{
+  "case_id": "triple_therapy",
+  "context_length": 32000,
+  "judge_model": "openai/gpt-5.4-mini",
+  "judgments": [
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A1",
+      "judgment": "CORRECT",
+      "rationale": "The answer identifies atrial fibrillation, and the added detail of rapid ventricular response is a more specific clinical description that preserves the anchor class.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A2",
+      "judgment": "CORRECT",
+      "rationale": "The model explicitly identified the antithrombotic regimen, matching the anchor category exactly and adding a compatible explanatory detail.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A3",
+      "judgment": "CORRECT",
+      "rationale": "The answer directly states thromboembolism prophylaxis, matching the anchor fact, with an added specific context that does not alter the class-level indication.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A4",
+      "judgment": "CORRECT",
+      "rationale": "The answer directly matches the anchor fact by stating recurrent nasal bleeding, with epistaxis as a synonymous term and added specificity that does not change the class.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A5",
+      "judgment": "CORRECT",
+      "rationale": "The model exactly recovered the specific documented subtype, paroxysmal atrial fibrillation.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A6",
+      "judgment": "CORRECT",
+      "rationale": "The model explicitly names rivaroxaban, which matches the anchor fact exactly.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A7",
+      "judgment": "CORRECT",
+      "rationale": "The model explicitly named prasugrel, which matches the anchor fact exactly.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A8",
+      "judgment": "CORRECT",
+      "rationale": "The model explicitly names aspirin, which matches the anchored antiplatelet instance exactly.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A9",
+      "judgment": "CORRECT",
+      "rationale": "The model explicitly names clopidogrel as the antiplatelet agent prasugrel was switched to, matching the anchor fact exactly.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A10",
+      "judgment": "CORRECT",
+      "rationale": "The model correctly identified the specific anticoagulant warfarin, matching the anchor fact exactly.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A11",
+      "judgment": "CORRECT",
+      "rationale": "The model explicitly names coronary artery disease as the diagnosis treated with a stent, matching the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A12",
+      "judgment": "CORRECT",
+      "rationale": "The model exactly recovered the documented renal diagnosis and stage: chronic kidney disease stage 3.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A13",
+      "judgment": "CORRECT",
+      "rationale": "The model correctly identified the specific bleeding event as severe posterior nasal hemorrhage, with only added procedural detail that does not alter the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": true
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A14",
+      "judgment": "CORRECT",
+      "rationale": "The model explicitly recovered the full qualifier phrase \"rapid ventricular response,\" matching the anchor fact exactly.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A15",
+      "judgment": "CORRECT",
+      "rationale": "The model exactly recovered both the base drug and the renal dosing qualifier: \"renally dosed rivaroxaban.\"",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A16",
+      "judgment": "CORRECT",
+      "rationale": "The response accurately recovered the full stent type, including the qualifier \"bare metal,\" matching the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A17",
+      "judgment": "CORRECT",
+      "rationale": "The answer preserves the negated prior stance that he previously refused warfarin therapy, with only added explanatory detail.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A18",
+      "judgment": "CORRECT",
+      "rationale": "The model correctly recovered the documented diagnosis and preserved the preserved-ejection-fraction characterization.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A19",
+      "judgment": "CORRECT",
+      "rationale": "The model preserved the exact one-day duration of nausea and vomiting before ED presentation.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A20",
+      "judgment": "CORRECT",
+      "rationale": "The answer preserves both the elapsed time and the reference event, matching \u201csix months prior.\u201d",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A21",
+      "judgment": "CORRECT",
+      "rationale": "The model reproduced the same duration, \"within 72 hours,\" matching the anchor fact exactly.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A22",
+      "judgment": "CORRECT",
+      "rationale": "The model recovered the same duration anchor, stating that it was removed five days later, which matches the expected answer.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A23",
+      "judgment": "CORRECT",
+      "rationale": "The model preserved the exact duration of 24 hours without oral rivaroxaban, matching the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A24",
+      "judgment": "CORRECT",
+      "rationale": "The answer explicitly preserves the anchor fact that aspirin was discontinued, and also includes the prompt for this change.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A25",
+      "judgment": "CORRECT",
+      "rationale": "The answer explicitly preserves the key medication changes: rivaroxaban was discontinued and prasugrel was switched to clopidogrel, matching the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A26",
+      "judgment": "CORRECT",
+      "rationale": "The model preserved the temporal sequence by stating that bleeding recurred after the posterior nasal packing was removed, matching the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A27",
+      "judgment": "CORRECT",
+      "rationale": "The answer explicitly states that before hospitalization he had previously refused warfarin therapy, which matches the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A28",
+      "judgment": "CORRECT",
+      "rationale": "The model correctly recovered the creatinine clearance value as 30 and appropriately identified it as 30 mL/min, matching the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A29",
+      "judgment": "CORRECT",
+      "rationale": "The answer preserves the causal linkage between rivaroxaban and thromboembolism prophylaxis, matching the anchor fact.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A30",
+      "judgment": "CORRECT",
+      "rationale": "The answer preserves the causal relationship and correctly identifies the objection as frequent monitoring and dose adjustment with warfarin.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A31",
+      "judgment": "CORRECT",
+      "rationale": "The answer preserves the causal purpose and target diagnosis, stating that heparin and diltiazem drip were started for atrial fibrillation.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A32",
+      "judgment": "CORRECT",
+      "rationale": "The answer preserves both the service and the planned reevaluation context after the bleeding complication.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A33",
+      "judgment": "CORRECT",
+      "rationale": "The answer preserves the anchor fact that the patient was deemed stable for discharge and includes the conditional/temporal context, which matches the subtype requirements.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    },
+    {
+      "case_id": "triple_therapy",
+      "context_length": 32000,
+      "anchor_id": "A34",
+      "judgment": "CORRECT",
+      "rationale": "The model preserved the exact count of five episodes and correctly described management with direct pressure and simple packing in the proper temporal sequence before the severe hemorrhage.",
+      "failure_mode": null,
+      "preserved_class": "n/a"
+    }
+  ]
+}

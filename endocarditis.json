@@ -1,0 +1,1059 @@
+{
+  "case_metadata": {
+    "title": "Fatal Enterococcus durans aortic valve endocarditis: a case report and review of the literature",
+    "source": "Vijayakrishnan R, Rapose A. BMJ Case Reports 2012; doi:10.1136/bcr-02-2012-5855",
+    "specialty": "Cardiovascular Medicine / Infectious Diseases",
+    "patient_descriptor": "61-year-old Caucasian man with end-stage liver disease and aortic stenosis presenting with fever and weakness",
+    "primary_condition_category": "infectious_disease",
+    "comorbidity_categories": [
+      "hepatic",
+      "cardiovascular"
+    ],
+    "case_text_token_count_estimate": 2100,
+    "excluded_text_token_count_estimate": 3500,
+    "truncation_notes": ""
+  },
+  "case_text": "A 61-year-old Caucasian man presented with complaints of generalised weakness lasting 1 month and a fever on the day of admission to the hospital. He had a history of alcoholic liver disease, portal hypertension, anaemia, thrombocytopaenia and severe aortic stenosis. The patient had no history of recent dental, gastrointestinal or genito-urinary procedure and no history of intravenous access lines or catheters prior to presentation. At the time of admission, he had a temperature of 100.6°F (38.1 °C). His physical examination was significant for a grade 4 systolic murmur in the aortic area with radiation to the carotids. The abdomen was distended, with dullness to percussion in the flanks suggestive of ascites; the liver was not palpable and the spleen tip was just palpable below the left costal margin. He also had cutaneous telangiectasias consistent with cirrhosis and bilateral lower extremity pitting oedema. He was awake, alert and had no evidence of hepatic encephalopathy. He had no Janeway lesions, Osler nodes or Roth spots.\n\nLaboratory workup revealed a normal leucocyte count (5.1 × 10−9/l), anaemia (haemoglobin 7.9 g/dl) and thrombocytopaenia (platelets 43 000/μl). Alanine transaminase was 11 u/l, aspartate transaminase 41 u/l, alkaline phosphatase 72 u/l, albumin 1.7 g/dl, international normalised ratio (INR) 1.5. Creatinine was 1.08 mg/dl. Beta natriuretic peptide (BNP) was 1122 pg/ml (normal: 0–100 pg/ml). C-reactive protein was elevated (69.67 mg/l; normal: 0–4.9 mg/l). Urine analysis was positive for few squamous epithelial cells, red blood cells, white blood cells and few bacteria. It was negative for casts, and urine culture was negative. Chest radiography revealed pulmonary oedema with bilateral pleural effusions and no evidence of pneumonia. An ultrasound of the abdomen revealed an irregular and nodular liver consistent with cirrhosis, large collaterals seen adjacent to the spleen, splenomegally and ascites—consistent with portal hypertension. Two sets of blood cultures (BacT/Alert 3D, bioMérieux Vitek, Inc., Durham, North Carolina, USA) drawn on admission were positive for gram-positive cocci in clusters in all four bottles in less than 24 h. Preliminary identification of the isolates over the next few days was based on gram stain, milky white colonies, negative catalase and pyrrolidonyl arylamidase (PYR) reaction (LifeSign, LLC, Skillman, New Jersey, USA). The predominant colony was PYR negative and was identified as E. durans (Vitek1 (bioMérieux Vitek, Inc., Durham, North Carolina, USA) and API 20 Strep (bioMérieux SA, Marcy l'Etoille France)). Minimum inhibitory concentrations by the Kerby Bauer diffusion method revealed: penicillin 22 mm, ampicillin 26 mm, vancomycin 22 mm, with synergy to gentamicin and streptomycin interpreted as 'sensitive' according to the Clinical and Laboratory Standards Institute guidelines. A transthoracic echocardiogram showed mobile vegetation on the aortic valve without any adjacent abscess (figure 1). A transoesophageal echocardiogram was deferred because of the risk of bleeding secondary to high-grade oesophageal varices. Colonoscopy revealed an ulcer at the splenic flexure. It was assumed to be ischaemic and biopsy was not done.\n\nOn admission, the patient was initiated on empiric antibiotic therapy with intravenous ceftriaxone 2 g every 24 h. This was secondary to clinical suspicion of spontaneous bacterial peritonitis that is most often associated with enteric gram-negative organisms. However, when blood cultures revealed gram-positive cocci in clusters, antibiotics were switched to intravenous vancomycin (20 mg/kg every 12 h). On account of high-grade bacteraemia, a transthoracic echocardiogram was requested to evaluate for endocarditis. When the organism was identified as enterococcus—sensitive to ampicillin with synergy for gentamicin—therapy was changed to a combination of ampicillin (2 g every 4 h) and gentamicin (1 mg/kg every 8 h).\n\nThe patient had no more fevers in hospital. Five days after admission, the blood cultures turned negative. Two weeks after the initial presentation, the patient was discharged on combination antibiotics delivered through a peripherally inserted central catheter with a planned duration of 6 weeks from first negative blood culture. Unfortunately, inflammatory markers like C-reactive protein were not rechecked before the patient was discharged from hospital. Creatinine and gentamicin levels were monitored twice a week, and gentamicin dose adjusted appropriately to keep troughs <1 μg/ml.\n\nThe patient required readmission to the hospital 2 weeks later for treatment of decompensated congestive heart failure (BNP 2376 pg/ml) and worsening renal failure (creatinine 1.67 mg/dl). INR had increased to 1.5 and platelet count had fallen to 25 000/μl. Repeat blood cultures were done from both peripheral sites as well as from the central catheter to determine whether there was evidence of line infection. The results of all blood cultures were negative. The gold standard for testing for line infection—removal and culture of the line—was not possible because it was very risky to remove the line and then to place a new line in the presence of low platelets and high INR. A repeat echocardiogram demonstrated multiple mobile densities on the aortic valve suggestive of vegetations and multiple abscesses in the aortic sinuses (figure 2). The patient was evaluated by two cardiothoracic surgeons and was considered to have high mortality risk if he underwent cardiac surgery. Liver cirrhosis with clinical and laboratory evidence of liver failure, thrombocytopaenia and nutritional status were all considered in the decision-making process. Gentamicin was discontinued on account of increased creatinine and substituted with ceftriaxone. Ampicillin was continued. He completed the recommended 6-week course of antibiotics. Surveillance blood cultures on days 7, 12 (before first discharge from hospital), 17, 45 (3 days after completing antibiotic course) and 54 (12 days after completing antibiotic course) remained negative.\n\nUnfortunately, he developed progressive heart failure (BNP 4892 pg/ml), renal failure (creatinine 3.56 mg/dl), thrombocytopaenia (platelets 20 000/μl) and epistaxis. Once again, he was deemed to be at very high risk for aortic valve surgery. After detailed discussion of his disease and prognosis, the patient made an informed decision declining further aggressive treatment in favour of primary palliation of symptoms. He died in a few days.",
+  "excluded_text": "Most enterococcal endocarditis is caused by Enterococcus faecalis and Enterococcus faecium. Enterococcus durans is a rare member of non-faecalis, non-faecium enterococcal species and is found in the intestines of animals. E durans endocarditis is a very rare infection—only two cases of endocarditis in humans have been reported in the literature—and usually associated with good outcomes when treated with appropriate antibiotics. We report the first case of fatal E durans endocarditis. This patient had end-stage liver disease with associated compromised immune status that likely contributed to the progression of disease in spite of appropriate antibiotic coverage and clearance of bacteraemia.\n\nEndocarditis with enterococcus is a potentially devastating infection and most often requires prolonged intravenous antibiotics with associated risks. Enterococcus durans endocarditis is very rare. Host factors including liver disease contribute to morbidity and mortality, as was seen in this patient. We could not find any other case in the literature with E durans endocarditis associated with fatal outcome.\n\nDifferential diagnosis: Spontaneous bacterial peritonitis, endocarditis, urinary tract infection.\n\nThe incidence of infective endocarditis is approximately 1.7–6.2 cases per 100 000 patient years. Enterococci are the third most common organism (approximately 8% of cases) causing endocarditis, after streptococci and staphylococci, and are emerging as an increasingly important cause of infection, especially in the elderly. They are gram-positive, catalase-negative, facultative anaerobes that are seen under direct microscopy as diplococci in short chains. They can be differentiated from other species of catalase-negative gram-positive cocci by their ability to produce PYR reaction. Although staphylococci and streptococci are established as the most common causes of bacterial endocarditis, enterococcal species were detected more frequently in a large surveillance study in Italy. This was attributed to a high percentage of elderly patients in that study population. Anderson et al also found enterococcal endocarditis more common in the elderly. In their study, intracardiac abscess was more common in prosthetic valves when compared to native valve involvement. In another collaborative study involving 107 patients with enterococcal endocarditis, it was found that enterococcal endocarditis occurred in older patients, predominantly affected the aortic valve and led to more heart failure compared to other streptococcus species. Peripheral signs of endocarditis such as Osler nodes, Roth spots and petechial lesions are found less frequently in enterococcal endocarditis than in other species. Among all enterococcal infections, E faecalis is isolated in 63–81%, E. faecium in 13–23% and other species (Enterococcus avium, Enterococcus durans, Enterococcus casseliflavus, Enterococcus gallinarum, Enterococcus hirae, and Enterococcus raffinosus) in the remaining. Non-faecalis, non-faecium enterococci are a group of diverse enterococcal species that have rarely been associated with human infections. Greater attention is now focused on these rarer species because of their potential to express low-level resistance to antibiotics. Tan et al analysed 182 patients with non-faecalis, non-faecium enterococcal bacteraemia, of which 5% were found to have infective endocarditis. In their study, malignancy was found to be the most common underlying disease, followed by biliary tract disease. de Perio et al studied 36 cases of non-faecalis, non-faecium enterococcal bacteraemia and found no difference in death rates compared to E faecalis. Again, the gastrointestinal tract was the most likely source of infection. Patients with non-faecalis, non-faecium enterococcal infection were more likely to have underlying disease that compromised the immune system than those with E faecalis infection.\n\nE durans is a very rare species of non-faecalis, non-faecium enterococci. E durans has been isolated from clinical specimens (usually from the intestine of animals and less frequently in humans) but rarely causes human infections as it is known to have low virulence. Devriese et al reviewed the literature on E durans and noted this organism to be an inhabitant of the gut of young chickens and calves. It was also associated with enteropathies in domesticated animals including dogs, kittens and piglets. E durans was a rare cause of enterococcal bacteraemia (0.1%) in a large series (1887 cases) from a 9- year database from Taiwan. They reported 182 cases of non-faecalis, non-faecium endocarditis, of which only two cases were E durans. In their 36 cases of non-faecalis, non-faecium bacteraemia, de Perio observed only five cases of E durans.\n\nWhen initial blood cultures turned positive, the organism was reported as gram-positive cocci in clusters and hence treatment was changed from ceftriaxone to vancomycin to cover Staphylococcus aureus—of which methicillin-resistant Staphylococcus aureus has worse prognosis. A change to ampicillin + gentamicin was made as soon as it became evident that the organism was an enterococcus susceptible to these antibiotics.\n\nThe recommended treatment regimen for enterococcus endocarditis is a combination of a β-lactam along with an aminoglycoside for synergistic action. Patients treated with a single agent have severe complications and hence combination therapy is always preferred. In our patient, owing to renal failure, gentamicin had to be discontinued and we opted for an alternate treatment regimen. In vitro studies have demonstrated good synergism with combinations of cell-wall active antibiotics like teicoplanin–imipenem, ampicillin–ceftriaxone and ampicillin–imipenem. Typically, cephalosporins have weak activity against enterococcal species with the exception of ceftriaxone or cefotaxim in combination with ampicillin which was used in our patient.\n\nIn this case, we feel that the antibiotic choice was very appropriate at every step. Vancomycin is the recommended drug of choice for suspected methicillin-resistant Staphylococcus aureus endocarditis (gram-positive cocci in clusters—as per initial report from the microbiology laboratory) and a combination of ampicillin + gentamicin is recommended once enterococcus is identified. The only broader coverage would have been to add gentamicin to the vancomycin initially and it has been recommended to avoid this, secondary to risk for nephrotoxicity. In this patient with liver disease and congestive heart failure, it would have been inappropriate to add gentamicin to vancomycin to broaden the coverage and risk precipitating acute renal failure. Our antibiotic choice was appropriate as evidenced by sustained clearance of the bacteraemia not only after initiation but even after completion of the antibiotic course. The initial echocardiogram showed only aortic valve vegetation, but the follow-up imaging documented multiple abscesses indicating progression of the disease in spite of successful clearance of organism from the blood. This calls attention to host factors that are required to clear any infection. All host defence mechanisms are compromised in patients with cirrhosis, and mortality from infection is increased more than 20 times compared to the general population. In vivo studies in patients with cirrhotic liver disease have demonstrated deficient neutrophil recruitment and impaired phagocytic activity, and defects in mucosal barriers and lymphocyte activation. This impaired innate and adaptive immunity in our patient could have contributed to the development of endocarditis with valve abscess caused by this low-virulence species of enterococcus.\n\nLearning points: Enterococci are emerging as very important aetiological agents causing endocarditis, especially in the elderly and in those with underlying immune compromising conditions. Enterococcus durans is a very rare, low-virulence species of enterococcus. End-stage liver disease is associated with multiple defects in host immune response. Even low-virulence organisms like E durans may cause a fatal outcome in a patient with advanced liver disease in spite of optimised antibiotic therapy.",
+  "anchors": [
+    {
+      "id": "A1",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "gram-positive cocci in clusters",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": [
+        "A5"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A2",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "empiric antibiotic therapy",
+      "location": "hospital_course",
+      "distinctiveness": "low",
+      "granularity": "class",
+      "paired_anchors": [
+        "A7",
+        "A8",
+        "A9",
+        "A10"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A3",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "anaemia",
+      "location": "presentation",
+      "distinctiveness": "low",
+      "granularity": "class",
+      "paired_anchors": [
+        "A28"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A4",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "portal hypertension",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A5",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "E. durans",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A1",
+        "A13",
+        "A14"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A6",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "alcoholic liver disease",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": false
+    },
+    {
+      "id": "A7",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "intravenous ceftriaxone",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2",
+        "A34"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A8",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "intravenous vancomycin",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2",
+        "A35"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A9",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "ampicillin",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2",
+        "A36"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A10",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "gentamicin",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A2",
+        "A37"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A11",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "mobile vegetation on the aortic valve",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": [
+        "A17",
+        "A43"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A12",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "severe aortic stenosis",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": false
+    },
+    {
+      "id": "A13",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "PYR negative",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "qualifier",
+      "paired_anchors": [
+        "A5"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A14",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "with synergy to gentamicin and streptomycin",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "qualifier",
+      "paired_anchors": [
+        "A5"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A15",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "decompensated congestive heart failure",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "qualifier",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A16",
+      "category": "CAT",
+      "subtype": "CAT.negated",
+      "text": "no Janeway lesions, Osler nodes or Roth spots",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A17",
+      "category": "CAT",
+      "subtype": "CAT.negated",
+      "text": "without any adjacent abscess",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A11"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A18",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "generalised weakness lasting 1 month",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A19",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "planned duration of 6 weeks from first negative blood culture",
+      "location": "disposition",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A20",
+      "category": "TEMP",
+      "subtype": "TEMP.since",
+      "text": "Five days after admission, the blood cultures turned negative",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A21",
+      "category": "TEMP",
+      "subtype": "TEMP.since",
+      "text": "readmission to the hospital 2 weeks later",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A22",
+      "category": "TEMP",
+      "subtype": "TEMP.sequence",
+      "text": "antibiotics were switched to intravenous vancomycin",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A7",
+        "A8"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A23",
+      "category": "TEMP",
+      "subtype": "TEMP.trajectory",
+      "text": "progressive heart failure",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A31"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A24",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "Gentamicin was discontinued on account of increased creatinine and substituted with ceftriaxone",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A10",
+        "A7"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A25",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "declining further aggressive treatment in favour of primary palliation of symptoms",
+      "location": "disposition",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A26",
+      "category": "TEMP",
+      "subtype": "TEMP.date",
+      "text": "in less than 24 h",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A1"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A27",
+      "category": "QUANT",
+      "subtype": "QUANT.vital",
+      "text": "temperature of 100.6°F (38.1 °C)",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A28",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "haemoglobin 7.9 g/dl",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A3"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A29",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "platelets 43 000/μl",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A30",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "albumin 1.7 g/dl",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A31",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "Beta natriuretic peptide (BNP) was 1122 pg/ml",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A23"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A32",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "Creatinine was 1.08 mg/dl",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A33",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "INR) 1.5",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A34",
+      "category": "QUANT",
+      "subtype": "QUANT.dose",
+      "text": "ceftriaxone 2 g every 24 h",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A7"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A35",
+      "category": "QUANT",
+      "subtype": "QUANT.dose",
+      "text": "vancomycin (20 mg/kg every 12 h)",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A8"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A36",
+      "category": "QUANT",
+      "subtype": "QUANT.dose",
+      "text": "ampicillin (2 g every 4 h)",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A9"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A37",
+      "category": "QUANT",
+      "subtype": "QUANT.dose",
+      "text": "gentamicin (1 mg/kg every 8 h)",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A10"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A38",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "creatinine 1.67 mg/dl",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A32"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A39",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "BNP 2376 pg/ml",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A31",
+        "A23"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A40",
+      "category": "REAS",
+      "subtype": "REAS.considered",
+      "text": "clinical suspicion of spontaneous bacterial peritonitis",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A7"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A41",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "transoesophageal echocardiogram was deferred because of the risk of bleeding secondary to high-grade oesophageal varices",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A42",
+      "category": "REAS",
+      "subtype": "REAS.considered",
+      "text": "considered to have high mortality risk if he underwent cardiac surgery",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A43",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "On account of high-grade bacteraemia, a transthoracic echocardiogram was requested to evaluate for endocarditis",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A11",
+        "A1"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A44",
+      "category": "REAS",
+      "subtype": "REAS.uncertain",
+      "text": "assumed to be ischaemic and biopsy was not done",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A45",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "Gentamicin was discontinued on account of increased creatinine",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A10",
+        "A38"
+      ],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A46",
+      "category": "REAS",
+      "subtype": "REAS.planned",
+      "text": "Creatinine and gentamicin levels were monitored twice a week",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [
+        "A10"
+      ],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    }
+  ],
+  "questions": [
+    {
+      "anchor_id": "A1",
+      "question": "What was the morphological description of the organism identified on initial blood cultures?",
+      "expected_answer": "gram-positive cocci in clusters",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A2",
+      "question": "What category of treatment was initiated on admission before culture results returned?",
+      "expected_answer": "empiric antibiotic therapy",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A3",
+      "question": "What haematologic condition was part of the patient's medical history at presentation?",
+      "expected_answer": "anaemia",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A4",
+      "question": "What hepatic vascular complication was documented in the patient's history?",
+      "expected_answer": "portal hypertension",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A5",
+      "question": "What species of organism was ultimately identified from the blood cultures?",
+      "expected_answer": "E. durans",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A6",
+      "question": "What specific aetiology of liver disease was documented in the patient's history?",
+      "expected_answer": "alcoholic liver disease",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A7",
+      "question": "What specific antibiotic was selected for the initial empiric regimen?",
+      "expected_answer": "intravenous ceftriaxone",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A8",
+      "question": "What antibiotic replaced the initial empiric agent after gram-positive cocci were identified?",
+      "expected_answer": "intravenous vancomycin",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A9",
+      "question": "What beta-lactam antibiotic was included in the definitive combination regimen for the identified enterococcus?",
+      "expected_answer": "ampicillin",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A10",
+      "question": "What aminoglycoside was paired with the beta-lactam in the definitive antibiotic combination?",
+      "expected_answer": "gentamicin",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A11",
+      "question": "What finding was identified on the initial transthoracic echocardiogram?",
+      "expected_answer": "mobile vegetation on the aortic valve",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A12",
+      "question": "What pre-existing cardiac valvular diagnosis was documented in the patient's history?",
+      "expected_answer": "severe aortic stenosis",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A13",
+      "question": "What was the result of the pyrrolidonyl arylamidase (PYR) reaction for the predominant colony?",
+      "expected_answer": "PYR negative",
+      "scoring": "exact_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A14",
+      "question": "What antibiotic synergy pattern was demonstrated on susceptibility testing of the isolate?",
+      "expected_answer": "synergy to gentamicin and streptomycin",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A15",
+      "question": "What qualifying descriptor characterized the heart failure at readmission?",
+      "expected_answer": "decompensated congestive heart failure",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A16",
+      "question": "Which peripheral stigmata of endocarditis were specifically assessed and found absent on examination?",
+      "expected_answer": "no Janeway lesions, Osler nodes or Roth spots",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A17",
+      "question": "On the initial echocardiogram, was there any perivalvular extension of infection noted alongside the vegetation?",
+      "expected_answer": "without any adjacent abscess",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A18",
+      "question": "How long had the patient's weakness been present before hospital admission?",
+      "expected_answer": "generalised weakness lasting 1 month",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A19",
+      "question": "What was the intended total duration of antibiotic therapy, and from what reference point was it measured?",
+      "expected_answer": "planned duration of 6 weeks from first negative blood culture",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A20",
+      "question": "How many days after admission did the blood cultures become negative?",
+      "expected_answer": "Five days after admission",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A21",
+      "question": "How long after the initial discharge did the patient require readmission?",
+      "expected_answer": "2 weeks later",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A22",
+      "question": "What antibiotic change was made when blood cultures revealed gram-positive organisms?",
+      "expected_answer": "antibiotics were switched to intravenous vancomycin",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A23",
+      "question": "What trajectory did the patient's cardiac function follow over the clinical course?",
+      "expected_answer": "progressive heart failure",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A24",
+      "question": "What was the change in the patient's aminoglycoside therapy status, and what agent replaced it?",
+      "expected_answer": "Gentamicin was discontinued on account of increased creatinine and substituted with ceftriaxone",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A25",
+      "question": "What was the patient's final treatment preference decision, and what approach did he choose instead?",
+      "expected_answer": "declining further aggressive treatment in favour of primary palliation of symptoms",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A26",
+      "question": "How quickly after collection did the blood cultures become positive?",
+      "expected_answer": "in less than 24 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A27",
+      "question": "What was the patient's temperature at the time of admission?",
+      "expected_answer": "100.6°F (38.1 °C)",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A28",
+      "question": "What was the patient's haemoglobin level on initial laboratory workup?",
+      "expected_answer": "haemoglobin 7.9 g/dl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A29",
+      "question": "What was the patient's platelet count on admission?",
+      "expected_answer": "platelets 43 000/μl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A30",
+      "question": "What was the patient's serum albumin level?",
+      "expected_answer": "albumin 1.7 g/dl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A31",
+      "question": "What was the initial BNP value at presentation?",
+      "expected_answer": "BNP was 1122 pg/ml",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A32",
+      "question": "What was the baseline creatinine value on admission?",
+      "expected_answer": "Creatinine was 1.08 mg/dl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A33",
+      "question": "What was the patient's INR on initial laboratory workup?",
+      "expected_answer": "INR 1.5",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A34",
+      "question": "What was the dose and dosing interval of the empiric ceftriaxone?",
+      "expected_answer": "ceftriaxone 2 g every 24 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A35",
+      "question": "What was the vancomycin dose and dosing interval when it was introduced?",
+      "expected_answer": "vancomycin 20 mg/kg every 12 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A36",
+      "question": "What was the dosing regimen for ampicillin in the definitive combination?",
+      "expected_answer": "ampicillin 2 g every 4 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A37",
+      "question": "What was the dosing regimen for gentamicin in the definitive combination?",
+      "expected_answer": "gentamicin 1 mg/kg every 8 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A38",
+      "question": "What was the creatinine value at the time of readmission?",
+      "expected_answer": "creatinine 1.67 mg/dl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A39",
+      "question": "What was the BNP level at readmission for decompensated heart failure?",
+      "expected_answer": "BNP 2376 pg/ml",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A40",
+      "question": "What initial diagnostic suspicion prompted the choice of ceftriaxone as the empiric antibiotic, and why was that diagnosis considered?",
+      "expected_answer": "clinical suspicion of spontaneous bacterial peritonitis",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A41",
+      "question": "Why was a transoesophageal echocardiogram not performed, and what specific risk factor drove that decision?",
+      "expected_answer": "deferred because of the risk of bleeding secondary to high-grade oesophageal varices",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A42",
+      "question": "What was the surgical team's assessment of operative risk, and what did they conclude about cardiac surgery?",
+      "expected_answer": "considered to have high mortality risk if he underwent cardiac surgery",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A43",
+      "question": "What clinical finding prompted the request for echocardiography, and what diagnosis was being evaluated?",
+      "expected_answer": "On account of high-grade bacteraemia, a transthoracic echocardiogram was requested to evaluate for endocarditis",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A44",
+      "question": "What was the clinical interpretation of the splenic flexure ulcer found on colonoscopy, and why was no tissue obtained?",
+      "expected_answer": "assumed to be ischaemic and biopsy was not done",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A45",
+      "question": "What was the stated reason for discontinuing the aminoglycoside from the antibiotic regimen?",
+      "expected_answer": "Gentamicin was discontinued on account of increased creatinine",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A46",
+      "question": "What monitoring plan was established for renal function and drug levels during outpatient antibiotic therapy?",
+      "expected_answer": "Creatinine and gentamicin levels were monitored twice a week",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    }
+  ],
+  "filler_blocks": [
+    {
+      "block_id": 1,
+      "note_type": "Physical therapy progress note",
+      "approximate_tokens": 1520,
+      "content": "PHYSICAL THERAPY PROGRESS NOTE\n\nPatient: 61-year-old male. Day of admission: see chart.\nTreating Therapist: [PT staff]\nReason for referral: Functional mobility decline in setting of acute hospitalization; evaluate for safe mobility and discharge planning support.\n\nSUBJECTIVE:\nPatient reports feeling somewhat fatigued this morning but states he is willing to attempt mobility activities. He notes that he did not sleep well overnight and feels his energy is lower than baseline. He denies acute pain with movement but endorses generalized weakness. He expresses motivation to return home and voiced understanding of the importance of keeping mobile during hospitalization. Family member present at bedside during session and participated in education.\n\nOBJECTIVE:\nSession conducted at bedside and in hallway. The patient was alert and oriented, cooperative with all tasks. No acute distress observed during the encounter.\n\nBed mobility: Patient required minimal assistance for supine to sit transition. Some difficulty with dynamic sitting balance noted at session initiation; improved over course of the session with verbal cueing.\n\nSit-to-stand: Patient required contact-guard assistance and use of armrests. Mild lower extremity weakness noted bilaterally; left greater than right per patient report. No loss of balance.\n\nAmbulation: Patient ambulated in hallway with a standard walker, contact-guard assistance from therapist. Gait pattern notable for decreased step length bilaterally and mild forward trunk flexion. Patient required one rest break at approximately midpoint of hallway. Total ambulation distance: a few lengths of the unit corridor, with rest. Endurance limited by patient-reported fatigue; session terminated at patient request.\n\nFunctional mobility status:\n- Bed mobility: Supervision/minimal assist\n- Transfers: Contact-guard assist\n- Ambulation: Contact-guard assist, assistive device (walker)\n- Stairs: Deferred this session; patient not ready for stair training given fatigue level\n\nFall risk assessment: Moderate-to-high. Contributing factors include generalized deconditioning, significant comorbidity burden, prolonged hospitalization effect on baseline function, and fatigue. Bed alarm in use per nursing. Patient and family educated on call bell use and not to attempt unsupervised ambulation.\n\nASSESSMENT:\nPatient is a 61-year-old male with significant hepatic and cardiovascular comorbidities presenting with acute functional decline related to hospitalization and underlying chronic illness burden. He demonstrates impaired functional mobility, reduced endurance, and weakness that collectively place him at elevated fall risk. He is cooperative with therapy and motivated, which is a positive prognostic sign.\n\nCompared to baseline per patient and family report, patient is functioning well below his prior level. Family states that prior to this admission he was independently ambulatory in the community without assistive devices and managing his own ADLs. Returning to that level of function will require time, consistent engagement with therapy, and appropriate outpatient follow-up.\n\nPLAN:\n1. Continue inpatient PT daily while patient is admitted.\n2. Progress ambulation distance and reduce assist level as tolerated.\n3. Advance to stair assessment as endurance permits.\n4. Coordinate with OT regarding upper extremity function and ADL assessment.\n5. Begin discharge planning discussions with care coordination team; home PT referral likely warranted at discharge.\n6. Patient and family education ongoing regarding safe mobility, fall prevention, energy conservation techniques.\n7. Equipment needs: Reassess need for rolling walker vs. standard walker prior to discharge. Home safety assessment recommended if patient returns to prior home environment.\n\nGoals:\nShort-term (prior to discharge): Patient will ambulate a functional distance with supervision and appropriate assistive device. Patient will perform bed-to-chair transfer with supervision only.\nLong-term (at 4-6 weeks post-discharge): Patient will ambulate within the community with appropriate assistive device independently.\n\nPatient verbalized understanding of session activities, goals, and fall prevention education. Family reinforced on safe assist techniques for home. Questions answered. Session concluded without adverse events.\n\nTime in: [shift timing]. Duration: approximately 45 minutes. Next session: tomorrow or per team communication."
+    },
+    {
+      "block_id": 2,
+      "note_type": "Nursing shift assessment",
+      "approximate_tokens": 1480,
+      "content": "NURSING SHIFT ASSESSMENT NOTE — NIGHT SHIFT\n\nRN: [Nursing staff, inpatient medicine unit]\nAssessment period: overnight shift\n\nGENERAL OVERVIEW:\nPt is a 61 y/o male admitted for management of acute infectious process in the setting of significant chronic medical comorbidities (hepatic and cardiovascular). Pt known to team; refer to primary team notes for full clinical context. This note documents nursing assessment and shift events.\n\nSYSTEMS REVIEW:\n\nNeuro/MS: Pt AAOx3 at time of initial assessment. Responds appropriately to questions. No acute change in mental status noted during shift. Pt oriented to self, place, situation. Able to communicate needs verbally. Cooperative with assessment. At one point overnight pt appeared confused briefly upon waking but quickly reoriented with verbal cues and reassurance; reported dream-related, and returned to baseline within minutes. No further episodes.\n\nCV: Hemodynamically stable through shift. Telemetry in place per orders; no significant events per telemetry monitoring overnight. Peripheral pulses present bilaterally. No new edema noted. Access site intact; no redness, swelling, or drainage noted at IV access sites. Dressings intact and per protocol.\n\nResp: Breathing comfortably on room air through most of shift. No acute respiratory distress observed. Lung sounds assessed; findings relayed to primary team per protocol. O2 status acceptable throughout, per monitoring.\n\nGI/GU: Abdomen assessed; no acute distress on palpation. Bowel sounds present in all four quadrants. Patient reports no nausea this shift; tolerating oral intake per diet order — consumed approximately half of evening meal tray. Urine output monitored and documented per nursing flow sheet; output within expected range and communicated to team. Foley in place; site assessed, no concerns noted.\n\nSkin/Integumentary: Full skin assessment completed at beginning of shift. Skin warm and dry in most areas. Some peripheral findings consistent with known chronic medical history — noted to team. Wound/site assessments per protocol; no new breakdown. Oral mucosa moist. No stage II or greater pressure injuries present.\n\nPain: Pt reports mild generalized discomfort, not localized. Rates pain low on standard scale. As-needed comfort measures offered and accepted; patient reports adequate relief. No escalation required overnight. Repositioning performed and reinforced with patient.\n\nSafety: Bed in lowest position, brakes locked, call bell in reach. Patient reminded of call bell use and instructed not to attempt independent ambulation overnight given fall risk status. Patient verbalized understanding. Side rails up x2 per fall protocol. Bed alarm in place.\n\nMedications: Scheduled medications administered as ordered. Patient tolerated without acute reaction noted. Medication reconciliation concerns flagged to pharmacy per protocol — see separate pharmacy note.\n\nPsychosocial: Patient awake briefly in early morning hours; reported difficulty sleeping. He expressed some worry about the duration of hospitalization and separation from home and usual routine. I spent approximately 10 minutes at bedside providing reassurance, reviewing the plan of care in lay terms, and validating his concerns. Patient appeared reassured and was able to return to sleep. No acute emotional crisis. Will communicate with daytime team for social work follow-up given expressed concerns.\n\nFamily: No family present overnight. Last contact per patient: family member called earlier in evening; patient reports reassured.\n\nLabs/results: Pending results noted per chart. Abnormal values communicated to primary team per protocol; physician aware.\n\nPLAN/COMMUNICATION:\n- Continue monitoring per protocol\n- Communicate skin assessment findings to wound nurse in AM\n- Morning report to include: mental status observations, pain assessment, psychosocial concerns flagged for SW\n- Pending labs per primary team's morning assessment\n- PT/OT sessions scheduled today per therapy team\n\nNo acute events this shift requiring immediate escalation. All care provided as ordered. Primary team updated on overnight course via morning huddle communication."
+    },
+    {
+      "block_id": 3,
+      "note_type": "Nutrition consult note",
+      "approximate_tokens": 1550,
+      "content": "CLINICAL NUTRITION CONSULTATION NOTE\n\nRegistered Dietitian: [RD, Inpatient Nutrition Services]\nReferral source: Primary medicine team\nReason for consult: Nutritional assessment requested for patient with significant chronic illness burden; concern for nutritional adequacy during acute hospitalization.\n\nPATIENT PROFILE:\n61-year-old male with significant hepatic and cardiovascular comorbidities. Acute infectious process currently being managed per primary and subspecialty teams. Patient hospitalized for ongoing treatment and monitoring.\n\nSUBJECTIVE:\nI met with the patient at bedside this morning. He was alert and cooperative with the interview. He reports his appetite has been decreased since admission, attributing this partly to fatigue and partly to the hospital environment and food unfamiliarity. He states he does not feel hungry at typical meal times but is able to eat when he makes an effort.\n\nAt home, patient reports a varied diet without significant self-imposed restrictions. He notes that his eating habits have shifted somewhat over the past several months as his energy and appetite have fluctuated with his chronic health conditions. He denies difficulty chewing or swallowing. He reports occasional nausea that has been present intermittently but denies emesis during this hospitalization. He is not currently on a feeding tube and is taking all nutrition orally.\n\nFluid intake: Patient is receiving IV fluids as ordered by team; oral fluid intake has been adequate per patient report and nursing documentation.\n\nOBJECTIVE:\nWeight and anthropometric data reviewed from nursing documentation. Patient's current weight and estimated weight history reviewed; notable changes consistent with acute illness period. Body composition subjectively estimated as lean with some changes from baseline per patient report. No formal anthropometric measurements performed this session.\n\nEstimated nutritional needs (general ranges, per standard clinical practice for patient profile):\n- Caloric needs: Estimated using body weight-based formula appropriate for patient with hepatic disease burden; targets adjusted to avoid excess while supporting recovery.\n- Protein needs: Higher than standard given hypermetabolic state of acute illness and underlying chronic conditions; specific target per clinical judgment and team discussion.\n- Micronutrients: Vitamins and minerals of particular clinical concern given chronic hepatic conditions noted; specific supplementation per team orders.\n\nCurrent intake assessment: Review of nursing intake documentation indicates patient is consuming an estimated fraction of estimated needs at current meal tray consumption rate. Oral intake has been suboptimal since admission; patient is not meeting estimated targets by mouth currently.\n\nASSESSMENT:\nPatient is at nutritional risk in the setting of acute illness superimposed on chronic comorbidities with significant metabolic implications. Poor oral intake since admission, estimated unintentional weight changes prior to and during hospitalization, and the nutritional demands of acute infectious and inflammatory processes all contribute to risk. Nausea, anorexia, fatigue, and altered taste are barriers to adequate oral intake.\n\nNutritional diagnosis: Inadequate oral intake related to acute illness, fatigue, and anorexia, as evidenced by estimated intake below needs and patient-reported decreased appetite.\n\nPLAN / RECOMMENDATIONS:\n1. Optimize oral intake: Small, frequent meals and snacks preferred over large trays. Discuss with nursing and dietary to offer snacks between meals and at patient-preferred times.\n2. Nutritional supplements: Recommend high-calorie, high-protein oral nutritional supplement between meals — frequency and type to be coordinated with team and patient preference. Patient receptive to trying supplements when presented as an option.\n3. Nausea management: Coordinate with primary team regarding anti-nausea support as needed to facilitate oral intake.\n4. Appetite stimulation: Non-pharmacologic measures recommended including small, appealing food choices, adjusting meal timing to patient preference, family bringing preferred foods from home if infection-control and dietary guidelines permit.\n5. Enteral nutrition: Not currently indicated; patient able to eat and swallow safely. To be revisited if oral intake does not improve within a few days or if clinical status changes.\n6. Micronutrient supplementation: Recommend team consider targeted supplementation relevant to chronic hepatic condition burden — specifics per standard of care and team pharmacy review.\n7. Ongoing monitoring: Follow-up nutrition assessment in the next few days. Reassess intake, weight, and tolerance of nutrition interventions.\n\nPatient education: Educated patient on the importance of adequate nutrition during hospitalization for recovery, immune function, and wound healing. Discussed specific strategies for improving intake. Patient verbalized understanding and agreed to try supplement options.\n\nFamily: Family not present during session. Recommend including family in follow-up nutrition conversation if present at bedside.\n\nDiscussed with primary team by phone; recommendations acknowledged.\n\nWill follow. Questions, contact RD via pager [extension on file]."
+    },
+    {
+      "block_id": 4,
+      "note_type": "Care coordination / social work note",
+      "approximate_tokens": 1510,
+      "content": "SOCIAL WORK / CARE COORDINATION NOTE\n\nSocial Worker: [MSW, Inpatient Social Work Services]\nReferral: Nursing flag — patient expressed concerns about hospitalization duration and home situation; care coordination need.\n\nREASON FOR CONTACT:\nPatient referred for psychosocial assessment and care coordination support during inpatient stay. Nursing noted patient expressed worry overnight about the hospitalization timeline and being away from home.\n\nPATIENT CONTACT:\nI met with the patient this afternoon at bedside. He was alert, oriented, and willing to engage in conversation. He was cooperative with social work assessment.\n\nPSYCHOSOCIAL ASSESSMENT:\n\nLiving situation: Patient lives in his own home. He reports living with a partner/family member who is his primary support person. Home described as a single-family residence, single-level access, no stairs required for primary living areas. Patient reports his home is familiar and he has lived there for an extended period of time.\n\nSupport systems: Patient identifies family member as primary support and states that this person has been in contact regularly. He has additional extended family nearby who have indicated willingness to help post-discharge. He does not identify significant social isolation. Community connections include contact with a few longstanding friends; he does not report regularly attending community or religious organizations at this time but has done so in the past.\n\nFinancial and insurance: Patient has insurance coverage; specific plan noted in chart. No immediate financial emergency identified. He does express some concern about time away from any work or routine activities, though he is not currently employed full-time. No application for emergency financial assistance indicated at this time.\n\nAdvance directives / healthcare decisions: Patient has previously designated a healthcare proxy; documentation reviewed and confirmed in chart. Patient was asked about his understanding of his current medical situation and treatment plan; he demonstrated a general lay understanding consistent with what the medical team has communicated. He did not raise specific concerns about goals of care at this time but I noted an openness to having those conversations as hospitalization continues. Will flag for primary team to ensure ongoing goals-of-care communication is occurring per patient preference.\n\nCoping and mood: Patient acknowledges this hospitalization has been stressful and longer than he anticipated. He describes his coping style as \"try to stay positive\" and states he keeps himself occupied with TV and conversations with family when they visit. He does not endorse depressed mood meeting clinical threshold but acknowledges feeling down on days when he is more symptomatic. He denied active suicidal or self-harm ideation. He was not in acute emotional distress during this encounter. He accepted the offer of ongoing social work support and stated he would appreciate someone to talk to periodically.\n\nSubstance use: Standard assessment performed per institutional protocol. Patient's history noted in chart; addressed with patient in a non-judgmental, supportive manner.\n\nDISCHARGE PLANNING — INITIAL ASSESSMENT:\nIt is early to finalize discharge planning given ongoing medical management, but it is appropriate to begin preliminary conversations. Initial considerations:\n\nReturn to prior home: Patient expresses strong preference to return home. This is clinically feasible pending stabilization and functional recovery. Home environment assessed as appropriate (single-level, family present).\n\nHome services: Pending physical and occupational therapy recommendations, patient may benefit from home health services post-discharge including nursing, PT, and aide support. Patient is open to this.\n\nFollow-up appointments: Will need coordination of multiple specialty follow-up appointments post-discharge. Patient has established care with relevant specialists. Care coordinator to assist with scheduling prior to discharge.\n\nTransportation: Patient states family will provide transportation for follow-up appointments.\n\nCommunity resources: Patient declined additional resource referrals at this time but I left contact information for community support resources relevant to chronic illness management and caregiver support for the family member.\n\nPLAN:\n1. Continue social work follow-up during admission — check in every two to three days or sooner if patient requests.\n2. Flag goals of care discussion opportunity for primary team.\n3. Initiate home health referral coordination when discharge timeline becomes clearer.\n4. Provide family member with caregiver resources at next opportunity (family expected at bedside tomorrow).\n5. Coordinate with case management on discharge planning timeline and services.\n\nNo acute psychosocial crisis identified. Patient engaged and cooperative. Documentation placed in chart. Primary team aware of social work involvement."
+    },
+    {
+      "block_id": 5,
+      "note_type": "Pharmacy reconciliation note",
+      "approximate_tokens": 1490,
+      "content": "PHARMACY MEDICATION RECONCILIATION NOTE\n\nClinical Pharmacist: [PharmD, Inpatient Clinical Pharmacy]\nEncounter type: Medication reconciliation — inpatient review\nReferral: Nursing identified possible home medication discrepancy; pharmacy review requested.\n\nREASON FOR REVIEW:\nPatient admitted with a complex chronic medication regimen. Reconciliation review requested to ensure accuracy of medication list and appropriateness of medications given current clinical status and hepatic comorbidity burden.\n\nSOURCES USED FOR RECONCILIATION:\n- Patient interview (primary source)\n- Family member corroboration (present during portion of interview)\n- Prior pharmacy fill records (accessed per institutional system)\n- Most recent outpatient prescribing records in chart\n- Inpatient medication administration record\n\nPATIENT INTERVIEW SUMMARY:\nPatient is a 61-year-old male. He has a complex chronic medical history with significant hepatic and cardiovascular disease burden. He takes multiple chronic medications at home for management of these conditions. During the interview, patient was cooperative and demonstrated reasonable knowledge of his medications.\n\nPatient was asked to name his current home medications. He was able to identify most of his medications by pill description or therapeutic category. He was uncertain about the exact regimens for a few medications and deferred to the pharmacy records. Family member was able to supplement history for two medications the patient could not specifically recall.\n\nDiscrepancies identified:\n1. One chronic medication documented in outpatient records was not listed on the inpatient admission medication list. This appears to have been omitted at time of admission. After cross-referencing outpatient prescribing records and patient interview, this is likely an omission error. Communicated to primary team — physician made aware; decision regarding whether to continue this medication in the inpatient setting deferred to attending.\n\n2. One over-the-counter product that patient uses intermittently at home was not on the admission list. Patient mentioned this during interview. Given potential interaction considerations with inpatient regimen and clinical status, pharmacist flagged this to primary team for awareness. Recommendation: do not resume during inpatient stay; revisit at discharge.\n\n3. One dose/frequency discrepancy identified between what patient reports using at home vs. what was entered at admission. Outpatient prescribing records support the patient's reported regimen rather than the entry. Corrected in medication administration record after physician acknowledgment.\n\nTHERAPEUTIC REVIEW NOTES:\nGiven patient's documented hepatic disease burden, a review of inpatient medications for hepatic dosing appropriateness was performed. No hepatotoxic medications of significant concern are currently on the active inpatient list. All scheduled medications have been reviewed for hepatic metabolism and dosing; adjustments per standard clinical guidelines were already in place on the current list with one minor exception — flagged to physician and adjusted per recommendation.\n\nAntimicrobial therapy (referenced without specifics): Current antimicrobial regimen is per infectious disease team recommendation. Pharmacist performed an independent review of antimicrobial class selection, dosing appropriateness, and monitoring parameters. Observations communicated to ID team; no discrepancy found. Monitoring parameters in place per protocol.\n\nPain management: Patient is receiving as-needed analgesic support per order. Reviewed for appropriateness given hepatic comorbidity; appropriate class utilized per current orders with appropriate monitoring.\n\nALLERGIES/ADVERSE REACTIONS:\nPatient-reported allergy/intolerance history reviewed and confirmed with patient during this encounter. One allergy on file confirmed accurate. No updates needed. Patient denies any new adverse drug reactions during this admission.\n\nPATIENT EDUCATION PROVIDED:\nI spent time with the patient reviewing his home medication regimen and explaining the changes that have been made during hospitalization. He was instructed that some home medications are being held during the inpatient stay and that the team will advise him on resuming or adjusting these at discharge. Patient verbalized understanding. He was encouraged to ask questions at any time and to bring a full medication list to all follow-up appointments post-discharge.\n\nI also discussed general medication safety concepts: taking medications exactly as prescribed, not stopping medications without consulting the prescribing provider, and reporting any new symptoms that might be medication-related.\n\nDISCHARGE MEDICATION PLANNING (preliminary):\nFormal discharge medication reconciliation will be completed closer to discharge date. At that time, will review:\n- Resumption of any held home medications\n- Any new medications started during hospitalization\n- Dose adjustments for chronic medications\n- Patient/family education on any changes\n\nPLAN:\n1. Primary team aware of all discrepancies and resolutions documented above.\n2. Continue pharmacy monitoring for therapeutic drug levels, organ function-based dosing adjustments, and drug interactions throughout admission.\n3. Will follow as needed; available via pager [on file] for any pharmacy-related questions.\n4. Discharge medication counseling to be scheduled when discharge timeline is clearer."
+    },
+    {
+      "block_id": 6,
+      "note_type": "Occupational therapy evaluation",
+      "approximate_tokens": 1530,
+      "content": "OCCUPATIONAL THERAPY EVALUATION NOTE\n\nOccupational Therapist: [OTR/L, Inpatient Rehabilitation Services]\nReferral source: Physical therapy / care team\nReason for referral: Evaluate ADL function, upper extremity capacity, and home safety; support discharge planning.\n\nBACKGROUND:\nPatient is a 61-year-old male with significant chronic medical history including hepatic and cardiovascular comorbidities, currently hospitalized for management of an acute infectious process. He was referred to occupational therapy for evaluation of functional capacity in activities of daily living and to contribute to discharge planning.\n\nOCCUPATIONAL PROFILE:\nPrior to this hospitalization, patient was living at home with a family member and functioning independently in most areas of self-care and home management. He describes himself as the primary person managing his own hygiene and personal care. He has had some gradual functional change over the past period of time as his chronic health conditions have evolved, but he maintained community independence.\n\nRoles and routines: Patient describes his daily routine at home as including self-care in the morning, light household activities, and leisure activities including television and reading. He does not report driving at this time — family provides transportation. He does not report return-to-work goals.\n\nMeaningful activities: Patient identifies being at home, being comfortable, and spending time with family as most important to him. He expresses desire to return to his home routine as the primary discharge goal.\n\nASSESSMENT:\n\nCognition/Mental status: AAO x3. Follows multi-step instructions without difficulty. Memory intact for purposes of functional task performance during session. No significant cognitive barriers to ADL participation noted.\n\nUpper extremity function: Bilateral upper extremity strength assessed through functional tasks. Mild reduction in grip strength noted bilaterally; right greater than left (patient is right-hand dominant). Range of motion grossly intact bilaterally. Fine motor coordination: adequate for most functional tasks; some slowing noted with fine motor tasks requiring precision, which patient attributes to fatigue.\n\nADL Assessment:\n\nGrooming: Patient performed grooming tasks at bedside (face washing, teeth brushing, combing hair) with setup assistance — items placed within reach. Able to complete tasks independently once items set up. Fatigue is a limiting factor; tasks took longer than typical.\n\nDressing: Assessed with functional task simulation (not full dressing; patient in hospital gown for medical access). Patient able to manage upper extremity dressing tasks independently. Lower extremity dressing expected to require seated position and potentially a dressing aid given reduced functional bending; recommend adaptive techniques and long-handled equipment.\n\nToileting / transfers: Transfer to bedside commode assessed with contact-guard assistance. Patient able to complete transfer with supervision and grab bar use. Recommend grab bar access at home bathroom prior to discharge.\n\nBathing: Not directly assessed during this session (patient fatigued). Per patient report, prior to admission he was showering independently with a shower stall; recommend transition to shower chair for safety post-discharge. Assessment of shower transfer to be completed prior to discharge.\n\nMeal preparation: Not assessed in hospital setting. Patient reports at home he manages simple meal preparation. Given fatigue and current functional status, recommend he rely on family for meal preparation initially post-discharge and reassess over recovery period.\n\nASSISTIVE DEVICE / ADAPTIVE EQUIPMENT RECOMMENDATIONS:\n- Grab bar in home bathroom (especially at toilet and shower entry)\n- Shower chair for seated bathing post-discharge\n- Long-handled sponge/reacher for lower extremity bathing/dressing\n- Raised toilet seat if standard toilet seat height is insufficient for safe transfer\n\nHome safety considerations: Patient's home reported to be single-level with accessible layout. Recommend family review for fall hazards (loose rugs, clutter in walkways) prior to patient return. Nighttime lighting in hallways recommended.\n\nASSESSMENT SUMMARY:\nPatient is functioning below his prior level of independence in ADLs secondary to fatigue, deconditioning, and impact of current and chronic medical conditions. He is motivated and cooperative. With targeted OT intervention, adaptive strategies, and appropriate equipment, return to near-prior functional level at home is a realistic goal over the coming weeks.\n\nPLAN:\n1. Continue OT intervention daily during admission; focus on seated ADL practice, energy conservation education, and upper extremity strengthening.\n2. Complete bathing transfer assessment prior to discharge.\n3. Equipment recommendations to be communicated to case management and family for procurement.\n4. Coordinate with PT regarding mobility and home safety recommendations.\n5. Home OT referral recommended at discharge for continued ADL training and home safety follow-up.\n6. Educate patient and family on energy conservation techniques and activity pacing for home.\n\nPatient verbalized understanding of session purpose, findings, and recommendations. Questions answered. No adverse events during session."
+    },
+    {
+      "block_id": 7,
+      "note_type": "Case management discharge planning note",
+      "approximate_tokens": 1470,
+      "content": "CASE MANAGEMENT — DISCHARGE PLANNING NOTE\n\nCase Manager: [RN, Case Management Services]\nNote type: Ongoing discharge planning update\n\nOVERVIEW:\nThis note documents ongoing discharge planning activities for a 61-year-old male with a complex medical history including hepatic and cardiovascular comorbidities currently hospitalized for management of an acute infectious process. Patient's clinical trajectory and timeline continue to be directed by the primary medical and subspecialty teams.\n\nCURRENT CLINICAL PICTURE (from chart and team communication):\nPatient remains hospitalized and medically active. Anticipated discharge timeline has not been firmly established by the medical team at this time, as ongoing therapeutic response monitoring is required. I have been in regular communication with the primary team regarding discharge planning milestones.\n\nKey discharge planning considerations:\n- Patient will likely require a period of additional support and monitoring post-discharge related to his infectious process management.\n- Functional status (per PT/OT assessments) indicates patient will likely need home health support at time of discharge.\n- Hepatic comorbidity burden adds complexity to outpatient medication monitoring and follow-up needs.\n- Patient has strong family support and returns to an accessible home environment.\n- Patient and family both clearly prefer home discharge over any post-acute facility; no transfer facility planning initiated at this time.\n\nINSURANCE / BENEFIT REVIEW:\nInsurance coverage confirmed. Authorization team engaged regarding potential extended inpatient stay and post-acute benefits. Home health benefit reviewed — patient has coverage for skilled nursing visits, physical therapy, and occupational therapy at home. Any durable medical equipment (DME) needs will be submitted for authorization; initial equipment requests (per OT note) have been flagged for processing.\n\nHOME HEALTH REFERRAL:\nHome health referral initiated in the case management system. Target disciplines at time of discharge pending team input:\n- Skilled nursing: For monitoring of ongoing medical needs, wound/access site care if applicable, and medication monitoring.\n- Physical therapy (home): Per PT team recommendation — patient will benefit from continued mobility therapy in home environment.\n- Occupational therapy (home): Per OT team recommendation — ADL training and home safety follow-up.\n- Home health aide: Pending clinical assessment at discharge; patient may benefit from assistance with personal care initially.\n\nHome health agency options discussed with family at bedside meeting. Family expressed preference for an agency they have some familiarity with; referral being initiated to that agency with appropriate orders to follow from the primary team.\n\nFOLLOW-UP APPOINTMENT PLANNING:\nThe following specialty follow-up appointments will need to be coordinated prior to discharge:\n1. Primary care / internal medicine: Within one week post-discharge. Patient has an established primary care provider; office contacted to flag urgency of follow-up and coordinate appointment scheduling.\n2. Infectious disease follow-up: Per ID team — specific timeframe pending guidance from attending. ID team advised to communicate expected timing to case management.\n3. Cardiology: Follow-up recommended per cardiovascular team; outpatient appointment to be scheduled.\n4. Hepatology / gastroenterology: Follow-up to be coordinated; patient's hepatic management will need ongoing outpatient oversight.\n5. Laboratory monitoring: Orders for outpatient lab monitoring to be placed by primary team at discharge; patient will need lab access coordination — home draw services explored given functional limitations.\n\nPATIENT AND FAMILY COMMUNICATION:\nI met with the patient and family member for approximately 20 minutes this afternoon. I reviewed the discharge planning process, explaining what we are working on and what the steps look like from here. Patient and family expressed appreciation and asked several questions, which I answered to the best of my ability. Questions I could not answer (clinical decision questions) were redirected to the primary team and I facilitated a brief communication.\n\nFamily member is fully engaged and will serve as primary home support. They confirmed ability to assist with transportation, medication pickup, and monitoring at home. Family demonstrated general understanding of the post-discharge plan. I provided them with written resources and contact numbers for home health agency, and reinforced the importance of attending follow-up appointments.\n\nOUTSTANDING ITEMS:\n- Discharge date TBD per medical team\n- Await ID team guidance on outpatient antimicrobial monitoring if applicable\n- DME authorization pending\n- Primary care follow-up appointment date pending\n- Cardiology and hepatology appointments pending scheduling\n\nPLAN:\nContinue daily case management involvement. Team communication ongoing. Next update note at significant discharge planning milestone or if clinical status changes that impact planning."
+    },
+    {
+      "block_id": 8,
+      "note_type": "Chaplaincy / spiritual care note",
+      "approximate_tokens": 1400,
+      "content": "SPIRITUAL CARE NOTE — CHAPLAINCY SERVICES\n\nChaplain: [Board-Certified Chaplain, Spiritual Care Services]\nVisit type: Pastoral care — unscheduled patient visit, nursing referral\nReferral context: Nursing staff noted patient had expressed generalized worry and difficulty sleeping; requested chaplaincy visit.\n\nENCOUNTER SUMMARY:\n\nI visited with the patient this morning following a referral from the overnight nursing team. Upon entering the room, I introduced myself and my role, and asked the patient if he was open to a visit. He welcomed the conversation and appeared to relax somewhat as we began speaking.\n\nThe patient is a 61-year-old man who has been hospitalized for some time. He is alert and engaged in conversation. He appeared tired but mentally present throughout our visit.\n\nSpiritual and existential concerns: The patient expressed uncertainty about \"how this all ends up\" — a statement he clarified as referring to his hospitalization and recovery, not as a statement about end of life, though I gently explored that dimension as well. He stated he is not ready to \"give up\" and expressed a desire to return home. He talked about his home, his routine, and his family with warmth and evident affection. He described his life as having value and meaning; he is clear that there is much he still wants to do and experience.\n\nWhen asked directly about his spiritual or religious beliefs, the patient was reflective. He identified himself as having grown up in a religious household but describes his current relationship with faith as \"complicated.\" He stated he believes in something greater than himself but does not practice formally at this time. He expressed openness to prayer and we shared a brief moment of silence together that he described as helpful. He said he finds meaning in connection with family and in moments of ordinary daily life.\n\nHe spoke about fear — specifically, fear of not knowing what comes next in terms of his medical situation, fear of being a burden to his family, and what he described as \"a fear of losing control.\" He voiced these concerns openly and thoughtfully. I reflected back to him the courage it takes to name those fears and to continue engaging with his care team and support system. He received this acknowledgment quietly and appeared moved.\n\nWe spoke about what gives him hope. He mentioned his family member by name and described specific shared memories and traditions. He also mentioned a pet at home that he misses. He laughed softly when describing his pet and the laugh seemed to bring him momentary relief.\n\nHe asked me if it is \"okay to be scared.\" I told him that it is — that fear in the face of illness and uncertainty is a deeply human experience, and that being afraid does not mean being without strength. He said that was reassuring.\n\nToward the end of the visit, he asked if I could come back. I said I would be happy to. He did not make any specific requests regarding religious rites, sacraments, or formal spiritual practices at this time. He did say he might want to speak with someone from his faith tradition at some point, and I offered to make that connection if and when he is ready; he appreciated having that option available.\n\nCHAPLAIN'S ASSESSMENT:\nThis patient demonstrates intact spiritual resilience with access to sources of meaning and connection (family, home, memory). His expressed fears are existentially appropriate to his situation and do not indicate a crisis state. He is engaging openly with his emotions, which is a healthy indicator. No acute spiritual distress or end-of-life crisis identified at this time. He does demonstrate some anticipatory anxiety related to uncertainty and the unknown trajectory of his illness. This is common and clinically meaningful to document.\n\nPLAN:\n1. Return visit scheduled — patient expressed desire for ongoing pastoral support.\n2. Will offer connection to faith community representative if patient desires in future.\n3. Communicated with nursing briefly following visit to close the loop on referral — noted patient expressed some relief following conversation.\n4. No changes to medical care recommended from spiritual care perspective. Patient's emotional and spiritual needs being addressed; ongoing chaplaincy support appropriate.\n\nTime of visit: this morning. Duration: approximately 35 minutes. Patient's expressed consent for visit: yes."
+    },
+    {
+      "block_id": 9,
+      "note_type": "Respiratory therapy note",
+      "approximate_tokens": 1430,
+      "content": "RESPIRATORY THERAPY NOTE\n\nRespiratory Therapist: [RRT, Inpatient Respiratory Care Services]\nVisit type: Assessment and treatment — routine\nReason for visit: Ongoing respiratory monitoring in patient with cardiovascular comorbidities; education and therapy per protocol.\n\nPATIENT OVERVIEW:\n61-year-old male with significant hepatic and cardiovascular comorbidity burden, hospitalized for acute infectious process management. Respiratory therapy was consulted as part of the interdisciplinary care team approach. Prior documentation reviewed; this note represents today's assessment and intervention.\n\nSUBJECTIVE:\nPatient was awake and alert at time of visit. He reports no significant respiratory complaints at this time — denies shortness of breath at rest, though notes mild breathlessness with exertion, which he reports is not new and has been present to some degree related to his chronic medical conditions for some time. He denies productive cough. He reports sleeping with his head elevated, which he says helps him feel more comfortable. He has no known reactive airway disease history per chart and confirmed by patient.\n\nHe did express frustration with being in bed for extended periods and says he feels better when he is \"up and moving,\" which he reports is consistent with his experience at home.\n\nOBJECTIVE:\nPatient in no acute respiratory distress at time of this visit. Breath sounds assessed: breath sounds present bilaterally with findings noted and reported to primary team per protocol. No obvious accessory muscle use. Speaking in full sentences without pausing. Oxygenation acceptable per monitoring — no acute supplemental support in use at this time.\n\nRESPIRATORY ASSESSMENT:\nDiaphragmatic excursion and respiratory pattern assessed. Breathing pattern regular with no obvious abnormality in rate or rhythm noted on observation. No cyanosis of lips or nail beds. No nasal flaring.\n\nCough assessment: Patient has a weak voluntary cough effort. Cough strength graded as mildly reduced compared to expected for age/size. Attributed primarily to pain splinting and deconditioning in setting of prolonged hospitalization rather than intrinsic airway or neuromuscular pathology, though this will be monitored. Patient educated on techniques to support cough effectiveness including supported coughing technique (pillow to chest during cough effort). Patient demonstrated technique after instruction; performed acceptably.\n\nINTERVENTIONS:\n\nIncentive spirometry: Patient has an incentive spirometer at bedside. Assessed current use — patient had been performing exercises inconsistently (performing approximately half the recommended sessions per day). Re-educated on importance of regular use for pulmonary hygiene during prolonged bed rest and hospitalization, particularly given cardiovascular comorbidity. Demonstrated proper technique; patient performed several repetitions under observation. Technique reinforced. Goal volumes reviewed and set at appropriate target for patient's age and size. Patient agreed to more consistent use and requested staff reminders during shift as a support strategy.\n\nPositioning: Reinforced benefits of sitting upright and out of bed when possible to support respiratory function. Coordinated with nursing regarding positioning schedule.\n\nBreathing exercises: Taught patient diaphragmatic breathing exercise sequence for use during rest periods and when feeling any sense of breathlessness. Patient practiced three rounds during session and said he found this helpful. Instruction card left at bedside.\n\nHumidification: Reviewed adequacy of ambient environment for respiratory comfort; no issues identified.\n\nSupplemental oxygen: Not currently in use. Patient monitoring parameters in place per orders; any change in status will be managed per protocol and primary team notification.\n\nASSESSMENT AND PLAN:\nPatient currently without acute respiratory distress. Mild reduction in cough strength and inconsistent pulmonary hygiene noted; addressed with education and reinforcement this session. Given prolonged hospitalization and cardiovascular comorbidity burden, continued respiratory monitoring and pulmonary hygiene support is appropriate.\n\nPlan:\n1. Continue daily RT assessment during admission.\n2. Reinforce incentive spirometry compliance; coordinate with nursing for reminder support.\n3. Breathing exercise practice to be incorporated into patient's daily routine.\n4. Reassess cough strength and pulmonary hygiene in two to three days.\n5. Coordinate with PT regarding progression of mobility — increasing ambulation will naturally support respiratory function.\n6. Immediate escalation to primary team for any change in respiratory status.\n\nPatient expressed appreciation for the visit and education. Questions answered. Session concluded without adverse events. Total visit time: approximately 30 minutes."
+    },
+    {
+      "block_id": 10,
+      "note_type": "Patient education encounter",
+      "approximate_tokens": 1510,
+      "content": "PATIENT EDUCATION ENCOUNTER NOTE\n\nEducator: [Inpatient Education RN / Patient Education Coordinator]\nEncounter type: Structured patient education session — discharge readiness preparation\nSetting: Patient room, bedside education session\n\nINTRODUCTION AND RATIONALE:\nThis education encounter was conducted as part of the patient's discharge readiness preparation. The goal was to assess current health literacy, identify knowledge gaps, and provide structured education on topics relevant to safe recovery at home following hospitalization. Family member was present for the session and actively participated, which is consistent with our standard care approach for patients with complex medical histories.\n\nHEALTH LITERACY / LEARNING ASSESSMENT:\nPrior to education, I assessed the patient's health literacy and readiness to learn. Patient was alert and oriented. He demonstrated adequate literacy for purpose of education (able to read printed materials at a standard level). He stated he learns best through conversation and discussion rather than from reading materials alone; a combination of verbal teaching with visual aids was used accordingly.\n\nPatient's prior knowledge: Patient has been managing chronic health conditions for some time and has some familiarity with concepts related to his conditions at a lay level. He was able to describe his chronic medical issues in general terms. He demonstrated some knowledge gaps regarding specific aspects of his recovery and home management, particularly around recognizing warning signs, appropriate activity levels post-discharge, and follow-up care logistics.\n\nPatient identified that he had questions that he had \"been saving up\" for this conversation. He engaged enthusiastically.\n\nEDUCATION TOPICS COVERED:\n\n1. Understanding the current illness and recovery trajectory\nPatient was given a lay-level explanation of the current illness and what recovery typically looks like, consistent with what the primary team has communicated to him. Emphasis placed on the importance of the full course of treatment and follow-up monitoring. Patient verbalized understanding that recovery may take longer than initially expected given his chronic health history.\n\n2. When to seek care / warning signs\nExtensive time spent on recognizing warning signs that require urgent evaluation. The patient was educated using plain language. He was given a printed reference card listing categories of warning signs and instructed to call his healthcare provider or go to the emergency department if any of these developed. Patient was able to teach back two of the three main categories of warning signs spontaneously and with minimal prompting identified the third.\n\nFamily member asked clarifying questions about what exactly constitutes an emergency vs. a non-urgent symptom. Addressed this in detail; family felt reassured by having a clear framework.\n\n3. Activity and physical limitations during recovery\nPatient was educated on appropriate activity levels post-discharge. Discussed the difference between fatigue and harmful overexertion, and the importance of gradual return to activity rather than trying to resume all prior activities immediately. Reinforced physical therapy's activity progression plan. Patient expressed understanding and stated he has realistic expectations after speaking with PT.\n\nPatient asked specifically about resuming outdoor walking — addressed within the framework of his current level and the graduated progression approach. He received this information positively.\n\n4. Medication adherence\nGeneral principles of medication adherence reviewed. Patient was told that detailed medication review would be provided by pharmacy at discharge. He was reminded of the importance of taking all medications as prescribed and not stopping medications without consulting his care team, even if he begins to feel better. He was asked to describe what he would do if he forgot a dose — his answer was appropriate.\n\nPatient was educated on the importance of carrying an updated medication list to all appointments and on medication storage at home.\n\n5. Follow-up care\nReinforced importance of keeping all follow-up appointments. Patient demonstrated understanding that multiple follow-up visits with different specialists are expected and expressed willingness. Family member noted transportation would not be a barrier.\n\nDiscussed that some monitoring labs or visits may need to occur sooner than standard intervals given his history; patient accepted this.\n\n6. Nutrition and dietary recovery\nReinforced key points from the dietitian's visit earlier in the admission. Encouraged continued attention to eating well and increasing oral intake as tolerated. Discussed general principles of a balanced diet during recovery; specific dietary restrictions per team recommendations reviewed without going into clinical detail that falls outside the nursing educator scope.\n\n7. Psychosocial recovery\nBrief discussion on the emotional impact of a significant hospitalization. Normalized feelings of anxiety or low mood following discharge. Informed patient and family of available resources including primary care follow-up for mental health concerns, and community support lines available to them.\n\nTEACH-BACK ASSESSMENT:\nAt the end of the session, I performed a teach-back assessment asking the patient to summarize in his own words:\n- Two warning signs that would prompt him to call or seek care (Correct)\n- Whether he should stop his medications if he feels better before his appointment (Correct — he should not)\n- Who his first call would be to with a health question post-discharge (Correct — identified primary care provider and after-hours line)\n\nTeach-back demonstrates adequate retention of core safety topics for discharge readiness. Family member also performed teach-back for warning signs and demonstrated retained understanding.\n\nMATERIALS PROVIDED:\n- Printed warning signs reference card\n- General hospital discharge instruction packet\n- Appointment scheduling contact information\n- Medication tracking sheet (to be completed by pharmacy at discharge)\n\nASSESSMENT:\nPatient demonstrates discharge readiness from a health literacy and education perspective. He is engaged, motivated, and has reliable family support that will reinforce home education. Gaps in knowledge were addressed and teach-back confirms retention of core safety content. Family member is an active and capable participant in the care plan.\n\nPLAN:\n1. Final discharge education to be completed day of discharge — pharmacy to lead medication review.\n2. Confirm final appointment schedule is communicated to patient at discharge.\n3. Follow-up call to patient at home (if available per program protocol) recommended at 72 hours post-discharge.\n4. Education documentation filed in chart per protocol.\n\nSession duration: approximately 60 minutes. Patient and family expressed gratitude and stated they felt more prepared."
+    }
+  ],
+  "coverage_report": {
+    "missing_subtypes": [
+      "CAT.alert",
+      "QUANT.anthro",
+      "QUANT.freq"
+    ],
+    "under_represented_subtypes": [
+      "TEMP.date"
+    ],
+    "instances_without_class_node": [
+      "A6",
+      "A12"
+    ],
+    "deliberate_deviations_from_target_bands": "CAT.alert absent because case_text contains no documented allergy, code status, or formal safety alert prior to the end-of-life decision. QUANT.anthro absent because no weight, BMI, CrCl, or BSA is reported despite weight-based dosing (mg/kg). QUANT.freq not extracted separately because all dosing frequencies appear as integral parts of dose-interval expressions already captured in QUANT.dose anchors (A34-A37). TEMP.date has only one anchor (A26) because the case uses relative temporal references (days after admission, weeks later) rather than absolute calendar dates. Total anchor count (46) slightly exceeds combined target midpoints because the three-step antibiotic switch and dual hospitalization generate numerous clinically distinct dose, lab, and reasoning anchors that cannot be reduced without losing experimentally valuable class-instance and trajectory pairings."
+  },
+  "filler_constraints_used": [
+    "no named medications",
+    "no named diagnoses",
+    "no specific organisms",
+    "no specific lab values with units",
+    "no specific vital signs",
+    "no specific doses or frequencies",
+    "no specific dates",
+    "no acute clinical events",
+    "no specific clinical reasoning or conditional management plans",
+    "no named medical conditions (hypertension, diabetes, atrial fibrillation, ESLD, aortic stenosis, etc.)",
+    "no drug name suffixes (-pril, -sartan, -olol, -statin, etc.)",
+    "no specific durations that could collide with case anchors"
+  ],
+  "audit_notes": "[part2 anchors] Self-audit performed against all seven checks before finalizing:\n\n1. VERBATIM CHECK: Every anchor text was verified as a substring of case_text. Key confirmations: 'E. durans' matches 'identified as E. durans'; 'PYR negative' matches 'PYR negative and was identified'; 'without any adjacent abscess' matches 'vegetation on the aortic valve without any adjacent abscess'; 'INR) 1.5' matches 'international normalised ratio (INR) 1.5'; 'BNP 2376 pg/ml' matches 'decompensated congestive heart failure (BNP 2376 pg/ml)'. The text for A33 uses 'INR) 1.5' which is a verbatim substring capturing the value immediately after the parenthetical abbreviation.\n\n2. CLASS_NODE_PRESENT: Set for all 8 CAT.instance anchors. A5 (E. durans) = true (paired with A1 gram-positive cocci in clusters). A7-A10 (four antibiotics) = true (paired with A2 empiric antibiotic therapy). A11 (mobile vegetation) = true (case_text contains 'endocarditis' in A43 reasoning context). A6 (alcoholic liver disease) = false (no standalone 'liver disease' class term). A12 (severe aortic stenosis) = false (no 'valvular disease' or 'heart disease' class term). Both false instances listed in coverage_report.instances_without_class_node.\n\n3. DOSE-INSTANCE PAIRING: A34 pairs to A7 (ceftriaxone), A35 pairs to A8 (vancomycin), A36 pairs to A9 (ampicillin), A37 pairs to A10 (gentamicin). All four QUANT.dose anchors correctly reference their CAT.instance.\n\n4. HIGH-PRIORITY SUBTYPE COVERAGE: CAT.instance = 8 anchors (target >= 4). CAT.qualifier = 3 anchors (target >= 2). QUANT.dose = 4 anchors. QUANT.lab = 7 anchors. TEMP.status = 2 anchors. REAS.considered = 2 anchors. All high-priority subtypes meet minimum thresholds. Missing subtypes documented in coverage_report.\n\n5. ANSWER SOURCE CHECK: All questions answerable solely from case_text. No question requires excluded_text (discussion/literature) or external clinical knowledge. Verified that SBP suspicion (A40), surgical risk assessment (A42), and TEE deferral reasoning (A41) all appear in case_text hospital course narrative, not in excluded discussion.\n\n6. REAS QUESTION QUALITY: A40 question targets the reasoning behind empiric antibiotic choice (why ceftriaxone), not just the diagnosis name. A41 targets the causal chain (bleeding risk from varices). A43 targets the indication for echocardiography (bacteraemia prompting endocarditis evaluation). A44 targets the uncertainty and decision not to biopsy. A45 targets the causal link between creatinine rise and gentamicin discontinuation.\n\n7. TEMP.STATUS QUESTION QUALITY: A24 question asks about the change in aminoglycoside status and its replacement, not just whether gentamicin was used. A25 question asks about the treatment preference transition and what approach was chosen, not just the outcome.\n\nRevisions made during audit: (a) Added A39 (BNP 2376) to capture the readmission BNP trajectory point, paired with A31 and A23. (b) Corrected A11 class_node_present from false to true after confirming 'endocarditis' appears in case_text via A43. (c) Revised A40 question from 'What diagnosis was initially suspected?' to a question targeting the reasoning link between the suspected diagnosis and the empiric antibiotic selection.\n\n[part3 filler] Self-audit performed before finalizing. Checked all 10 blocks for: (1) Medication names — none present; all medications referenced by therapeutic class or role only ('antihypertensive regimen,' 'scheduled medications,' 'analgesic support,' 'antimicrobial class'). No drug name suffixes identified. No 'mg,' 'mcg,' or unit-dose strings found. (2) Diagnosis names — none present; comorbidities described only at system level ('hepatic and cardiovascular comorbidities,' 'chronic medical conditions,' 'metabolic comorbidity burden') with no named conditions (no hypertension, diabetes, atrial fibrillation, endocarditis, aortic stenosis, liver disease). (3) Specific lab values — none present; labs referenced only as 'labs stable,' 'within expected ranges,' 'trends communicated to team.' (4) Specific vital signs — none present; hemodynamic status referenced qualitatively ('hemodynamically stable,' 'vitals stable through shift,' 'no acute distress'). (5) Specific dates — none present; time references are all relative ('this morning,' 'overnight,' 'earlier in the admission,' 'some time ago'). (6) Specific durations — avoided fixed numeric durations that could collide with anchors; used 'some time,' 'a period of time,' 'extended period' throughout. (7) Acute event language — no bleeding, stroke, infarction, arrhythmia, sepsis, exacerbation, decompensation language present. (8) Specific clinical reasoning — no if/then conditional plans, no considered-and-rejected differentials. One close call: pharmacy block references 'antimicrobial class selection' — retained as it is class-level and does not name any organism or specific drug, consistent with constraints. Organism reference in case title (Enterococcus durans) does not appear anywhere in the filler. Patient descriptor from case ('end-stage liver disease,' 'aortic stenosis,' 'fever and weakness') does not appear in filler; patient described only as '61-year-old male with hepatic and cardiovascular comorbidities.' Stylistic variation achieved across blocks: PT note uses structured functional status format; nursing note uses systems-review layout with abbreviations (AAOx3, IV, NAD); nutrition note uses narrative with formal RD clinical structure; social work note is narrative and psychosocially oriented; pharmacy note is documentation-heavy and cross-referential; OT note uses structured ADL-by-domain format; case management note is task-and-status-oriented; chaplaincy note is narrative and reflective; respiratory therapy note uses clinical-procedural structure; patient education note uses teach-back framework."
+}

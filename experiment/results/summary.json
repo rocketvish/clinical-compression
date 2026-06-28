@@ -1,0 +1,125 @@
+{
+  "n_total": 68,
+  "by_length": {
+    "8000": {
+      "CORRECT": 33,
+      "PARTIAL": 0,
+      "INCORRECT": 1
+    },
+    "32000": {
+      "CORRECT": 34,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    }
+  },
+  "by_subtype": {
+    "CAT.class": {
+      "CORRECT": 8,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "CAT.instance": {
+      "CORRECT": 18,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "CAT.qualifier": {
+      "CORRECT": 6,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "CAT.negated": {
+      "CORRECT": 3,
+      "PARTIAL": 0,
+      "INCORRECT": 1
+    },
+    "TEMP.duration": {
+      "CORRECT": 8,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "TEMP.since": {
+      "CORRECT": 2,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "TEMP.status": {
+      "CORRECT": 6,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "TEMP.sequence": {
+      "CORRECT": 4,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "QUANT.anthro": {
+      "CORRECT": 2,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "REAS.causal": {
+      "CORRECT": 6,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    },
+    "REAS.planned": {
+      "CORRECT": 4,
+      "PARTIAL": 0,
+      "INCORRECT": 0
+    }
+  },
+  "by_failure_mode": {
+    "negation_loss": 1
+  },
+  "class_vs_instance": {
+    "all_instances": {
+      "8000": {
+        "n_paired_instances": 9,
+        "instance_correct": 9,
+        "instance_lost_class_preserved": 0,
+        "both_lost": 0,
+        "class_lost_instance_correct": 0
+      },
+      "32000": {
+        "n_paired_instances": 9,
+        "instance_correct": 9,
+        "instance_lost_class_preserved": 0,
+        "both_lost": 0,
+        "class_lost_instance_correct": 0
+      }
+    },
+    "with_class_node": {
+      "8000": {
+        "n_paired_instances": 7,
+        "instance_correct": 7,
+        "instance_lost_class_preserved": 0,
+        "both_lost": 0,
+        "class_lost_instance_correct": 0
+      },
+      "32000": {
+        "n_paired_instances": 7,
+        "instance_correct": 7,
+        "instance_lost_class_preserved": 0,
+        "both_lost": 0,
+        "class_lost_instance_correct": 0
+      }
+    },
+    "without_class_node": {
+      "8000": {
+        "n_paired_instances": 2,
+        "instance_correct": 2,
+        "instance_lost_class_preserved": 0,
+        "both_lost": 0,
+        "class_lost_instance_correct": 0
+      },
+      "32000": {
+        "n_paired_instances": 2,
+        "instance_correct": 2,
+        "instance_lost_class_preserved": 0,
+        "both_lost": 0,
+        "class_lost_instance_correct": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "case_id": "triple_therapy",
+  "context_length_target": 8000,
+  "context_length_actual": 8113,
+  "placement": "middle",
+  "answer_model": "openai/gpt-5.4",
+  "answers": [
+    {
+      "anchor_id": "A1",
+      "question": "What cardiac arrhythmia category was the patient found to have on presentation?",
+      "expected_answer": "atrial fibrillation",
+      "model_answer": "Atrial fibrillation with rapid ventricular response.",
+      "input_tokens": 8094,
+      "output_tokens": 13
+    },
+    {
+      "anchor_id": "A2",
+      "question": "What broad category of medication regimen was reevaluated during the hospitalization?",
+      "expected_answer": "antithrombotic regimen",
+      "model_answer": "The patient\u2019s antithrombotic regimen was reevaluated.",
+      "input_tokens": 8093,
+      "output_tokens": 18
+    },
+    {
+      "anchor_id": "A3",
+      "question": "What was the clinical indication for starting rivaroxaban?",
+      "expected_answer": "thromboembolism prophylaxis",
+      "model_answer": "Rivaroxaban was started for thromboembolism prophylaxis in the setting of atrial fibrillation.",
+      "input_tokens": 8091,
+      "output_tokens": 26
+    },
+    {
+      "anchor_id": "A4",
+      "question": "What general type of bleeding complication did the patient develop?",
+      "expected_answer": "recurrent nasal bleeding",
+      "model_answer": "He developed recurrent nasal bleeding (epistaxis), including severe posterior nasal hemorrhage.",
+      "input_tokens": 8090,
+      "output_tokens": 21
+    },
+    {
+      "anchor_id": "A5",
+      "question": "What specific subtype of atrial fibrillation was documented in the patient's history?",
+      "expected_answer": "paroxysmal atrial fibrillation",
+      "model_answer": "Paroxysmal atrial fibrillation.",
+      "input_tokens": 8094,
+      "output_tokens": 13
+    },
+    {
+      "anchor_id": "A6",
+      "question": "Which specific oral anticoagulant was initiated for stroke prevention?",
+      "expected_answer": "rivaroxaban",
+      "model_answer": "Rivaroxaban was initiated for thromboembolism/stroke prevention.",
+      "input_tokens": 8091,
+      "output_tokens": 19
+    },
+    {
+      "anchor_id": "A7",
+      "question": "Which thienopyridine antiplatelet agent was included among the patient's home medications?",
+      "expected_answer": "prasugrel",
+      "model_answer": "Prasugrel.",
+      "input_tokens": 8098,
+      "output_tokens": 9
+    },
+    {
+      "anchor_id": "A8",
+      "question": "Which antiplatelet was the first to be discontinued after the bleeding episodes began?",
+      "expected_answer": "aspirin",
+      "model_answer": "Aspirin was the first antiplatelet discontinued after the bleeding began.",
+      "input_tokens": 8096,
+      "output_tokens": 20
+    },
+    {
+      "anchor_id": "A9",
+      "question": "What antiplatelet agent was prasugrel switched to after the bleeding complication?",
+      "expected_answer": "clopidogrel",
+      "model_answer": "Prasugrel was switched to clopidogrel.",
+      "input_tokens": 8096,
+      "output_tokens": 16
+    },
+    {
+      "anchor_id": "A10",
+      "question": "Which anticoagulant had the patient previously been offered but declined?",
+      "expected_answer": "warfarin",
+      "model_answer": "Warfarin.",
+      "input_tokens": 8092,
+      "output_tokens": 8
+    },
+    {
+      "anchor_id": "A11",
+      "question": "What cardiac diagnosis was treated with a stent in the patient's past medical history?",
+      "expected_answer": "coronary artery disease",
+      "model_answer": "Coronary artery disease \u2014 treated with a bare metal stent six months prior.",
+      "input_tokens": 8095,
+      "output_tokens": 21
+    },
+    {
+      "anchor_id": "A12",
+      "question": "What renal diagnosis and its stage were documented in the past medical history?",
+      "expected_answer": "chronic kidney disease stage 3",
+      "model_answer": "Chronic kidney disease stage 3.",
+      "input_tokens": 8093,
+      "output_tokens": 12
+    },
+    {
+      "anchor_id": "A13",
+      "question": "What was the most clinically severe bleeding event the patient experienced, including its anatomic specification?",
+      "expected_answer": "severe posterior nasal hemorrhage",
+      "model_answer": "Severe posterior nasal hemorrhage requiring posterior nasal packing.",
+      "input_tokens": 8097,
+      "output_tokens": 15
+    },
+    {
+      "anchor_id": "A14",
+      "question": "What qualifier described the ventricular rate at the time atrial fibrillation was identified?",
+      "expected_answer": "rapid ventricular response",
+      "model_answer": "Atrial fibrillation was identified **with rapid ventricular response**.",
+      "input_tokens": 8095,
+      "output_tokens": 17
+    },
+    {
+      "anchor_id": "A15",
+      "question": "How was the rivaroxaban dosing described in relation to the patient's renal function?",
+      "expected_answer": "renally dosed rivaroxaban",
+      "model_answer": "It was described as **renally dosed rivaroxaban**.",
+      "input_tokens": 8096,
+      "output_tokens": 19
+    },
+    {
+      "anchor_id": "A16",
+      "question": "What type of coronary stent had the patient previously received?",
+      "expected_answer": "bare metal stent",
+      "model_answer": "He had previously received a bare metal coronary stent.",
+      "input_tokens": 8091,
+      "output_tokens": 15
+    },
+    {
+      "anchor_id": "A17",
+      "question": "What was the patient's prior stance regarding warfarin therapy?",
+      "expected_answer": "previously refused warfarin therapy",
+      "model_answer": "He had previously refused warfarin therapy.",
+      "input_tokens": 8091,
+      "output_tokens": 13
+    },
+    {
+      "anchor_id": "A18",
+      "question": "What type of heart failure, including its ejection fraction characterization, was documented?",
+      "expected_answer": "congestive heart failure preserved ejection fraction",
+      "model_answer": "Congestive heart failure with preserved ejection fraction (HFpEF).",
+      "input_tokens": 8095,
+      "output_tokens": 19
+    },
+    {
+      "anchor_id": "A19",
+      "question": "How long had the patient experienced nausea and vomiting before presenting to the emergency department?",
+      "expected_answer": "one-day history of intractable nausea and vomiting",
+      "model_answer": "One day.",
+      "input_tokens": 8095,
+      "output_tokens": 7
+    },
+    {
+      "anchor_id": "A20",
+      "question": "How long before the current presentation had the coronary stent been placed?",
+      "expected_answer": "six months prior",
+      "model_answer": "The coronary bare metal stent had been placed 6 months prior to presentation.",
+      "input_tokens": 8093,
+      "output_tokens": 20
+    },
+    {
+      "anchor_id": "A21",
+      "question": "How soon after rivaroxaban was started did the patient develop bleeding?",
+      "expected_answer": "Within 72 hours of initiating renally dosed rivaroxaban",
+      "model_answer": "Within 72 hours of starting renally dosed rivaroxaban, he developed recurrent nasal bleeding.",
+      "input_tokens": 8094,
+      "output_tokens": 25
+    },
+    {
+      "anchor_id": "A22",
+      "question": "How long did the nasal packing remain in place before it was removed?",
+      "expected_answer": "five days later",
+      "model_answer": "Five days.",
+      "input_tokens": 8093,
+      "output_tokens": 7
+    },
+    {
+      "anchor_id": "A23",
+      "question": "What time interval without rivaroxaban was observed before determining discharge readiness?",
+      "expected_answer": "After 24 hours without oral rivaroxaban",
+      "model_answer": "After 24 hours without oral rivaroxaban and without recurrent hemorrhage, he was deemed stable for discharge.",
+      "input_tokens": 8094,
+      "output_tokens": 27
+    },
+    {
+      "anchor_id": "A24",
+      "question": "What change was made to aspirin during the hospitalization, and what prompted it?",
+      "expected_answer": "Aspirin was discontinued",
+      "model_answer": "Aspirin was discontinued after the patient developed recurrent epistaxis on rivaroxaban, including severe posterior nasal hemorrhage requiring posterior nasal packing.",
+      "input_tokens": 8094,
+      "output_tokens": 34
+    },
+    {
+      "anchor_id": "A25",
+      "question": "What specific medication changes were made to the antithrombotic regimen after reevaluation, and which agents were involved?",
+      "expected_answer": "discontinuing rivaroxaban and switching prasugrel to clopidogrel",
+      "model_answer": "After reevaluation, **rivaroxaban was discontinued** and **prasugrel was switched to clopidogrel**. Earlier, **aspirin had also been discontinued**.",
+      "input_tokens": 8103,
+      "output_tokens": 41
+    },
+    {
+      "anchor_id": "A26",
+      "question": "What happened after the posterior nasal packing was removed?",
+      "expected_answer": "When the packing was removed five days later, bleeding recurred",
+      "model_answer": "After the posterior nasal packing was removed five days later, the nasal bleeding recurred.",
+      "input_tokens": 8089,
+      "output_tokens": 21
+    },
+    {
+      "anchor_id": "A27",
+      "question": "What was the patient's anticoagulation status before the current hospitalization, and what had changed?",
+      "expected_answer": "previously refused warfarin therapy",
+      "model_answer": "Before this hospitalization, he had known paroxysmal atrial fibrillation but had previously refused warfarin, so he was not on warfarin anticoagulation. During this admission, he was started on heparin and then rivaroxaban for thromboembolism prophylaxis.",
+      "input_tokens": 8097,
+      "output_tokens": 64
+    },
+    {
+      "anchor_id": "A28",
+      "question": "What was the patient's creatinine clearance value, and what unit or threshold does it represent?",
+      "expected_answer": "creatinine clearance 30",
+      "model_answer": "Creatinine clearance was 30, representing 30 mL/min.",
+      "input_tokens": 8097,
+      "output_tokens": 18
+    },
+    {
+      "anchor_id": "A29",
+      "question": "What therapeutic rationale linked the choice of rivaroxaban to the patient's clinical need?",
+      "expected_answer": "rivaroxaban for thromboembolism prophylaxis",
+      "model_answer": "Rivaroxaban was chosen for thromboembolism prophylaxis in atrial fibrillation because the patient had previously refused warfarin due to the need for frequent monitoring and dose adjustment.",
+      "input_tokens": 8096,
+      "output_tokens": 42
+    },
+    {
+      "anchor_id": "A30",
+      "question": "What specific reason did the patient give for refusing warfarin, and what aspect of warfarin therapy was objectionable?",
+      "expected_answer": "the patient's main objection to warfarin was the need for frequent monitoring and dose adjustment",
+      "model_answer": "He refused warfarin because he objected to the need for frequent monitoring and dose adjustment.",
+      "input_tokens": 8104,
+      "output_tokens": 23
+    },
+    {
+      "anchor_id": "A31",
+      "question": "What was the stated purpose for initiating heparin and diltiazem drip, and what diagnosis did they target?",
+      "expected_answer": "started on heparin and diltiazem drip for his atrial fibrillation",
+      "model_answer": "Heparin and a diltiazem drip were started for management of his atrial fibrillation, specifically atrial fibrillation with rapid ventricular response; heparin was for thromboembolism prophylaxis and diltiazem for rate control.",
+      "input_tokens": 8103,
+      "output_tokens": 55
+    },
+    {
+      "anchor_id": "A32",
+      "question": "Which service initiated the formal reevaluation of the patient's drug regimen after the bleeding complication?",
+      "expected_answer": "Cardiology reevaluated the patient's antithrombotic regimen",
+      "model_answer": "Cardiology initiated the formal reevaluation of the antithrombotic/drug regimen after the bleeding complication.",
+      "input_tokens": 8096,
+      "output_tokens": 26
+    },
+    {
+      "anchor_id": "A33",
+      "question": "What clinical determination was made regarding the patient's readiness to leave the hospital?",
+      "expected_answer": "the patient was deemed stable for discharge",
+      "model_answer": "After 24 hours off oral rivaroxaban without recurrent hemorrhage, the patient was deemed stable for discharge.",
+      "input_tokens": 8093,
+      "output_tokens": 27
+    },
+    {
+      "anchor_id": "A34",
+      "question": "How many discrete mild bleeding episodes occurred before the severe hemorrhage, and how were they managed?",
+      "expected_answer": "five episodes of mild bleeding that stopped with direct pressure and simple packing",
+      "model_answer": "Five mild bleeding episodes; they stopped with direct pressure and simple packing.",
+      "input_tokens": 8098,
+      "output_tokens": 18
+    }
+  ]
+}

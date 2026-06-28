@@ -1,0 +1,887 @@
+{
+  "anchors": [
+    {
+      "id": "A1",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "gram-positive cocci in clusters",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": ["A5"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A2",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "empiric antibiotic therapy",
+      "location": "hospital_course",
+      "distinctiveness": "low",
+      "granularity": "class",
+      "paired_anchors": ["A7", "A8", "A9", "A10"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A3",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "anaemia",
+      "location": "presentation",
+      "distinctiveness": "low",
+      "granularity": "class",
+      "paired_anchors": ["A28"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A4",
+      "category": "CAT",
+      "subtype": "CAT.class",
+      "text": "portal hypertension",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "class",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A5",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "E. durans",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": ["A1", "A13", "A14"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A6",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "alcoholic liver disease",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": false
+    },
+    {
+      "id": "A7",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "intravenous ceftriaxone",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": ["A2", "A34"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A8",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "intravenous vancomycin",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": ["A2", "A35"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A9",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "ampicillin",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": ["A2", "A36"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A10",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "gentamicin",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": ["A2", "A37"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A11",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "mobile vegetation on the aortic valve",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "instance",
+      "paired_anchors": ["A17", "A43"],
+      "clinical_actionability": "high",
+      "class_node_present": true
+    },
+    {
+      "id": "A12",
+      "category": "CAT",
+      "subtype": "CAT.instance",
+      "text": "severe aortic stenosis",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "instance",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": false
+    },
+    {
+      "id": "A13",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "PYR negative",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "qualifier",
+      "paired_anchors": ["A5"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A14",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "with synergy to gentamicin and streptomycin",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "qualifier",
+      "paired_anchors": ["A5"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A15",
+      "category": "CAT",
+      "subtype": "CAT.qualifier",
+      "text": "decompensated congestive heart failure",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "qualifier",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A16",
+      "category": "CAT",
+      "subtype": "CAT.negated",
+      "text": "no Janeway lesions, Osler nodes or Roth spots",
+      "location": "presentation",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A17",
+      "category": "CAT",
+      "subtype": "CAT.negated",
+      "text": "without any adjacent abscess",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A11"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A18",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "generalised weakness lasting 1 month",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A19",
+      "category": "TEMP",
+      "subtype": "TEMP.duration",
+      "text": "planned duration of 6 weeks from first negative blood culture",
+      "location": "disposition",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A20",
+      "category": "TEMP",
+      "subtype": "TEMP.since",
+      "text": "Five days after admission, the blood cultures turned negative",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A21",
+      "category": "TEMP",
+      "subtype": "TEMP.since",
+      "text": "readmission to the hospital 2 weeks later",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A22",
+      "category": "TEMP",
+      "subtype": "TEMP.sequence",
+      "text": "antibiotics were switched to intravenous vancomycin",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A7", "A8"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A23",
+      "category": "TEMP",
+      "subtype": "TEMP.trajectory",
+      "text": "progressive heart failure",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A31"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A24",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "Gentamicin was discontinued on account of increased creatinine and substituted with ceftriaxone",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A10", "A7"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A25",
+      "category": "TEMP",
+      "subtype": "TEMP.status",
+      "text": "declining further aggressive treatment in favour of primary palliation of symptoms",
+      "location": "disposition",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A26",
+      "category": "TEMP",
+      "subtype": "TEMP.date",
+      "text": "in less than 24 h",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A1"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A27",
+      "category": "QUANT",
+      "subtype": "QUANT.vital",
+      "text": "temperature of 100.6°F (38.1 °C)",
+      "location": "presentation",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A28",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "haemoglobin 7.9 g/dl",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A3"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A29",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "platelets 43 000/μl",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A30",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "albumin 1.7 g/dl",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A31",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "Beta natriuretic peptide (BNP) was 1122 pg/ml",
+      "location": "labs",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A23"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A32",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "Creatinine was 1.08 mg/dl",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A33",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "INR) 1.5",
+      "location": "labs",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A34",
+      "category": "QUANT",
+      "subtype": "QUANT.dose",
+      "text": "ceftriaxone 2 g every 24 h",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A7"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A35",
+      "category": "QUANT",
+      "subtype": "QUANT.dose",
+      "text": "vancomycin (20 mg/kg every 12 h)",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A8"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A36",
+      "category": "QUANT",
+      "subtype": "QUANT.dose",
+      "text": "ampicillin (2 g every 4 h)",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A9"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A37",
+      "category": "QUANT",
+      "subtype": "QUANT.dose",
+      "text": "gentamicin (1 mg/kg every 8 h)",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A10"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A38",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "creatinine 1.67 mg/dl",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A32"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A39",
+      "category": "QUANT",
+      "subtype": "QUANT.lab",
+      "text": "BNP 2376 pg/ml",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A31", "A23"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A40",
+      "category": "REAS",
+      "subtype": "REAS.considered",
+      "text": "clinical suspicion of spontaneous bacterial peritonitis",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A7"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A41",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "transoesophageal echocardiogram was deferred because of the risk of bleeding secondary to high-grade oesophageal varices",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A42",
+      "category": "REAS",
+      "subtype": "REAS.considered",
+      "text": "considered to have high mortality risk if he underwent cardiac surgery",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A43",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "On account of high-grade bacteraemia, a transthoracic echocardiogram was requested to evaluate for endocarditis",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A11", "A1"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A44",
+      "category": "REAS",
+      "subtype": "REAS.uncertain",
+      "text": "assumed to be ischaemic and biopsy was not done",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": [],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A45",
+      "category": "REAS",
+      "subtype": "REAS.causal",
+      "text": "Gentamicin was discontinued on account of increased creatinine",
+      "location": "hospital_course",
+      "distinctiveness": "high",
+      "granularity": "n/a",
+      "paired_anchors": ["A10", "A38"],
+      "clinical_actionability": "high",
+      "class_node_present": "n/a"
+    },
+    {
+      "id": "A46",
+      "category": "REAS",
+      "subtype": "REAS.planned",
+      "text": "Creatinine and gentamicin levels were monitored twice a week",
+      "location": "hospital_course",
+      "distinctiveness": "medium",
+      "granularity": "n/a",
+      "paired_anchors": ["A10"],
+      "clinical_actionability": "medium",
+      "class_node_present": "n/a"
+    }
+  ],
+  "questions": [
+    {
+      "anchor_id": "A1",
+      "question": "What was the morphological description of the organism identified on initial blood cultures?",
+      "expected_answer": "gram-positive cocci in clusters",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A2",
+      "question": "What category of treatment was initiated on admission before culture results returned?",
+      "expected_answer": "empiric antibiotic therapy",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A3",
+      "question": "What haematologic condition was part of the patient's medical history at presentation?",
+      "expected_answer": "anaemia",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A4",
+      "question": "What hepatic vascular complication was documented in the patient's history?",
+      "expected_answer": "portal hypertension",
+      "scoring": "keyword_match",
+      "granularity_tested": "class"
+    },
+    {
+      "anchor_id": "A5",
+      "question": "What species of organism was ultimately identified from the blood cultures?",
+      "expected_answer": "E. durans",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A6",
+      "question": "What specific aetiology of liver disease was documented in the patient's history?",
+      "expected_answer": "alcoholic liver disease",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A7",
+      "question": "What specific antibiotic was selected for the initial empiric regimen?",
+      "expected_answer": "intravenous ceftriaxone",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A8",
+      "question": "What antibiotic replaced the initial empiric agent after gram-positive cocci were identified?",
+      "expected_answer": "intravenous vancomycin",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A9",
+      "question": "What beta-lactam antibiotic was included in the definitive combination regimen for the identified enterococcus?",
+      "expected_answer": "ampicillin",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A10",
+      "question": "What aminoglycoside was paired with the beta-lactam in the definitive antibiotic combination?",
+      "expected_answer": "gentamicin",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A11",
+      "question": "What finding was identified on the initial transthoracic echocardiogram?",
+      "expected_answer": "mobile vegetation on the aortic valve",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A12",
+      "question": "What pre-existing cardiac valvular diagnosis was documented in the patient's history?",
+      "expected_answer": "severe aortic stenosis",
+      "scoring": "keyword_match",
+      "granularity_tested": "instance"
+    },
+    {
+      "anchor_id": "A13",
+      "question": "What was the result of the pyrrolidonyl arylamidase (PYR) reaction for the predominant colony?",
+      "expected_answer": "PYR negative",
+      "scoring": "exact_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A14",
+      "question": "What antibiotic synergy pattern was demonstrated on susceptibility testing of the isolate?",
+      "expected_answer": "synergy to gentamicin and streptomycin",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A15",
+      "question": "What qualifying descriptor characterized the heart failure at readmission?",
+      "expected_answer": "decompensated congestive heart failure",
+      "scoring": "keyword_match",
+      "granularity_tested": "qualifier"
+    },
+    {
+      "anchor_id": "A16",
+      "question": "Which peripheral stigmata of endocarditis were specifically assessed and found absent on examination?",
+      "expected_answer": "no Janeway lesions, Osler nodes or Roth spots",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A17",
+      "question": "On the initial echocardiogram, was there any perivalvular extension of infection noted alongside the vegetation?",
+      "expected_answer": "without any adjacent abscess",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A18",
+      "question": "How long had the patient's weakness been present before hospital admission?",
+      "expected_answer": "generalised weakness lasting 1 month",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A19",
+      "question": "What was the intended total duration of antibiotic therapy, and from what reference point was it measured?",
+      "expected_answer": "planned duration of 6 weeks from first negative blood culture",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A20",
+      "question": "How many days after admission did the blood cultures become negative?",
+      "expected_answer": "Five days after admission",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A21",
+      "question": "How long after the initial discharge did the patient require readmission?",
+      "expected_answer": "2 weeks later",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A22",
+      "question": "What antibiotic change was made when blood cultures revealed gram-positive organisms?",
+      "expected_answer": "antibiotics were switched to intravenous vancomycin",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A23",
+      "question": "What trajectory did the patient's cardiac function follow over the clinical course?",
+      "expected_answer": "progressive heart failure",
+      "scoring": "semantic_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A24",
+      "question": "What was the change in the patient's aminoglycoside therapy status, and what agent replaced it?",
+      "expected_answer": "Gentamicin was discontinued on account of increased creatinine and substituted with ceftriaxone",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A25",
+      "question": "What was the patient's final treatment preference decision, and what approach did he choose instead?",
+      "expected_answer": "declining further aggressive treatment in favour of primary palliation of symptoms",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A26",
+      "question": "How quickly after collection did the blood cultures become positive?",
+      "expected_answer": "in less than 24 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A27",
+      "question": "What was the patient's temperature at the time of admission?",
+      "expected_answer": "100.6°F (38.1 °C)",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A28",
+      "question": "What was the patient's haemoglobin level on initial laboratory workup?",
+      "expected_answer": "haemoglobin 7.9 g/dl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A29",
+      "question": "What was the patient's platelet count on admission?",
+      "expected_answer": "platelets 43 000/μl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A30",
+      "question": "What was the patient's serum albumin level?",
+      "expected_answer": "albumin 1.7 g/dl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A31",
+      "question": "What was the initial BNP value at presentation?",
+      "expected_answer": "BNP was 1122 pg/ml",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A32",
+      "question": "What was the baseline creatinine value on admission?",
+      "expected_answer": "Creatinine was 1.08 mg/dl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A33",
+      "question": "What was the patient's INR on initial laboratory workup?",
+      "expected_answer": "INR 1.5",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A34",
+      "question": "What was the dose and dosing interval of the empiric ceftriaxone?",
+      "expected_answer": "ceftriaxone 2 g every 24 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A35",
+      "question": "What was the vancomycin dose and dosing interval when it was introduced?",
+      "expected_answer": "vancomycin 20 mg/kg every 12 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A36",
+      "question": "What was the dosing regimen for ampicillin in the definitive combination?",
+      "expected_answer": "ampicillin 2 g every 4 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A37",
+      "question": "What was the dosing regimen for gentamicin in the definitive combination?",
+      "expected_answer": "gentamicin 1 mg/kg every 8 h",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A38",
+      "question": "What was the creatinine value at the time of readmission?",
+      "expected_answer": "creatinine 1.67 mg/dl",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A39",
+      "question": "What was the BNP level at readmission for decompensated heart failure?",
+      "expected_answer": "BNP 2376 pg/ml",
+      "scoring": "numeric_match_with_unit",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A40",
+      "question": "What initial diagnostic suspicion prompted the choice of ceftriaxone as the empiric antibiotic, and why was that diagnosis considered?",
+      "expected_answer": "clinical suspicion of spontaneous bacterial peritonitis",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A41",
+      "question": "Why was a transoesophageal echocardiogram not performed, and what specific risk factor drove that decision?",
+      "expected_answer": "deferred because of the risk of bleeding secondary to high-grade oesophageal varices",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A42",
+      "question": "What was the surgical team's assessment of operative risk, and what did they conclude about cardiac surgery?",
+      "expected_answer": "considered to have high mortality risk if he underwent cardiac surgery",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A43",
+      "question": "What clinical finding prompted the request for echocardiography, and what diagnosis was being evaluated?",
+      "expected_answer": "On account of high-grade bacteraemia, a transthoracic echocardiogram was requested to evaluate for endocarditis",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A44",
+      "question": "What was the clinical interpretation of the splenic flexure ulcer found on colonoscopy, and why was no tissue obtained?",
+      "expected_answer": "assumed to be ischaemic and biopsy was not done",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A45",
+      "question": "What was the stated reason for discontinuing the aminoglycoside from the antibiotic regimen?",
+      "expected_answer": "Gentamicin was discontinued on account of increased creatinine",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    },
+    {
+      "anchor_id": "A46",
+      "question": "What monitoring plan was established for renal function and drug levels during outpatient antibiotic therapy?",
+      "expected_answer": "Creatinine and gentamicin levels were monitored twice a week",
+      "scoring": "keyword_match",
+      "granularity_tested": "n/a"
+    }
+  ],
+  "coverage_report": {
+    "missing_subtypes": ["CAT.alert", "QUANT.anthro", "QUANT.freq"],
+    "under_represented_subtypes": ["TEMP.date"],
+    "instances_without_class_node": ["A6", "A12"],
+    "deliberate_deviations_from_target_bands": "CAT.alert absent because case_text contains no documented allergy, code status, or formal safety alert prior to the end-of-life decision. QUANT.anthro absent because no weight, BMI, CrCl, or BSA is reported despite weight-based dosing (mg/kg). QUANT.freq not extracted separately because all dosing frequencies appear as integral parts of dose-interval expressions already captured in QUANT.dose anchors (A34-A37). TEMP.date has only one anchor (A26) because the case uses relative temporal references (days after admission, weeks later) rather than absolute calendar dates. Total anchor count (46) slightly exceeds combined target midpoints because the three-step antibiotic switch and dual hospitalization generate numerous clinically distinct dose, lab, and reasoning anchors that cannot be reduced without losing experimentally valuable class-instance and trajectory pairings."
+  },
+  "audit_notes": "Self-audit performed against all seven checks before finalizing:\n\n1. VERBATIM CHECK: Every anchor text was verified as a substring of case_text. Key confirmations: 'E. durans' matches 'identified as E. durans'; 'PYR negative' matches 'PYR negative and was identified'; 'without any adjacent abscess' matches 'vegetation on the aortic valve without any adjacent abscess'; 'INR) 1.5' matches 'international normalised ratio (INR) 1.5'; 'BNP 2376 pg/ml' matches 'decompensated congestive heart failure (BNP 2376 pg/ml)'. The text for A33 uses 'INR) 1.5' which is a verbatim substring capturing the value immediately after the parenthetical abbreviation.\n\n2. CLASS_NODE_PRESENT: Set for all 8 CAT.instance anchors. A5 (E. durans) = true (paired with A1 gram-positive cocci in clusters). A7-A10 (four antibiotics) = true (paired with A2 empiric antibiotic therapy). A11 (mobile vegetation) = true (case_text contains 'endocarditis' in A43 reasoning context). A6 (alcoholic liver disease) = false (no standalone 'liver disease' class term). A12 (severe aortic stenosis) = false (no 'valvular disease' or 'heart disease' class term). Both false instances listed in coverage_report.instances_without_class_node.\n\n3. DOSE-INSTANCE PAIRING: A34 pairs to A7 (ceftriaxone), A35 pairs to A8 (vancomycin), A36 pairs to A9 (ampicillin), A37 pairs to A10 (gentamicin). All four QUANT.dose anchors correctly reference their CAT.instance.\n\n4. HIGH-PRIORITY SUBTYPE COVERAGE: CAT.instance = 8 anchors (target >= 4). CAT.qualifier = 3 anchors (target >= 2). QUANT.dose = 4 anchors. QUANT.lab = 7 anchors. TEMP.status = 2 anchors. REAS.considered = 2 anchors. All high-priority subtypes meet minimum thresholds. Missing subtypes documented in coverage_report.\n\n5. ANSWER SOURCE CHECK: All questions answerable solely from case_text. No question requires excluded_text (discussion/literature) or external clinical knowledge. Verified that SBP suspicion (A40), surgical risk assessment (A42), and TEE deferral reasoning (A41) all appear in case_text hospital course narrative, not in excluded discussion.\n\n6. REAS QUESTION QUALITY: A40 question targets the reasoning behind empiric antibiotic choice (why ceftriaxone), not just the diagnosis name. A41 targets the causal chain (bleeding risk from varices). A43 targets the indication for echocardiography (bacteraemia prompting endocarditis evaluation). A44 targets the uncertainty and decision not to biopsy. A45 targets the causal link between creatinine rise and gentamicin discontinuation.\n\n7. TEMP.STATUS QUESTION QUALITY: A24 question asks about the change in aminoglycoside status and its replacement, not just whether gentamicin was used. A25 question asks about the treatment preference transition and what approach was chosen, not just the outcome.\n\nRevisions made during audit: (a) Added A39 (BNP 2376) to capture the readmission BNP trajectory point, paired with A31 and A23. (b) Corrected A11 class_node_present from false to true after confirming 'endocarditis' appears in case_text via A43. (c) Revised A40 question from 'What diagnosis was initially suspected?' to a question targeting the reasoning link between the suspected diagnosis and the empiric antibiotic selection."
+}
