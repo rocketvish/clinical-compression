@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: clinical-compression
+Version: 0.1.0
+Summary: Structured clinical fact extraction schema for evaluating context compression on clinical text.
+Requires-Python: >=3.12
+License-File: LICENSE
+Requires-Dist: pydantic>=2
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Provides-Extra: analysis
+Requires-Dist: torch; extra == "analysis"
+Requires-Dist: transformers; extra == "analysis"
+Requires-Dist: bitsandbytes; extra == "analysis"
+Requires-Dist: matplotlib; extra == "analysis"
+Requires-Dist: accelerate; extra == "analysis"
+Dynamic: license-file

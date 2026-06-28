@@ -1,0 +1,1516 @@
+position,token,surprisal_bits,category
+0,B,nan,true_boilerplate
+1,le,8.751639366149902,medical_vocabulary
+2,eding,0.5446640849113464,clinical_entity
+3, Comp,13.363508224487305,medical_vocabulary
+4,lication,2.1892879009246826,medical_vocabulary
+5, of,3.1026344299316406,true_boilerplate
+6, Triple,11.976222038269043,clinical_entity
+7, Therapy,1.6460310220718384,clinical_entity
+8, of,6.102798938751221,true_boilerplate
+9, Riv,10.828658103942871,medical_vocabulary
+10,ar,0.19510827958583832,medical_vocabulary
+11,ox,0.0004230152990203351,medical_vocabulary
+12,aban,0.0008749543339945376,clinical_entity
+13,",",0.3364487886428833,true_boilerplate
+14, Pr,8.569685935974121,medical_vocabulary
+15,as,8.168944623321295e-05,true_boilerplate
+16,ug,0.00046307494631037116,numeric
+17,rel,0.00017902282706927508,medical_vocabulary
+18,",",0.4553566873073578,true_boilerplate
+19, and,0.006570232100784779,true_boilerplate
+20, As,1.2164788246154785,true_boilerplate
+21,pir,1.5478355635423213e-05,medical_vocabulary
+22,in,0.00010421771730761975,true_boilerplate
+23,:,3.12492299079895,true_boilerplate
+24, A,0.4215622842311859,true_boilerplate
+25, Case,0.4516359865665436,true_boilerplate
+26, Report,0.09303562343120575,true_boilerplate
+27, and,1.9956152439117432,true_boilerplate
+28, General,15.593971252441406,true_boilerplate
+29, Discussion,5.7662672996521,medical_vocabulary
+30,"
+
+",0.9114164710044861,true_boilerplate
+31,D,7.312460899353027,true_boilerplate
+32,ane,13.924092292785645,medical_vocabulary
+33, D,7.010475158691406,true_boilerplate
+34,.,1.242807149887085,true_boilerplate
+35, G,6.038926601409912,numeric
+36,ru,6.199753761291504,medical_vocabulary
+37,ene,8.845730781555176,medical_vocabulary
+38,baum,4.8143839836120605,medical_vocabulary
+39,",",0.19147104024887085,true_boilerplate
+40, Ahmad,15.348360061645508,medical_vocabulary
+41, Als,10.658976554870605,medical_vocabulary
+42,arah,12.68281364440918,medical_vocabulary
+43,",",0.1357022374868393,true_boilerplate
+44, Osama,12.560358047485352,medical_vocabulary
+45, Als,6.435060501098633,medical_vocabulary
+46,ara,5.561988353729248,medical_vocabulary
+47,",",1.1631964445114136,true_boilerplate
+48, and,4.7063679695129395,true_boilerplate
+49, Heather,10.064233779907227,medical_vocabulary
+50, Lair,15.853408813476562,medical_vocabulary
+51,d,0.10972801595926285,true_boilerplate
+52,-F,9.371726989746094,true_boilerplate
+53,ick,4.842414379119873,medical_vocabulary
+54,"
+",2.978670358657837,true_boilerplate
+55,Department,1.8732404708862305,clinical_entity
+56, of,0.0005175749538466334,true_boilerplate
+57, Internal,1.8516340255737305,medical_vocabulary
+58, Medicine,0.0002675801806617528,medical_vocabulary
+59,",",0.0546736977994442,true_boilerplate
+60, Michigan,7.856119155883789,medical_vocabulary
+61, State,0.04452836513519287,true_boilerplate
+62, University,0.00013259254046715796,true_boilerplate
+63,"
+",7.751945972442627,true_boilerplate
+64,Published,8.187409400939941,true_boilerplate
+65, ,5.2388410568237305,true_boilerplate
+66,1,2.6380748748779297,numeric
+67,1,2.974992275238037,numeric
+68, March,5.459305763244629,true_boilerplate
+69, ,0.01290137879550457,true_boilerplate
+70,2,0.0021505870390683413,numeric
+71,0,1.3758605064140284e-06,numeric
+72,1,1.5213336944580078,numeric
+73,4,4.366749286651611,numeric
+74,"
+
+",1.076972246170044,true_boilerplate
+75,1,7.184144020080566,numeric
+76,.,0.07022054493427277,true_boilerplate
+77, Introduction,0.30514341592788696,medical_vocabulary
+78,"
+
+",1.9666093587875366,true_boilerplate
+79,Several,9.202777862548828,true_boilerplate
+80, options,8.13127326965332,medical_vocabulary
+81,",",9.265743255615234,true_boilerplate
+82, with,6.586820602416992,true_boilerplate
+83, well,10.869148254394531,true_boilerplate
+84,-described,8.48352336883545,true_boilerplate
+85, bleeding,5.559146404266357,clinical_entity
+86, risks,1.1825294494628906,medical_vocabulary
+87,",",0.15168271958827972,true_boilerplate
+88, exist,1.7452325820922852,medical_vocabulary
+89, for,0.11201532185077667,true_boilerplate
+90, the,1.840370535850525,true_boilerplate
+91, chem,15.347118377685547,medical_vocabulary
+92,op,0.042643629014492035,medical_vocabulary
+93,roph,0.11385516822338104,medical_vocabulary
+94,yl,0.0006917203427292407,medical_vocabulary
+95,axis,0.009800090454518795,medical_vocabulary
+96, of,0.11438208818435669,true_boilerplate
+97, throm,4.785274028778076,clinical_entity
+98,bot,3.8316283226013184,medical_vocabulary
+99,ic,1.0318955219190684e-06,medical_vocabulary
+100, complications,7.294931411743164,medical_vocabulary
+101, of,4.1646809577941895,true_boilerplate
+102, either,11.483003616333008,true_boilerplate
+103, atr,3.7539079189300537,medical_vocabulary
+104,ial,0.00014170673966873437,medical_vocabulary
+105, fibr,0.012598283588886261,clinical_entity
+106,illation,1.0146940439881291e-05,clinical_entity
+107, or,0.861224353313446,true_boilerplate
+108, coronary,1.3795892000198364,clinical_entity
+109, st,9.953170776367188,true_boilerplate
+110,ents,0.49407708644866943,medical_vocabulary
+111, in,5.753596782684326,true_boilerplate
+112, isolation,20.497417449951172,medical_vocabulary
+113,.,0.1681787371635437,true_boilerplate
+114, However,1.0064786672592163,true_boilerplate
+115,",",0.0006188328261487186,true_boilerplate
+116, therapy,13.528441429138184,clinical_entity
+117, is,4.8197479248046875,true_boilerplate
+118, less,5.596949577331543,true_boilerplate
+119, clear,0.8484137654304504,clinical_entity
+120, when,0.7384012937545776,true_boilerplate
+121, the,4.346885681152344,true_boilerplate
+122, two,1.3454792499542236,true_boilerplate
+123, conditions,1.5254861116409302,medical_vocabulary
+124, are,2.7552993297576904,true_boilerplate
+125, com,4.855479717254639,medical_vocabulary
+126,or,0.00048284645890817046,true_boilerplate
+127,bid,1.5822317436686717e-05,numeric
+128,.,0.5344868302345276,true_boilerplate
+129, The,2.650888442993164,true_boilerplate
+130," """,9.36703109741211,true_boilerplate
+131,gold,11.307308197021484,true_boilerplate
+132, standard,0.05910462141036987,true_boilerplate
+133,"""",0.010126658715307713,true_boilerplate
+134, therapies,9.102252006530762,medical_vocabulary
+135, differ,9.405620574951172,medical_vocabulary
+136, for,2.5534417629241943,true_boilerplate
+137, each,0.9150523543357849,true_boilerplate
+138, and,9.596796989440918,true_boilerplate
+139, provide,9.401853561401367,true_boilerplate
+140, sub,7.6320672035217285,medical_vocabulary
+141,opt,0.030166497454047203,medical_vocabulary
+142,imal,3.267666670581093e-06,medical_vocabulary
+143, risk,4.468343734741211,clinical_entity
+144, reduction,7.122424602508545,medical_vocabulary
+145, for,2.9344594478607178,true_boilerplate
+146, the,0.3612055778503418,true_boilerplate
+147, other,0.6269286274909973,true_boilerplate
+148, condition,1.9499808549880981,medical_vocabulary
+149,.,0.38902559876441956,true_boilerplate
+150, For,1.9630168676376343,true_boilerplate
+151, example,0.4724891781806946,true_boilerplate
+152,",",0.0005026177386753261,true_boilerplate
+153, the,2.466768503189087,true_boilerplate
+154, combination,3.8807151317596436,medical_vocabulary
+155, of,0.008136044256389141,true_boilerplate
+156, aspir,1.8493281602859497,clinical_entity
+157,in,1.7198263435602712e-07,true_boilerplate
+158, and,0.39409732818603516,true_boilerplate
+159, a,2.4823696613311768,true_boilerplate
+160, th,9.566298484802246,medical_vocabulary
+161,ien,0.000667654094286263,medical_vocabulary
+162,opy,0.00024780569947324693,medical_vocabulary
+163,rid,0.001332250190898776,medical_vocabulary
+164,ine,2.35614315897692e-05,medical_vocabulary
+165, inhibitor,12.435404777526855,medical_vocabulary
+166, is,3.638416051864624,true_boilerplate
+167, recommended,4.435619831085205,medical_vocabulary
+168, to,5.2022809982299805,true_boilerplate
+169, prevent,1.3523305654525757,medical_vocabulary
+170, in,7.472507953643799,true_boilerplate
+171,-st,0.0016427027294412255,true_boilerplate
+172,ent,-0.0,medical_vocabulary
+173, throm,0.12357109040021896,clinical_entity
+174,b,0.0008213272667489946,true_boilerplate
+175,osis,3.783613237828831e-06,medical_vocabulary
+176, but,5.6424336433410645,true_boilerplate
+177, is,1.7161210775375366,true_boilerplate
+178, inferior,6.1861138343811035,medical_vocabulary
+179, to,0.5362544655799866,true_boilerplate
+180, war,4.013039588928223,true_boilerplate
+181,far,1.2038780141665484e-06,true_boilerplate
+182,in,-0.0,true_boilerplate
+183, or,1.5293684005737305,true_boilerplate
+184, the,3.791003942489624,true_boilerplate
+185, newer,1.3647055625915527,medical_vocabulary
+186, oral,3.5992136001586914,medical_vocabulary
+187, ant,0.038260769098997116,medical_vocabulary
+188,ico,3.1644460250390694e-05,medical_vocabulary
+189,ag,9.287033208238427e-06,medical_vocabulary
+190,ul,0.004157360177487135,medical_vocabulary
+191,ants,4.9874884098244365e-06,medical_vocabulary
+192, for,2.238403797149658,true_boilerplate
+193, the,1.4042505025863647,true_boilerplate
+194, prevention,0.149457186460495,medical_vocabulary
+195, of,0.0035110495518893003,true_boilerplate
+196, stroke,0.3074343204498291,medical_vocabulary
+197, in,0.14661496877670288,true_boilerplate
+198, atr,0.839289665222168,medical_vocabulary
+199,ial,2.751719648586004e-06,medical_vocabulary
+200, fibr,0.0017947261221706867,clinical_entity
+201,illation,6.879304237372708e-07,clinical_entity
+202,.,0.18470041453838348,true_boilerplate
+203, As,8.919331550598145,true_boilerplate
+204, a,1.3997796773910522,true_boilerplate
+205, result,0.0807541012763977,true_boilerplate
+206,",",0.014439225196838379,true_boilerplate
+207, some,4.444015026092529,true_boilerplate
+208, clinicians,1.6434955596923828,medical_vocabulary
+209, have,1.312670350074768,true_boilerplate
+210, utilized,8.881728172302246,medical_vocabulary
+211, both,10.164989471435547,true_boilerplate
+212, gold,15.334691047668457,true_boilerplate
+213, standard,0.8381157517433167,true_boilerplate
+214, therapies,0.3282265067100525,medical_vocabulary
+215, simultaneously,2.6977925300598145,medical_vocabulary
+216,",",1.1719948053359985,true_boilerplate
+217, resulting,2.7390854358673096,medical_vocabulary
+218, in,0.0014173006638884544,true_boilerplate
+219, triple,1.7717441320419312,clinical_entity
+220, oral,13.13239860534668,medical_vocabulary
+221, ant,0.2305067479610443,medical_vocabulary
+222,ith,1.6401602029800415,medical_vocabulary
+223,rom,3.4396526871205424e-07,medical_vocabulary
+224,bot,0.0012334480416029692,medical_vocabulary
+225,ic,0.0007039252086542547,medical_vocabulary
+226, therapy,0.05006318539381027,clinical_entity
+227,.,2.718628406524658,true_boilerplate
+228, While,3.036130666732788,true_boilerplate
+229, this,2.0157651901245117,true_boilerplate
+230, strategy,3.0202884674072266,medical_vocabulary
+231, theoretically,7.112884521484375,medical_vocabulary
+232, minim,7.861943244934082,medical_vocabulary
+233,izes,0.0006322416593320668,medical_vocabulary
+234, the,0.6566264629364014,true_boilerplate
+235, risk,0.0845615491271019,clinical_entity
+236, of,0.0277511328458786,true_boilerplate
+237, throm,1.0938225984573364,clinical_entity
+238,bot,0.2498900294303894,medical_vocabulary
+239,ic,2.407755118838395e-06,medical_vocabulary
+240, complications,1.6804019212722778,medical_vocabulary
+241,",",1.1293096542358398,true_boilerplate
+242, it,0.684861421585083,true_boilerplate
+243, may,2.648456335067749,true_boilerplate
+244, increase,1.9289915561676025,true_boilerplate
+245, the,0.25118881464004517,true_boilerplate
+246, risk,0.15178582072257996,clinical_entity
+247, of,0.03401052951812744,true_boilerplate
+248, bleeding,0.14884209632873535,clinical_entity
+249, beyond,11.18016242980957,medical_vocabulary
+250, the,2.534146785736084,true_boilerplate
+251, benefits,10.246932983398438,medical_vocabulary
+252, gained,3.5222740173339844,medical_vocabulary
+253,.,0.9234417676925659,true_boilerplate
+254, The,2.774879217147827,true_boilerplate
+255, net,12.647326469421387,medical_vocabulary
+256, risk,3.5440332889556885,clinical_entity
+257,-b,0.5710026621818542,true_boilerplate
+258,enefit,1.7714104615151882e-05,medical_vocabulary
+259, ratio,1.6170634031295776,medical_vocabulary
+260, for,3.8237123489379883,true_boilerplate
+261, patients,5.368927478790283,medical_vocabulary
+262, on,3.2921736240386963,true_boilerplate
+263, triple,0.2873554527759552,clinical_entity
+264, ant,1.9310672283172607,medical_vocabulary
+265,ith,0.04856818914413452,medical_vocabulary
+266,rom,-0.0,medical_vocabulary
+267,bot,0.0001095487896236591,medical_vocabulary
+268,ic,-0.0,medical_vocabulary
+269, therapy,0.024176549166440964,clinical_entity
+270, should,6.95314359664917,true_boilerplate
+271, drive,16.688871383666992,true_boilerplate
+272, treatment,3.3143575191497803,true_boilerplate
+273, decisions,0.28131103515625,medical_vocabulary
+274,",",1.519597053527832,true_boilerplate
+275, yet,5.409641265869141,true_boilerplate
+276, it,5.020405292510986,true_boilerplate
+277, is,0.6796413660049438,true_boilerplate
+278, often,3.6168580055236816,true_boilerplate
+279, unclear,1.1391525268554688,medical_vocabulary
+280,".
+
+",4.566069602966309,true_boilerplate
+281,2,3.717350721359253,numeric
+282,.,0.0005663996562361717,true_boilerplate
+283, Case,0.04842251539230347,true_boilerplate
+284,"
+
+",6.420668601989746,true_boilerplate
+285,A,0.2172049880027771,true_boilerplate
+286, ,0.019450919702649117,true_boilerplate
+287,5,3.659120798110962,numeric
+288,5,3.4500174522399902,numeric
+289,-year,0.015216637402772903,true_boilerplate
+290,-old,0.003264147089794278,true_boilerplate
+291, Caucasian,7.730438232421875,medical_vocabulary
+292, male,0.6694120764732361,medical_vocabulary
+293, presented,2.0750207901000977,medical_vocabulary
+294, to,0.7979257106781006,true_boilerplate
+295, the,0.11608055979013443,true_boilerplate
+296, emergency,0.3666781485080719,clinical_entity
+297, department,0.08017522841691971,clinical_entity
+298, for,5.4668731689453125,true_boilerplate
+299, one,9.959931373596191,true_boilerplate
+300,-day,4.196004390716553,true_boilerplate
+301, history,0.3509736955165863,true_boilerplate
+302, of,0.0015466705663129687,true_boilerplate
+303, in,12.63354778289795,true_boilerplate
+304,tract,0.011058473028242588,medical_vocabulary
+305,able,9.716692147776484e-05,true_boilerplate
+306, nausea,6.688523292541504,clinical_entity
+307, and,1.2344766855239868,true_boilerplate
+308, vomiting,0.3133734166622162,clinical_entity
+309, and,3.8013875484466553,true_boilerplate
+310, was,5.4481587409973145,true_boilerplate
+311, found,0.3535638749599457,true_boilerplate
+312, to,0.013115448877215385,true_boilerplate
+313, be,2.756345272064209,true_boilerplate
+314, in,2.6164865493774414,true_boilerplate
+315, atr,0.9644867777824402,medical_vocabulary
+316,ial,5.159478746463719e-07,medical_vocabulary
+317, fibr,0.014317306689918041,clinical_entity
+318,illation,3.783568536164239e-05,clinical_entity
+319, with,1.7614351511001587,true_boilerplate
+320, rapid,2.518941640853882,clinical_entity
+321, vent,0.006296798121184111,clinical_entity
+322,ricular,1.3930527529737446e-05,clinical_entity
+323, response,0.09064404666423798,clinical_entity
+324,.,0.40975162386894226,true_boilerplate
+325, He,0.8187031149864197,true_boilerplate
+326, had,0.25850996375083923,true_boilerplate
+327, a,0.4237586259841919,true_boilerplate
+328, known,6.494036674499512,true_boilerplate
+329, history,0.24235029518604279,true_boilerplate
+330, of,0.000520669505931437,true_boilerplate
+331, par,14.187529563903809,medical_vocabulary
+332,ox,0.0002024093846557662,medical_vocabulary
+333,ys,1.2038780141665484e-06,medical_vocabulary
+334,mal,1.4618452041759156e-05,medical_vocabulary
+335, atr,0.006051912903785706,medical_vocabulary
+336,ial,-0.0,medical_vocabulary
+337, fibr,0.005006489343941212,clinical_entity
+338,illation,6.879304237372708e-07,clinical_entity
+339, but,6.600100517272949,true_boilerplate
+340, had,0.7266526818275452,true_boilerplate
+341, previously,6.150994300842285,medical_vocabulary
+342, refused,7.628166675567627,medical_vocabulary
+343, war,2.8651821613311768,true_boilerplate
+344,far,-0.0,true_boilerplate
+345,in,-0.0,true_boilerplate
+346, therapy,2.4783289432525635,clinical_entity
+347,.,1.222365379333496,true_boilerplate
+348, His,2.7991578578948975,true_boilerplate
+349, past,1.4257439374923706,true_boilerplate
+350, medical,0.0063896034844219685,true_boilerplate
+351, history,0.0007379607413895428,true_boilerplate
+352, was,2.1192245483398438,true_boilerplate
+353, otherwise,2.3641700744628906,medical_vocabulary
+354, significant,6.043705463409424,medical_vocabulary
+355, for,0.07335201650857925,true_boilerplate
+356, congest,11.013957023620605,clinical_entity
+357,ive,2.5797373837121995e-06,medical_vocabulary
+358, heart,0.00013500005297828466,clinical_entity
+359, failure,0.00010559348447714001,clinical_entity
+360, preserved,22.46628189086914,medical_vocabulary
+361, e,0.0010047166142612696,true_boilerplate
+362,jection,1.5478429986615083e-06,medical_vocabulary
+363, fraction,0.0006745302234776318,medical_vocabulary
+364,",",0.9974197149276733,true_boilerplate
+365, coronary,4.6672210693359375,clinical_entity
+366, artery,0.00616220198571682,clinical_entity
+367, disease,0.0024272119626402855,clinical_entity
+368, treated,11.017552375793457,medical_vocabulary
+369, with,0.07833782583475113,true_boilerplate
+370, a,2.445136547088623,true_boilerplate
+371, bare,5.36848783493042,clinical_entity
+372, metal,0.7625439167022705,clinical_entity
+373, st,0.007809880655258894,true_boilerplate
+374,ent,4.8670270189177245e-05,medical_vocabulary
+375, six,6.373258590698242,true_boilerplate
+376, months,0.22244396805763245,true_boilerplate
+377, prior,0.9737487435340881,medical_vocabulary
+378,",",0.0836164727807045,true_boilerplate
+379, diabetes,8.575469970703125,clinical_entity
+380, mell,0.27733010053634644,clinical_entity
+381,itus,1.2038780141665484e-06,clinical_entity
+382, type,1.6562440395355225,clinical_entity
+383, ,0.09727601706981659,true_boilerplate
+384,2,0.020456088706851006,numeric
+385,",",0.018838416785001755,true_boilerplate
+386, hypertension,4.35120964050293,clinical_entity
+387,",",0.009479428641498089,true_boilerplate
+388, g,10.829665184020996,numeric
+389,out,1.633825922908727e-05,true_boilerplate
+390,",",0.024058327078819275,true_boilerplate
+391, and,0.18584997951984406,true_boilerplate
+392, chronic,3.0693812370300293,clinical_entity
+393, kidney,0.27139535546302795,clinical_entity
+394, disease,0.00016113874153234065,clinical_entity
+395, stage,0.9285470247268677,true_boilerplate
+396, ,0.1523430198431015,true_boilerplate
+397,3,0.28141629695892334,numeric
+398, (,6.298458099365234,true_boilerplate
+399,cre,6.768416404724121,medical_vocabulary
+400,atin,4.5230728574097157e-05,clinical_entity
+401,ine,0.0005007265717722476,medical_vocabulary
+402, clearance,5.267431735992432,clinical_entity
+403, ,0.575921893119812,true_boilerplate
+404,3,1.5443496704101562,numeric
+405,0,1.9909327030181885,numeric
+406,).,5.235506057739258,true_boilerplate
+407, His,2.1248505115509033,true_boilerplate
+408, home,7.76714563369751,true_boilerplate
+409, medications,0.12332417815923691,medical_vocabulary
+410, included,0.17906655371189117,true_boilerplate
+411, pr,3.0060207843780518,medical_vocabulary
+412,as,0.0011664305347949266,true_boilerplate
+413,ug,-0.0,numeric
+414,rel,4.471542069950374e-06,medical_vocabulary
+415,",",2.543534517288208,true_boilerplate
+416, aspir,0.27146175503730774,clinical_entity
+417,in,6.879304237372708e-07,true_boilerplate
+418,",",0.0397581122815609,true_boilerplate
+419, at,9.129582405090332,true_boilerplate
+420,or,0.018122395500540733,true_boilerplate
+421,v,4.1275245166616514e-05,true_boilerplate
+422,ast,0.00026173386140726507,medical_vocabulary
+423,atin,2.8376858608680777e-05,clinical_entity
+424,",",0.006199191324412823,true_boilerplate
+425, cl,12.611427307128906,medical_vocabulary
+426,on,0.012251130305230618,true_boilerplate
+427,idine,0.04308737814426422,clinical_entity
+428,",",0.005702494643628597,true_boilerplate
+429, f,6.731363773345947,true_boilerplate
+430,uro,0.011068372055888176,medical_vocabulary
+431,sem,1.1694773093040567e-05,medical_vocabulary
+432,ide,1.6854201021487825e-05,medical_vocabulary
+433,",",0.002723181387409568,true_boilerplate
+434, potassium,10.643213272094727,clinical_entity
+435, chloride,2.156611680984497,clinical_entity
+436,",",0.004553099628537893,true_boilerplate
+437, a,7.61273717880249,true_boilerplate
+438,ml,0.004205890465527773,numeric
+439,od,1.7886084606288932e-05,medical_vocabulary
+440,ip,0.0001033578664646484,medical_vocabulary
+441,ine,-0.0,medical_vocabulary
+442,",",0.009935030713677406,true_boilerplate
+443, insulin,9.423954963684082,clinical_entity
+444,",",0.3091503381729126,true_boilerplate
+445, al,7.360015392303467,true_boilerplate
+446,lop,0.007361136376857758,medical_vocabulary
+447,ur,7.911180546216201e-06,medical_vocabulary
+448,in,3.95559527532896e-06,true_boilerplate
+449,ol,1.7198263435602712e-07,medical_vocabulary
+450,",",0.03871775418519974,true_boilerplate
+451, and,0.056582484394311905,true_boilerplate
+452, hy,12.246602058410645,medical_vocabulary
+453,d,0.0029068440198898315,true_boilerplate
+454,ral,0.02061106078326702,medical_vocabulary
+455,azine,2.0637771740439348e-05,clinical_entity
+456,".
+
+",2.47078275680542,true_boilerplate
+457,His,3.5814106464385986,true_boilerplate
+458, nausea,11.14405345916748,clinical_entity
+459, and,0.18664216995239258,true_boilerplate
+460, vomiting,0.000809123448561877,clinical_entity
+461, were,0.772358775138855,true_boilerplate
+462, treated,7.360357284545898,medical_vocabulary
+463, with,0.10946180671453476,true_boilerplate
+464, supportive,7.797879695892334,medical_vocabulary
+465, care,0.31253597140312195,true_boilerplate
+466, and,1.4413379430770874,true_boilerplate
+467, he,3.9387452602386475,true_boilerplate
+468, was,0.06519094854593277,true_boilerplate
+469, started,7.142490863800049,true_boilerplate
+470, on,0.0016109216958284378,true_boilerplate
+471, he,10.485000610351562,true_boilerplate
+472,par,0.0002992187801282853,medical_vocabulary
+473,in,-0.0,true_boilerplate
+474, and,4.97549295425415,true_boilerplate
+475, d,5.916763782501221,true_boilerplate
+476,ilt,0.05928966403007507,medical_vocabulary
+477,iaz,7.051116699585691e-05,medical_vocabulary
+478,em,1.0318955219190684e-06,medical_vocabulary
+479, drip,5.553390026092529,medical_vocabulary
+480, for,1.2928905487060547,true_boilerplate
+481, his,5.469592571258545,true_boilerplate
+482, atr,1.4930185079574585,medical_vocabulary
+483,ial,8.599129728281696e-07,medical_vocabulary
+484, fibr,0.016378317028284073,clinical_entity
+485,illation,1.3070622117083985e-05,clinical_entity
+486,.,0.20475082099437714,true_boilerplate
+487, Card,10.998215675354004,true_boilerplate
+488,iology,2.330840587615967,medical_vocabulary
+489, recommended,7.155616760253906,medical_vocabulary
+490, riv,9.280720710754395,medical_vocabulary
+491,ar,8.065760630415753e-05,medical_vocabulary
+492,ox,1.7198254909089883e-06,medical_vocabulary
+493,aban,1.7198263435602712e-07,clinical_entity
+494, for,2.364896535873413,true_boilerplate
+495, throm,5.842176914215088,clinical_entity
+496,bo,7.976356506347656,medical_vocabulary
+497,emb,0.0003946461947634816,medical_vocabulary
+498,ol,3.2286126613616943,medical_vocabulary
+499,ism,0.00012124267959734425,medical_vocabulary
+500, proph,1.1165242195129395,medical_vocabulary
+501,yl,9.544721251586452e-05,medical_vocabulary
+502,axis,3.0956844057072885e-06,medical_vocabulary
+503, as,5.561474323272705,true_boilerplate
+504, the,4.021960735321045,true_boilerplate
+505, patient,0.045289065688848495,medical_vocabulary
+506,'s,5.491752624511719,true_boilerplate
+507, main,15.103106498718262,true_boilerplate
+508, objection,19.542320251464844,medical_vocabulary
+509, to,0.09181031584739685,true_boilerplate
+510, war,0.07947192341089249,true_boilerplate
+511,far,5.159478746463719e-07,true_boilerplate
+512,in,-0.0,true_boilerplate
+513, was,0.2857400178909302,true_boilerplate
+514, the,1.5987142324447632,true_boilerplate
+515, need,0.874641478061676,true_boilerplate
+516, for,0.04254026710987091,true_boilerplate
+517, frequent,0.9740628600120544,medical_vocabulary
+518, monitoring,0.876529335975647,medical_vocabulary
+519, and,2.1397478580474854,true_boilerplate
+520, dose,6.59211540222168,medical_vocabulary
+521, adjustment,1.572343111038208,medical_vocabulary
+522,".
+
+",6.060424327850342,true_boilerplate
+523,Within,7.630395412445068,true_boilerplate
+524, ,0.7893779873847961,true_boilerplate
+525,7,3.9927518367767334,numeric
+526,2,0.15321539342403412,numeric
+527, hours,0.0217941552400589,numeric
+528, of,0.5646765828132629,true_boilerplate
+529, initiating,3.13877272605896,medical_vocabulary
+530, ren,20.20659828186035,medical_vocabulary
+531,ally,10.642257690429688,medical_vocabulary
+532, dos,4.3944573402404785,medical_vocabulary
+533,ed,0.00010266999015584588,medical_vocabulary
+534, riv,0.01697673834860325,medical_vocabulary
+535,ar,3.4396526871205424e-07,medical_vocabulary
+536,ox,-0.0,medical_vocabulary
+537,aban,4.471542069950374e-06,clinical_entity
+538,",",0.9663470387458801,true_boilerplate
+539, the,0.5924718379974365,true_boilerplate
+540, patient,0.001057133893482387,medical_vocabulary
+541, experienced,3.779083728790283,medical_vocabulary
+542, recurrent,7.660343170166016,medical_vocabulary
+543, nasal,12.475366592407227,clinical_entity
+544, bleeding,0.7307978868484497,clinical_entity
+545,.,2.2673068046569824,true_boilerplate
+546, During,9.83630657196045,true_boilerplate
+547, the,0.7150605916976929,true_boilerplate
+548, day,7.2615065574646,numeric
+549, the,8.335329055786133,true_boilerplate
+550, patient,1.387227177619934,medical_vocabulary
+551, had,1.7265981435775757,true_boilerplate
+552, five,8.220736503601074,true_boilerplate
+553, episodes,0.37242376804351807,medical_vocabulary
+554, of,0.060124944895505905,true_boilerplate
+555, mild,6.248042106628418,medical_vocabulary
+556, bleeding,2.4779725074768066,clinical_entity
+557, that,5.767832279205322,true_boilerplate
+558, stopped,3.3554391860961914,medical_vocabulary
+559, with,3.1278085708618164,true_boilerplate
+560, direct,3.344409704208374,medical_vocabulary
+561, pressure,0.027913417667150497,true_boilerplate
+562, and,3.1104538440704346,true_boilerplate
+563, simple,12.079846382141113,clinical_entity
+564, packing,8.957380294799805,clinical_entity
+565,.,0.26813560724258423,true_boilerplate
+566, However,3.2317850589752197,true_boilerplate
+567,",",0.0010811935644596815,true_boilerplate
+568, that,4.847406387329102,true_boilerplate
+569, night,1.4010709524154663,true_boilerplate
+570, the,3.137709140777588,true_boilerplate
+571, patient,0.10157883912324905,medical_vocabulary
+572, experienced,0.9340866208076477,medical_vocabulary
+573, severe,4.513264179229736,medical_vocabulary
+574, posterior,8.215656280517578,clinical_entity
+575, nasal,0.542263925075531,clinical_entity
+576, hemorrh,5.381044864654541,clinical_entity
+577,age,6.638377817580476e-05,true_boilerplate
+578, requiring,1.989945650100708,medical_vocabulary
+579, posterior,6.445842266082764,clinical_entity
+580, nasal,0.06029418855905533,clinical_entity
+581, packing,0.012284893542528152,clinical_entity
+582,.,2.206918478012085,true_boilerplate
+583, As,7.729395389556885,true_boilerplate
+584,pir,0.7257266044616699,medical_vocabulary
+585,in,8.564481686335057e-05,true_boilerplate
+586, was,2.498591661453247,true_boilerplate
+587, discontinued,1.1008672714233398,medical_vocabulary
+588,.,3.946079730987549,true_boilerplate
+589, When,8.138301849365234,true_boilerplate
+590, the,0.7462737560272217,true_boilerplate
+591, packing,6.903902053833008,clinical_entity
+592, was,0.02625967562198639,true_boilerplate
+593, removed,0.01807297207415104,medical_vocabulary
+594, five,8.868563652038574,true_boilerplate
+595, days,0.002070216927677393,numeric
+596, later,0.17471985518932343,true_boilerplate
+597,",",0.02417164482176304,true_boilerplate
+598, bleeding,7.405754566192627,clinical_entity
+599, rec,1.810642123222351,medical_vocabulary
+600,urred,0.00031056723673827946,medical_vocabulary
+601,.,1.2489614486694336,true_boilerplate
+602, Card,14.184222221374512,true_boilerplate
+603,iology,0.1389571577310562,medical_vocabulary
+604, re,7.191671848297119,true_boilerplate
+605,eval,1.0649635791778564,medical_vocabulary
+606,uated,1.1522791282914113e-05,medical_vocabulary
+607, the,0.5155612230300903,true_boilerplate
+608, patient,0.3032318353652954,medical_vocabulary
+609,'s,5.640920162200928,true_boilerplate
+610, ant,0.8641842007637024,medical_vocabulary
+611,ith,2.3090033531188965,medical_vocabulary
+612,rom,1.2210716704430524e-05,medical_vocabulary
+613,bot,0.012494453229010105,medical_vocabulary
+614,ic,5.159478746463719e-07,medical_vocabulary
+615, regimen,0.20638558268547058,clinical_entity
+616,",",2.6074278354644775,true_boilerplate
+617, discontin,8.494108200073242,medical_vocabulary
+618,uing,0.0003308566811028868,medical_vocabulary
+619, riv,2.5821869373321533,medical_vocabulary
+620,ar,-0.0,medical_vocabulary
+621,ox,-0.0,medical_vocabulary
+622,aban,-0.0,clinical_entity
+623, and,1.0252671241760254,true_boilerplate
+624, switching,3.775785207748413,medical_vocabulary
+625, pr,5.705638408660889,medical_vocabulary
+626,as,1.2038780141665484e-06,true_boilerplate
+627,ug,-0.0,numeric
+628,rel,4.299559805076569e-06,medical_vocabulary
+629, to,0.03892434760928154,true_boilerplate
+630, clo,0.2627989649772644,medical_vocabulary
+631,pid,5.8473983699514065e-06,medical_vocabulary
+632,og,0.0003269019944127649,medical_vocabulary
+633,rel,0.0004910988500341773,medical_vocabulary
+634,.,0.39664292335510254,true_boilerplate
+635, After,5.113749980926514,true_boilerplate
+636, ,3.858779191970825,true_boilerplate
+637,2,2.764765977859497,numeric
+638,4,2.687366247177124,numeric
+639, hours,0.028066914528608322,numeric
+640, without,5.609328746795654,true_boilerplate
+641, oral,15.659865379333496,medical_vocabulary
+642, riv,9.567259788513184,medical_vocabulary
+643,ar,-0.0,medical_vocabulary
+644,ox,-0.0,medical_vocabulary
+645,aban,1.4618452041759156e-05,clinical_entity
+646, or,4.210287570953369,true_boilerplate
+647, recurrence,23.334251403808594,medical_vocabulary
+648, of,0.023225249722599983,true_boilerplate
+649, hemorrh,7.436992645263672,clinical_entity
+650,age,0.0004914426826871932,true_boilerplate
+651,",",0.006625357549637556,true_boilerplate
+652, the,0.4137793779373169,true_boilerplate
+653, patient,0.06009673699736595,medical_vocabulary
+654, was,0.05634582042694092,true_boilerplate
+655, deemed,7.947746276855469,medical_vocabulary
+656, stable,0.4497409462928772,medical_vocabulary
+657, for,3.2200729846954346,true_boilerplate
+658, discharge,1.4910966157913208,clinical_entity
+659,".
+
+",1.427374243736267,true_boilerplate
+660,3,0.40404385328292847,numeric
+661,.,0.0004350505187176168,true_boilerplate
+662, Discussion,0.3843386173248291,medical_vocabulary
+663,"
+
+",0.01779797300696373,true_boilerplate
+664,For,10.691509246826172,true_boilerplate
+665, decades,7.915521144866943,medical_vocabulary
+666,",",0.013850481249392033,true_boilerplate
+667, ant,3.8919694423675537,medical_vocabulary
+668,ith,1.5208607912063599,medical_vocabulary
+669,rom,4.6435238800768275e-06,medical_vocabulary
+670,bot,0.0003354991495143622,medical_vocabulary
+671,ic,0.004054120741784573,medical_vocabulary
+672, therapies,4.741551399230957,medical_vocabulary
+673, have,0.18732625246047974,true_boilerplate
+674, been,0.13263480365276337,true_boilerplate
+675, effectively,12.748200416564941,medical_vocabulary
+676, used,0.351632684469223,true_boilerplate
+677, to,1.0415667295455933,true_boilerplate
+678, decrease,6.278101444244385,medical_vocabulary
+679, complications,9.568989753723145,medical_vocabulary
+680, associated,4.593942642211914,medical_vocabulary
+681, with,0.00026878382777795196,true_boilerplate
+682, medical,11.951842308044434,true_boilerplate
+683, conditions,0.3196916878223419,medical_vocabulary
+684, such,1.1856521368026733,true_boilerplate
+685, as,0.00012261842493899167,true_boilerplate
+686, atr,0.9000025987625122,medical_vocabulary
+687,ial,7.223252850963036e-06,medical_vocabulary
+688, fibr,0.00033739052014425397,clinical_entity
+689,illation,8.599129728281696e-07,clinical_entity
+690,",",2.6667840480804443,true_boilerplate
+691, mechanical,11.059279441833496,medical_vocabulary
+692, heart,0.0347895622253418,clinical_entity
+693, valves,0.048653993755578995,medical_vocabulary
+694,",",0.004115001764148474,true_boilerplate
+695, deep,7.735057353973389,true_boilerplate
+696, ven,1.646802306175232,medical_vocabulary
+697,ous,8.599129728281696e-07,medical_vocabulary
+698, throm,5.1077942771371454e-05,clinical_entity
+699,b,0.0005486923037096858,true_boilerplate
+700,osis,0.00014222263416741043,medical_vocabulary
+701,",",0.023934680968523026,true_boilerplate
+702, and,0.6516080498695374,true_boilerplate
+703, intr,11.902016639709473,medical_vocabulary
+704,av,6.1649370193481445,medical_vocabulary
+705,ascular,0.0007228339090943336,medical_vocabulary
+706, st,0.06588957458734512,true_boilerplate
+707,ents,0.012272956781089306,medical_vocabulary
+708,.,0.02930222637951374,true_boilerplate
+709, An,11.055242538452148,true_boilerplate
+710, agent,14.339482307434082,medical_vocabulary
+711,'s,4.462082386016846,true_boilerplate
+712, mechanism,2.9943108558654785,medical_vocabulary
+713, of,0.13493497669696808,true_boilerplate
+714, action,0.002779655857011676,true_boilerplate
+715, (,4.898296356201172,true_boilerplate
+716,in,7.1554059982299805,true_boilerplate
+717,hibition,1.0286903381347656,medical_vocabulary
+718, of,0.006620222236961126,true_boilerplate
+719, the,6.249120235443115,true_boilerplate
+720, co,1.002989411354065,true_boilerplate
+721,ag,1.7198263435602712e-07,medical_vocabulary
+722,ulation,0.0009705155389383435,medical_vocabulary
+723, or,9.247328758239746,true_boilerplate
+724, plate,0.011784317903220654,medical_vocabulary
+725,let,0.000719224102795124,true_boilerplate
+726, aggregation,3.6344153881073,medical_vocabulary
+727, casc,6.931340217590332,medical_vocabulary
+728,ades,3.783613237828831e-06,medical_vocabulary
+729,),0.13062617182731628,true_boilerplate
+730, makes,10.265983581542969,true_boilerplate
+731, it,0.8248336911201477,true_boilerplate
+732, more,4.037688732147217,true_boilerplate
+733, effective,1.9882277250289917,medical_vocabulary
+734, for,0.9315734505653381,true_boilerplate
+735, specific,3.545520782470703,true_boilerplate
+736, cardiac,10.909905433654785,medical_vocabulary
+737, diseases,5.5736846923828125,medical_vocabulary
+738, rather,11.402878761291504,true_boilerplate
+739, than,0.0012951357057318091,true_boilerplate
+740, others,0.3375798463821411,true_boilerplate
+741,.,0.1331770271062851,true_boilerplate
+742, For,1.6731822490692139,true_boilerplate
+743, instance,2.3321352005004883,medical_vocabulary
+744,",",0.00021066336194053292,true_boilerplate
+745, aspir,2.394233465194702,clinical_entity
+746,in,5.159478746463719e-07,true_boilerplate
+747, and,1.6359472274780273,true_boilerplate
+748, clo,2.9022161960601807,medical_vocabulary
+749,pid,2.751719648586004e-06,medical_vocabulary
+750,og,1.943390816450119e-05,medical_vocabulary
+751,rel,7.584235572721809e-05,medical_vocabulary
+752, dual,14.320758819580078,medical_vocabulary
+753, therapy,2.9834885597229004,clinical_entity
+754, is,0.5605948567390442,true_boilerplate
+755, considered,4.414552211761475,true_boilerplate
+756, the,0.9487832188606262,true_boilerplate
+757, standard,0.522668182849884,true_boilerplate
+758, of,0.314836710691452,true_boilerplate
+759, care,0.0018589661922305822,true_boilerplate
+760, to,4.549313068389893,true_boilerplate
+761, prevent,0.3131706118583679,medical_vocabulary
+762, st,0.6038433909416199,true_boilerplate
+763,ent,0.0003786560846492648,medical_vocabulary
+764, throm,0.020572064444422722,clinical_entity
+765,b,2.8720816771965474e-05,true_boilerplate
+766,osis,3.4396489354548976e-06,medical_vocabulary
+767, but,7.711151599884033,true_boilerplate
+768, is,0.37735775113105774,true_boilerplate
+769, inferior,3.3200221061706543,medical_vocabulary
+770, to,0.6195375919342041,true_boilerplate
+771, oral,4.55035400390625,medical_vocabulary
+772, ant,0.0009187826071865857,medical_vocabulary
+773,ico,1.8917966372100636e-05,medical_vocabulary
+774,ag,1.7198254909089883e-06,medical_vocabulary
+775,ul,0.5288514494895935,medical_vocabulary
+776,ants,0.0006236462504602969,medical_vocabulary
+777, for,0.8513622879981995,true_boilerplate
+778, preventing,4.14255428314209,medical_vocabulary
+779, stroke,0.6934678554534912,medical_vocabulary
+780, in,0.11997945606708527,true_boilerplate
+781, high,12.487984657287598,true_boilerplate
+782,-risk,0.10351945459842682,true_boilerplate
+783, patients,0.6240063905715942,medical_vocabulary
+784, with,0.021902231499552727,true_boilerplate
+785, atr,0.02490377053618431,medical_vocabulary
+786,ial,-0.0,medical_vocabulary
+787, fibr,0.0008716885931789875,clinical_entity
+788,illation,8.599129728281696e-07,clinical_entity
+789,.,0.15232306718826294,true_boilerplate
+790, Similarly,1.9267032146453857,medical_vocabulary
+791,",",0.00024247514375019819,true_boilerplate
+792, oral,4.0445556640625,medical_vocabulary
+793, ant,0.0019642519764602184,medical_vocabulary
+794,ico,0.0001587312581250444,medical_vocabulary
+795,ag,0.33080053329467773,medical_vocabulary
+796,ul,0.33745476603507996,medical_vocabulary
+797,ants,-0.0,medical_vocabulary
+798, reduce,9.178367614746094,medical_vocabulary
+799, stroke,2.0395631790161133,medical_vocabulary
+800, risk,0.1606091409921646,clinical_entity
+801, in,0.5312531590461731,true_boilerplate
+802, patients,1.7069295644760132,medical_vocabulary
+803, with,0.0007204274297691882,true_boilerplate
+804, atr,0.0376804955303669,medical_vocabulary
+805,ial,1.7198263435602712e-07,medical_vocabulary
+806, fibr,0.0015715811168774962,clinical_entity
+807,illation,8.599129728281696e-07,clinical_entity
+808, but,0.21574848890304565,true_boilerplate
+809, are,0.971038818359375,true_boilerplate
+810, not,1.3326064348220825,true_boilerplate
+811, effective,1.548776626586914,medical_vocabulary
+812, as,7.002898216247559,true_boilerplate
+813, mon,7.047214031219482,medical_vocabulary
+814,otherapy,0.003170281881466508,medical_vocabulary
+815, after,10.373835563659668,true_boilerplate
+816, st,1.7734355926513672,true_boilerplate
+817,ent,0.1039610281586647,medical_vocabulary
+818,".
+
+",19.06083869934082,true_boilerplate
+819,About,15.411568641662598,true_boilerplate
+820, ,0.5885493755340576,true_boilerplate
+821,5,3.256368637084961,numeric
+822,-,1.9422155618667603,medical_vocabulary
+823,7,4.042446136474609,numeric
+824,%,0.025325633585453033,numeric
+825, of,0.0020988965407013893,true_boilerplate
+826, patients,0.12447884678840637,medical_vocabulary
+827, undergoing,5.480276584625244,medical_vocabulary
+828, per,1.4796885251998901,true_boilerplate
+829,cut,2.2873511625221e-05,true_boilerplate
+830,aneous,0.000185557350050658,medical_vocabulary
+831, coronary,0.004852918442338705,clinical_entity
+832, interventions,2.756993055343628,medical_vocabulary
+833, (,0.6289553046226501,true_boilerplate
+834,PCI,0.6884491443634033,medical_vocabulary
+835,),0.012762965634465218,true_boilerplate
+836, have,3.010124921798706,true_boilerplate
+837, atr,5.507876873016357,medical_vocabulary
+838,ial,1.530637382529676e-05,medical_vocabulary
+839, fibr,0.00025262037524953485,clinical_entity
+840,illation,8.599129728281696e-07,clinical_entity
+841, (,5.0186262130737305,true_boilerplate
+842,AF,0.26384586095809937,medical_vocabulary
+843,),2.6145448684692383,true_boilerplate
+844, or,3.377094030380249,true_boilerplate
+845, other,1.0880286693572998,true_boilerplate
+846, indications,5.906063079833984,medical_vocabulary
+847, for,0.08093980699777603,true_boilerplate
+848, chronic,4.018271446228027,clinical_entity
+849, oral,2.7604928016662598,medical_vocabulary
+850, ant,0.00045052418136037886,medical_vocabulary
+851,ico,0.0004902392392978072,medical_vocabulary
+852,ag,0.00029457619530148804,medical_vocabulary
+853,ulant,3.111635684967041,medical_vocabulary
+854, therapy,0.44622358679771423,clinical_entity
+855,.,0.7404489517211914,true_boilerplate
+856, The,3.10760235786438,true_boilerplate
+857, combination,2.9810752868652344,medical_vocabulary
+858, of,0.017056791111826897,true_boilerplate
+859, ant,2.3913626670837402,medical_vocabulary
+860,ith,2.9114506244659424,medical_vocabulary
+861,rom,1.7198263435602712e-07,medical_vocabulary
+862,bot,0.0004515557666309178,medical_vocabulary
+863,ic,0.0002935444936156273,medical_vocabulary
+864, reg,4.831090927124023,medical_vocabulary
+865,imens,0.0009100171155296266,medical_vocabulary
+866, into,14.593802452087402,true_boilerplate
+867, a,1.6007553339004517,true_boilerplate
+868," """,4.309698104858398,true_boilerplate
+869,tr,0.005593541078269482,medical_vocabulary
+870,iple,1.1866753993672319e-05,clinical_entity
+871, therapy,0.49668997526168823,clinical_entity
+872,"""",0.011119741946458817,true_boilerplate
+873, seems,8.14476490020752,true_boilerplate
+874, like,5.292926788330078,true_boilerplate
+875, an,1.8942674398422241,true_boilerplate
+876, attractive,1.4743064641952515,medical_vocabulary
+877, option,1.3035475015640259,medical_vocabulary
+878, for,1.4678139686584473,true_boilerplate
+879, preventing,6.274574279785156,medical_vocabulary
+880, both,1.1278722286224365,true_boilerplate
+881, stroke,3.3933827877044678,medical_vocabulary
+882, and,0.051028668880462646,true_boilerplate
+883, in,3.4267470836639404,true_boilerplate
+884,-st,0.00012949711526744068,true_boilerplate
+885,ent,1.0318955219190684e-06,medical_vocabulary
+886, throm,0.004494979977607727,clinical_entity
+887,b,0.0003346394223626703,true_boilerplate
+888,osis,1.1866753993672319e-05,medical_vocabulary
+889, but,6.2322797775268555,true_boilerplate
+890, must,8.25725269317627,true_boilerplate
+891, be,0.050447363406419754,true_boilerplate
+892, balanced,3.8050038814544678,medical_vocabulary
+893, against,0.7058205008506775,true_boilerplate
+894, a,6.52103853225708,true_boilerplate
+895, bleeding,7.215810775756836,clinical_entity
+896, risk,0.018637586385011673,clinical_entity
+897, which,6.30153226852417,true_boilerplate
+898, is,1.448845624923706,true_boilerplate
+899, less,9.5136137008667,true_boilerplate
+900, well,0.5328131914138794,true_boilerplate
+901, understood,1.7917160987854004,medical_vocabulary
+902,".
+
+",3.0827105045318604,true_boilerplate
+903,The,2.142838716506958,true_boilerplate
+904, most,5.50109338760376,true_boilerplate
+905, studied,7.978342533111572,medical_vocabulary
+906, oral,8.51909351348877,medical_vocabulary
+907, triple,14.431900978088379,clinical_entity
+908, ant,0.7742476463317871,medical_vocabulary
+909,ith,0.07919503003358841,medical_vocabulary
+910,rom,3.4396526871205424e-07,medical_vocabulary
+911,bot,0.00018435361562296748,medical_vocabulary
+912,ic,0.001323143602348864,medical_vocabulary
+913, therapies,4.852568626403809,medical_vocabulary
+914, are,1.506123423576355,true_boilerplate
+915, aspir,5.559332370758057,clinical_entity
+916,in,1.7198263435602712e-07,true_boilerplate
+917,",",1.2166028022766113,true_boilerplate
+918, war,5.770238399505615,true_boilerplate
+919,far,-0.0,true_boilerplate
+920,in,-0.0,true_boilerplate
+921,",",0.012384818866848946,true_boilerplate
+922, and,0.007134400773793459,true_boilerplate
+923, clo,2.674794912338257,medical_vocabulary
+924,pid,1.5478429986615083e-06,medical_vocabulary
+925,og,1.3930527529737446e-05,medical_vocabulary
+926,rel,0.005591313820332289,medical_vocabulary
+927,.,0.5893421173095703,true_boilerplate
+928, A,3.970247745513916,true_boilerplate
+929, meta,1.854758381843567,clinical_entity
+930,-analysis,0.009384258650243282,medical_vocabulary
+931, of,0.5501413345336914,true_boilerplate
+932, nine,7.101398944854736,clinical_entity
+933, trials,1.674202561378479,medical_vocabulary
+934, included,7.099520683288574,true_boilerplate
+935, ,0.8744174838066101,true_boilerplate
+936,1,1.3398854732513428,numeric
+937,",",5.084738731384277,true_boilerplate
+938,9,3.9036033153533936,numeric
+939,9,3.597476005554199,numeric
+940,6,3.3353912830352783,numeric
+941, participants,6.713184356689453,medical_vocabulary
+942, taking,13.682047843933105,true_boilerplate
+943, either,7.200311660766602,true_boilerplate
+944, dual,2.8866190910339355,medical_vocabulary
+945, anti,3.9009387493133545,clinical_entity
+946,plate,0.008083882741630077,medical_vocabulary
+947,let,0.0005500676343217492,true_boilerplate
+948, therapy,0.023728301748633385,clinical_entity
+949, (,0.34766528010368347,true_boilerplate
+950,as,3.9013397693634033,true_boilerplate
+951,pir,6.363217835314572e-05,medical_vocabulary
+952,in,1.7198263435602712e-07,true_boilerplate
+953, and,1.4659010171890259,true_boilerplate
+954, clo,0.0072649703361094,medical_vocabulary
+955,pid,1.1866753993672319e-05,medical_vocabulary
+956,og,3.95559527532896e-06,medical_vocabulary
+957,rel,0.026787159964442253,medical_vocabulary
+958,),0.12547259032726288,true_boilerplate
+959, or,0.17845484614372253,true_boilerplate
+960, triple,0.1933794617652893,clinical_entity
+961, therapy,0.42927953600883484,clinical_entity
+962, (,0.5905624628067017,true_boilerplate
+963,war,7.589970588684082,true_boilerplate
+964,far,-0.0,true_boilerplate
+965,in,-0.0,true_boilerplate
+966,",",0.08903176337480545,true_boilerplate
+967, aspir,0.03515516594052315,clinical_entity
+968,in,3.4396526871205424e-07,true_boilerplate
+969,",",0.008611731231212616,true_boilerplate
+970, and,0.10201653093099594,true_boilerplate
+971, clo,9.355552901979536e-05,medical_vocabulary
+972,pid,3.4396489354548976e-06,medical_vocabulary
+973,og,5.159478746463719e-07,medical_vocabulary
+974,rel,0.007074160035699606,medical_vocabulary
+975,),1.4926514625549316,true_boilerplate
+976, has,10.32029914855957,true_boilerplate
+977, reported,4.65775203704834,true_boilerplate
+978, that,1.6546512842178345,true_boilerplate
+979, triple,0.637997567653656,clinical_entity
+980, therapy,0.019479764625430107,clinical_entity
+981, was,3.279036283493042,true_boilerplate
+982, more,6.9841485023498535,true_boilerplate
+983, effic,9.190780639648438,medical_vocabulary
+984,acious,0.00018125833594240248,medical_vocabulary
+985, in,0.9701173901557922,true_boilerplate
+986, reducing,3.0786964893341064,medical_vocabulary
+987, the,1.2469991445541382,true_boilerplate
+988, occurrence,6.483970642089844,medical_vocabulary
+989, of,0.0021499001886695623,true_boilerplate
+990, cardiovascular,5.870791435241699,medical_vocabulary
+991, events,0.07406533509492874,true_boilerplate
+992, and,4.634743690490723,true_boilerplate
+993, mortality,4.330373287200928,medical_vocabulary
+994, compared,3.297461748123169,medical_vocabulary
+995, with,2.756009340286255,true_boilerplate
+996, dual,0.034827668219804764,medical_vocabulary
+997, anti,1.229451298713684,clinical_entity
+998,plate,0.0002165098994737491,medical_vocabulary
+999,let,0.001315411413088441,true_boilerplate
+1000, therapy,0.014269625768065453,clinical_entity
+1001,.,0.634000837802887,true_boilerplate
+1002, However,0.21428517997264862,true_boilerplate
+1003,",",0.00048181493184529245,true_boilerplate
+1004, there,5.369164943695068,true_boilerplate
+1005, was,0.9130733609199524,true_boilerplate
+1006, significantly,6.330014228820801,medical_vocabulary
+1007, more,3.3830437660217285,true_boilerplate
+1008, major,2.656802177429199,true_boilerplate
+1009, bleeding,0.046032048761844635,clinical_entity
+1010, with,2.3810505867004395,true_boilerplate
+1011, triple,0.0620935820043087,clinical_entity
+1012, ant,8.137389183044434,medical_vocabulary
+1013,ith,1.7198263435602712e-07,medical_vocabulary
+1014,rom,-0.0,medical_vocabulary
+1015,bot,1.4790432032896206e-05,medical_vocabulary
+1016,ic,-0.0,medical_vocabulary
+1017, therapy,0.03415464609861374,clinical_entity
+1018, in,7.5905280113220215,true_boilerplate
+1019, the,2.110630512237549,true_boilerplate
+1020, first,7.414430618286133,true_boilerplate
+1021, ,0.9906848073005676,true_boilerplate
+1022,6,2.6668827533721924,numeric
+1023, months,0.5139054656028748,true_boilerplate
+1024, (,4.400256633758545,true_boilerplate
+1025,OR,4.051419734954834,true_boilerplate
+1026,",",3.6603105068206787,true_boilerplate
+1027, ,0.0005608983337879181,true_boilerplate
+1028,2,0.9769211411476135,numeric
+1029,.,0.0019285277230665088,true_boilerplate
+1030,1,2.851003408432007,numeric
+1031,2,3.5844898223876953,numeric
+1032,;,0.3906582295894623,true_boilerplate
+1033, ,0.04575616121292114,true_boilerplate
+1034,9,0.0014918658416718245,numeric
+1035,5,0.00036490103229880333,numeric
+1036,%,0.0013307038461789489,numeric
+1037, CI,0.04022917523980141,medical_vocabulary
+1038,",",0.12153540551662445,true_boilerplate
+1039, ,0.00018229008128400892,true_boilerplate
+1040,1,0.004998262505978346,numeric
+1041,.,0.00010645333532011136,true_boilerplate
+1042,0,3.5916318893432617,numeric
+1043,5,3.253131151199341,numeric
+1044,-,1.3366907835006714,medical_vocabulary
+1045,4,0.0028033435810357332,numeric
+1046,.,0.00012502596655394882,true_boilerplate
+1047,2,0.4221997857093811,numeric
+1048,9,1.1762913465499878,numeric
+1049,;,4.391767978668213,true_boilerplate
+1050, P,1.1159933805465698,true_boilerplate
+1051, =,1.164185643196106,medical_vocabulary
+1052, ,0.0548950731754303,true_boilerplate
+1053,0,6.363344255078118e-06,numeric
+1054,.,4.1275245166616514e-05,true_boilerplate
+1055,0,0.0002732545544859022,numeric
+1056,4,4.756544589996338,numeric
+1057,").
+
+",4.564340591430664,true_boilerplate
+1058,Generally,13.936766624450684,medical_vocabulary
+1059,",",0.02277737855911255,true_boilerplate
+1060, bleeding,4.331109523773193,clinical_entity
+1061, events,4.636049270629883,true_boilerplate
+1062, with,3.180020332336426,true_boilerplate
+1063, triple,0.4426124691963196,clinical_entity
+1064, therapy,0.3191088140010834,clinical_entity
+1065, have,2.9354453086853027,true_boilerplate
+1066, been,0.22649775445461273,true_boilerplate
+1067, found,4.815983772277832,true_boilerplate
+1068, to,0.042469799518585205,true_boilerplate
+1069, be,0.14189431071281433,true_boilerplate
+1070, ,6.427773952484131,true_boilerplate
+1071,3,2.3552472591400146,numeric
+1072,.,3.3140218257904053,true_boilerplate
+1073,7,3.7524163722991943,numeric
+1074, times,1.391818642616272,true_boilerplate
+1075, higher,2.2549149990081787,true_boilerplate
+1076, than,0.2177077829837799,true_boilerplate
+1077, that,3.437361478805542,true_boilerplate
+1078, with,1.263847827911377,true_boilerplate
+1079, war,7.173320770263672,true_boilerplate
+1080,far,-0.0,true_boilerplate
+1081,in,-0.0,true_boilerplate
+1082, alone,1.9637309312820435,true_boilerplate
+1083, and,3.2491183280944824,true_boilerplate
+1084, ,0.3355655074119568,true_boilerplate
+1085,4,2.7088160514831543,numeric
+1086, times,3.4084739685058594,true_boilerplate
+1087, than,9.383268356323242,true_boilerplate
+1088, with,1.8085979223251343,true_boilerplate
+1089, aspir,2.3696279525756836,clinical_entity
+1090,in,6.879304237372708e-07,true_boilerplate
+1091, mon,5.7517266273498535,medical_vocabulary
+1092,otherapy,5.675416105077602e-06,medical_vocabulary
+1093,.,0.2271382212638855,true_boilerplate
+1094, Similarly,7.554388046264648,medical_vocabulary
+1095,",",0.0024260100908577442,true_boilerplate
+1096, adding,12.719290733337402,medical_vocabulary
+1097, war,7.473849773406982,true_boilerplate
+1098,far,-0.0,true_boilerplate
+1099,in,-0.0,true_boilerplate
+1100, to,0.1325806826353073,true_boilerplate
+1101, dual,1.0127074718475342,medical_vocabulary
+1102, anti,0.02301165647804737,clinical_entity
+1103,plate,0.0008766730898059905,medical_vocabulary
+1104,let,1.1522791282914113e-05,true_boilerplate
+1105, therapy,0.013862404972314835,clinical_entity
+1106, increases,1.7391277551651,medical_vocabulary
+1107, the,0.15034615993499756,true_boilerplate
+1108, relative,7.972432613372803,medical_vocabulary
+1109, risk,0.02338855154812336,clinical_entity
+1110, for,4.96396541595459,true_boilerplate
+1111, bleeding,2.0953714847564697,clinical_entity
+1112, to,5.494134426116943,true_boilerplate
+1113, ,0.44820845127105713,true_boilerplate
+1114,2,1.52658212184906,numeric
+1115,.,0.018323129042983055,true_boilerplate
+1116,2,3.272583246231079,numeric
+1117, at,11.6398286819458,true_boilerplate
+1118, ,0.16994257271289825,true_boilerplate
+1119,3,2.3594608306884766,numeric
+1120,0,1.7549971342086792,numeric
+1121, days,0.014876922592520714,numeric
+1122,",",2.640291452407837,true_boilerplate
+1123, and,1.7070125341415405,true_boilerplate
+1124, the,2.706622362136841,true_boilerplate
+1125, yearly,15.911581039428711,medical_vocabulary
+1126, incidence,3.080854892730713,medical_vocabulary
+1127, of,0.3213743567466736,true_boilerplate
+1128, bleeding,2.4556167125701904,clinical_entity
+1129, will,12.056244850158691,true_boilerplate
+1130, be,1.7436739206314087,true_boilerplate
+1131, ,1.263789415359497,true_boilerplate
+1132,1,1.9843116998672485,numeric
+1133,2,2.7332077026367188,numeric
+1134,%,1.6070165634155273,numeric
+1135, compared,3.8790102005004883,medical_vocabulary
+1136, to,0.503109335899353,true_boilerplate
+1137, ,0.08706524223089218,true_boilerplate
+1138,3,2.0706586837768555,numeric
+1139,.,1.9916529655456543,true_boilerplate
+1140,7,3.331082344055176,numeric
+1141,%,0.02346605248749256,numeric
+1142, for,1.687015414237976,true_boilerplate
+1143, only,11.587138175964355,true_boilerplate
+1144, aspir,2.892817735671997,clinical_entity
+1145,in,-0.0,true_boilerplate
+1146, plus,9.727034568786621,medical_vocabulary
+1147, clo,0.00520785478875041,medical_vocabulary
+1148,pid,4.127577540202765e-06,medical_vocabulary
+1149,og,3.783613237828831e-06,medical_vocabulary
+1150,rel,0.0021780631504952908,medical_vocabulary
+1151,.,0.6490916013717651,true_boilerplate
+1152, Interestingly,10.759598731994629,medical_vocabulary
+1153,",",0.00602981960400939,true_boilerplate
+1154, combining,9.543468475341797,medical_vocabulary
+1155, war,2.5108726024627686,true_boilerplate
+1156,far,-0.0,true_boilerplate
+1157,in,3.4396526871205424e-07,true_boilerplate
+1158, and,3.3015260696411133,true_boilerplate
+1159, only,15.819046974182129,true_boilerplate
+1160, clo,3.0658578872680664,medical_vocabulary
+1161,pid,6.879304237372708e-07,medical_vocabulary
+1162,og,1.7198254909089883e-06,medical_vocabulary
+1163,rel,0.00513519486412406,medical_vocabulary
+1164, reduces,5.822013854980469,medical_vocabulary
+1165, bleeding,2.8148767948150635,clinical_entity
+1166, complications,8.004022598266602,medical_vocabulary
+1167, without,9.171149253845215,true_boilerplate
+1168, increasing,3.041334629058838,medical_vocabulary
+1169, throm,2.8073110580444336,clinical_entity
+1170,bot,0.1028669998049736,medical_vocabulary
+1171,ic,2.235772626590915e-06,medical_vocabulary
+1172, events,1.499564528465271,true_boilerplate
+1173, when,5.670165538787842,true_boilerplate
+1174, compared,0.0856248140335083,medical_vocabulary
+1175, to,0.5591268539428711,true_boilerplate
+1176, triple,2.69174861907959,clinical_entity
+1177, therapy,0.03552840277552605,clinical_entity
+1178,".
+
+",2.621277093887329,true_boilerplate
+1179,Many,10.067075729370117,true_boilerplate
+1180, factors,6.26243782043457,medical_vocabulary
+1181, increased,15.029723167419434,medical_vocabulary
+1182, our,18.09857940673828,true_boilerplate
+1183, patient,0.17747581005096436,medical_vocabulary
+1184,'s,0.1476639211177826,true_boilerplate
+1185, risk,1.0596016645431519,clinical_entity
+1186, of,0.7686318755149841,true_boilerplate
+1187, bleeding,0.07449380308389664,clinical_entity
+1188,.,1.277770757675171,true_boilerplate
+1189, Pr,13.69061279296875,medical_vocabulary
+1190,as,0.00011814723984571174,true_boilerplate
+1191,ug,1.7198263435602712e-07,numeric
+1192,rel,3.4396526871205424e-07,medical_vocabulary
+1193, results,12.238984107971191,true_boilerplate
+1194, in,0.004366045352071524,true_boilerplate
+1195, greater,2.7572498321533203,medical_vocabulary
+1196, plate,0.513674795627594,medical_vocabulary
+1197,let,5.675416105077602e-06,true_boilerplate
+1198, inhibition,0.021820073947310448,medical_vocabulary
+1199, and,3.9944207668304443,true_boilerplate
+1200, more,4.073696613311768,true_boilerplate
+1201, bleeding,1.3801993131637573,clinical_entity
+1202, compared,2.7126221656799316,medical_vocabulary
+1203, to,0.16300588846206665,true_boilerplate
+1204, clo,0.017647797241806984,medical_vocabulary
+1205,pid,9.802977729123086e-06,medical_vocabulary
+1206,og,4.471542069950374e-06,medical_vocabulary
+1207,rel,3.594392546801828e-05,medical_vocabulary
+1208,.,0.3429972529411316,true_boilerplate
+1209, Advanced,13.573562622070312,medical_vocabulary
+1210, chronic,7.273868560791016,clinical_entity
+1211, kidney,0.011858179233968258,clinical_entity
+1212, disease,0.00018968438962474465,clinical_entity
+1213, may,5.758195400238037,true_boilerplate
+1214, increase,3.2197940349578857,true_boilerplate
+1215, the,0.4155675768852234,true_boilerplate
+1216, bleeding,3.5086710453033447,clinical_entity
+1217, risk,0.0664030984044075,clinical_entity
+1218,.,4.629878997802734,true_boilerplate
+1219, In,3.558276653289795,true_boilerplate
+1220, the,4.842726230621338,true_boilerplate
+1221, RO,9.654021263122559,medical_vocabulary
+1222,CKET,0.0019606451969593763,medical_vocabulary
+1223, AF,0.5853211283683777,medical_vocabulary
+1224, trial,0.2618933320045471,clinical_entity
+1225,",",0.04720031097531319,true_boilerplate
+1226, in,8.95817756652832,true_boilerplate
+1227, which,1.6002445220947266,true_boilerplate
+1228, riv,0.28334981203079224,medical_vocabulary
+1229,ar,-0.0,medical_vocabulary
+1230,ox,-0.0,medical_vocabulary
+1231,aban,-0.0,clinical_entity
+1232, was,0.07887575775384903,true_boilerplate
+1233, compared,0.1998966634273529,medical_vocabulary
+1234, to,0.6292312145233154,true_boilerplate
+1235, war,0.0010641800472512841,true_boilerplate
+1236,far,-0.0,true_boilerplate
+1237,in,1.7198263435602712e-07,true_boilerplate
+1238, in,1.814399003982544,true_boilerplate
+1239, non,3.9640493392944336,true_boilerplate
+1240,val,2.911760091781616,medical_vocabulary
+1241,v,0.0010715698590502143,true_boilerplate
+1242,ular,1.7198263435602712e-07,clinical_entity
+1243, atr,1.1927733421325684,medical_vocabulary
+1244,ial,8.599129728281696e-07,medical_vocabulary
+1245, fibr,0.0011487306328490376,clinical_entity
+1246,illation,1.3758605064140284e-06,clinical_entity
+1247,",",0.31302887201309204,true_boilerplate
+1248, patients,1.9137228727340698,medical_vocabulary
+1249, with,0.06762703508138657,true_boilerplate
+1250, creat,3.0960543155670166,clinical_entity
+1251,inine,0.00010765712067950517,clinical_entity
+1252, clearance,0.008083712309598923,clinical_entity
+1253, <,0.9544237852096558,medical_vocabulary
+1254,3,0.2230791449546814,numeric
+1255,0,3.800766353379004e-05,numeric
+1256, mL,0.6550589203834534,numeric
+1257,/min,0.029716061428189278,medical_vocabulary
+1258, were,2.2355687618255615,true_boilerplate
+1259, excluded,0.2638011574745178,medical_vocabulary
+1260,",",2.8644824028015137,true_boilerplate
+1261, and,2.1373417377471924,true_boilerplate
+1262, those,2.686851739883423,true_boilerplate
+1263, with,0.026255285367369652,true_boilerplate
+1264, a,4.756350040435791,true_boilerplate
+1265, creat,0.10002030432224274,clinical_entity
+1266,inine,8.255143256974407e-06,clinical_entity
+1267, clearance,0.0039026783779263496,clinical_entity
+1268, of,1.026145339012146,true_boilerplate
+1269, ,0.034073520451784134,true_boilerplate
+1270,3,0.025287777185440063,numeric
+1271,0,4.505875040194951e-05,numeric
+1272,-,0.20430143177509308,medical_vocabulary
+1273,4,5.099952220916748,numeric
+1274,9,7.945379184093326e-05,numeric
+1275, mL,0.042057935148477554,numeric
+1276,/min,0.00035148969618603587,medical_vocabulary
+1277, received,4.809703826904297,true_boilerplate
+1278, a,0.599444568157196,true_boilerplate
+1279, reduced,1.9914504289627075,medical_vocabulary
+1280, dose,0.06552296876907349,medical_vocabulary
+1281, of,1.096246361732483,true_boilerplate
+1282, riv,0.4081173241138458,medical_vocabulary
+1283,ar,-0.0,medical_vocabulary
+1284,ox,3.4396526871205424e-07,medical_vocabulary
+1285,aban,4.471542069950374e-06,clinical_entity
+1286, (,1.8499072790145874,true_boilerplate
+1287,1,0.17186397314071655,numeric
+1288,5,4.574495792388916,numeric
+1289, mg,0.005079840775579214,numeric
+1290, daily,1.7045652866363525,numeric
+1291,).,0.4230080544948578,true_boilerplate
+1292, To,12.22573471069336,true_boilerplate
+1293, date,4.443480491638184,true_boilerplate
+1294,",",0.007291493471711874,true_boilerplate
+1295, there,1.3756914138793945,true_boilerplate
+1296, is,1.6267869472503662,true_boilerplate
+1297, no,0.4051453769207001,true_boilerplate
+1298, published,4.482208251953125,true_boilerplate
+1299, data,0.6313682794570923,true_boilerplate
+1300, on,0.7490915656089783,true_boilerplate
+1301, the,0.4563668370246887,true_boilerplate
+1302, effect,5.506261348724365,true_boilerplate
+1303, of,0.0038289236836135387,true_boilerplate
+1304, kidney,6.298399448394775,clinical_entity
+1305, failure,6.103338718414307,clinical_entity
+1306, on,0.1344277262687683,true_boilerplate
+1307, bleeding,1.5382903814315796,clinical_entity
+1308, risk,0.7669706344604492,clinical_entity
+1309, of,5.361008167266846,true_boilerplate
+1310, triple,11.769463539123535,clinical_entity
+1311, therapy,0.16652031242847443,clinical_entity
+1312, with,1.2227658033370972,true_boilerplate
+1313, riv,0.0526575930416584,medical_vocabulary
+1314,ar,-0.0,medical_vocabulary
+1315,ox,-0.0,medical_vocabulary
+1316,aban,2.751719648586004e-06,clinical_entity
+1317,".
+
+",6.947601795196533,true_boilerplate
+1318,When,9.232285499572754,true_boilerplate
+1319, the,3.2087039947509766,true_boilerplate
+1320, anticipated,17.11370277404785,medical_vocabulary
+1321, risk,2.627908229827881,clinical_entity
+1322, of,0.7793306112289429,true_boilerplate
+1323, stroke,4.174229621887207,medical_vocabulary
+1324, over,13.917342185974121,true_boilerplate
+1325,weigh,11.620793342590332,medical_vocabulary
+1326, the,11.102703094482422,true_boilerplate
+1327, risk,0.8041712641716003,clinical_entity
+1328, of,0.012877173721790314,true_boilerplate
+1329, bleeding,0.04621710628271103,clinical_entity
+1330,",",0.15522882342338562,true_boilerplate
+1331, and,6.837383270263672,true_boilerplate
+1332, the,1.5920344591140747,true_boilerplate
+1333, use,9.523408889770508,true_boilerplate
+1334, of,0.0029591922648251057,true_boilerplate
+1335, triple,3.201557159423828,clinical_entity
+1336, therapy,0.28550565242767334,clinical_entity
+1337, becomes,7.394869327545166,medical_vocabulary
+1338, mandatory,9.18869686126709,medical_vocabulary
+1339,",",0.3455228805541992,true_boilerplate
+1340, many,10.243795394897461,true_boilerplate
+1341, strategies,4.493528366088867,medical_vocabulary
+1342, can,1.8256127834320068,true_boilerplate
+1343, be,0.15670651197433472,true_boilerplate
+1344, considered,1.6888132095336914,true_boilerplate
+1345, to,0.5469493865966797,true_boilerplate
+1346, decrease,4.496391296386719,medical_vocabulary
+1347, bleeding,1.3550214767456055,clinical_entity
+1348, risk,0.8910131454467773,clinical_entity
+1349,",",3.367724895477295,true_boilerplate
+1350, such,0.6961497068405151,true_boilerplate
+1351, as,0.001126390416175127,true_boilerplate
+1352, using,3.842714548110962,true_boilerplate
+1353, the,3.1557729244232178,true_boilerplate
+1354, lower,4.973023414611816,true_boilerplate
+1355, effective,6.820775508880615,medical_vocabulary
+1356, dose,0.22250661253929138,medical_vocabulary
+1357, of,0.16520173847675323,true_boilerplate
+1358, aspir,5.169177532196045,clinical_entity
+1359,in,3.95559527532896e-06,true_boilerplate
+1360, and,3.1585590839385986,true_boilerplate
+1361, adding,7.234383583068848,medical_vocabulary
+1362, proton,7.041257858276367,medical_vocabulary
+1363, pump,0.04942765086889267,medical_vocabulary
+1364, inhibitor,4.2273759841918945,medical_vocabulary
+1365, as,8.382184982299805,true_boilerplate
+1366, a,2.118565559387207,true_boilerplate
+1367, proph,4.93263053894043,medical_vocabulary
+1368,yl,3.233237657696009e-05,medical_vocabulary
+1369,axis,1.1958290338516235,medical_vocabulary
+1370, of,5.790170669555664,true_boilerplate
+1371, gastrointestinal,1.5260361433029175,medical_vocabulary
+1372, bleeding,0.31652504205703735,clinical_entity
+1373,.,0.7013816833496094,true_boilerplate
+1374, Util,12.220308303833008,medical_vocabulary
+1375,izing,0.16900165379047394,medical_vocabulary
+1376, bare,10.641317367553711,clinical_entity
+1377, metal,0.2051175832748413,clinical_entity
+1378, st,0.019861146807670593,true_boilerplate
+1379,ents,0.2315458357334137,medical_vocabulary
+1380, to,9.011051177978516,true_boilerplate
+1381, minimize,2.725908041000366,medical_vocabulary
+1382, time,11.58297348022461,true_boilerplate
+1383, on,0.7540156245231628,true_boilerplate
+1384, triple,6.991058349609375,clinical_entity
+1385, therapy,0.08536271750926971,clinical_entity
+1386, may,1.9772248268127441,true_boilerplate
+1387, be,1.5385991334915161,true_boilerplate
+1388, another,1.1603652238845825,true_boilerplate
+1389, strategy,1.2221745252609253,medical_vocabulary
+1390, to,4.782400131225586,true_boilerplate
+1391, prevent,6.561059474945068,medical_vocabulary
+1392, bleeding,2.1667211055755615,clinical_entity
+1393, events,5.5609965324401855,true_boilerplate
+1394,",",3.422466516494751,true_boilerplate
+1395, but,4.196465969085693,true_boilerplate
+1396, at,9.960927963256836,true_boilerplate
+1397, this,7.612771987915039,true_boilerplate
+1398, point,1.9765673875808716,true_boilerplate
+1399, it,4.27369499206543,true_boilerplate
+1400, is,0.4444529116153717,true_boilerplate
+1401, based,11.435105323791504,true_boilerplate
+1402, on,0.251592218875885,true_boilerplate
+1403, insufficient,8.686180114746094,medical_vocabulary
+1404, evidence,0.7119356989860535,true_boilerplate
+1405,".
+
+",1.1649795770645142,true_boilerplate
+1406,4,3.604552745819092,numeric
+1407,.,0.0002502130519133061,true_boilerplate
+1408, Conclusion,0.07972679287195206,medical_vocabulary
+1409,"
+
+",0.0029065008275210857,true_boilerplate
+1410,We,7.337169170379639,true_boilerplate
+1411, believe,6.178545951843262,true_boilerplate
+1412, this,4.3212409019470215,true_boilerplate
+1413, is,3.0332717895507812,true_boilerplate
+1414, the,0.34475791454315186,true_boilerplate
+1415, first,0.011967684142291546,true_boilerplate
+1416, case,1.2078070640563965,true_boilerplate
+1417, report,0.2908819615840912,true_boilerplate
+1418, of,0.5530707240104675,true_boilerplate
+1419, bleeding,1.6452829837799072,clinical_entity
+1420, complications,0.6471312046051025,medical_vocabulary
+1421, involving,9.770268440246582,medical_vocabulary
+1422, this,11.050126075744629,true_boilerplate
+1423, combination,2.4376277923583984,medical_vocabulary
+1424, of,0.2468116134405136,true_boilerplate
+1425, medications,6.069663047790527,medical_vocabulary
+1426,.,0.5872493982315063,true_boilerplate
+1427, Care,11.114615440368652,true_boilerplate
+1428, should,7.605375289916992,true_boilerplate
+1429, be,0.0033133935648947954,true_boilerplate
+1430, taken,0.10341252386569977,true_boilerplate
+1431, in,1.7617582082748413,true_boilerplate
+1432, selecting,3.132873773574829,medical_vocabulary
+1433, a,5.119792938232422,true_boilerplate
+1434, regimen,3.7225499153137207,clinical_entity
+1435, most,14.432673454284668,true_boilerplate
+1436, appropriate,0.6245916485786438,medical_vocabulary
+1437, for,0.19530265033245087,true_boilerplate
+1438, the,0.7002356648445129,true_boilerplate
+1439, patient,1.347033143043518,medical_vocabulary
+1440,",",2.1175169944763184,true_boilerplate
+1441, remembering,13.057266235351562,medical_vocabulary
+1442, that,0.10070019215345383,true_boilerplate
+1443, there,5.45134973526001,true_boilerplate
+1444, are,1.9849880933761597,true_boilerplate
+1445, no,1.5967199802398682,true_boilerplate
+1446, methods,17.288692474365234,medical_vocabulary
+1447, for,3.543773651123047,true_boilerplate
+1448, monitoring,5.603536128997803,medical_vocabulary
+1449, newer,16.879695892333984,medical_vocabulary
+1450, oral,0.8347175121307373,medical_vocabulary
+1451, ant,0.0026692794635891914,medical_vocabulary
+1452,ico,0.0019158179638907313,medical_vocabulary
+1453,ag,1.2038780141665484e-06,medical_vocabulary
+1454,ul,0.08458263427019119,medical_vocabulary
+1455,ants,-0.0,medical_vocabulary
+1456,.,3.5408127307891846,true_boilerplate
+1457, This,5.575272083282471,true_boilerplate
+1458, is,4.6152262687683105,true_boilerplate
+1459, especially,1.49289071559906,true_boilerplate
+1460, true,3.4286742210388184,true_boilerplate
+1461, in,1.8077876567840576,true_boilerplate
+1462, patients,0.26849988102912903,medical_vocabulary
+1463, with,0.035523030906915665,true_boilerplate
+1464, other,10.0604887008667,true_boilerplate
+1465, com,2.012261152267456,medical_vocabulary
+1466,or,0.0037220586091279984,true_boilerplate
+1467,bid,0.004405481740832329,numeric
+1468,ities,0.24898278713226318,medical_vocabulary
+1469, that,2.269624710083008,true_boilerplate
+1470, increase,2.9438040256500244,true_boilerplate
+1471, bleeding,1.0272538661956787,clinical_entity
+1472, risk,0.1442236602306366,clinical_entity
+1473,",",1.4006437063217163,true_boilerplate
+1474, such,0.2629145085811615,true_boilerplate
+1475, as,0.0005629613297060132,true_boilerplate
+1476, chronic,0.5039774775505066,clinical_entity
+1477, kidney,0.08029023557901382,clinical_entity
+1478, disease,0.0020647214259952307,clinical_entity
+1479,".
+",8.314852714538574,true_boilerplate

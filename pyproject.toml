@@ -11,6 +11,16 @@ dependencies = [
 dev = [
     "pytest>=8",
 ]
+# Forward-pass perplexity profiling (src/analysis/perplexity_profile.py).
+# Heavy GPU stack, kept out of the core install: pip install -e .[analysis]
+analysis = [
+    "torch",
+    "transformers",
+    "bitsandbytes",
+    "matplotlib",
+    "accelerate",
+    "wordfreq",
+]
 
 # Tests import the schema as `from schema.fact_schema import ...`; putting
 # `src` on the path makes `schema` a top-level package without an install step.
