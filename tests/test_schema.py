@@ -227,6 +227,35 @@ def test_reconstruct_omits_empty_sections():
         assert absent not in out
 
 
+def test_reconstruct_dedupes_same_entity_in_section():
+    # Same diagnosis (pulmonary oedema) noted from two studies: render once,
+    # keeping the most specific version.
+    meta = DocumentMetadata(document_id="d", note_type=NoteType.OTHER)
+    ff = FactFile(metadata=meta, facts=[
+        Fact(id="f001", category=FactCategory.CATEGORICAL,
+             subcategory="previous_diagnosis", content="Pulmonary oedema",
+             entities=["pulmonary oedema"], source=FactSource.PHYSICIAN_ASSESSED),
+        Fact(id="f002", category=FactCategory.CATEGORICAL,
+             subcategory="previous_diagnosis",
+             content="Pulmonary oedema on CT chest",
+             entities=["pulmonary oedema"], source=FactSource.PHYSICIAN_ASSESSED),
+    ])
+    # Collapsed to a single DIAGNOSES entry rather than rendered twice.
+    assert ff.reconstruct() == "DIAGNOSES: pulmonary oedema."
+
+
+def test_reconstruct_drug_without_dose_marked_not_specified():
+    # A drug_name with no matching medication_dosage renders an explicit
+    # "(dose not specified)" marker rather than the bare drug name.
+    meta = DocumentMetadata(document_id="d", note_type=NoteType.OTHER)
+    ff = FactFile(metadata=meta, facts=[
+        Fact(id="f001", category=FactCategory.CATEGORICAL,
+             subcategory="drug_name", content="Patient is on aspirin",
+             entities=["aspirin"], source=FactSource.PHYSICIAN_ASSESSED),
+    ])
+    assert ff.reconstruct() == "MEDICATIONS: Aspirin (dose not specified)."
+
+
 def test_reconstruct_orphan_dosage_renders_drug_and_dose():
     # A medication_dosage with no associated drug_name fact must still render
     # as "drug + dose" in MEDICATIONS, not be dropped or stranded.

@@ -316,6 +316,28 @@ class FactFile(BaseModel):
                     out.append(f)
             return out
 
+        def _primary_entity(f: "Fact") -> str:
+            return f.entities[0].strip().lower() if f.entities else ""
+
+        def duplicate_drop_ids(anchors: list["Fact"]) -> set[str]:
+            """IDs of section anchors to skip as duplicates. When several
+            anchors share a primary entity, keep only one: the most specific
+            (longest content), tie-broken by the most recent (latest in
+            document order). Anchors without a primary entity are never
+            dropped."""
+            best: dict[str, "Fact"] = {}
+            for f in anchors:
+                key = _primary_entity(f)
+                if not key:
+                    continue
+                cur = best.get(key)
+                if cur is None or len(f.content) >= len(cur.content):
+                    best[key] = f
+            keep = {f.id for f in best.values()}
+            return {
+                f.id for f in anchors if _primary_entity(f) and f.id not in keep
+            }
+
         cat = FactCategory  # local alias for brevity below
 
         # Step 1 — patient identity (noun phrase, no trailing period).
@@ -339,10 +361,18 @@ class FactFile(BaseModel):
             sections.append(("ALERTS", " ".join(parts)))
 
         # Step 3 — active problem list, with onset merged in from a related
-        # temporal fact (same group / shared entity).
+        # temporal fact (same group / shared entity). Diagnoses sharing a
+        # primary entity (e.g. the same finding noted on CXR and on CT) are
+        # deduplicated to a single, most-specific entry.
+        dx_anchors = [
+            f for f in self.facts
+            if f.category is cat.CATEGORICAL and f.subcategory == "previous_diagnosis"
+        ]
+        dx_drop = duplicate_drop_ids(dx_anchors)
         parts = []
-        for f in self.facts:
-            if not (f.category is cat.CATEGORICAL and f.subcategory == "previous_diagnosis"):
+        for f in dx_anchors:
+            if f.id in dx_drop:
+                consumed.add(f.id)
                 continue
             if f.negated:  # preserve negation rather than rendering entity only
                 parts.append(_ensure_period(f.span or _capitalize_first(_strip_patient_prefix(f.content))))
@@ -365,9 +395,15 @@ class FactFile(BaseModel):
         # Step 4 — medications: drug + current dosage, then any dosage change
         # and explanatory link merged into one statement. The explanatory_link
         # is consumed here so step 6 will not render it again.
+        drug_anchors = [
+            f for f in self.facts
+            if f.category is cat.CATEGORICAL and f.subcategory == "drug_name"
+        ]
+        drug_drop = duplicate_drop_ids(drug_anchors)
         parts = []
-        for f in self.facts:
-            if not (f.category is cat.CATEGORICAL and f.subcategory == "drug_name"):
+        for f in drug_anchors:
+            if f.id in drug_drop:
+                consumed.add(f.id)
                 continue
             if f.negated:
                 parts.append(_ensure_period(f.span or _capitalize_first(_strip_patient_prefix(f.content))))
@@ -379,7 +415,10 @@ class FactFile(BaseModel):
                 base = f"{drug} {' '.join(dosage[0].values)}".strip()
                 consumed.add(dosage[0].id)
             else:
-                base = drug
+                # No matching medication_dosage (by group_id or entity). Mark
+                # explicitly so "dose not extracted" reads differently from a
+                # bare drug name.
+                base = f"{drug} (dose not specified)"
             clause = ""
             change = related(f, category=cat.TEMPORAL, subcats={"dosage_change"})
             if change:
@@ -419,10 +458,18 @@ class FactFile(BaseModel):
             sections.append(("MEDICATIONS", " ".join(parts)))
 
         # Step 5 — recent results, with lab trajectory trend merged in.
+        # Results sharing a primary entity (the same test reported twice) are
+        # deduplicated to the most specific/most recent entry.
         result_subs = {"lab_value", "vital_sign"}
+        result_anchors = [
+            f for f in self.facts
+            if f.category is cat.QUANTITATIVE and f.subcategory in result_subs
+        ]
+        result_drop = duplicate_drop_ids(result_anchors)
         parts = []
-        for f in self.facts:
-            if not (f.category is cat.QUANTITATIVE and f.subcategory in result_subs):
+        for f in result_anchors:
+            if f.id in result_drop:
+                consumed.add(f.id)
                 continue
             if f.negated:
                 parts.append(_ensure_period(f.span or _capitalize_first(_strip_patient_prefix(f.content))))
