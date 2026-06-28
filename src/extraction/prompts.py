@@ -66,7 +66,9 @@ _DECOMPOSITION_RULES = """DECOMPOSITION RULES:
 
 14. PROGRESSIVE CONDITIONS. When the same condition appears at different severity levels across the document timeline (e.g., 'heart failure' early, 'decompensated heart failure' later), extract the progression as a single temporal fact showing the trajectory, not as two separate categorical diagnoses.
 
-15. QUALITATIVE VS QUANTITATIVE LAB RESULTS. Lab results with numeric values (HbA1c 7.2%, INR 4.9, WBC 11,600) are quantitative/lab_value. Lab results that are categorical or binary (blood culture positive for MSSA, eosinophilia without a count, urine culture negative) are categorical/previous_diagnosis if they establish a diagnosis, or categorical/negated_fact if they confirm absence. Do not put non-numeric results in quantitative/lab_value."""
+15. QUALITATIVE VS QUANTITATIVE LAB RESULTS. Lab results with numeric values (HbA1c 7.2%, INR 4.9, WBC 11,600) are quantitative/lab_value. Lab results that are categorical or binary (blood culture positive for MSSA, eosinophilia without a count, urine culture negative) are categorical/previous_diagnosis if they establish a diagnosis, or categorical/negated_fact if they confirm absence. Do not put non-numeric results in quantitative/lab_value.
+
+16. LAB ISOLATE IDENTIFIERS ARE NOT DIAGNOSES. Microbiology isolate labels (SA1, SA2, SA3, 'isolate 1', strain designations, ATCC reference numbers) are laboratory identifiers, not patient diagnoses or clinical entities. Do not extract them as standalone categorical facts. When a lab result references an isolate, the entity should be the organism (e.g., 'methicillin-susceptible Staphylococcus aureus') not the isolate label (e.g., 'SA1')."""
 
 _OUTPUT_FORMAT = (
     "Return ONLY valid JSON matching the FactFile structure — a single JSON "
