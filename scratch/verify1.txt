@@ -1,0 +1,1188 @@
+<SYSTEM>
+You are a clinical fact extractor. Given a medical document, you extract every clinically relevant patient-specific fact into a structured JSON format. You are exhaustive, precise, and follow strict decomposition rules.
+
+TAXONOMY (category: subcategories):
+Categorical: previous_diagnosis, reported_symptom, patient_identifier, family_history, behavior, code_status, negated_fact, allergy, infection_precaution, fall_risk, drug_name, device_type
+Temporal: medication_timing, event_sequence, lab_trajectory, dosage_change, time_since_event
+Quantitative: lab_value, vital_sign, medication_dosage
+Clinical Reasoning: considered_rejected_diagnosis, conditional_fact, explanatory_link, uncertainty_marker, pending_planned_task
+
+SOURCE ATTRIBUTION VALUES:
+patient_reported, physician_assessed, outside_records, nursing_note, family_reported, unknown
+
+DECOMPOSITION RULES:
+
+1. ONE ENTITY PER FACT. "Patient takes tylenol 200mg and metformin 10mg" becomes TWO facts, each with a single entity and its associated values. Never put multiple unrelated entities in one fact entry.
+
+2. ATOMIC FACTS. Compound clinical statements are decomposed into separate facts by category. "Metformin increased from 250mg to 500mg on 2024-01-10 due to inadequate glycemic control" becomes:
+   - categorical/drug_name: "Patient takes metformin"
+   - quantitative/medication_dosage: "Metformin 500mg" (current dose)
+   - temporal/dosage_change: "Metformin increased from 250mg to 500mg on 2024-01-10"
+   - clinical_reasoning/explanatory_link: "Metformin increased due to inadequate glycemic control"
+   All share the same group_id.
+
+3. GROUP_ID links facts decomposed from the same clinical statement. Each fact in a group is independently meaningful. Use format "g001", "g002", etc. Facts that stand alone have group_id: null.
+
+4. NEGATION. Any negated clinical fact (denies, no history of, ruled out, absent, etc.) MUST have negated: true. The content field MUST include the negation word. "Denies chest pain" → content: "Patient denies chest pain", negated: true. The entities field contains the concept being negated: ["chest pain"].
+
+5. VERBATIM SPAN. The span field captures the original text from the document, preserving abbreviations and formatting. If the fact comes from multiple non-contiguous spans, capture the most informative one.
+
+6. SOURCE ATTRIBUTION. Set the source field based on who asserted the fact:
+   - patient_reported: patient's own statements
+   - physician_assessed: physician's clinical judgment or documentation
+   - outside_records: from external records or prior documentation
+   - nursing_note: nursing documentation
+   - family_reported: family member statements
+   - unknown: cannot determine source
+
+7. MULTIPLE VALUES on one entity follow chronological order for changes (old first, new second) and co-equal listing for current state. Content must state direction explicitly for changes.
+
+8. TAGS for cross-cutting concerns use format "category:detail" (e.g. "temporal:started_2024-03-15"). Use tags when a fact has a secondary category relationship but its primary category is something else.
+
+9. EXTRACT PATIENT-SPECIFIC FACTS ONLY. Do not extract general medical knowledge, literature findings, study results, or guideline recommendations. Extract only facts about the specific patient in the case.
+
+10. PRESERVE DISEASE QUALIFIERS. Stage, grade, severity, functional status, and subtype modifiers must be included in the content field. "Chronic kidney disease stage 3" not "chronic kidney disease." "Heart failure with preserved ejection fraction" not "heart failure." These qualifiers change clinical management.
+
+11. TREATMENT REGIMENS ARE NOT DRUGS. Do not extract combination therapy descriptions ("triple antithrombotic therapy", "dual antiplatelet therapy") as drug_name facts. The individual drugs in the regimen should each have their own drug_name entry. If the regimen concept is clinically relevant, categorize it as clinical_reasoning/explanatory_link.
+
+12. DEDUPLICATE FACTS. If the same clinical fact appears in multiple sections of the document (e.g., mentioned in the case presentation and again in the discussion), extract it ONCE. Use the most complete or specific version. Do not create separate fact entries for each mention of the same fact.
+
+13. DIAGNOSIS HIERARCHY. When a condition has an etiology, pathology, and functional consequence (e.g., alcoholic liver disease → cirrhosis → liver failure), extract the most clinically specific composite diagnosis rather than separate entries for each level. Use the content field for the composite ('end-stage alcoholic cirrhosis with liver failure') and entities for the key terms. Extract separate facts only when different levels are clinically independent or diagnosed at different times.
+
+14. PROGRESSIVE CONDITIONS. When the same condition appears at different severity levels across the document timeline (e.g., 'heart failure' early, 'decompensated heart failure' later), extract the progression as a single temporal fact showing the trajectory, not as two separate categorical diagnoses.
+
+WORKED EXAMPLE
+
+Given this clinical text:
+"Patient is a 67-year-old male with history of Type 2 diabetes (diagnosed 2019), currently on metformin 500mg BID. Denies chest pain. HbA1c 7.2% on 2024-03-15, up from 6.8% in 2023-09. Allergic to penicillin (anaphylaxis). Metformin was increased from 250mg to 500mg on 2024-01-10 due to inadequate glycemic control. Concerning for early diabetic nephropathy — plan to order urine albumin."
+
+Produce this extraction:
+{
+  "metadata": {
+    "document_id": "example-001",
+    "note_type": "progress_note",
+    "date": "2024-03-15",
+    "author_role": "attending physician",
+    "sections_present": ["HPI", "Assessment/Plan"],
+    "source_dataset": "synthetic"
+  },
+  "facts": [
+    {
+      "id": "f001",
+      "category": "categorical",
+      "subcategory": "patient_identifier",
+      "content": "Patient is a 67-year-old male",
+      "span": "67-year-old male",
+      "entities": ["patient"],
+      "values": ["67"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f002",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has Type 2 diabetes",
+      "span": "history of Type 2 diabetes (diagnosed 2019)",
+      "entities": ["Type 2 diabetes"],
+      "values": [],
+      "tags": ["temporal:diagnosed_2019"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f003",
+      "category": "temporal",
+      "subcategory": "time_since_event",
+      "content": "Type 2 diabetes diagnosed in 2019",
+      "span": "diagnosed 2019",
+      "entities": ["Type 2 diabetes"],
+      "values": ["2019"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f004",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient is currently on metformin",
+      "span": "currently on metformin 500mg BID",
+      "entities": ["metformin"],
+      "values": [],
+      "tags": ["quantitative:500mg_BID"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f005",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Metformin 500mg twice daily",
+      "span": "metformin 500mg BID",
+      "entities": ["metformin"],
+      "values": ["500mg", "BID"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f006",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "Patient denies chest pain",
+      "span": "Denies chest pain",
+      "entities": ["chest pain"],
+      "values": [],
+      "tags": [],
+      "source": "patient_reported",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f007",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "HbA1c is 7.2%",
+      "span": "HbA1c 7.2% on 2024-03-15",
+      "entities": ["HbA1c"],
+      "values": ["7.2%"],
+      "tags": ["temporal:2024-03-15"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f008",
+      "category": "temporal",
+      "subcategory": "lab_trajectory",
+      "content": "HbA1c increased from 6.8% to 7.2% between September 2023 and March 2024",
+      "span": "HbA1c 7.2% on 2024-03-15, up from 6.8% in 2023-09",
+      "entities": ["HbA1c"],
+      "values": ["6.8%", "7.2%"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f009",
+      "category": "categorical",
+      "subcategory": "allergy",
+      "content": "Patient is allergic to penicillin with anaphylaxis reaction",
+      "span": "Allergic to penicillin (anaphylaxis)",
+      "entities": ["penicillin"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f010",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Metformin increased from 250mg to 500mg on 2024-01-10",
+      "span": "Metformin was increased from 250mg to 500mg on 2024-01-10",
+      "entities": ["metformin"],
+      "values": ["250mg", "500mg", "2024-01-10"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f011",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Metformin was increased due to inadequate glycemic control",
+      "span": "due to inadequate glycemic control",
+      "entities": ["metformin", "glycemic control"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f012",
+      "category": "clinical_reasoning",
+      "subcategory": "uncertainty_marker",
+      "content": "Concerning for early diabetic nephropathy",
+      "span": "Concerning for early diabetic nephropathy",
+      "entities": ["diabetic nephropathy"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f013",
+      "category": "clinical_reasoning",
+      "subcategory": "pending_planned_task",
+      "content": "Plan to order urine albumin test",
+      "span": "plan to order urine albumin",
+      "entities": ["urine albumin"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    }
+  ]
+}
+
+OUTPUT FORMAT:
+Return ONLY valid JSON matching the FactFile structure — a single JSON object with "metadata" and "facts" keys.
+
+CRITICAL: Your entire response must be valid JSON and nothing else. Start your response with { and end it with }. No text before or after the object. No explanation, no commentary, no markdown fencing.
+
+FactFile structure:
+{
+  "metadata": {
+    "document_id": str,
+    "note_type": one of [discharge_summary, progress_note, history_and_physical, consult, imaging_report, procedure_note, nursing_note, er_provider_note, echocardiography_report, case_report, other],
+    "date": str | null,            // ISO YYYY-MM-DD
+    "author_role": str | null,
+    "sections_present": [str, ...],
+    "source_dataset": str | null
+  },
+  "facts": [
+    {
+      "id": str,                    // "f001", unique within the file
+      "category": one of [categorical, temporal, quantitative, clinical_reasoning],
+      "subcategory": str,           // a valid subcategory for the category
+      "content": str,               // normalized, human-readable statement
+      "span": str | null,           // verbatim source text
+      "entities": [str, ...],       // at least one clinical entity
+      "values": [str, ...],         // quantitative values with units; may be empty
+      "tags": [str, ...],           // cross-cutting "category:detail"
+      "source": one of [patient_reported, physician_assessed, outside_records, nursing_note, family_reported, unknown],
+      "negated": bool,
+      "group_id": str | null        // links decomposed facts, e.g. "g001"
+    }
+  ]
+}
+</SYSTEM>
+
+<USER>
+Review this clinical document against the facts already extracted. Identify any clinically relevant patient-specific facts that are MISSING from the extraction.
+
+Focus especially on:
+- Negated facts (things the patient denies or does not have)
+- Temporal relationships (when things started, stopped, changed)
+- Clinical reasoning (why decisions were made, what was considered and rejected)
+- Conditional instructions (if X then Y)
+- Source attributions that may be wrong
+- Quantitative values (lab numbers, vitals, dosages) that were missed
+- Drug interactions or risk factors mentioned specifically about this patient
+
+Document text:
+---
+Retropharyngeal Haematoma — An Unusual Bleeding Site in an Anticoagulated Patient: A Case Report
+
+Seema Srivastava and Tarun Solanki
+Taunton and Somerset Foundation Trust, Musgrove Park Hospital, Taunton, Somerset, UK
+Published 2 November 2008
+
+Background
+
+Oral anticoagulation is commonly used in patients with atrial fibrillation for the prevention of embolic complications. Bleeding is the most common complication of this treatment. One study following 3958 patients on warfarin reported an incidence of bleeding requiring hospitalization of 2.6 per 100 patient years. Although the retropharyngeal space is an uncommon site for bleeding complications, a haematoma here can expand almost unrestrictedly and rapidly lead to upper airway obstruction. We report the case of retropharyngeal haematoma in a patient on warfarin, as a result of a fall.
+
+Case Presentation
+
+An 85 years old woman was brought to the emergency department after collapsing at home with breathing difficulties. On arrival she was dyspnoeic with oxygen saturation of 75% on room air and a respiratory rate of 40 per minute. She also had minor bruising to her forehead as a result of her fall. She had a past history of a porcine aortic valve replacement 17 years previously, hypertension and atrial fibrillation for which she was on warfarin. On examination she was tachycardic, hypertensive and her jugular venous pressure was elevated. She had coarse crackles throughout both lungs. Arterial blood gases on 15 litres oxygen showed severe type 2 respiratory failure with pH of 7.15, pCO2 9.12, pO2 10.22 and bicarbonate of 22.8 mmol/l. Laboratory results showed a haemoglobin of 11.9 g/dL and INR of 4.9. ECG showed atrial fibrillation, right bundle branch block and widespread ST depression. Findings on chest radiograph were compatible with pulmonary oedema. She was commenced on a nitrate infusion, intravenous diuretics and Bi-level Positive Airway Pressure ventilation. Her condition improved rapidly and the Bi-level Positive Airway Pressure ventilation was discontinued. An hour later her breathing deteriorated and she newly developed stridor. She was noted to have developed bruising of the neck. Urgent nasoendoscopy showed a normal larynx with a slight bulge narrowing the trachea anteriorly. She was immediately intubated and ventilated. An urgent computerized tomography (CT) scan of the neck showed a large retropharyngeal haematoma causing anterior compression of the airway, extending into the posterior mediastinum and terminating behind the left atrium. Evidence of pulmonary oedema and a right pleural effusion were also seen on CT.
+
+Intravenous Vitamin K at a dose of 5 mg and Prothrombin Complex Concentrates (PCCs) at a dose of 50 units per kilogram were given on diagnosis of the haematoma for the reversal of anticoagulation. The INR was 1.1 when repeated subsequently 2 hours later. Due to complications of a ventilation-related pneumonia the patient stayed in intensive care for 10 days after which she was extubated uneventfully. A decision was made not to recommence anticoagulation with warfarin due to the past history of recurrent injurious falls and the high risk of complications from future haemorrhagic events. The patient was commenced instead on aspirin and was discharged two weeks later to her own home.
+
+Discussion
+
+Haemorrhagic complications from warfarin treatment account for 10.5% of all adverse drug reactions resulting in hospital admissions. Bleeding is more likely to occur with an INR greater than 4.5. Older patients are more sensitive to the effects of warfarin and are more likely to have bleeding complications. Haemorrhage related to anticoagulation is most commonly observed in the gastrointestinal tract, subcutaneous tissue and intracranially. Although there is limited data regarding bleeding risk for anticoagulated patients who fall, national consensus guidelines include recurrent or injurious falls as risk factors for haemorrhagic complications with warfarin. There is no consensus on anticoagulation reversal for patients presenting with minor head trauma although one recent study suggests that all traumatic brain injured patients who are supratherapeutically anticoagulated should be considered for reversal of anticoagulation.
+
+Retropharyngeal haematomas are uncommon but are a recognized complication of cervical spine trauma, great vessel trauma, foreign body ingestion, violent coughing or sneezing, retropharyngeal infections and iatrogenic injury after procedures such as internal jugular line insertion. Eighteen cases of retropharyngeal haematoma secondary to oral anticoagulation have been previously reported. Bleeding may be spontaneous or occur after minor trauma such as falls. Haematomas in the retropharyngeal space can expand rapidly causing obstruction of the pharynx, larynx, oesophagus and trachea. Patients may present with a sore throat, hoarse voice, dysphagia, odynophagia, drooling, or overt stridor. Tenderness, swelling or bruising of the neck may be evident.
+
+Nasoendoscopy may show bulging of the posterior pharynx wall. Unstable patients with dyspnoea and hypoxia should be evaluated immediately and considered for intubation to protect the airway from obstruction. CT of the neck and mediastinum is diagnostic and will show the extent of haematoma and its proximity to other structures within the neck.
+
+Most patients with retropharyngeal haematoma are managed conservatively. The haematoma will usually resolve with conservative management but can take several weeks. In almost all of the previously published cases either vitamin K or a combination of either vitamin K and Fresh Frozen Plasma (FFP) or PCCs were used. British Committee for Standards in Haematology Guidelines recommend reversal of anticoagulation in major bleeding using factor concentrate and vitamin K. PCCs are recommended in preference to FFP as complete and rapid reversal is more readily achieved, usually within 10-15 minutes, without the need for blood group typing and thawing before it can be used. Occasionally surgical drainage is required if the haematoma is very large or impeding mechanical ventilation. Late complications include non-resolving haematoma or abscess formation. There is little consensus in the literature regarding the use of steroids or prophylactic antibiotics in patients with retropharyngeal haematoma.
+
+Conclusion
+
+Retropharyngeal haematoma should be considered in anticoagulated patients presenting with abrupt respiratory distress after minor head trauma. It can result in airway obstruction, which can be life threatening. Urgent assessment for intubation and ventilation is essential. Correction of the INR with vitamin K and Prothrombin Complex Concentrates is essential.
+
+---
+
+Already extracted facts:
+---
+{
+  "metadata": {
+    "document_id": "retropharyngeal-hematoma-case",
+    "note_type": "case_report",
+    "date": "2008-11-02",
+    "author_role": "unknown",
+    "sections_present": [
+      "Background",
+      "Case Presentation",
+      "Discussion",
+      "Conclusion"
+    ],
+    "source_dataset": "manual"
+  },
+  "facts": [
+    {
+      "id": "f001",
+      "category": "categorical",
+      "subcategory": "patient_identifier",
+      "content": "Patient is an 85-year-old woman",
+      "span": "85 years old woman",
+      "entities": [
+        "patient"
+      ],
+      "values": [
+        "85"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f002",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient collapsed at home and was brought to the emergency department",
+      "span": "brought to the emergency department after collapsing at home",
+      "entities": [
+        "collapse",
+        "emergency department presentation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f003",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient presented with breathing difficulties",
+      "span": "collapsing at home with breathing difficulties",
+      "entities": [
+        "breathing difficulties"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f004",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient had minor bruising to forehead as a result of fall",
+      "span": "minor bruising to her forehead as a result of her fall",
+      "entities": [
+        "forehead bruising"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:on_presentation"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f005",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has history of porcine aortic valve replacement",
+      "span": "past history of a porcine aortic valve replacement 17 years previously",
+      "entities": [
+        "porcine aortic valve replacement"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f006",
+      "category": "temporal",
+      "subcategory": "time_since_event",
+      "content": "Porcine aortic valve replacement performed 17 years previously",
+      "span": "porcine aortic valve replacement 17 years previously",
+      "entities": [
+        "porcine aortic valve replacement"
+      ],
+      "values": [
+        "17 years"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f007",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has hypertension",
+      "span": "hypertension",
+      "entities": [
+        "hypertension"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f008",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has atrial fibrillation",
+      "span": "atrial fibrillation for which she was on warfarin",
+      "entities": [
+        "atrial fibrillation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f009",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient is on warfarin for atrial fibrillation",
+      "span": "atrial fibrillation for which she was on warfarin",
+      "entities": [
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f010",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient was dyspnoeic on arrival",
+      "span": "On arrival she was dyspnoeic",
+      "entities": [
+        "dyspnoea"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f011",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Oxygen saturation 75% on room air",
+      "span": "oxygen saturation of 75% on room air",
+      "entities": [
+        "oxygen saturation"
+      ],
+      "values": [
+        "75%"
+      ],
+      "tags": [
+        "categorical:on_room_air"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f012",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Respiratory rate 40 per minute",
+      "span": "respiratory rate of 40 per minute",
+      "entities": [
+        "respiratory rate"
+      ],
+      "values": [
+        "40/min"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f013",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Patient was tachycardic on examination",
+      "span": "she was tachycardic",
+      "entities": [
+        "heart rate"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f014",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Patient was hypertensive on examination",
+      "span": "hypertensive",
+      "entities": [
+        "blood pressure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f015",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Jugular venous pressure was elevated",
+      "span": "her jugular venous pressure was elevated",
+      "entities": [
+        "jugular venous pressure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f016",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Coarse crackles throughout both lungs on auscultation",
+      "span": "coarse crackles throughout both lungs",
+      "entities": [
+        "bilateral lung crackles"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f017",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has severe type 2 respiratory failure",
+      "span": "severe type 2 respiratory failure",
+      "entities": [
+        "type 2 respiratory failure"
+      ],
+      "values": [],
+      "tags": [
+        "quantitative:see_ABG_g005"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f018",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Arterial blood gas pH 7.15 on 15 litres oxygen",
+      "span": "pH of 7.15",
+      "entities": [
+        "arterial pH"
+      ],
+      "values": [
+        "7.15"
+      ],
+      "tags": [
+        "categorical:on_15L_O2"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f019",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Arterial pCO2 9.12 kPa",
+      "span": "pCO2 9.12",
+      "entities": [
+        "pCO2"
+      ],
+      "values": [
+        "9.12"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f020",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Arterial pO2 10.22 kPa",
+      "span": "pO2 10.22",
+      "entities": [
+        "pO2"
+      ],
+      "values": [
+        "10.22"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f021",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Arterial bicarbonate 22.8 mmol/L",
+      "span": "bicarbonate of 22.8 mmol/l",
+      "entities": [
+        "bicarbonate"
+      ],
+      "values": [
+        "22.8 mmol/L"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f022",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Haemoglobin 11.9 g/dL",
+      "span": "haemoglobin of 11.9 g/dL",
+      "entities": [
+        "haemoglobin"
+      ],
+      "values": [
+        "11.9 g/dL"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f023",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "INR 4.9 on presentation",
+      "span": "INR of 4.9",
+      "entities": [
+        "INR"
+      ],
+      "values": [
+        "4.9"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f024",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "ECG showed right bundle branch block",
+      "span": "right bundle branch block",
+      "entities": [
+        "right bundle branch block"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f025",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "ECG showed widespread ST depression",
+      "span": "widespread ST depression",
+      "entities": [
+        "ST depression"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f026",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Chest radiograph findings compatible with pulmonary oedema",
+      "span": "Findings on chest radiograph were compatible with pulmonary oedema",
+      "entities": [
+        "pulmonary oedema"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f027",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient commenced on nitrate infusion",
+      "span": "commenced on a nitrate infusion",
+      "entities": [
+        "nitrate"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:on_presentation"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f028",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient commenced on intravenous diuretics",
+      "span": "intravenous diuretics",
+      "entities": [
+        "diuretics"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:on_presentation"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f029",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Patient commenced on Bi-level Positive Airway Pressure ventilation",
+      "span": "Bi-level Positive Airway Pressure ventilation",
+      "entities": [
+        "BiPAP"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f030",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient condition improved rapidly and BiPAP ventilation was discontinued",
+      "span": "Her condition improved rapidly and the Bi-level Positive Airway Pressure ventilation was discontinued",
+      "entities": [
+        "clinical improvement",
+        "BiPAP"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f031",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "One hour after BiPAP discontinuation patient breathing deteriorated",
+      "span": "An hour later her breathing deteriorated",
+      "entities": [
+        "respiratory deterioration"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:one_hour_after_improvement"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f032",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient newly developed stridor",
+      "span": "she newly developed stridor",
+      "entities": [
+        "stridor"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:new_onset"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f033",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient developed bruising of the neck",
+      "span": "developed bruising of the neck",
+      "entities": [
+        "neck bruising"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:new_onset"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f034",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "No laryngeal abnormality on nasoendoscopy",
+      "span": "normal larynx",
+      "entities": [
+        "laryngeal abnormality"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": "g010"
+    },
+    {
+      "id": "f035",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Nasoendoscopy showed slight bulge narrowing the trachea anteriorly",
+      "span": "slight bulge narrowing the trachea anteriorly",
+      "entities": [
+        "tracheal narrowing"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f036",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Patient was immediately intubated and mechanically ventilated",
+      "span": "immediately intubated and ventilated",
+      "entities": [
+        "endotracheal intubation",
+        "mechanical ventilation"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:after_nasoendoscopy"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f037",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "CT showed large retropharyngeal haematoma causing anterior compression of the airway, extending into the posterior mediastinum and terminating behind the left atrium",
+      "span": "large retropharyngeal haematoma causing anterior compression of the airway, extending into the posterior mediastinum and terminating behind the left atrium",
+      "entities": [
+        "retropharyngeal haematoma"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f038",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "CT showed right pleural effusion",
+      "span": "right pleural effusion were also seen on CT",
+      "entities": [
+        "right pleural effusion"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f039",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient given intravenous Vitamin K",
+      "span": "Intravenous Vitamin K at a dose of 5 mg",
+      "entities": [
+        "Vitamin K"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f040",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Vitamin K 5mg intravenously",
+      "span": "Vitamin K at a dose of 5 mg",
+      "entities": [
+        "Vitamin K"
+      ],
+      "values": [
+        "5 mg",
+        "IV"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f041",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient given Prothrombin Complex Concentrates",
+      "span": "Prothrombin Complex Concentrates (PCCs)",
+      "entities": [
+        "Prothrombin Complex Concentrates"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f042",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "PCCs 50 units per kilogram",
+      "span": "PCCs at a dose of 50 units per kilogram",
+      "entities": [
+        "Prothrombin Complex Concentrates"
+      ],
+      "values": [
+        "50 units/kg"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f043",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Vitamin K and PCCs given for reversal of anticoagulation due to retropharyngeal haematoma diagnosis",
+      "span": "given on diagnosis of the haematoma for the reversal of anticoagulation",
+      "entities": [
+        "Vitamin K",
+        "Prothrombin Complex Concentrates",
+        "anticoagulation reversal"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f044",
+      "category": "temporal",
+      "subcategory": "lab_trajectory",
+      "content": "INR decreased from 4.9 to 1.1 within 2 hours after anticoagulation reversal",
+      "span": "The INR was 1.1 when repeated subsequently 2 hours later",
+      "entities": [
+        "INR"
+      ],
+      "values": [
+        "4.9",
+        "1.1"
+      ],
+      "tags": [
+        "temporal:2_hours_post_reversal"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f045",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient developed ventilation-related pneumonia",
+      "span": "complications of a ventilation-related pneumonia",
+      "entities": [
+        "ventilation-related pneumonia"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:during_ICU_stay"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f046",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient stayed in intensive care for 10 days",
+      "span": "the patient stayed in intensive care for 10 days",
+      "entities": [
+        "ICU admission"
+      ],
+      "values": [
+        "10 days"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f047",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient was extubated uneventfully after 10-day ICU stay",
+      "span": "she was extubated uneventfully",
+      "entities": [
+        "extubation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f048",
+      "category": "categorical",
+      "subcategory": "fall_risk",
+      "content": "Patient has past history of recurrent injurious falls",
+      "span": "past history of recurrent injurious falls",
+      "entities": [
+        "recurrent injurious falls"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f049",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Warfarin not recommenced after retropharyngeal haematoma",
+      "span": "A decision was made not to recommence anticoagulation with warfarin",
+      "entities": [
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f050",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Warfarin not recommenced due to recurrent injurious falls and high risk of complications from future haemorrhagic events",
+      "span": "due to the past history of recurrent injurious falls and the high risk of complications from future haemorrhagic events",
+      "entities": [
+        "warfarin",
+        "recurrent injurious falls",
+        "haemorrhagic risk"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f051",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient commenced on aspirin as alternative to warfarin",
+      "span": "The patient was commenced instead on aspirin",
+      "entities": [
+        "aspirin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f052",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient discharged two weeks later to own home",
+      "span": "discharged two weeks later to her own home",
+      "entities": [
+        "discharge"
+      ],
+      "values": [
+        "2 weeks"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    }
+  ]
+}
+---
+
+Return ONLY a JSON array of additional Fact objects that are missing. Use fact IDs continuing from the highest existing ID. Use group_ids continuing from the highest existing group. If no facts are missing, return an empty array: []
+
+CRITICAL: Your entire response must be valid JSON and nothing else. Start your response with [ and end it with ]. No text before or after the array. No explanation, no commentary, no markdown fencing.
+</USER>

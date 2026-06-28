@@ -1,0 +1,41 @@
+[
+  {
+    "id": "f053",
+    "category": "categorical",
+    "subcategory": "previous_diagnosis",
+    "content": "ECG confirmed atrial fibrillation rhythm",
+    "span": "ECG showed atrial fibrillation",
+    "entities": ["atrial fibrillation"],
+    "values": [],
+    "tags": ["temporal:on_presentation"],
+    "source": "physician_assessed",
+    "negated": false,
+    "group_id": "g007"
+  },
+  {
+    "id": "f054",
+    "category": "categorical",
+    "subcategory": "previous_diagnosis",
+    "content": "CT scan also showed evidence of pulmonary oedema",
+    "span": "Evidence of pulmonary oedema and a right pleural effusion were also seen on CT",
+    "entities": ["pulmonary oedema"],
+    "values": [],
+    "tags": [],
+    "source": "physician_assessed",
+    "negated": false,
+    "group_id": "g011"
+  },
+  {
+    "id": "f055",
+    "category": "clinical_reasoning",
+    "subcategory": "explanatory_link",
+    "content": "Retropharyngeal haematoma occurred as a result of the fall in the context of anticoagulation",
+    "span": "retropharyngeal haematoma in a patient on warfarin, as a result of a fall",
+    "entities": ["retropharyngeal haematoma", "fall", "warfarin"],
+    "values": [],
+    "tags": [],
+    "source": "physician_assessed",
+    "negated": false,
+    "group_id": null
+  }
+]

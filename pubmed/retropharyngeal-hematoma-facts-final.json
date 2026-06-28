@@ -1,0 +1,909 @@
+{
+  "metadata": {
+    "document_id": "retropharyngeal-hematoma-case",
+    "note_type": "case_report",
+    "date": "2008-11-02",
+    "author_role": "unknown",
+    "sections_present": [
+      "Background",
+      "Case Presentation",
+      "Discussion",
+      "Conclusion"
+    ],
+    "source_dataset": "manual"
+  },
+  "facts": [
+    {
+      "id": "f001",
+      "category": "categorical",
+      "subcategory": "patient_identifier",
+      "content": "Patient is an 85-year-old woman",
+      "span": "85 years old woman",
+      "entities": [
+        "patient"
+      ],
+      "values": [
+        "85"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f002",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient collapsed at home and was brought to the emergency department",
+      "span": "brought to the emergency department after collapsing at home",
+      "entities": [
+        "collapse",
+        "emergency department presentation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f003",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient presented with breathing difficulties",
+      "span": "collapsing at home with breathing difficulties",
+      "entities": [
+        "breathing difficulties"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f004",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient had minor bruising to forehead as a result of fall",
+      "span": "minor bruising to her forehead as a result of her fall",
+      "entities": [
+        "forehead bruising"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:on_presentation"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f005",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has history of porcine aortic valve replacement",
+      "span": "past history of a porcine aortic valve replacement 17 years previously",
+      "entities": [
+        "porcine aortic valve replacement"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f006",
+      "category": "temporal",
+      "subcategory": "time_since_event",
+      "content": "Porcine aortic valve replacement performed 17 years previously",
+      "span": "porcine aortic valve replacement 17 years previously",
+      "entities": [
+        "porcine aortic valve replacement"
+      ],
+      "values": [
+        "17 years"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f007",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has hypertension",
+      "span": "hypertension",
+      "entities": [
+        "hypertension"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f008",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has atrial fibrillation",
+      "span": "atrial fibrillation for which she was on warfarin",
+      "entities": [
+        "atrial fibrillation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f009",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient is on warfarin for atrial fibrillation",
+      "span": "atrial fibrillation for which she was on warfarin",
+      "entities": [
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f010",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient was dyspnoeic on arrival",
+      "span": "On arrival she was dyspnoeic",
+      "entities": [
+        "dyspnoea"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f011",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Oxygen saturation 75% on room air",
+      "span": "oxygen saturation of 75% on room air",
+      "entities": [
+        "oxygen saturation"
+      ],
+      "values": [
+        "75%"
+      ],
+      "tags": [
+        "categorical:on_room_air"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f012",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Respiratory rate 40 per minute",
+      "span": "respiratory rate of 40 per minute",
+      "entities": [
+        "respiratory rate"
+      ],
+      "values": [
+        "40/min"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f013",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Patient was tachycardic on examination",
+      "span": "she was tachycardic",
+      "entities": [
+        "heart rate"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f014",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Patient was hypertensive on examination",
+      "span": "hypertensive",
+      "entities": [
+        "blood pressure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f015",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Jugular venous pressure was elevated",
+      "span": "her jugular venous pressure was elevated",
+      "entities": [
+        "jugular venous pressure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f016",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Coarse crackles throughout both lungs on auscultation",
+      "span": "coarse crackles throughout both lungs",
+      "entities": [
+        "bilateral lung crackles"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f017",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has severe type 2 respiratory failure",
+      "span": "severe type 2 respiratory failure",
+      "entities": [
+        "type 2 respiratory failure"
+      ],
+      "values": [],
+      "tags": [
+        "quantitative:see_ABG_g005"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f018",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Arterial blood gas pH 7.15 on 15 litres oxygen",
+      "span": "pH of 7.15",
+      "entities": [
+        "arterial pH"
+      ],
+      "values": [
+        "7.15"
+      ],
+      "tags": [
+        "categorical:on_15L_O2"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f019",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Arterial pCO2 9.12 kPa",
+      "span": "pCO2 9.12",
+      "entities": [
+        "pCO2"
+      ],
+      "values": [
+        "9.12"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f020",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Arterial pO2 10.22 kPa",
+      "span": "pO2 10.22",
+      "entities": [
+        "pO2"
+      ],
+      "values": [
+        "10.22"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f021",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Arterial bicarbonate 22.8 mmol/L",
+      "span": "bicarbonate of 22.8 mmol/l",
+      "entities": [
+        "bicarbonate"
+      ],
+      "values": [
+        "22.8 mmol/L"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f022",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Haemoglobin 11.9 g/dL",
+      "span": "haemoglobin of 11.9 g/dL",
+      "entities": [
+        "haemoglobin"
+      ],
+      "values": [
+        "11.9 g/dL"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f023",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "INR 4.9 on presentation",
+      "span": "INR of 4.9",
+      "entities": [
+        "INR"
+      ],
+      "values": [
+        "4.9"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f024",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "ECG showed right bundle branch block",
+      "span": "right bundle branch block",
+      "entities": [
+        "right bundle branch block"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f025",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "ECG showed widespread ST depression",
+      "span": "widespread ST depression",
+      "entities": [
+        "ST depression"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f026",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Chest radiograph findings compatible with pulmonary oedema",
+      "span": "Findings on chest radiograph were compatible with pulmonary oedema",
+      "entities": [
+        "pulmonary oedema"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f027",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient commenced on nitrate infusion",
+      "span": "commenced on a nitrate infusion",
+      "entities": [
+        "nitrate"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:on_presentation"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f028",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient commenced on intravenous diuretics",
+      "span": "intravenous diuretics",
+      "entities": [
+        "diuretics"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:on_presentation"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f029",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Patient commenced on Bi-level Positive Airway Pressure ventilation",
+      "span": "Bi-level Positive Airway Pressure ventilation",
+      "entities": [
+        "BiPAP"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f030",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient condition improved rapidly and BiPAP ventilation was discontinued",
+      "span": "Her condition improved rapidly and the Bi-level Positive Airway Pressure ventilation was discontinued",
+      "entities": [
+        "clinical improvement",
+        "BiPAP"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f031",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "One hour after BiPAP discontinuation patient breathing deteriorated",
+      "span": "An hour later her breathing deteriorated",
+      "entities": [
+        "respiratory deterioration"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:one_hour_after_improvement"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f032",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient newly developed stridor",
+      "span": "she newly developed stridor",
+      "entities": [
+        "stridor"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:new_onset"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f033",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient developed bruising of the neck",
+      "span": "developed bruising of the neck",
+      "entities": [
+        "neck bruising"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:new_onset"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f034",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "No laryngeal abnormality on nasoendoscopy",
+      "span": "normal larynx",
+      "entities": [
+        "laryngeal abnormality"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": "g010"
+    },
+    {
+      "id": "f035",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Nasoendoscopy showed slight bulge narrowing the trachea anteriorly",
+      "span": "slight bulge narrowing the trachea anteriorly",
+      "entities": [
+        "tracheal narrowing"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f036",
+      "category": "categorical",
+      "subcategory": "device_type",
+      "content": "Patient was immediately intubated and mechanically ventilated",
+      "span": "immediately intubated and ventilated",
+      "entities": [
+        "endotracheal intubation",
+        "mechanical ventilation"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:after_nasoendoscopy"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f037",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "CT showed large retropharyngeal haematoma causing anterior compression of the airway, extending into the posterior mediastinum and terminating behind the left atrium",
+      "span": "large retropharyngeal haematoma causing anterior compression of the airway, extending into the posterior mediastinum and terminating behind the left atrium",
+      "entities": [
+        "retropharyngeal haematoma"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f038",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "CT showed right pleural effusion",
+      "span": "right pleural effusion were also seen on CT",
+      "entities": [
+        "right pleural effusion"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f039",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient given intravenous Vitamin K",
+      "span": "Intravenous Vitamin K at a dose of 5 mg",
+      "entities": [
+        "Vitamin K"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f040",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Vitamin K 5mg intravenously",
+      "span": "Vitamin K at a dose of 5 mg",
+      "entities": [
+        "Vitamin K"
+      ],
+      "values": [
+        "5 mg",
+        "IV"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f041",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient given Prothrombin Complex Concentrates",
+      "span": "Prothrombin Complex Concentrates (PCCs)",
+      "entities": [
+        "Prothrombin Complex Concentrates"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f042",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "PCCs 50 units per kilogram",
+      "span": "PCCs at a dose of 50 units per kilogram",
+      "entities": [
+        "Prothrombin Complex Concentrates"
+      ],
+      "values": [
+        "50 units/kg"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f043",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Vitamin K and PCCs given for reversal of anticoagulation due to retropharyngeal haematoma diagnosis",
+      "span": "given on diagnosis of the haematoma for the reversal of anticoagulation",
+      "entities": [
+        "Vitamin K",
+        "Prothrombin Complex Concentrates",
+        "anticoagulation reversal"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f044",
+      "category": "temporal",
+      "subcategory": "lab_trajectory",
+      "content": "INR decreased from 4.9 to 1.1 within 2 hours after anticoagulation reversal",
+      "span": "The INR was 1.1 when repeated subsequently 2 hours later",
+      "entities": [
+        "INR"
+      ],
+      "values": [
+        "4.9",
+        "1.1"
+      ],
+      "tags": [
+        "temporal:2_hours_post_reversal"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f045",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient developed ventilation-related pneumonia",
+      "span": "complications of a ventilation-related pneumonia",
+      "entities": [
+        "ventilation-related pneumonia"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:during_ICU_stay"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f046",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient stayed in intensive care for 10 days",
+      "span": "the patient stayed in intensive care for 10 days",
+      "entities": [
+        "ICU admission"
+      ],
+      "values": [
+        "10 days"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f047",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient was extubated uneventfully after 10-day ICU stay",
+      "span": "she was extubated uneventfully",
+      "entities": [
+        "extubation"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f048",
+      "category": "categorical",
+      "subcategory": "fall_risk",
+      "content": "Patient has past history of recurrent injurious falls",
+      "span": "past history of recurrent injurious falls",
+      "entities": [
+        "recurrent injurious falls"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f049",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Warfarin not recommenced after retropharyngeal haematoma",
+      "span": "A decision was made not to recommence anticoagulation with warfarin",
+      "entities": [
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f050",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Warfarin not recommenced due to recurrent injurious falls and high risk of complications from future haemorrhagic events",
+      "span": "due to the past history of recurrent injurious falls and the high risk of complications from future haemorrhagic events",
+      "entities": [
+        "warfarin",
+        "recurrent injurious falls",
+        "haemorrhagic risk"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f051",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient commenced on aspirin as alternative to warfarin",
+      "span": "The patient was commenced instead on aspirin",
+      "entities": [
+        "aspirin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f052",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient discharged two weeks later to own home",
+      "span": "discharged two weeks later to her own home",
+      "entities": [
+        "discharge"
+      ],
+      "values": [
+        "2 weeks"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f053",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "ECG confirmed atrial fibrillation rhythm",
+      "span": "ECG showed atrial fibrillation",
+      "entities": [
+        "atrial fibrillation"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:on_presentation"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f054",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "CT scan also showed evidence of pulmonary oedema",
+      "span": "Evidence of pulmonary oedema and a right pleural effusion were also seen on CT",
+      "entities": [
+        "pulmonary oedema"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f055",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Retropharyngeal haematoma occurred as a result of the fall in the context of anticoagulation",
+      "span": "retropharyngeal haematoma in a patient on warfarin, as a result of a fall",
+      "entities": [
+        "retropharyngeal haematoma",
+        "fall",
+        "warfarin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    }
+  ]
+}

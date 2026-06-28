@@ -126,6 +126,22 @@ NEGATION_CUES: tuple[str, ...] = (
     "no signs",
     "ruled out",
     "free of",
+    # Medical-convention negation: terms that express absence without an
+    # English negation word ("afebrile" == "no fever", "unremarkable" ==
+    # "no abnormal findings"). See NEGATION rule in extraction/prompts.py.
+    "unremarkable",
+    "afebrile",
+    "asymptomatic",
+    "atraumatic",
+    "anicteric",
+    "nontender",
+    "noncontributory",
+    "benign",
+    "normal",
+    "clear",
+    "stable",
+    "intact",
+    "within normal limits",
 )
 
 

@@ -1,0 +1,1907 @@
+<SYSTEM>
+You are a clinical fact extractor. Given a medical document, you extract every clinically relevant patient-specific fact into a structured JSON format. You are exhaustive, precise, and follow strict decomposition rules.
+
+TAXONOMY (category: subcategories):
+Categorical: previous_diagnosis, reported_symptom, patient_identifier, family_history, behavior, code_status, negated_fact, allergy, infection_precaution, fall_risk, drug_name, device_type
+Temporal: medication_timing, event_sequence, lab_trajectory, dosage_change, time_since_event
+Quantitative: lab_value, vital_sign, medication_dosage
+Clinical Reasoning: considered_rejected_diagnosis, conditional_fact, explanatory_link, uncertainty_marker, pending_planned_task
+
+SOURCE ATTRIBUTION VALUES:
+patient_reported, physician_assessed, outside_records, nursing_note, family_reported, unknown
+
+DECOMPOSITION RULES:
+
+1. ONE ENTITY PER FACT. "Patient takes tylenol 200mg and metformin 10mg" becomes TWO facts, each with a single entity and its associated values. Never put multiple unrelated entities in one fact entry.
+
+2. ATOMIC FACTS. Compound clinical statements are decomposed into separate facts by category. "Metformin increased from 250mg to 500mg on 2024-01-10 due to inadequate glycemic control" becomes:
+   - categorical/drug_name: "Patient takes metformin"
+   - quantitative/medication_dosage: "Metformin 500mg" (current dose)
+   - temporal/dosage_change: "Metformin increased from 250mg to 500mg on 2024-01-10"
+   - clinical_reasoning/explanatory_link: "Metformin increased due to inadequate glycemic control"
+   All share the same group_id.
+
+3. GROUP_ID links facts decomposed from the same clinical statement. Each fact in a group is independently meaningful. Use format "g001", "g002", etc. Facts that stand alone have group_id: null.
+
+4. NEGATION. Any negated clinical fact (denies, no history of, ruled out, absent, etc.) MUST have negated: true. The content field MUST include the negation word. "Denies chest pain" → content: "Patient denies chest pain", negated: true. The entities field contains the concept being negated: ["chest pain"].
+
+5. VERBATIM SPAN. The span field captures the original text from the document, preserving abbreviations and formatting. If the fact comes from multiple non-contiguous spans, capture the most informative one.
+
+6. SOURCE ATTRIBUTION. Set the source field based on who asserted the fact:
+   - patient_reported: patient's own statements
+   - physician_assessed: physician's clinical judgment or documentation
+   - outside_records: from external records or prior documentation
+   - nursing_note: nursing documentation
+   - family_reported: family member statements
+   - unknown: cannot determine source
+
+7. MULTIPLE VALUES on one entity follow chronological order for changes (old first, new second) and co-equal listing for current state. Content must state direction explicitly for changes.
+
+8. TAGS for cross-cutting concerns use format "category:detail" (e.g. "temporal:started_2024-03-15"). Use tags when a fact has a secondary category relationship but its primary category is something else.
+
+9. EXTRACT PATIENT-SPECIFIC FACTS ONLY. Do not extract general medical knowledge, literature findings, study results, or guideline recommendations. Extract only facts about the specific patient in the case.
+
+10. PRESERVE DISEASE QUALIFIERS. Stage, grade, severity, functional status, and subtype modifiers must be included in the content field. "Chronic kidney disease stage 3" not "chronic kidney disease." "Heart failure with preserved ejection fraction" not "heart failure." These qualifiers change clinical management.
+
+11. TREATMENT REGIMENS ARE NOT DRUGS. Do not extract combination therapy descriptions ("triple antithrombotic therapy", "dual antiplatelet therapy") as drug_name facts. The individual drugs in the regimen should each have their own drug_name entry. If the regimen concept is clinically relevant, categorize it as clinical_reasoning/explanatory_link.
+
+12. DEDUPLICATE FACTS. If the same clinical fact appears in multiple sections of the document (e.g., mentioned in the case presentation and again in the discussion), extract it ONCE. Use the most complete or specific version. Do not create separate fact entries for each mention of the same fact.
+
+13. DIAGNOSIS HIERARCHY. When a condition has an etiology, pathology, and functional consequence (e.g., alcoholic liver disease → cirrhosis → liver failure), extract the most clinically specific composite diagnosis rather than separate entries for each level. Use the content field for the composite ('end-stage alcoholic cirrhosis with liver failure') and entities for the key terms. Extract separate facts only when different levels are clinically independent or diagnosed at different times.
+
+14. PROGRESSIVE CONDITIONS. When the same condition appears at different severity levels across the document timeline (e.g., 'heart failure' early, 'decompensated heart failure' later), extract the progression as a single temporal fact showing the trajectory, not as two separate categorical diagnoses.
+
+WORKED EXAMPLE
+
+Given this clinical text:
+"Patient is a 67-year-old male with history of Type 2 diabetes (diagnosed 2019), currently on metformin 500mg BID. Denies chest pain. HbA1c 7.2% on 2024-03-15, up from 6.8% in 2023-09. Allergic to penicillin (anaphylaxis). Metformin was increased from 250mg to 500mg on 2024-01-10 due to inadequate glycemic control. Concerning for early diabetic nephropathy — plan to order urine albumin."
+
+Produce this extraction:
+{
+  "metadata": {
+    "document_id": "example-001",
+    "note_type": "progress_note",
+    "date": "2024-03-15",
+    "author_role": "attending physician",
+    "sections_present": ["HPI", "Assessment/Plan"],
+    "source_dataset": "synthetic"
+  },
+  "facts": [
+    {
+      "id": "f001",
+      "category": "categorical",
+      "subcategory": "patient_identifier",
+      "content": "Patient is a 67-year-old male",
+      "span": "67-year-old male",
+      "entities": ["patient"],
+      "values": ["67"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f002",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has Type 2 diabetes",
+      "span": "history of Type 2 diabetes (diagnosed 2019)",
+      "entities": ["Type 2 diabetes"],
+      "values": [],
+      "tags": ["temporal:diagnosed_2019"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f003",
+      "category": "temporal",
+      "subcategory": "time_since_event",
+      "content": "Type 2 diabetes diagnosed in 2019",
+      "span": "diagnosed 2019",
+      "entities": ["Type 2 diabetes"],
+      "values": ["2019"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f004",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient is currently on metformin",
+      "span": "currently on metformin 500mg BID",
+      "entities": ["metformin"],
+      "values": [],
+      "tags": ["quantitative:500mg_BID"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f005",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Metformin 500mg twice daily",
+      "span": "metformin 500mg BID",
+      "entities": ["metformin"],
+      "values": ["500mg", "BID"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f006",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "Patient denies chest pain",
+      "span": "Denies chest pain",
+      "entities": ["chest pain"],
+      "values": [],
+      "tags": [],
+      "source": "patient_reported",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f007",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "HbA1c is 7.2%",
+      "span": "HbA1c 7.2% on 2024-03-15",
+      "entities": ["HbA1c"],
+      "values": ["7.2%"],
+      "tags": ["temporal:2024-03-15"],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f008",
+      "category": "temporal",
+      "subcategory": "lab_trajectory",
+      "content": "HbA1c increased from 6.8% to 7.2% between September 2023 and March 2024",
+      "span": "HbA1c 7.2% on 2024-03-15, up from 6.8% in 2023-09",
+      "entities": ["HbA1c"],
+      "values": ["6.8%", "7.2%"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f009",
+      "category": "categorical",
+      "subcategory": "allergy",
+      "content": "Patient is allergic to penicillin with anaphylaxis reaction",
+      "span": "Allergic to penicillin (anaphylaxis)",
+      "entities": ["penicillin"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f010",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Metformin increased from 250mg to 500mg on 2024-01-10",
+      "span": "Metformin was increased from 250mg to 500mg on 2024-01-10",
+      "entities": ["metformin"],
+      "values": ["250mg", "500mg", "2024-01-10"],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f011",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Metformin was increased due to inadequate glycemic control",
+      "span": "due to inadequate glycemic control",
+      "entities": ["metformin", "glycemic control"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f012",
+      "category": "clinical_reasoning",
+      "subcategory": "uncertainty_marker",
+      "content": "Concerning for early diabetic nephropathy",
+      "span": "Concerning for early diabetic nephropathy",
+      "entities": ["diabetic nephropathy"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f013",
+      "category": "clinical_reasoning",
+      "subcategory": "pending_planned_task",
+      "content": "Plan to order urine albumin test",
+      "span": "plan to order urine albumin",
+      "entities": ["urine albumin"],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    }
+  ]
+}
+
+OUTPUT FORMAT:
+Return ONLY valid JSON matching the FactFile structure — a single JSON object with "metadata" and "facts" keys.
+
+CRITICAL: Your entire response must be valid JSON and nothing else. Start your response with { and end it with }. No text before or after the object. No explanation, no commentary, no markdown fencing.
+
+FactFile structure:
+{
+  "metadata": {
+    "document_id": str,
+    "note_type": one of [discharge_summary, progress_note, history_and_physical, consult, imaging_report, procedure_note, nursing_note, er_provider_note, echocardiography_report, case_report, other],
+    "date": str | null,            // ISO YYYY-MM-DD
+    "author_role": str | null,
+    "sections_present": [str, ...],
+    "source_dataset": str | null
+  },
+  "facts": [
+    {
+      "id": str,                    // "f001", unique within the file
+      "category": one of [categorical, temporal, quantitative, clinical_reasoning],
+      "subcategory": str,           // a valid subcategory for the category
+      "content": str,               // normalized, human-readable statement
+      "span": str | null,           // verbatim source text
+      "entities": [str, ...],       // at least one clinical entity
+      "values": [str, ...],         // quantitative values with units; may be empty
+      "tags": [str, ...],           // cross-cutting "category:detail"
+      "source": one of [patient_reported, physician_assessed, outside_records, nursing_note, family_reported, unknown],
+      "negated": bool,
+      "group_id": str | null        // links decomposed facts, e.g. "g001"
+    }
+  ]
+}
+</SYSTEM>
+
+<USER>
+Review this clinical document against the facts already extracted. Identify any clinically relevant patient-specific facts that are MISSING from the extraction.
+
+Focus especially on:
+- Negated facts (things the patient denies or does not have)
+- Temporal relationships (when things started, stopped, changed)
+- Clinical reasoning (why decisions were made, what was considered and rejected)
+- Conditional instructions (if X then Y)
+- Source attributions that may be wrong
+- Quantitative values (lab numbers, vitals, dosages) that were missed
+- Drug interactions or risk factors mentioned specifically about this patient
+
+Document text:
+---
+Endocarditis Caused by Methicillin-Susceptible Staphylococcus aureus with Reduced Susceptibility to Vancomycin: A Case Report
+
+Beatriz Perazzi, Natalia Bello, Marta Mollerach, Carlos Vay, Maria Beatriz Lasala, and Angela Famiglietti
+Hospital de Clinicas, Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina
+Published 7 July 2011
+
+Introduction
+
+Staphylococcus aureus is the most common cause of acute infective endocarditis (IE). S. aureus has developed resistance to every beta-lactam antibiotic that has been introduced into clinical medicine. Recent reports have described heteroresistance to vancomycin associated with methicillin-resistant S. aureus (MRSA). However, the scope and clinical significance of such isolates are yet to be completely defined.
+
+We present the first case report in Argentina of the failure of vancomycin treatment for endocarditis caused by methicillin-susceptible S. aureus (MSSA) containing subpopulations with reduced susceptibility to vancomycin.
+
+Case Presentation
+
+We report the case of a 66-year-old Hispanic man with a history of diabetes, psoriasis, smoking, alcoholism, hospitalization in the previous year due to upper gastrointestinal bleeding (UGB), gastric ulcer and bacteremic lower limb cellulitis caused by MSSA, who received intravenous cephalothin for 14 days. The patient had not previously been exposed to glycopeptide antibiotics.
+
+At admission, he presented with a febrile syndrome and chills and complained of lumbar pain that had persisted for more than 20 days. On physical examination, the patient was mentally alert and had a blood pressure of 110/70 mmHg, a heart rate of 70 beats/minute and a respiration frequency of 18 breaths/minute. A systolic murmur (grade 4/6) was detected in the aortic and mitral valves. He also had lower limb hypotrophia with no pain when flexing, extending or rotating the hip. A hematological study showed hematocrit levels of 28%, a hemoglobin concentration of 9.6 g/dL, a white blood cell count of 11,600/mm3 with 85% polymorphonuclear leukocytes, a platelet count of 197,000/mm3 and an erythrocyte sedimentation rate (ESR) of 130 mm in the first hour.
+
+Blood cultures performed at admittance were positive for MSSA (SA1) in both samples taken after 18 hours. The SA1 strain was susceptible to the following non-beta lactam antibiotics: gentamicin, minocycline, tigecycline, rifampin, cotrimoxazol, vancomycin, teicoplanin, levofloxacin, ciprofloxacin and linezolid. The vancomycin MIC determined by the broth microdilution method was 1 ug/mL. Nuclear MRI of the spine showed spondylodiscitis at the L5-S1 level with left iliopsoas muscle involvement.
+
+The transesophageal echocardiogram (TEE) performed 48 hours after admission showed a mass compatible with vegetation and an anterior mitral valve leaflet abscess causing mild mitral failure: this was interpreted as IE with septic emboli involving the lumbosacral spine and the left iliopsoas muscle. Intravenous antibiotic treatment with cephalothin (2 g/6 hours) and gentamicin (240 mg/day) was started. Subsequent echocardiograms performed 15 days after the start of the treatment did not reveal any abscesses or changes in vegetation size. A blood culture performed as a control 10 days after the start of the treatment was negative.
+
+On day 26 of cephalothin administration, our patient developed a rash caused by beta-lactams with eosinophilia and urinary sediment findings that were compatible with interstitial nephritis. For that reason, treatment was switched to intravenous vancomycin (1 g/12 hours) until day 42, when a new TEE was performed, which showed no vegetation. He was discharged due to improvement of his condition. However, a week later, a new blood culture was positive for MSSA (SA2) in both samples after 19.5 hours, showing the same antibiotic susceptibility and a vancomycin MIC of 1 ug/mL. He was readmitted 48 hours after the blood culture was performed. Immediate treatment was started with intravenous vancomycin (1 g/12 hours), gentamicin (240 mg/day) and rifampin (300 mg/6 hours).
+
+A TEE performed 48 hours after hospitalization revealed a mass compatible with recently established aortic valve vegetation producing mild valvular failure. A mass attached to the anterior mitral valve leaflet was also observed, which suggested the presence of previously attached vegetation causing mild mitral failure. Our patient remained hemodynamically stable, afebrile and his physical examination was unremarkable. The treatment was monitored by a time-kill curve and by vancomycin dosage. The serum bactericidal rate showed bactericidal effects after 24 hours. The trough serum vancomycin concentration was 14.1 mg/L. Gentamicin was discontinued after 21 days due to renal failure. A TEE performed 20 days after hospitalization showed remission of the mass. A tomography-guided needle puncture of the lesion in the left iliopsoas muscle showed no microbiological growth.
+
+Our patient completed intravenous treatment with vancomycin (42 days), gentamicin (21 days) and rifampin (36 days). Because the blood culture was negative, he was discharged.
+
+Polymerase chain reaction detection of the mecA gene was negative in both isolates.
+
+The vancomycin MIC for SA1 and SA2 with the standard inoculum (10^5) was 0.5 and 1 ug/mL, respectively, and the minimum bactericidal concentration (MBC) was 0.5 and 128 ug/mL, respectively. A higher inoculum (10^7) increased the MIC to 2 ug/mL and the MBC to 512 ug/mL in both isolates. After stimulation with increasing subinhibitory concentrations of vancomycin (SA3), the MIC and MBC with the standard inoculum were the same, whereas at a higher inoculum (10^7), the values increased to 4 ug/mL and 512 ug/mL for the MIC and MBC, respectively.
+
+In the population analysis of SA2 and SA3, a development of colonies up to 3 and 4 ug/mL, respectively, was observed, with growth between 1 and 4 ug/mL, which was 2 to 4 logs more than in SA1, which developed up to 2 ug/mL. SA2 and SA3 were identified as heterogeneous vancomycin-intermediate S. aureus (hVISA) on the basis of the population analysis profiling-area under the curve (PAP-AUC) ratios, showing PAP-AUC ratios of 1.06 and 1.26, respectively, compared to the AUC of the Mu3 strain, whereas SA1 was identified as vancomycin-susceptible, showing a PAP-AUC ratio of 0.83, compared to the AUC of the Mu3 strain.
+
+Electron microscopy of SA2 showed a thickened cell wall.
+
+The clonal relationship determined by pulsed-field gel electrophoresis showed that both S. aureus isolates displayed indistinguishable electrophoretic patterns.
+
+Discussion
+
+IE is a disease in which the endocardial surface of the heart is invaded by infectious microorganisms. S. aureus, which is a common cause of acute IE, is difficult to treat and establishes an aggravated infection if the therapeutic options are limited because of adverse effects or reduced susceptibility to antibiotics.
+
+IE due to S. aureus has a slow microbiological resolution when treated with vancomycin. This persistent bacteremia could be due to the presence of a metastatic infectious focus, such as that in the left iliopsoas muscle and the vertebrae. Because vancomycin has poor bone penetration, the initial monotherapy with this antibiotic combined with short-duration parenteral antimicrobial treatment may have failed to sterilize the bone. Negative cultures resulting from the aspiration biopsy of the muscle lesion cannot rule out the presence of a metastatic infectious focus, because this procedure has very low diagnostic sensitivity, especially in patients pre-treated with antibiotics. Another possible explanation of persistent bacteremia is that in this case, the isolate showed a vancomycin MIC of 1 ug/mL or greater, which could justify treatment failure and control of the infection with the combined treatment. In this respect, it is worth mentioning that treatment of MSSA bacteremia with vancomycin is not optimal, as has been clearly demonstrated in several studies. The slow bactericidal activity of this antibiotic is responsible for its high probability of therapeutic failure, which increases as the MIC increases, even within the susceptibility range. There are several strategies to deal with this situation. The use of high doses of vancomycin (15-20 mg/kg/8 to 12 hours) in complicated infections to obtain trough serum concentrations of 15-20 mg/L and an AUC/MIC of greater than 400 has elicited a better therapeutic response in strains with MICs of 1 ug/mL or less, despite higher rates of nephrotoxicity, which requires serum concentration monitoring of the drug. The combination of vancomycin with other antibiotics, as in our case, is another possible strategy. Rifampin is a first-line anti-staphylococcal agent. However, some studies suggest that its combination with vancomycin may have antagonistic effects, although this was not the case with our patient. Rifampin could have been effective here due to the patient's bone involvement in the spine. The combination of vancomycin with gentamicin was a previous recommendation of the Infectious Diseases Society of America and the American Heart Association to hasten clearance of blood cultures; this has recently been changed due to findings of enhanced nephrotoxicity with no real morbidity and/or mortality benefit.
+
+Considering that the vancomycin doses administered in our case did not reach the recommended trough serum levels of 15-20 mg/L (14.1 mg/L), it could be assumed that S. aureus subpopulations with reduced susceptibility to vancomycin might have arisen during therapy, thus contributing to treatment failure. The infection finally resolved after vancomycin treatment, likely because of its combination with gentamicin and rifampin.
+
+Conclusion
+
+We describe the first case in Argentina of failure of vancomycin treatment in an acute infection caused by an hVISA methicillin-susceptible strain of S. aureus. Our report provides important evidence for the existence of subpopulations of S. aureus with reduced vancomycin susceptibility which would account for treatment failure in this case.
+
+This case raises an alert about the existence of these strains, which despite showing vancomycin MIC values of 2 ug/mL or less, are considered susceptible by the Clinical and Laboratory Standards Institute (CLSI). These strains usually show vancomycin MIC values between 1 and 2 ug/mL which could account for treatment failure in severe infections if the trough serum concentrations of this antibiotic are lower than 20 ug/mL. Therefore, the correct management of severe S. aureus infections with vancomycin requires careful monitoring by determining the vancomycin MIC and its trough serum concentrations in order to adjust the treatment.
+
+---
+
+Already extracted facts:
+---
+{
+  "metadata": {
+    "document_id": "vanc-resistant-endocarditis-case",
+    "note_type": "case_report",
+    "date": "2011-07-07",
+    "author_role": "unknown",
+    "sections_present": [
+      "Introduction",
+      "Case Presentation",
+      "Discussion",
+      "Conclusion"
+    ],
+    "source_dataset": "manual"
+  },
+  "facts": [
+    {
+      "id": "f001",
+      "category": "categorical",
+      "subcategory": "patient_identifier",
+      "content": "Patient is a 66-year-old Hispanic man",
+      "span": "66-year-old Hispanic man",
+      "entities": [
+        "patient"
+      ],
+      "values": [
+        "66"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f002",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has a history of diabetes",
+      "span": "a history of diabetes",
+      "entities": [
+        "diabetes"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f003",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient has a history of psoriasis",
+      "span": "psoriasis",
+      "entities": [
+        "psoriasis"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f004",
+      "category": "categorical",
+      "subcategory": "behavior",
+      "content": "Patient has a history of smoking",
+      "span": "smoking",
+      "entities": [
+        "smoking"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f005",
+      "category": "categorical",
+      "subcategory": "behavior",
+      "content": "Patient has a history of alcoholism",
+      "span": "alcoholism",
+      "entities": [
+        "alcoholism"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f006",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient was previously hospitalized for upper gastrointestinal bleeding and gastric ulcer",
+      "span": "hospitalization in the previous year due to upper gastrointestinal bleeding (UGB), gastric ulcer",
+      "entities": [
+        "upper gastrointestinal bleeding",
+        "gastric ulcer"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:previous_year"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f007",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient had bacteremic lower limb cellulitis caused by MSSA during prior hospitalization",
+      "span": "bacteremic lower limb cellulitis caused by MSSA",
+      "entities": [
+        "lower limb cellulitis",
+        "MSSA bacteremia"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:previous_year"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g001"
+    },
+    {
+      "id": "f008",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient received intravenous cephalothin during prior hospitalization",
+      "span": "received intravenous cephalothin for 14 days",
+      "entities": [
+        "cephalothin"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:previous_year"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f009",
+      "category": "temporal",
+      "subcategory": "medication_timing",
+      "content": "Cephalothin was administered intravenously for 14 days during prior hospitalization",
+      "span": "received intravenous cephalothin for 14 days",
+      "entities": [
+        "cephalothin"
+      ],
+      "values": [
+        "14 days"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g002"
+    },
+    {
+      "id": "f010",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "Patient had not previously been exposed to glycopeptide antibiotics",
+      "span": "The patient had not previously been exposed to glycopeptide antibiotics",
+      "entities": [
+        "glycopeptide antibiotics"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f011",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient presented with febrile syndrome and chills at admission",
+      "span": "he presented with a febrile syndrome and chills",
+      "entities": [
+        "febrile syndrome",
+        "chills"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f012",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient complained of lumbar pain persisting for more than 20 days",
+      "span": "complained of lumbar pain that had persisted for more than 20 days",
+      "entities": [
+        "lumbar pain"
+      ],
+      "values": [
+        ">20 days"
+      ],
+      "tags": [
+        "temporal:>20_days_duration"
+      ],
+      "source": "patient_reported",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f013",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Blood pressure 110/70 mmHg at admission",
+      "span": "a blood pressure of 110/70 mmHg",
+      "entities": [
+        "blood pressure"
+      ],
+      "values": [
+        "110/70 mmHg"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f014",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Heart rate 70 beats per minute at admission",
+      "span": "a heart rate of 70 beats/minute",
+      "entities": [
+        "heart rate"
+      ],
+      "values": [
+        "70 beats/minute"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f015",
+      "category": "quantitative",
+      "subcategory": "vital_sign",
+      "content": "Respiration frequency 18 breaths per minute at admission",
+      "span": "a respiration frequency of 18 breaths/minute",
+      "entities": [
+        "respiration frequency"
+      ],
+      "values": [
+        "18 breaths/minute"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f016",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient was mentally alert on physical examination",
+      "span": "the patient was mentally alert",
+      "entities": [
+        "mental status"
+      ],
+      "values": [
+        "alert"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f017",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Systolic murmur grade 4/6 detected at aortic and mitral valves",
+      "span": "A systolic murmur (grade 4/6) was detected in the aortic and mitral valves",
+      "entities": [
+        "systolic murmur"
+      ],
+      "values": [
+        "grade 4/6"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f018",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient had lower limb hypotrophia on examination",
+      "span": "lower limb hypotrophia",
+      "entities": [
+        "lower limb hypotrophia"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f019",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "No pain when flexing, extending, or rotating the hip",
+      "span": "no pain when flexing, extending or rotating the hip",
+      "entities": [
+        "hip pain"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f020",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Hematocrit 28% at admission",
+      "span": "hematocrit levels of 28%",
+      "entities": [
+        "hematocrit"
+      ],
+      "values": [
+        "28%"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f021",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Hemoglobin 9.6 g/dL at admission",
+      "span": "a hemoglobin concentration of 9.6 g/dL",
+      "entities": [
+        "hemoglobin"
+      ],
+      "values": [
+        "9.6 g/dL"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f022",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "White blood cell count 11,600/mm3 with 85% polymorphonuclear leukocytes at admission",
+      "span": "a white blood cell count of 11,600/mm3 with 85% polymorphonuclear leukocytes",
+      "entities": [
+        "white blood cell count",
+        "polymorphonuclear leukocytes"
+      ],
+      "values": [
+        "11600/mm3",
+        "85%"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f023",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Platelet count 197,000/mm3 at admission",
+      "span": "a platelet count of 197,000/mm3",
+      "entities": [
+        "platelet count"
+      ],
+      "values": [
+        "197000/mm3"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f024",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Erythrocyte sedimentation rate 130 mm in the first hour at admission",
+      "span": "an erythrocyte sedimentation rate (ESR) of 130 mm in the first hour",
+      "entities": [
+        "ESR"
+      ],
+      "values": [
+        "130 mm/hr"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f025",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Blood cultures at admission positive for MSSA (SA1) in both samples after 18 hours",
+      "span": "Blood cultures performed at admittance were positive for MSSA (SA1) in both samples taken after 18 hours",
+      "entities": [
+        "MSSA",
+        "SA1"
+      ],
+      "values": [
+        "18 hours"
+      ],
+      "tags": [
+        "temporal:admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f026",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "SA1 strain susceptible to gentamicin, minocycline, tigecycline, rifampin, cotrimoxazol, vancomycin, teicoplanin, levofloxacin, ciprofloxacin, and linezolid",
+      "span": "The SA1 strain was susceptible to the following non-beta lactam antibiotics: gentamicin, minocycline, tigecycline, rifampin, cotrimoxazol, vancomycin, teicoplanin, levofloxacin, ciprofloxacin and linezolid",
+      "entities": [
+        "SA1",
+        "antibiotic susceptibility"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f027",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "SA1 vancomycin MIC 1 ug/mL by broth microdilution method",
+      "span": "The vancomycin MIC determined by the broth microdilution method was 1 ug/mL",
+      "entities": [
+        "vancomycin MIC",
+        "SA1"
+      ],
+      "values": [
+        "1 ug/mL"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g003"
+    },
+    {
+      "id": "f028",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Nuclear MRI showed spondylodiscitis at L5-S1 with left iliopsoas muscle involvement",
+      "span": "Nuclear MRI of the spine showed spondylodiscitis at the L5-S1 level with left iliopsoas muscle involvement",
+      "entities": [
+        "spondylodiscitis",
+        "left iliopsoas muscle involvement"
+      ],
+      "values": [],
+      "tags": [
+        "categorical:L5-S1"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f029",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "TEE showed vegetation and anterior mitral valve leaflet abscess causing mild mitral failure, interpreted as infective endocarditis with septic emboli to lumbosacral spine and left iliopsoas muscle",
+      "span": "a mass compatible with vegetation and an anterior mitral valve leaflet abscess causing mild mitral failure: this was interpreted as IE with septic emboli involving the lumbosacral spine and the left iliopsoas muscle",
+      "entities": [
+        "infective endocarditis",
+        "mitral valve vegetation",
+        "mitral valve leaflet abscess",
+        "septic emboli"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:48h_post_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f030",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient started on intravenous cephalothin for infective endocarditis (first admission)",
+      "span": "Intravenous antibiotic treatment with cephalothin (2 g/6 hours)",
+      "entities": [
+        "cephalothin"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:first_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f031",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Cephalothin 2 g every 6 hours intravenously (first admission)",
+      "span": "cephalothin (2 g/6 hours)",
+      "entities": [
+        "cephalothin"
+      ],
+      "values": [
+        "2 g",
+        "every 6 hours"
+      ],
+      "tags": [
+        "temporal:first_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g004"
+    },
+    {
+      "id": "f032",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient started on intravenous gentamicin for infective endocarditis (first admission)",
+      "span": "gentamicin (240 mg/day) was started",
+      "entities": [
+        "gentamicin"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:first_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f033",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Gentamicin 240 mg per day intravenously (first admission)",
+      "span": "gentamicin (240 mg/day)",
+      "entities": [
+        "gentamicin"
+      ],
+      "values": [
+        "240 mg/day"
+      ],
+      "tags": [
+        "temporal:first_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g005"
+    },
+    {
+      "id": "f034",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "Follow-up echocardiograms at 15 days did not reveal any abscesses or changes in vegetation size",
+      "span": "Subsequent echocardiograms performed 15 days after the start of the treatment did not reveal any abscesses or changes in vegetation size",
+      "entities": [
+        "abscess",
+        "vegetation"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:day_15_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f035",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Control blood culture at day 10 of first treatment was negative",
+      "span": "A blood culture performed as a control 10 days after the start of the treatment was negative",
+      "entities": [
+        "blood culture"
+      ],
+      "values": [
+        "negative"
+      ],
+      "tags": [
+        "temporal:day_10_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f036",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient developed a rash caused by beta-lactams on day 26 of cephalothin administration",
+      "span": "our patient developed a rash caused by beta-lactams",
+      "entities": [
+        "beta-lactam rash"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:day_26_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f037",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Eosinophilia present on day 26 of cephalothin administration",
+      "span": "with eosinophilia",
+      "entities": [
+        "eosinophilia"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:day_26_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f038",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Urinary sediment findings compatible with interstitial nephritis on day 26",
+      "span": "urinary sediment findings that were compatible with interstitial nephritis",
+      "entities": [
+        "interstitial nephritis"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:day_26_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f039",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Beta-lactam rash with eosinophilia and interstitial nephritis caused switch from cephalothin to vancomycin",
+      "span": "For that reason, treatment was switched to intravenous vancomycin (1 g/12 hours)",
+      "entities": [
+        "cephalothin",
+        "vancomycin",
+        "beta-lactam adverse reaction"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g006"
+    },
+    {
+      "id": "f040",
+      "category": "temporal",
+      "subcategory": "dosage_change",
+      "content": "Treatment switched from cephalothin to vancomycin 1 g every 12 hours IV on day 26",
+      "span": "treatment was switched to intravenous vancomycin (1 g/12 hours)",
+      "entities": [
+        "vancomycin"
+      ],
+      "values": [
+        "1 g",
+        "every 12 hours"
+      ],
+      "tags": [
+        "temporal:day_26_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f041",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient received intravenous vancomycin during first admission (after cephalothin switch)",
+      "span": "treatment was switched to intravenous vancomycin (1 g/12 hours)",
+      "entities": [
+        "vancomycin"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:day_26_to_42_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g007"
+    },
+    {
+      "id": "f042",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "TEE on day 42 showed no vegetation",
+      "span": "a new TEE was performed, which showed no vegetation",
+      "entities": [
+        "vegetation"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:day_42_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f043",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient discharged on day 42 due to improvement after TEE showed no vegetation",
+      "span": "He was discharged due to improvement of his condition",
+      "entities": [
+        "discharge"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:day_42_first_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f044",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Blood culture one week post-discharge positive for MSSA (SA2) in both samples after 19.5 hours",
+      "span": "a new blood culture was positive for MSSA (SA2) in both samples after 19.5 hours",
+      "entities": [
+        "MSSA",
+        "SA2",
+        "blood culture"
+      ],
+      "values": [
+        "positive",
+        "19.5 hours"
+      ],
+      "tags": [
+        "temporal:1_week_post_discharge"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f045",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "SA2 showed same antibiotic susceptibility profile as SA1 with vancomycin MIC of 1 ug/mL",
+      "span": "showing the same antibiotic susceptibility and a vancomycin MIC of 1 ug/mL",
+      "entities": [
+        "SA2",
+        "antibiotic susceptibility",
+        "vancomycin MIC"
+      ],
+      "values": [
+        "1 ug/mL"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g008"
+    },
+    {
+      "id": "f046",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient readmitted 48 hours after the post-discharge blood culture was performed",
+      "span": "He was readmitted 48 hours after the blood culture was performed",
+      "entities": [
+        "readmission"
+      ],
+      "values": [
+        "48 hours"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f047",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient started on intravenous vancomycin for second admission",
+      "span": "Immediate treatment was started with intravenous vancomycin (1 g/12 hours)",
+      "entities": [
+        "vancomycin"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:second_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f048",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Vancomycin 1 g every 12 hours intravenously (second admission)",
+      "span": "vancomycin (1 g/12 hours)",
+      "entities": [
+        "vancomycin"
+      ],
+      "values": [
+        "1 g",
+        "every 12 hours"
+      ],
+      "tags": [
+        "temporal:second_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g009"
+    },
+    {
+      "id": "f049",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient started on intravenous gentamicin for second admission",
+      "span": "gentamicin (240 mg/day)",
+      "entities": [
+        "gentamicin"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:second_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f050",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Gentamicin 240 mg per day intravenously (second admission)",
+      "span": "gentamicin (240 mg/day)",
+      "entities": [
+        "gentamicin"
+      ],
+      "values": [
+        "240 mg/day"
+      ],
+      "tags": [
+        "temporal:second_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g010"
+    },
+    {
+      "id": "f051",
+      "category": "categorical",
+      "subcategory": "drug_name",
+      "content": "Patient started on rifampin for second admission",
+      "span": "rifampin (300 mg/6 hours)",
+      "entities": [
+        "rifampin"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:second_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f052",
+      "category": "quantitative",
+      "subcategory": "medication_dosage",
+      "content": "Rifampin 300 mg every 6 hours (second admission)",
+      "span": "rifampin (300 mg/6 hours)",
+      "entities": [
+        "rifampin"
+      ],
+      "values": [
+        "300 mg",
+        "every 6 hours"
+      ],
+      "tags": [
+        "temporal:second_admission_treatment"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g011"
+    },
+    {
+      "id": "f053",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "TEE 48 hours after second hospitalization revealed recently established aortic valve vegetation producing mild valvular failure",
+      "span": "a mass compatible with recently established aortic valve vegetation producing mild valvular failure",
+      "entities": [
+        "aortic valve vegetation",
+        "mild aortic valvular failure"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:48h_post_readmission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f054",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "TEE also showed mass on anterior mitral valve leaflet suggesting previously attached vegetation causing mild mitral failure",
+      "span": "A mass attached to the anterior mitral valve leaflet was also observed, which suggested the presence of previously attached vegetation causing mild mitral failure",
+      "entities": [
+        "mitral valve vegetation",
+        "mild mitral failure"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:48h_post_readmission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g012"
+    },
+    {
+      "id": "f055",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient remained hemodynamically stable during second admission",
+      "span": "Our patient remained hemodynamically stable",
+      "entities": [
+        "hemodynamic status"
+      ],
+      "values": [
+        "stable"
+      ],
+      "tags": [
+        "temporal:second_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f056",
+      "category": "categorical",
+      "subcategory": "reported_symptom",
+      "content": "Patient was afebrile during second admission",
+      "span": "afebrile",
+      "entities": [
+        "fever"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:second_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f057",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Serum bactericidal rate showed bactericidal effects after 24 hours",
+      "span": "The serum bactericidal rate showed bactericidal effects after 24 hours",
+      "entities": [
+        "serum bactericidal rate"
+      ],
+      "values": [
+        "bactericidal at 24 hours"
+      ],
+      "tags": [
+        "temporal:second_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f058",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "Trough serum vancomycin concentration was 14.1 mg/L during second admission",
+      "span": "The trough serum vancomycin concentration was 14.1 mg/L",
+      "entities": [
+        "trough vancomycin"
+      ],
+      "values": [
+        "14.1 mg/L"
+      ],
+      "tags": [
+        "temporal:second_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f059",
+      "category": "temporal",
+      "subcategory": "medication_timing",
+      "content": "Gentamicin discontinued after 21 days due to renal failure during second admission",
+      "span": "Gentamicin was discontinued after 21 days due to renal failure",
+      "entities": [
+        "gentamicin"
+      ],
+      "values": [
+        "21 days"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f060",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Patient developed renal failure during second admission",
+      "span": "due to renal failure",
+      "entities": [
+        "renal failure"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:second_admission_day_21"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f061",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Gentamicin was discontinued because of renal failure",
+      "span": "Gentamicin was discontinued after 21 days due to renal failure",
+      "entities": [
+        "gentamicin",
+        "renal failure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g013"
+    },
+    {
+      "id": "f062",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "TEE at day 20 of second hospitalization showed remission of the mass",
+      "span": "A TEE performed 20 days after hospitalization showed remission of the mass",
+      "entities": [
+        "vegetation",
+        "mass remission"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:day_20_second_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f063",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "CT-guided needle puncture of left iliopsoas muscle lesion showed no microbiological growth",
+      "span": "A tomography-guided needle puncture of the lesion in the left iliopsoas muscle showed no microbiological growth",
+      "entities": [
+        "left iliopsoas lesion",
+        "microbiological growth"
+      ],
+      "values": [],
+      "tags": [
+        "temporal:second_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f064",
+      "category": "temporal",
+      "subcategory": "medication_timing",
+      "content": "Patient completed vancomycin for 42 days during second admission",
+      "span": "vancomycin (42 days)",
+      "entities": [
+        "vancomycin"
+      ],
+      "values": [
+        "42 days"
+      ],
+      "tags": [
+        "temporal:second_admission_total"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f065",
+      "category": "temporal",
+      "subcategory": "medication_timing",
+      "content": "Patient completed gentamicin for 21 days during second admission",
+      "span": "gentamicin (21 days)",
+      "entities": [
+        "gentamicin"
+      ],
+      "values": [
+        "21 days"
+      ],
+      "tags": [
+        "temporal:second_admission_total"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f066",
+      "category": "temporal",
+      "subcategory": "medication_timing",
+      "content": "Patient completed rifampin for 36 days during second admission",
+      "span": "rifampin (36 days)",
+      "entities": [
+        "rifampin"
+      ],
+      "values": [
+        "36 days"
+      ],
+      "tags": [
+        "temporal:second_admission_total"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g014"
+    },
+    {
+      "id": "f067",
+      "category": "temporal",
+      "subcategory": "event_sequence",
+      "content": "Patient discharged after second admission because blood culture was negative",
+      "span": "Because the blood culture was negative, he was discharged",
+      "entities": [
+        "discharge",
+        "blood culture"
+      ],
+      "values": [
+        "negative"
+      ],
+      "tags": [
+        "temporal:end_second_admission"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f068",
+      "category": "categorical",
+      "subcategory": "negated_fact",
+      "content": "PCR detection of mecA gene was negative in both SA1 and SA2 isolates",
+      "span": "Polymerase chain reaction detection of the mecA gene was negative in both isolates",
+      "entities": [
+        "mecA gene"
+      ],
+      "values": [
+        "negative"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": true,
+      "group_id": null
+    },
+    {
+      "id": "f069",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "SA1 vancomycin MIC 0.5 ug/mL and MBC 0.5 ug/mL at standard inoculum (10^5)",
+      "span": "The vancomycin MIC for SA1 and SA2 with the standard inoculum (10^5) was 0.5 and 1 ug/mL, respectively, and the minimum bactericidal concentration (MBC) was 0.5 and 128 ug/mL, respectively",
+      "entities": [
+        "SA1",
+        "vancomycin MIC",
+        "vancomycin MBC"
+      ],
+      "values": [
+        "MIC 0.5 ug/mL",
+        "MBC 0.5 ug/mL"
+      ],
+      "tags": [
+        "categorical:standard_inoculum_10^5"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g015"
+    },
+    {
+      "id": "f070",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "SA2 vancomycin MIC 1 ug/mL and MBC 128 ug/mL at standard inoculum (10^5)",
+      "span": "The vancomycin MIC for SA1 and SA2 with the standard inoculum (10^5) was 0.5 and 1 ug/mL, respectively, and the minimum bactericidal concentration (MBC) was 0.5 and 128 ug/mL, respectively",
+      "entities": [
+        "SA2",
+        "vancomycin MIC",
+        "vancomycin MBC"
+      ],
+      "values": [
+        "MIC 1 ug/mL",
+        "MBC 128 ug/mL"
+      ],
+      "tags": [
+        "categorical:standard_inoculum_10^5"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g015"
+    },
+    {
+      "id": "f071",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "SA1 and SA2 vancomycin MIC increased to 2 ug/mL and MBC to 512 ug/mL at higher inoculum (10^7)",
+      "span": "A higher inoculum (10^7) increased the MIC to 2 ug/mL and the MBC to 512 ug/mL in both isolates",
+      "entities": [
+        "SA1",
+        "SA2",
+        "vancomycin MIC",
+        "vancomycin MBC"
+      ],
+      "values": [
+        "MIC 2 ug/mL",
+        "MBC 512 ug/mL"
+      ],
+      "tags": [
+        "categorical:higher_inoculum_10^7"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g015"
+    },
+    {
+      "id": "f072",
+      "category": "quantitative",
+      "subcategory": "lab_value",
+      "content": "SA3 (vancomycin-stimulated) MIC and MBC at standard inoculum same as SA2; at higher inoculum (10^7) MIC increased to 4 ug/mL and MBC to 512 ug/mL",
+      "span": "After stimulation with increasing subinhibitory concentrations of vancomycin (SA3), the MIC and MBC with the standard inoculum were the same, whereas at a higher inoculum (10^7), the values increased to 4 ug/mL and 512 ug/mL for the MIC and MBC, respectively",
+      "entities": [
+        "SA3",
+        "vancomycin MIC",
+        "vancomycin MBC"
+      ],
+      "values": [
+        "standard: MIC 1 ug/mL, MBC 128 ug/mL",
+        "10^7: MIC 4 ug/mL, MBC 512 ug/mL"
+      ],
+      "tags": [
+        "categorical:vancomycin_stimulated"
+      ],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f073",
+      "category": "temporal",
+      "subcategory": "lab_trajectory",
+      "content": "Population analysis showed SA2 colony development up to 3 ug/mL and SA3 up to 4 ug/mL, with 2-4 logs more growth between 1-4 ug/mL compared to SA1 which developed up to 2 ug/mL",
+      "span": "a development of colonies up to 3 and 4 ug/mL, respectively, was observed, with growth between 1 and 4 ug/mL, which was 2 to 4 logs more than in SA1, which developed up to 2 ug/mL",
+      "entities": [
+        "SA1",
+        "SA2",
+        "SA3",
+        "population analysis"
+      ],
+      "values": [
+        "SA1: up to 2 ug/mL",
+        "SA2: up to 3 ug/mL",
+        "SA3: up to 4 ug/mL"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g016"
+    },
+    {
+      "id": "f074",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "SA2 classified as heterogeneous vancomycin-intermediate S. aureus (hVISA) with PAP-AUC ratio of 1.06 versus Mu3 strain",
+      "span": "SA2 and SA3 were identified as heterogeneous vancomycin-intermediate S. aureus (hVISA) on the basis of the population analysis profiling-area under the curve (PAP-AUC) ratios, showing PAP-AUC ratios of 1.06 and 1.26, respectively",
+      "entities": [
+        "SA2",
+        "hVISA"
+      ],
+      "values": [
+        "PAP-AUC ratio 1.06"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g016"
+    },
+    {
+      "id": "f075",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "SA3 classified as hVISA with PAP-AUC ratio of 1.26 versus Mu3 strain",
+      "span": "SA2 and SA3 were identified as heterogeneous vancomycin-intermediate S. aureus (hVISA) on the basis of the population analysis profiling-area under the curve (PAP-AUC) ratios, showing PAP-AUC ratios of 1.06 and 1.26, respectively",
+      "entities": [
+        "SA3",
+        "hVISA"
+      ],
+      "values": [
+        "PAP-AUC ratio 1.26"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g016"
+    },
+    {
+      "id": "f076",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "SA1 classified as vancomycin-susceptible with PAP-AUC ratio of 0.83 versus Mu3 strain",
+      "span": "SA1 was identified as vancomycin-susceptible, showing a PAP-AUC ratio of 0.83, compared to the AUC of the Mu3 strain",
+      "entities": [
+        "SA1",
+        "vancomycin-susceptible"
+      ],
+      "values": [
+        "PAP-AUC ratio 0.83"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g016"
+    },
+    {
+      "id": "f077",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "Electron microscopy of SA2 showed a thickened cell wall",
+      "span": "Electron microscopy of SA2 showed a thickened cell wall",
+      "entities": [
+        "SA2",
+        "cell wall thickening"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f078",
+      "category": "categorical",
+      "subcategory": "previous_diagnosis",
+      "content": "PFGE showed SA1 and SA2 displayed indistinguishable electrophoretic patterns confirming clonal relationship",
+      "span": "The clonal relationship determined by pulsed-field gel electrophoresis showed that both S. aureus isolates displayed indistinguishable electrophoretic patterns",
+      "entities": [
+        "SA1",
+        "SA2",
+        "clonal relationship"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f079",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Persistent bacteremia possibly due to metastatic infectious focus in left iliopsoas muscle and vertebrae",
+      "span": "This persistent bacteremia could be due to the presence of a metastatic infectious focus, such as that in the left iliopsoas muscle and the vertebrae",
+      "entities": [
+        "persistent bacteremia",
+        "metastatic infectious focus"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g017"
+    },
+    {
+      "id": "f080",
+      "category": "clinical_reasoning",
+      "subcategory": "conditional_fact",
+      "content": "Initial vancomycin monotherapy may have failed to sterilize the bone due to poor vancomycin bone penetration",
+      "span": "the initial monotherapy with this antibiotic combined with short-duration parenteral antimicrobial treatment may have failed to sterilize the bone",
+      "entities": [
+        "vancomycin",
+        "bone sterilization failure"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g017"
+    },
+    {
+      "id": "f081",
+      "category": "clinical_reasoning",
+      "subcategory": "uncertainty_marker",
+      "content": "Negative aspirate cultures from iliopsoas lesion cannot rule out metastatic infectious focus due to low sensitivity of procedure in antibiotic-pretreated patients",
+      "span": "Negative cultures resulting from the aspiration biopsy of the muscle lesion cannot rule out the presence of a metastatic infectious focus",
+      "entities": [
+        "iliopsoas aspirate",
+        "metastatic infectious focus"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": "g017"
+    },
+    {
+      "id": "f082",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Vancomycin MIC of 1 ug/mL or greater in the isolate could justify treatment failure",
+      "span": "the isolate showed a vancomycin MIC of 1 ug/mL or greater, which could justify treatment failure",
+      "entities": [
+        "vancomycin MIC",
+        "treatment failure"
+      ],
+      "values": [
+        "1 ug/mL"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f083",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Rifampin could have been effective in this patient because of bone involvement in the spine",
+      "span": "Rifampin could have been effective here due to the patient's bone involvement in the spine",
+      "entities": [
+        "rifampin",
+        "spinal bone involvement"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f084",
+      "category": "clinical_reasoning",
+      "subcategory": "conditional_fact",
+      "content": "Vancomycin trough of 14.1 mg/L did not reach recommended 15-20 mg/L, suggesting subpopulations with reduced vancomycin susceptibility may have arisen during therapy contributing to treatment failure",
+      "span": "the vancomycin doses administered in our case did not reach the recommended trough serum levels of 15-20 mg/L (14.1 mg/L), it could be assumed that S. aureus subpopulations with reduced susceptibility to vancomycin might have arisen during therapy",
+      "entities": [
+        "trough vancomycin",
+        "hVISA subpopulations",
+        "treatment failure"
+      ],
+      "values": [
+        "14.1 mg/L",
+        "recommended 15-20 mg/L"
+      ],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    },
+    {
+      "id": "f085",
+      "category": "clinical_reasoning",
+      "subcategory": "explanatory_link",
+      "content": "Infection finally resolved after vancomycin treatment likely because of combination with gentamicin and rifampin",
+      "span": "The infection finally resolved after vancomycin treatment, likely because of its combination with gentamicin and rifampin",
+      "entities": [
+        "infection resolution",
+        "vancomycin",
+        "gentamicin",
+        "rifampin"
+      ],
+      "values": [],
+      "tags": [],
+      "source": "physician_assessed",
+      "negated": false,
+      "group_id": null
+    }
+  ]
+}
+---
+
+Return ONLY a JSON array of additional Fact objects that are missing. Use fact IDs continuing from the highest existing ID. Use group_ids continuing from the highest existing group. If no facts are missing, return an empty array: []
+
+CRITICAL: Your entire response must be valid JSON and nothing else. Start your response with [ and end it with ]. No text before or after the array. No explanation, no commentary, no markdown fencing.
+</USER>

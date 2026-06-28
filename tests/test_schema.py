@@ -159,6 +159,18 @@ def test_negated_with_cue_accepted():
     assert f.negated is True
 
 
+def test_negated_with_medical_convention_cue_accepted():
+    # Medical-convention negation: "afebrile" means "no fever" and counts as
+    # explicit negation language without an English negation word.
+    f = make_fact(
+        subcategory="negated_fact",
+        content="Patient is afebrile",
+        entities=["fever"],
+        negated=True,
+    )
+    assert f.negated is True
+
+
 def test_negated_diagnosis_is_orthogonal_to_negated_fact():
     # "no history of seizures": a negated previous_diagnosis, NOT negated_fact.
     f = make_fact(

@@ -38,7 +38,7 @@ _DECOMPOSITION_RULES = """DECOMPOSITION RULES:
 
 3. GROUP_ID links facts decomposed from the same clinical statement. Each fact in a group is independently meaningful. Use format "g001", "g002", etc. Facts that stand alone have group_id: null.
 
-4. NEGATION. Any negated clinical fact (denies, no history of, ruled out, absent, etc.) MUST have negated: true. The content field MUST include the negation word. "Denies chest pain" → content: "Patient denies chest pain", negated: true. The entities field contains the concept being negated: ["chest pain"].
+4. NEGATION. Any negated clinical fact (denies, no history of, ruled out, absent, etc.) MUST have negated: true. The content field MUST include the negation word. "Denies chest pain" → content: "Patient denies chest pain", negated: true. The entities field contains the concept being negated: ["chest pain"]. Medical-convention negation terms also count as negation: afebrile (no fever), asymptomatic (no symptoms), atraumatic (no trauma), unremarkable (no abnormal findings), nontender, noncontributory, within normal limits. These must have negated: true and the content field should use explicit negation language (e.g., "No abnormal findings on physical exam" rather than just "unremarkable exam").
 
 5. VERBATIM SPAN. The span field captures the original text from the document, preserving abbreviations and formatting. If the fact comes from multiple non-contiguous spans, capture the most informative one.
 
@@ -64,7 +64,9 @@ _DECOMPOSITION_RULES = """DECOMPOSITION RULES:
 
 13. DIAGNOSIS HIERARCHY. When a condition has an etiology, pathology, and functional consequence (e.g., alcoholic liver disease → cirrhosis → liver failure), extract the most clinically specific composite diagnosis rather than separate entries for each level. Use the content field for the composite ('end-stage alcoholic cirrhosis with liver failure') and entities for the key terms. Extract separate facts only when different levels are clinically independent or diagnosed at different times.
 
-14. PROGRESSIVE CONDITIONS. When the same condition appears at different severity levels across the document timeline (e.g., 'heart failure' early, 'decompensated heart failure' later), extract the progression as a single temporal fact showing the trajectory, not as two separate categorical diagnoses."""
+14. PROGRESSIVE CONDITIONS. When the same condition appears at different severity levels across the document timeline (e.g., 'heart failure' early, 'decompensated heart failure' later), extract the progression as a single temporal fact showing the trajectory, not as two separate categorical diagnoses.
+
+15. QUALITATIVE VS QUANTITATIVE LAB RESULTS. Lab results with numeric values (HbA1c 7.2%, INR 4.9, WBC 11,600) are quantitative/lab_value. Lab results that are categorical or binary (blood culture positive for MSSA, eosinophilia without a count, urine culture negative) are categorical/previous_diagnosis if they establish a diagnosis, or categorical/negated_fact if they confirm absence. Do not put non-numeric results in quantitative/lab_value."""
 
 _OUTPUT_FORMAT = (
     "Return ONLY valid JSON matching the FactFile structure — a single JSON "

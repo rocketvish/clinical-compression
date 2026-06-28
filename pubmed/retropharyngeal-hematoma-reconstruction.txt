@@ -1,0 +1,13 @@
+PATIENT: 85-year-old woman
+
+ALERTS: past history of recurrent injurious falls.
+
+DIAGNOSES: porcine aortic valve replacement (porcine aortic valve replacement 17 years previously). hypertension. atrial fibrillation. type 2 respiratory failure. right bundle branch block. pulmonary oedema. retropharyngeal haematoma. right pleural effusion. ventilation-related pneumonia (the patient stayed in intensive care for 10 days). atrial fibrillation. pulmonary oedema.
+
+MEDICATIONS: Warfarin due to recurrent injurious falls and high risk of complications from future haemorrhagic events. Nitrate. Diuretics. Vitamin K 5 mg IV due to retropharyngeal haematoma diagnosis. Prothrombin Complex Concentrates 50 units/kg. Aspirin.
+
+RESULTS: oxygen saturation 75%. respiratory rate 40/min. heart rate. blood pressure. jugular venous pressure. arterial pH 7.15. pCO2 9.12. pO2 10.22. bicarbonate 22.8 mmol/L. haemoglobin 11.9 g/dL. INR 4.9, unchanged from 4.9.
+
+CLINICAL REASONING: Retropharyngeal haematoma occurred as a result of the fall in the context of anticoagulation.
+
+CONTEXT: normal larynx.

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "f086",
+    "category": "categorical",
+    "subcategory": "negated_fact",
+    "content": "No abnormal findings on physical examination during second admission",
+    "span": "his physical examination was unremarkable",
+    "entities": ["physical examination"],
+    "values": [],
+    "tags": ["temporal:second_admission"],
+    "source": "physician_assessed",
+    "negated": true,
+    "group_id": null
+  },
+  {
+    "id": "f087",
+    "category": "temporal",
+    "subcategory": "event_sequence",
+    "content": "Treatment during second admission was monitored by time-kill curve and vancomycin dosage",
+    "span": "The treatment was monitored by a time-kill curve and by vancomycin dosage",
+    "entities": ["time-kill curve", "vancomycin dosage monitoring"],
+    "values": [],
+    "tags": ["temporal:second_admission"],
+    "source": "physician_assessed",
+    "negated": false,
+    "group_id": null
+  },
+  {
+    "id": "f088",
+    "category": "clinical_reasoning",
+    "subcategory": "considered_rejected_diagnosis",
+    "content": "Vancomycin-rifampin antagonistic effects were considered but not observed in this patient",
+    "span": "some studies suggest that its combination with vancomycin may have antagonistic effects, although this was not the case with our patient",
+    "entities": ["vancomycin-rifampin antagonism"],
+    "values": [],
+    "tags": [],
+    "source": "physician_assessed",
+    "negated": true,
+    "group_id": null
+  }
+]
